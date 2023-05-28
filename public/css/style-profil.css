@@ -1,0 +1,445 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+body {
+    background-image: url('assets/images/background-white.png');
+    background-size: cover;
+    background-color: #fff;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #ffff;
+    background-size: cover;
+    z-index: 3;
+    box-shadow: 0 2px 4px rgba(0, 4, 4, 0.5);
+  }
+  
+  #navbar-full {
+    margin-left: 140px;
+  }
+  .navbar-brand {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .navbar-brand img {
+    margin-left: -20px;
+  }
+  
+  .nav-item a {
+    color: #363434;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+    font-size: 17px;
+  }
+  
+  .nav-item a:hover {
+    background-color: #ff8854;
+    color: #363434;
+  }
+  
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  
+  .dropdown-menu {
+    background-color: #ffff;
+  }
+  
+  .dropdown-item:hover {
+    background-color: #ff8854;
+  }
+  
+  .btn-login {
+    background-color: rgba(255, 136, 84, 1);
+    color: #fff;
+    font-weight: bold;
+    border-radius: 8px;
+  }
+  
+/* Profil */
+
+#profil {
+    width: 100%;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+}
+
+.profil-image {
+    width: 100%;
+    max-width: 900px;
+    height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color:  rgb(255, 255, 255, 0.6);
+    border-radius: 12px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 4px rgba(0, 4.0, 4.0, 0.3);
+    display: flex;
+    margin-top: 100px;
+}
+
+.img-fluid {
+    margin-left: auto;
+    margin-right: auto;
+    width: 350px;
+    height: auto;
+}
+
+.text-profile {
+    width: 100%;
+    max-width: 900px;
+    letter-spacing: 0.5px;
+    font-size: 18px;
+    padding: 1px;
+    text-align: justify;
+    margin-right: auto;
+    margin-left: auto;
+    color: #F2F2F2;
+    margin-bottom: 30px;
+}
+
+.text-center h1{
+    padding-top: 40px;
+    padding-bottom: 25px;
+    color: #F2F2F2;
+    font-size: 38px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    letter-spacing: 2px;
+    margin-top: 50px;
+}
+
+.text-center h3{
+    color: #F2F2F2;
+    font-size: 20px;
+    font-weight: lighter;
+}
+
+
+/* Profil Tutor */
+
+#profil-tutor {
+    margin-bottom: 30px;
+}
+
+.lecturer-card-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+.lecturer-card {
+    display: flex;
+    flex-direction: column;
+    width: 255px;
+    height: 519px;
+    background: #fff;
+    border-radius: 24px;
+    margin: 0 15px 20px;
+    box-shadow: 0 4px 30px 0 rgba(95, 95, 95, 0.25);
+}
+
+#yor1 {
+    background: url('./assets/images/lecturer/yor.png') no-repeat;
+    background-size: cover;
+}
+
+#rian1 {
+    background: url('./assets/images/lecturer/rian.png') no-repeat;
+    background-size: cover;
+}
+
+#pica1 {
+    background: url('./assets/images/lecturer/pica.png') no-repeat;
+    background-size: cover;
+}
+#timo1 {
+    background: url('./assets/images/lecturer/timo.png') no-repeat;
+    background-size: cover;
+}
+
+.lecturer-card .card-image {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border-radius: 24px 24px 0 0;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.lecturer-card .image img {
+    position: absolute;
+    bottom: -5px;
+    width: 100%;
+}
+
+.lecturer-card .card-text {
+    text-align: center;
+    padding: 16px;
+    margin-bottom: 15px;
+}
+
+.lecturer-card .lecturer-name {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 auto;
+}
+
+.lecturer-card span , .lecturer-card li {
+    color: #363434;
+    font-size: 10px;
+}
+
+.card-text li {
+    text-align: center;
+}
+
+.card-text ul {
+    list-style-image: url("./assets/icons/bronze-medal-icon.svg");
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+dl, ol, ul {
+    margin-top: 0;
+    margin-bottom: 0px;
+}
+
+ol, ul {
+    padding-left: 0px;
+}
+
+.lecturer-card .description {
+    font-size: 12px;
+    font-weight: 200;
+    margin: 0px 0;
+}
+
+hr {
+    border-top: 1.5px solid rgb(0, 0, 0, 1);
+    z-index: 1;
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    background: #00225B;
+    padding: 57px 40px;
+}
+
+.footer-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    color: #fff;
+    justify-content: space-between;
+}
+
+.footer-container .footer-logo {
+    margin-bottom: 24px;
+}
+
+.footer-left-content {
+    flex: 0.25;
+}
+
+.footer-left-content p {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 14px;
+}
+
+.footer-left-content p:nth-of-type(1) {
+    margin-bottom: 20px;
+}
+
+.footer-right-content {
+    flex: 0.7;
+    max-width: 100%;
+}
+
+
+.footer-right-top-content,
+.footer-right-bottom-content {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 50px 0;
+    justify-content: space-between;
+}
+
+.footer-right-top-content .product {
+    padding-top: 20px;
+}
+
+.footer-right-content .title {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 21px;
+}
+
+.footer-right-content ul {
+    list-style: none;
+}
+
+.footer-right-content li {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 9px;
+}
+
+.footer-right-content a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.footer-right-bottom-content p,
+.footer-right-bottom-content li {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.footer-right-bottom-content {
+    padding-left: 40px;
+}
+
+.footer-right-bottom-content li {
+    display: flex;
+    align-items: center;
+}
+
+.footer-right-bottom-content ul img {
+    margin-right: 8px;
+}
+
+.footer-right-bottom-content .social-media {
+    display: flex;
+}
+
+.footer-right-bottom-content .social-media a {
+    text-decoration: none;
+    margin: 0 6px;
+}
+
+@media (max-width: 985px) {
+
+    #navbar-full {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    
+    .notification-panel {
+        height: fit-content;
+    }
+
+    .footer-right-content > p:nth-last-of-type(1) {
+        text-align: center;
+    }
+
+}
+
+@media (max-width: 768px) {
+    #navbar-full {
+        margin-left: auto;
+      }
+    
+
+    .img-fluid {
+        width: 300px;
+        padding: 50px;
+    }
+    .text-center h1 {
+        font-size: 25px;
+    }
+
+    .profil-image {
+        height: auto;
+        margin-top: 80px;
+     }   
+
+    .lecturer-card-wrapper {
+        width: fit-content;
+    }
+    
+    .text-profile p {
+        font-size: 14px;
+    }
+    
+    .footer-container {
+        display: block;
+    }
+
+    .footer-left-content {
+        text-align: center;
+        align-items: center;
+    }
+
+    .footer-container .footer-logo {
+        width: 250px;
+        height: auto;
+    }
+    .footer-right-bottom-content {
+        padding-left: 0;
+    }
+
+    .footer-right-bottom-content .contact {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 475px) {
+
+    .navbar-brand img {
+        width: 180px;
+        height: 32px;
+      }
+    
+    .text-center h1 {
+        margin: 50px 25px 0px 25px;
+    }
+
+    .lecturer-card {
+        width: 190px;
+        height: 350px;
+        margin: 0 5px 10px;
+    }
+    
+    .profil-image {
+        max-height: auto;
+    }
+    
+    .lecturer-card .lecturer-name {
+        font-size: 12px;
+    }
+
+    .lecturer-card span, .lecturer-card li {
+        font-size: 8px;
+    }
+
+    .lecturer-card .card-text {
+        padding: 12px;
+    }
+}
+
+@media (max-width: 400px) {
+    .lecturer-card {
+        width: 180px;
+        height: 350px;
+        margin: 0 5px 10px;
+    }
+}
