@@ -1,12 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Goals Academy | Profil Perusahaan</title>
-</head>
-<body>
-    <h1>Halaman Company Profil</h1>
-</body>
-</html>
+@extends('layouts.main')
+
+@section('container')
+    
+    <!-- Isi Page -->
+<section id="profil">
+    <div class="profil-image container justify-content-center align-items-center">
+        <img class="img-fluid" alt="" src="../image/assets/icons/LOGO PRIMARY_ORANGE.png" width="350px" height="290px" />
+    </div>
+
+    <div class="text-profile">
+        <div class="text-1">
+    <p style="font-weight: bold; color: #4F3F85;">Apa itu Goals Academy?</p>
+            <p style="color:#363434 ;">Platform yang berfokus pada bimbingan skripsi secara hybrid, bisa online maupun offline,  
+                yang menyediakan berbagai macam program bimbingan yang membantu mahasiswa dalam  
+                mengerjakan skripsi dari awal hingga lulus, tentunya dengan bimbingan langsung oleh tutor 
+                yang berpengalaman dan ahli di bidangnya.</p>
+            <br>
+            <p style="font-weight: bold; color: #4F3F85;">Visi Kami</p>
+            <p style="color:#363434 ;">Berkomitmen dalam mentransformasi tenaga pendidik profesional dan pelajar sebagai pemimpin di 
+                 masa depan dengan mengedepankan kemajuan dan efektifitas di bidang riset,  
+                 pendidikan dan keilmuan berbasis inovasi dan teknologi.</p>
+        </div>
+    </div>
+    </div>
+</section>
+<!-- Last Page -->
+
+@endsection

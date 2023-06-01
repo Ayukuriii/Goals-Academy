@@ -6,7 +6,7 @@
     </button>
 
     <a href="/" class="navbar-brand">
-      <img src="image/assets/images/PNG-horison-hitam 1.png">
+      <img src="../image/assets/images/PNG-horison-hitam 1.png">
     </a>
     
     <div id="navbar" class="navbar-collapse collapse text-center">
@@ -14,11 +14,11 @@
       <ul class="navbar-nav mx-auto">
         
         <li class="nav-item"> <!--Artikel Page -->
-          <a href="/" class="nav-link" onclick="alert('Halaman Artikel akan Segera Hadir! Ikuti Kami untuk Update Informasinya')">Artikel</a>
+          <a href="#" class="nav-link" onclick="alert('Halaman Artikel akan Segera Hadir! Ikuti Kami untuk Update Informasinya')">Artikel</a>
         </li>
 
         <li class="nav-item"> <!--Diskusi Page -->
-          <a href="/" class="nav-link" onclick="alert('Halaman Diskusi akan Segera Hadir! Ikuti Kami untuk Update Informasinya')">Diskusi</a>
+          <a href="#" class="nav-link" onclick="alert('Halaman Diskusi akan Segera Hadir! Ikuti Kami untuk Update Informasinya')">Diskusi</a>
         </li>
 
         <li class="nav-item"> <!--Karir Page-->
@@ -32,7 +32,7 @@
 
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="profil_company">Profil Perusahaan</a></li> <!--Profil Perusahaan-->
-            <li><a class="dropdown-item" onclick="alert('Halaman Profil Tutor akan Segera Hadir! Ikuti Kami untuk Update Informasinya')" href="/">Profil Tutor</a></li> <!--Profil Tutor-->
+            <li><a class="dropdown-item" onclick="alert('Halaman Profil Tutor akan Segera Hadir! Ikuti Kami untuk Update Informasinya')" href="">Profil Tutor</a></li> <!--Profil Tutor-->
             <li><a class="dropdown-item" href="http://linktr.ee/goalsacademyid">Media Sosial</a></li> <!--Media Sosial-->
           </ul>
         </li>
@@ -44,7 +44,7 @@
 </nav>
 
   {{-- active navbar --}}
-  {{-- {{ ($title === "namatitle") ? active : '' }} --}}
+  {{-- {{ ($title === "namatitle") ? 'active' : '' }} --}}
   
 
   <div class="modal-container" id="modal-login-register">
@@ -176,8 +176,8 @@
   
   <!-- Notification Panel -->
   <div class="notification-panel">
-  <div class="panel-container">
-  <p>Percepat kelulusanmu dengan belajar di Goals Academy<span><a href="goalsacademy.id" alt="">goalsacademy.id</a></span></p>
-  <i class="fa-solid fa-xmark" id="button-1"></i>
-  </div>
+    <div class="panel-container">
+      <p>Percepat kelulusanmu dengan belajar di Goals Academy<span><a href="goalsacademy.id" alt="">goalsacademy.id</a></span></p>
+      <i class="fa-solid fa-xmark" id="button-1"></i>
+    </div>
   </div>

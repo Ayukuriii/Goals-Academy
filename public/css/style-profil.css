@@ -4,11 +4,11 @@
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
-    font-family: 'Poppins';
+    font-family: "Poppins";
 }
 
 body {
-    background-image: url('assets/images/background-white.png');
+    background-image: url("../image/assets/images/background-white.png");
     background-size: cover;
     background-color: #fff;
 }
@@ -19,51 +19,51 @@ body {
     background-size: cover;
     z-index: 3;
     box-shadow: 0 2px 4px rgba(0, 4, 4, 0.5);
-  }
-  
-  #navbar-full {
+}
+
+#navbar-full {
     margin-left: 140px;
-  }
-  .navbar-brand {
+}
+.navbar-brand {
     margin-left: auto;
     margin-right: auto;
-  }
-  
-  .navbar-brand img {
+}
+
+.navbar-brand img {
     margin-left: -20px;
-  }
-  
-  .nav-item a {
+}
+
+.nav-item a {
     color: #363434;
     letter-spacing: 1.5px;
     font-weight: bold;
     font-size: 17px;
-  }
-  
-  .nav-item a:hover {
+}
+
+.nav-item a:hover {
     background-color: #ff8854;
     color: #363434;
-  }
-  
-  .dropdown:hover .dropdown-menu {
+}
+
+.dropdown:hover .dropdown-menu {
     display: block;
-  }
-  
-  .dropdown-menu {
+}
+
+.dropdown-menu {
     background-color: #ffff;
-  }
-  
-  .dropdown-item:hover {
+}
+
+.dropdown-item:hover {
     background-color: #ff8854;
-  }
-  
-  .btn-login {
+}
+
+.btn-login {
     background-color: rgba(255, 136, 84, 1);
     color: #fff;
     font-weight: bold;
     border-radius: 8px;
-  }
-  
+}
+
 /* Profil */
 
 #profil {
@@ -80,11 +80,11 @@ body {
     height: 400px;
     margin-left: auto;
     margin-right: auto;
-    background-color:  rgb(255, 255, 255, 0.6);
+    background-color: rgb(255, 255, 255, 0.6);
     border-radius: 12px;
     margin-top: 50px;
     margin-bottom: 30px;
-    box-shadow: 0 2px 4px rgba(0, 4.0, 4.0, 0.3);
+    box-shadow: 0 2px 4px rgba(0, 4, 4, 0.3);
     display: flex;
     margin-top: 100px;
 }
@@ -105,14 +105,14 @@ body {
     text-align: justify;
     margin-right: auto;
     margin-left: auto;
-    color: #F2F2F2;
+    color: #f2f2f2;
     margin-bottom: 30px;
 }
 
-.text-center h1{
+.text-center h1 {
     padding-top: 40px;
     padding-bottom: 25px;
-    color: #F2F2F2;
+    color: #f2f2f2;
     font-size: 38px;
     font-weight: bold;
     letter-spacing: 1.5px;
@@ -120,12 +120,11 @@ body {
     margin-top: 50px;
 }
 
-.text-center h3{
-    color: #F2F2F2;
+.text-center h3 {
+    color: #f2f2f2;
     font-size: 20px;
     font-weight: lighter;
 }
-
 
 /* Profil Tutor */
 
@@ -153,21 +152,21 @@ body {
 }
 
 #yor1 {
-    background: url('./assets/images/lecturer/yor.png') no-repeat;
+    background: url("./assets/images/lecturer/yor.png") no-repeat;
     background-size: cover;
 }
 
 #rian1 {
-    background: url('./assets/images/lecturer/rian.png') no-repeat;
+    background: url("./assets/images/lecturer/rian.png") no-repeat;
     background-size: cover;
 }
 
 #pica1 {
-    background: url('./assets/images/lecturer/pica.png') no-repeat;
+    background: url("./assets/images/lecturer/pica.png") no-repeat;
     background-size: cover;
 }
 #timo1 {
-    background: url('./assets/images/lecturer/timo.png') no-repeat;
+    background: url("./assets/images/lecturer/timo.png") no-repeat;
     background-size: cover;
 }
 
@@ -199,7 +198,8 @@ body {
     margin: 0 auto;
 }
 
-.lecturer-card span , .lecturer-card li {
+.lecturer-card span,
+.lecturer-card li {
     color: #363434;
     font-size: 10px;
 }
@@ -215,12 +215,15 @@ body {
     text-align: center;
 }
 
-dl, ol, ul {
+dl,
+ol,
+ul {
     margin-top: 0;
     margin-bottom: 0px;
 }
 
-ol, ul {
+ol,
+ul {
     padding-left: 0px;
 }
 
@@ -238,7 +241,7 @@ hr {
 /* Footer */
 footer {
     width: 100%;
-    background: #00225B;
+    background: #00225b;
     padding: 57px 40px;
 }
 
@@ -272,7 +275,6 @@ footer {
     flex: 0.7;
     max-width: 100%;
 }
-
 
 .footer-right-top-content,
 .footer-right-bottom-content {
@@ -337,12 +339,11 @@ footer {
 }
 
 @media (max-width: 985px) {
-
     #navbar-full {
         margin-left: auto;
         margin-right: auto;
-      }
-    
+    }
+
     .notification-panel {
         height: fit-content;
     }
@@ -350,14 +351,12 @@ footer {
     .footer-right-content > p:nth-last-of-type(1) {
         text-align: center;
     }
-
 }
 
 @media (max-width: 768px) {
     #navbar-full {
         margin-left: auto;
-      }
-    
+    }
 
     .img-fluid {
         width: 300px;
@@ -370,16 +369,16 @@ footer {
     .profil-image {
         height: auto;
         margin-top: 80px;
-     }   
+    }
 
     .lecturer-card-wrapper {
         width: fit-content;
     }
-    
+
     .text-profile p {
         font-size: 14px;
     }
-    
+
     .footer-container {
         display: block;
     }
@@ -403,12 +402,11 @@ footer {
 }
 
 @media (max-width: 475px) {
-
     .navbar-brand img {
         width: 180px;
         height: 32px;
-      }
-    
+    }
+
     .text-center h1 {
         margin: 50px 25px 0px 25px;
     }
@@ -418,16 +416,17 @@ footer {
         height: 350px;
         margin: 0 5px 10px;
     }
-    
+
     .profil-image {
         max-height: auto;
     }
-    
+
     .lecturer-card .lecturer-name {
         font-size: 12px;
     }
 
-    .lecturer-card span, .lecturer-card li {
+    .lecturer-card span,
+    .lecturer-card li {
         font-size: 8px;
     }
 
