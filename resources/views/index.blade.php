@@ -4,6 +4,14 @@
 	<!-- Notification Panel -->
 	<div class="notification-panel">
 		<div class="panel-container">
+			
+			@if (session()->has('login'))
+				<p>{{ session('success') }}</p>
+			@endif
+			@if (session()->has('loginError'))
+				<p>{{ session('loginError') }}</p>
+			@endif
+			
 			@if (session()->has('success'))
 				<p>{{ session('success') }}</p>
 			@else
