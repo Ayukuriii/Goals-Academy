@@ -39,7 +39,7 @@
     align-items: center;
     width: 1100px;
     min-height: 500px;
-	background: linear-gradient(#FF8854, #ffff);
+	background-color: #FF8854;
     padding: 54px 48px;
     border-radius: 24px;
     transition: 0.5 ease;
@@ -240,7 +240,7 @@
     align-items: center;
     width: 1100px;
     min-height: 500px;
-	background: linear-gradient(#FF8854, #ffff);
+	background-color: #FF8854;
     padding: 54px 48px;
     border-radius: 24px;
     transition: 0.5 ease;
