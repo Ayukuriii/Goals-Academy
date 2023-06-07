@@ -4,8 +4,24 @@
 	<!-- Notification Panel -->
 	<div class="notification-panel">
 		<div class="panel-container">
+<<<<<<< HEAD
 			<p>Percepat kelulusanmu dengan belajar di Goals Academy<span><a href="goalsacademy.id"
 						alt="">goalsacademy.id</a></span></p>
+=======
+			
+			@if (session()->has('login'))
+				<p>{{ session('success') }}</p>
+			@endif
+			@if (session()->has('loginError'))
+				<p>{{ session('loginError') }}</p>
+			@endif
+			
+			@if (session()->has('success'))
+				<p>{{ session('success') }}</p>
+			@else
+				<p>Percepat kelulusanmu dengan belajar di Goals Academy<span><a href="goalsacademy.id" alt="">goalsacademy.id</a></span></p>
+			@endif
+>>>>>>> 0cd7f28fb7c86453a3b41e46befb7c0e88a06c1d
 			<i class="fa-solid fa-xmark" id="button-1"></i>
 		</div>
 	</div>

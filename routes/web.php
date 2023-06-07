@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 
@@ -71,5 +72,7 @@ Route::get('/dibimbing-sekali', function () {
 Route::get('/test', function () {
     return view('test');
 });
+
+Route::post('/register', [LoginController::class, 'auth']);
 
 Route::post('/register', [RegisterController::class, 'store'])->middleware('guest');
