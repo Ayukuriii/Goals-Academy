@@ -4,14 +4,6 @@
 	<!-- Notification Panel -->
 	<div class="notification-panel">
 		<div class="panel-container">
-			
-			@if (session()->has('login'))
-				<p>{{ session('success') }}</p>
-			@endif
-			@if (session()->has('loginError'))
-				<p>{{ session('loginError') }}</p>
-			@endif
-			
 			@if (session()->has('success'))
 				<p>{{ session('success') }}</p>
 			@else
@@ -28,11 +20,17 @@
 		<div class="hero-container">
 			<div class="hero-left-content">
 				<h1>Percepat Kelulusanmu <br>Bersama Tutor yang<br>Solutif dan Friendly</h1>
+				@if (session()->has('login'))
+					<p>{{ session('login') }}</p>
+				@endif
+				
+				@if (session()->has('loginError'))
+					<p>{{ session('loginError') }}</p>
+				@endif
 
 				<p>Buat apa hidup kalau gak berburu diskon,<br>yuk isi emailmu sekarang!</p>
 				<!-- <button class="btn hero-btn"><a href="https://wa.me/6282147638286">Daftar Sekarang</a></button> -->
-
-
+				
 				<div class="input-group mb-3 hero-btn">
 					<input type="text" class="form-control" placeholder="Masukkan Email" aria-label="Masukkan Email"
 						aria-describedby="basic-addon2" id="email-diskon"> <!--Input Email -->
