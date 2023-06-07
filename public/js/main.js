@@ -1,61 +1,63 @@
 function test() {
     alert("test complete");
 }
-$(".navbar-toggler").click(function () {
-    $(this).toggleClass("collapsed");
-    if ($(this).hasClass("collapsed")) {
-        $(this).html('<i class="fas fa-times fs-1"></i>');
+// Navbar Icon
+$('.navbar-toggler').click(function() {
+    $(this).toggleClass('collapsed');
+    if ($(this).hasClass('collapsed')) {
+      $(this).html('<i class="fas fa-times fs-1"></i>');
     } else {
-        $(this).html('<i class="fas fa-bars fs-1"></i>');
+      $(this).html('<i class="fas fa-bars fs-1"></i>');
     }
-});
-
-// Login
-var input = document.getElementById("email");
-var button = document.getElementById("next-submit");
-input.addEventListener("change", function () {
+  });
+  
+  // Login
+  var input = document.getElementById("email");
+  var button = document.getElementById("next-submit");
+  input.addEventListener("change", function () {
     if (input.value != "") {
-        input.style.border = "1px solid #FE7E1F";
-        button.style.backgroundColor = "#FE7E1F";
+      input.style.border = "1px solid #FE7E1F";
+      button.style.backgroundColor = "#FE7E1F";
     } else {
-        input.style.border = "";
-        button.style.backgroundColor = "";
+      input.style.border = "";
+      button.style.backgroundColor = "";
     }
-});
-
-var input = document.getElementsByClassName("form-control");
-var button = document.getElementById("submit-login");
-
-for (var i = 0; i < input.length; i++) {
+  });
+  
+  var input = document.getElementsByClassName("form-control");
+  var button = document.getElementById("submit-login");
+  
+  for (var i = 0; i < input.length; i++) {
     input[i].addEventListener("change", function () {
-        if (this.value != "") {
-            this.style.border = "1px solid #FE7E1F";
-            button.style.backgroundColor = "#FE7E1F";
-        } else {
-            this.style.border = "";
-            button.style.backgroundColor = "";
-        }
+      if (this.value != "") {
+        this.style.border = "1px solid #FE7E1F";
+        button.style.backgroundColor = "#FE7E1F";
+      } else {
+        this.style.border = "";
+        button.style.backgroundColor = "";
+      }
     });
-}
-
-// Notification - Panel
-const notiificationPanel = document.querySelector(".notification-panel");
-const closeBtn = document.querySelector("#button-1");
-
-function closeNotificationPanel() {
+  }
+  
+  // Notification - Panel
+  const notiificationPanel = document.querySelector(".notification-panel");
+  const closeBtn = document.querySelector("#button-1");
+  
+  function closeNotificationPanel() {
     notiificationPanel.style.display = "none";
-}
-
-closeBtn.addEventListener("click", closeNotificationPanel);
-
-// Close Notification Panel
-$(".panel-icon").click(function () {
+  }
+  
+  closeBtn.addEventListener("click", closeNotificationPanel);
+  
+  // Close Notification Panel
+  $(".panel-icon").click(function () {
     $(".notification-panel").hide();
-});
-
-// Promo
-
-var promoSwiper = new Swiper(".slide-content", {
+  });
+  
+  
+  // Promo
+  
+  var promoSwiper = new Swiper(".slide-content", {
     autoplay: true,
     autoplaySpeed: 5000,
     slidesPerView: 2,
@@ -65,232 +67,231 @@ var promoSwiper = new Swiper(".slide-content", {
     fade: true,
     loop: true,
     pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-        dynamicBullets: true,
+      el: ".swiper-pagination",
+      clickable: true,
+      dynamicBullets: true,
     },
     breakpoints: {
-        0: {
-            slidesPerView: 2,
-            centeredSlides: true,
-        },
-        950: {
-            slidesPerView: 2,
-            centeredSlides: true,
-        },
+      0: {
+        slidesPerView: 2,
+        centeredSlides: true,
+      },
+      950: {
+        slidesPerView: 2,
+        centeredSlides: true,
+      },
     },
     navigation: {
-        nextEl: "#button-promo-right",
-        prevEl: "#button-promo-left",
+      nextEl: "#button-promo-right",
+      prevEl: "#button-promo-left",
     },
-});
-
-// Program
-// var productsSwiper = new Swiper(".slider", {
-//   slidesPerView: 1,
-//   spaceBetween: 1,
-//   loop: true,
-//   breakpoints: {
-//     0: {
-//       slidesPerView: 1,
-//       centeredSlides: true,
-//     },
-//     950: {
-//       slidesPerView: 1,
-//       centeredSlides: true,
-//     },
-//   },
-//   navigation: {
-//     nextEl: "#button-product-right",
-//     prevEl: "#button-product-left",
-//   },
-// });
-
-var buttons = document.querySelectorAll(".button-product");
-for (var i = 0; i < buttons.length; i++) {
+  });
+  
+  // Program
+  // var productsSwiper = new Swiper(".slider", {
+  //   slidesPerView: 1,
+  //   spaceBetween: 1,
+  //   loop: true,
+  //   breakpoints: {
+  //     0: {
+  //       slidesPerView: 1,
+  //       centeredSlides: true,
+  //     },
+  //     950: {
+  //       slidesPerView: 1,
+  //       centeredSlides: true,
+  //     },
+  //   },
+  //   navigation: {
+  //     nextEl: "#button-product-right",
+  //     prevEl: "#button-product-left",
+  //   },
+  // });
+  
+  var buttons = document.querySelectorAll(".button-product");
+  for (var i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener("click", function () {
-        productsSwiper.slideTo(this.getAttribute("data-slide"));
-        this.classList.add("clicked");
+      productsSwiper.slideTo(this.getAttribute("data-slide"));
+      this.classList.add("clicked");
     });
-}
-
-for (var i = 0; i < buttons.length; i++) {
+  }
+  
+  for (var i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener("click", function () {
-        // hapus kelas 'clicked' dari semua tombol
-        for (var j = 0; j < buttons.length; j++) {
-            buttons[j].classList.remove("clicked");
-        }
-
-        // tambahkan kelas 'clicked' pada tombol yang diklik
-        mySwiper.slideTo(this.getAttribute("data-slide"));
-        this.classList.add("clicked");
+      for (var j = 0; j < buttons.length; j++) {
+        buttons[j].classList.remove("clicked");
+      }
+  
+      mySwiper.slideTo(this.getAttribute("data-slide"));
+      this.classList.add("clicked");
     });
-}
-// Modal
-
-// Register/Login
-$("#step-login").click(function () {
+  }
+  
+  
+  // Modal Pop Up (Semua Pop Up di Main Page)
+  
+  // Register/Login
+  $("#step-login").click(function () {
     $("#modal-login-register").css("display", "flex");
-});
-
-$("body").click(function (event) {
-    if ($(event.target).is("#modal-login-register")) {
-        $("modal-login-register").hide();
-    }
-});
-
-// Register
-// $("#step-login").click(function() {
-//     $("#modal-register").css("display", "flex");
-// });
-
-// $(".close-icon").click(function() {
-//     $("#modal-register").hide();
-// });
-
-// $('body').click(function(event) {
-//     if($(event.target).is('#modal-register')) {
-//         $("modal-register").hide();
-//     }
-// });
-
-// Pop-Up Diskon
-$("#dapatkan-diskon").click(function () {
+  });
+  
+  $('body').click(function(event) {
+      if($(event.target).is('#modal-login-register')) {
+          $("modal-login-register").hide();
+      }
+  });
+  
+  // Register
+  // $("#step-login").click(function() {
+  //     $("#modal-register").css("display", "flex");
+  // });
+  
+  // $(".close-icon").click(function() {
+  //     $("#modal-register").hide();
+  // });
+  
+  // $('body').click(function(event) {
+  //     if($(event.target).is('#modal-register')) {
+  //         $("modal-register").hide();
+  //     }
+  // });
+  
+  // Pop-Up Diskon
+  $("#dapatkan-diskon").click(function () {
     $("#popup-diskon").css("display", "flex");
-});
-
-$("#close-icon").click(function () {
-    $("popup-diskon").hide();
-});
-
-$("body").click(function (event) {
-    if ($(event.target).is("#popup-diskon")) {
-        $("#popup-diskon").hide();
-    }
-});
-
-// Get the modal
-var modallogreg = document.getElementById("modal-login-register");
-var modallogin = document.getElementById("modal-login");
-var modalregister = document.getElementById("modal-register");
-
-window.onclick = function (event) {
+  });
+  
+  $("#close-icon").click(function() {
+      $("popup-diskon").hide();
+  });
+  
+  $('body').click(function(event) {
+      if($(event.target).is('#popup-diskon')) {
+          $("#popup-diskon").hide();
+      }
+  });
+  
+  
+  var modallogreg = document.getElementById("modal-login-register");
+  var modallogin = document.getElementById("modal-login");
+  var modalregister = document.getElementById("modal-register");
+  
+  window.onclick = function (event) {
     if (event.target == modallogreg) {
-        modallogreg.style.display = "none";
+      modallogreg.style.display = "none";
     }
     if (event.target == modallogin) {
-        modallogin.style.display = "none";
+      modallogin.style.display = "none";
     }
     if (event.target == modalregister) {
-        modalregister.style.display = "none";
+      modalregister.style.display = "none";
     }
-};
-
-$("#next-submit").click(function () {
+  };
+  
+  $("#next-submit").click(function () {
     $("#modal-login").css("display", "flex");
-});
-
-// Modal Dibimbing Berkelompok
-$("#join-now-1").click(function () {
+  });
+  
+  // Modal Product Dibimbing Sekali
+  $("#join-now-1").click(function () {
     $("#modal1").css("display", "flex");
-});
-
-$(".close-icon").click(function () {
+  });
+  
+  $(".close-icon").click(function () {
     $("#modal1").hide();
-});
-
-$("body").click(function (event) {
+  });
+  
+  $("body").click(function (event) {
     if ($(event.target).is("#modal1")) {
-        $("#modal1").hide();
+      $("#modal1").hide();
     }
-});
-
-// Modal Dibimbing Berkelompok
-$("#join-now-2").click(function () {
+  });
+  
+  // Modal Dibimbing Berkelompok
+  $("#join-now-2").click(function () {
     $("#modal2").css("display", "flex");
-});
-
-$(".close-icon").click(function () {
+  });
+  
+  $(".close-icon").click(function () {
     $("#modal2").hide();
-});
-
-$("body").click(function (event) {
+  });
+  
+  $("body").click(function (event) {
     if ($(event.target).is("#modal2")) {
-        $("#modal2").hide();
+      $("#modal2").hide();
     }
-});
-
-// Modal Webinar Skripsi
-$("#join-now-3").click(function () {
+  });
+  
+  // Modal Webinar Skripsi
+  $("#join-now-3").click(function () {
     $("#modal3").css("display", "flex");
-});
-
-$(".close-icon").click(function () {
+  });
+  
+  $(".close-icon").click(function () {
     $("#modal3").hide();
-});
-
-$("body").click(function (event) {
+  });
+  
+  $("body").click(function (event) {
     if ($(event.target).is("#modal3")) {
-        $("#modal3").hide();
+      $("#modal3").hide();
     }
-});
-
-// Modal Webinar Skripsi
-$("#join-now-4").click(function () {
+  });
+  
+  // Modal Dbimbing Gratis
+  $("#join-now-4").click(function () {
     $("#modal4").css("display", "flex");
-});
-
-$(".close-icon").click(function () {
+  });
+  
+  $(".close-icon").click(function () {
     $("#modal4").hide();
-});
-
-$("body").click(function (event) {
+  });
+  
+  $("body").click(function (event) {
     if ($(event.target).is("#modal4")) {
-        $("#modal4").hide();
+      $("#modal4").hide();
     }
-});
-
-// Modal Webinar Skripsi
-$("#join-now-5").click(function () {
+  });
+  
+  // Modal Ebook Skripsi
+  $("#join-now-5").click(function () {
     $("#modal5").css("display", "flex");
-});
-
-$(".close-icon").click(function () {
+  });
+  
+  $(".close-icon").click(function () {
     $("#modal5").hide();
-});
-
-$("body").click(function (event) {
+  });
+  
+  $("body").click(function (event) {
     if ($(event.target).is("#modal5")) {
-        $("#modal5").hide();
+      $("#modal5").hide();
     }
-});
-
-// Magnific Popup
-$("#btn-play").magnificPopup({
+  });
+  
+  // Magnific Popup
+  $("#btn-play").magnificPopup({
     type: "inline",
     midClick: true,
-});
-
-// FAQ
-const accordionItemHeaders = document.querySelectorAll(
+  });
+  
+  // Accordion FAQ
+  const accordionItemHeaders = document.querySelectorAll(
     ".accordion-item-header"
-);
-
-accordionItemHeaders.forEach((accordionItemHeader) => {
+  );
+  
+  accordionItemHeaders.forEach((accordionItemHeader) => {
     accordionItemHeader.addEventListener("click", (event) => {
-        accordionItemHeader.classList.toggle("active");
-        const accordionItemBody = accordionItemHeader.nextElementSibling;
-        if (accordionItemHeader.classList.contains("active")) {
-            accordionItemBody.style.maxHeight =
-                accordionItemBody.scrollHeight + "px";
-        } else {
-            accordionItemBody.style.maxHeight = 0;
-        }
+      accordionItemHeader.classList.toggle("active");
+      const accordionItemBody = accordionItemHeader.nextElementSibling;
+      if (accordionItemHeader.classList.contains("active")) {
+        accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + "px";
+      } else {
+        accordionItemBody.style.maxHeight = 0;
+      }
     });
-});
-
-// Testimoni
-var testimoniSwiper = new Swiper("#slide-top", {
+  });
+  
+  // Testimoni
+  var testimoniSwiper = new Swiper("#slide-top", {
     autoplay: true,
     autoplaySpeed: 2500,
     slidesPerView: 2,
@@ -298,25 +299,18 @@ var testimoniSwiper = new Swiper("#slide-top", {
     fade: true,
     loop: true,
     breakpoints: {
-        0: {
-            slidesPerView: 2,
-            centeredSlides: true,
-        },
-        640: {
-            slidesPerView: 2,
-            centeredSlides: true,
-        },
+      0: {
+        slidesPerView: 2,
+        centeredSlides: true,
+      },
+      640: {
+        slidesPerView: 2,
+        centeredSlides: true,
+      },
     },
-});
-
-// // $("#swiper-top").mouseenter(function () {
-// //     testimoniSwiper.autoplay.start();
-// // });
-// // $("#swiper-top").mouseleave(function () {
-// //     testimoniSwiper.autoplay.stop();
-// // });
-
-var testimoniSwiper2 = new Swiper("#slide-bottom", {
+  });
+  
+  var testimoniSwiper2 = new Swiper("#slide-bottom", {
     autoplay: true,
     autoplaySpeed: 5000,
     slidesPerView: 3,
@@ -324,47 +318,41 @@ var testimoniSwiper2 = new Swiper("#slide-bottom", {
     fade: true,
     loop: true,
     breakpoints: {
-        0: {
-            slidesPerView: 2,
-            centeredSlides: true,
-        },
-        640: {
-            slidesPerView: 2,
-            centeredSlides: true,
-        },
+      0: {
+        slidesPerView: 2,
+        centeredSlides: true,
+      },
+      640: {
+        slidesPerView: 2,
+        centeredSlides: true,
+      },
     },
-});
-
-// $("#swiper-bottom").mouseenter(function () {
-//     testimoniSwiper2.autoplay.start();
-// });
-// $("#swiper-bottom").mouseleave(function () {
-//     testimoniSwiper2.autoplay.stop();
-// });
-
-function mobileDisplay() {
+  });
+  
+  // Javascript for Responsive Mobile 
+  function mobileDisplay() {
     var productsSwiper = new Swiper(".slide-content", {
-        slidesPerView: 1,
-        spaceBetween: 1,
-        loop: true,
-        autoplay: true,
-        breakpoints: {
-            0: {
-                slidesPerView: 1,
-                centeredSlides: true,
-                spaceBetween: 10,
-            },
-            950: {
-                slidesPerView: 1,
-                centeredSlides: true,
-            },
+      slidesPerView: 1,
+      spaceBetween: 1,
+      loop: true,
+      autoplay: true,
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+          centeredSlides: true,
+          spaceBetween: 10,
         },
-        navigation: {
-            nextEl: "#button-product-right",
-            prevEl: "#button-product-left",
+        950: {
+          slidesPerView: 1,
+          centeredSlides: true,
         },
+      },
+      navigation: {
+        nextEl: "#button-product-right",
+        prevEl: "#button-product-left",
+      },
     });
-
+  
     // var productsSwiper = new Swiper(".slider", {
     //   breakpoints: {
     //     950: {
@@ -377,62 +365,63 @@ function mobileDisplay() {
     //     },
     //   },
     // });
-}
-
-function mobileTestimoni() {
+  }
+  
+  function mobileTestimoni() {
     var testimoniSwiper = new Swiper("#slide-top", {
-        autoplay: true,
-        autoplaySpeed: 2500,
-        slidesPerView: 1,
-        spaceBetween: 0,
-        fade: true,
-        loop: true,
-        direction: "vertical", // menambahkan opsi direction
-        breakpoints: {
-            0: {
-                slidesPerView: 1, // mengubah slidesPerView untuk orientasi vertikal
-                centeredSlides: true,
-            },
-            640: {
-                slidesPerView: 2,
-                centeredSlides: true,
-            },
+      autoplay: true,
+      autoplaySpeed: 2500,
+      slidesPerView: 1,
+      spaceBetween: 0,
+      fade: true,
+      loop: true,
+      direction: 'vertical', // menambahkan opsi direction
+      breakpoints: {
+        0: {
+          slidesPerView: 1, // mengubah slidesPerView untuk orientasi vertikal
+          centeredSlides: true,
         },
+        640: {
+          slidesPerView: 2,
+          centeredSlides: true,
+        },
+      },
     });
-
+    
     var testimoniSwiper2 = new Swiper("#slide-bottom", {
-        autoplay: true,
-        autoplaySpeed: 5000,
-        slidesPerView: 1,
-        spaceBetween: 0,
-        fade: true,
-        loop: true,
-        direction: "vertical", // menambahkan opsi direction
-        breakpoints: {
-            0: {
-                slidesPerView: 1, // mengubah slidesPerView untuk orientasi vertikal
-                centeredSlides: true,
-            },
-            640: {
-                slidesPerView: 2,
-                centeredSlides: true,
-            },
+      autoplay: true,
+      autoplaySpeed: 5000,
+      slidesPerView: 1,
+      spaceBetween: 0,
+      fade: true,
+      loop: true,
+      direction: 'vertical', // menambahkan opsi direction
+      breakpoints: {
+        0: {
+          slidesPerView: 1, // mengubah slidesPerView untuk orientasi vertikal
+          centeredSlides: true,
         },
-    });
-}
-window.onload = function () {
+        640: {
+          slidesPerView: 2,
+          centeredSlides: true,
+        },
+      },
+    });  
+  }
+  window.onload = function() {
     if (window.innerWidth <= 475) {
-        mobileDisplay();
-        // mobileTestimoni();
+      mobileDisplay();
+      // mobileTestimoni();
     }
-};
-
-window.onresize = function () {
+  }
+  
+  window.onresize = function() {
     if (window.innerWidth <= 475) {
-        mobileDisplay();
-        // mobileTestimoni();
+      mobileDisplay();
+      // mobileTestimoni();
     }
-};
+  }
+  
 
 // function sendEmail() {
 //   let emailDiskon = document.getElementById("email-diskon").value;

@@ -55,6 +55,18 @@ Route::get('/profil_tutor', function () {
     ]);
 });
 
+Route::get('/lupa-password', function () {
+    return view('lupa-password', [
+        'title' => 'Lupa Password'
+    ]);
+});
+
+Route::get('/dibimbing-sekali', function () {
+    return view('dibimbing-sekali', [
+        'title' => 'Dibimbing Sekali'
+    ]);
+});
+
 Route::get('/test', function () {
     return view('test');
 });
