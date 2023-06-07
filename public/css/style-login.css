@@ -31,6 +31,7 @@
 #modal-login {
     display: none;
 }
+
 .login-register-content {
     display: flex;
     flex-wrap: wrap;
@@ -38,7 +39,7 @@
     align-items: center;
     width: 1100px;
     min-height: 500px;
-	background: linear-gradient(#81B9FF, #7C85E1);
+	background: linear-gradient(#FF8854, #ffff);
     padding: 54px 48px;
     border-radius: 24px;
     transition: 0.5 ease;
@@ -88,7 +89,7 @@
 .card-login-register {
     width: 100%;
     max-width: 438px;
-    height: 354px;
+    height: 380px;
     background-color: #fff;
     /* box-shadow: 0 2px 4px rgba(0, 4.0, 4.0, 0.5); */
     border-radius: 12px;
@@ -239,7 +240,7 @@
     align-items: center;
     width: 1100px;
     min-height: 500px;
-	background: linear-gradient(#81B9FF, #7C85E1);
+	background: linear-gradient(#FF8854, #ffff);
     padding: 54px 48px;
     border-radius: 24px;
     transition: 0.5 ease;
@@ -273,7 +274,7 @@
 .card-login {
     width: 100%;
     max-width: 438px;
-    height: 354px;
+    height: 380px;
     background-color: #fff;
     /* box-shadow: 0 2px 4px rgba(0, 4.0, 4.0, 0.5); */
     border-radius: 12px;

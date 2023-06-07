@@ -4,11 +4,8 @@
 	<!-- Notification Panel -->
 	<div class="notification-panel">
 		<div class="panel-container">
-			@if (session()->has('success'))
-				<p>{{ session('success') }}</p>
-			@else
-				<p>Percepat kelulusanmu dengan belajar di Goals Academy<span><a href="goalsacademy.id" alt="">goalsacademy.id</a></span></p>
-			@endif
+			<p>Percepat kelulusanmu dengan belajar di Goals Academy<span><a href="goalsacademy.id"
+						alt="">goalsacademy.id</a></span></p>
 			<i class="fa-solid fa-xmark" id="button-1"></i>
 		</div>
 	</div>
@@ -165,8 +162,7 @@
 						<div class="bottom">
 							<button class="btn product-btn btn-pc" id="join-now-1">Daftar Sekarang</button>
 							<!--button untuk pop up (>768px)-->
-							<button class="btn product-btn btn-mobile"><a class="links-hidden"
-									href="dibimbing-sekali.html">Daftar Sekarang</a></button>
+							<button class="btn product-btn btn-mobile"><a class="links-hidden" href="dibimbing-sekali">Daftar Sekarang</a></button>
 							<!--button untuk hp (< 485px)-->
 						</div>
 					</div>
@@ -283,7 +279,7 @@
 					<p>Rp 925.000</p>
 					<div class="kode-btn">
 						<p id="kode">Masukkan kode "<span style="font-weight: bold;">CEPATLULUS</span>" <br> untuk
-							mendapatkan diskon sebesar 20%)</p>
+							mendapatkan diskon sebesar 20%</p>
 						<a class="modal-btn btn-pay" href="https://lynk.id/goalsacademy" target="_blank">Daftar</a>
 					</div>
 				</div>
