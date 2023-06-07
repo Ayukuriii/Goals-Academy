@@ -4,8 +4,11 @@
 	<!-- Notification Panel -->
 	<div class="notification-panel">
 		<div class="panel-container">
-			<p>Percepat kelulusanmu dengan belajar di Goals Academy<span><a href="goalsacademy.id"
-						alt="">goalsacademy.id</a></span></p>
+			@if (session()->has('success'))
+				<p>{{ session('success') }}</p>
+			@else
+				<p>Percepat kelulusanmu dengan belajar di Goals Academy<span><a href="goalsacademy.id" alt="">goalsacademy.id</a></span></p>
+			@endif
 			<i class="fa-solid fa-xmark" id="button-1"></i>
 		</div>
 	</div>

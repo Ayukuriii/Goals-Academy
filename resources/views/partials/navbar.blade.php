@@ -123,42 +123,43 @@
 			<h3 >Register Sekarang di</h3>
 			<img src="image\assets\icons\LOGO_SECONDARY_ORANGE.png" alt="" width="256" height="38" />
 		</div>
-	<div class="card-register">
-	<form action="" method="GET">
-	<div class="form-register">
-			<div class="form-left">
-			<div class="form-group" style="margin-top: 10px;">
-			<label for="nama_lengkap">Nama Lengkap</label>
-			<input type="text" class="form-control" id="nama_lengkap" required/>
-			</div>
-			<div class="form-group">
-			<label for="email">Email</label>
-			<input type="email" class="form-control" id="email-regist" required/>
-			</div>
-			<div class="form-group">
-			<label for="universitas">Universitas</label>
-			<input type="text" class="form-control" id="universitas" required/>
-			</div>
-		</div>
-		<div class="form-right">
-			<div class="form-group">
-				<label for="no_telp">No. Telp</label>
-				<input type="text" class="form-control" id="no_telp"required/>
+		<div class="card-register">
+			<form action="/register" method="POST">
+				@csrf
+				<div class="form-register">
+					<div class="form-left">
+						<div class="form-group" style="margin-top: 10px;">
+						<label for="name">Nama Lengkap</label>
+						<input type="text" name="name" class="form-control" id="name" required/>
+						</div>
+						<div class="form-group">
+						<label for="email">Email</label>
+						<input type="email" name="email" class="form-control" id="email" required/>
+						</div>
+						<div class="form-group">
+						<label for="university">Universitas</label>
+						<input type="text" name="university" class="form-control" id="university" required/>
+						</div>
+					</div>
+					<div class="form-right">
+						<div class="form-group">
+						<label for="phone_number">No. Telp</label>
+						<input type="text" name="phone_number" class="form-control" id="phone_number" required/>
+						</div>
+						<div class="form-group">
+						<label for="password">Password* (Minimal 8 Karakter)</label>
+						<input type="password" name="password" class="form-control" id="password" required/>
+						</div>
+						<div class="form-group">
+						<label for="major">Jurusan</label>
+						<input type="text" name="major" class="form-control" id="major"required>
+						</div>
+						<div class="form-button">
+						<button type="submit" class="btn btn-center" id="submit-register">Register</button>
+						</div>
+					</div>
 				</div>
-			<div class="form-group">
-			<label for="password">Password* (Minimal 8 Karakter)</label>
-			<input type="password" class="form-control" id="password-regist" required/>
-			</div>
-			<div class="form-group">
-				<label for="jurusan">Jurusan</label>
-				<input type="text" class="form-control" id="jurusan"required>
-				</div>
-			<div class="form-button">
-			<button type="submit" class="btn btn-center" id="submit-register">Register</button>
-			</div>
+			</form>
 		</div>
-		</form>
-	</div>
-	</div>
 	</div>
 </div>
