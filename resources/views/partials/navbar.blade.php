@@ -107,85 +107,90 @@
 		<div class="photo-login">
 		  <img alt="" src="image\assets\icons\LOGO PRIMARY_PUTIH.png" width="320px" height="185px" style="margin: auto;">
 		</div>
-	  </div>
-	  <div class="card-login">
+	</div>
+	<div class="card-login">
 		<h3>Login/Register</h3>
 		<div class="form-login">
-		  <form action="" method="GET">
-			<div class="form-group" style="margin-top: 10px;">
-			  <label for="email">Email</label>
-			  <input type="email" class="form-control" id="email" required />
-			</div>
-			<div class="form-group">
-			  <label for="password">Password</label>
-			  <input type="password" class="form-control" id="password" required />
-			</div>
-			<div class="form-button">
-			  <button type="submit" class="btn btn-center" id="submit-login">Login</button>
-			  <p><a href="lupa-password">Lupa Password?</a></p>
-			</div>
-		  </form>
-		  <h5>atau gunakan</h5>
-		  <div class="card-button">
-			<button type="submit" id="google-login">
-			  <img alt="" src="image/assets/images/login/icons8-google-48.png" width="25px" height="25px" />
-			  <p>Google</p>
-			</button>
-			<button type="submit" id="facebook-login">
-			  <img alt="" src="image/assets/images/login/icons8-facebook-48.png" width="25px" height="25px" />
-			  <p>Facebook</p>
-			</button>
-		  </div>
-		  <p class="text-center" style="font-size: 12px; color: #363434;">Belum punya akun? <span
-			  class="fw-bold text-decoration-none" id="next-register" style="cursor: pointer">Daftar</p>
-		</div>
-	  </div>
-	</div>
-  </div>
-  
-  <!-- PopUp Register -->
-  <div class="modal-container" id="modal-register">
-	<div class="register-content">
-	  <div class="text-register">
-		<h3>Register Sekarang di</h3>
-		<img src="image\assets\icons\LOGO_SECONDARY_ORANGE.png" alt="" width="256" height="38" />
-	  </div>
-	  <div class="card-register">
-		<form action="" method="GET">
-		  <div class="form-register">
-			<div class="form-left">
-			  <div class="form-group" style="margin-top: 10px;">
-				<label for="nama_lengkap">Nama Lengkap</label>
-				<input type="text" class="form-control" id="nama_lengkap" required />
-			  </div>
-			  <div class="form-group">
+			<form action="/login" method="POST">
+				@csrf
+				<div class="form-group" style="margin-top: 10px;">
 				<label for="email">Email</label>
-				<input type="email" class="form-control" id="email-regist" required />
-			  </div>
-			  <div class="form-group">
-				<label for="universitas">Universitas</label>
-				<input type="text" class="form-control" id="universitas" required />
-			  </div>
+				<input type="email" name="email" class="form-control" id="email" required/>
+				</div>
+				<div class="form-group">
+				<label for="password">Password</label>
+				<input type="password" name="password" class="form-control" id="password" required/>
+				</div>
+				<div class="form-button">
+				<button type="submit" class="btn btn-center" id="submit-login">Login</button>
+				<p><a href="lupa-password">Lupa Password?</a></p>
+				</div>
+			</form>
+			<h5>atau gunakan</h5>
+			<div class="card-button">
+				<button type="submit" id="google-login">
+					<img alt="" src="image/assets/images/login/icons8-google-48.png" width="25px" height="25px"/>
+					<p>Google</p>
+				</button>
+				<button type="submit" id="facebook-login">
+					<img alt="" src="image/assets/images/login/icons8-facebook-48.png" width="25px" height="25px"/>
+					<p>Facebook</p>
+				</button>
 			</div>
-			<div class="form-right">
-			  <div class="form-group">
-				<label for="no_telp">No. Telp</label>
-				<input type="text" class="form-control" id="no_telp" required />
-			  </div>
-			  <div class="form-group">
-				<label for="password">Password* (Minimal 8 Karakter)</label>
-				<input type="password" class="form-control" id="password-regist" required />
-			  </div>
-			  <div class="form-group">
-				<label for="jurusan">Jurusan</label>
-				<input type="text" class="form-control" id="jurusan" required>
-			  </div>
-			  <div class="form-button">
-				<button type="submit" class="btn btn-center" id="submit-register">Register</button>
-			  </div>
+		</div>
+		<p class="text-center" style="font-size: 12px; color: #363434;">Belum punya akun? <span class="fw-bold text-decoration-none" id="next-register" style="cursor: pointer">Daftar</p>
+	</div>
+	<p class="text-center" style="font-size: 12px; color: #363434;">Belum punya akun? <span class="fw-bold text-decoration-none" id="next-register" style="cursor: pointer">Daftar</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- PopUp Register -->
+<div class="modal-container" id="modal-register">
+<div class="register-content">
+	<div class="text-register">
+		<h3 >Register Sekarang di</h3>
+		<img src="image\assets\icons\LOGO_SECONDARY_ORANGE.png" alt="" width="256" height="38" />
+	</div>
+	<div class="card-register">
+		<form action="/register" method="POST">
+			@csrf
+			<div class="form-register">
+					<div class="form-left">
+					<div class="form-group" style="margin-top: 10px;">
+					<label for="name">Nama Lengkap</label>
+					<input type="text" name="name" class="form-control" id="name" required/>
+					</div>
+					<div class="form-group">
+					<label for="email">Email</label>
+					<input type="email" name="email" class="form-control" id="email" required/>
+					</div>
+					<div class="form-group">
+					<label for="university">Universitas</label>
+					<input type="text" name="university" class="form-control" id="university" required/>
+					</div>
+				</div>
+				<div class="form-right">
+					<div class="form-group">
+						<label for="phone_number">No. Telp</label>
+						<input type="text" name="phone_number" class="form-control" id="university"required/>
+					</div>
+					<div class="form-group">
+						<label for="password">Password* (Minimal 8 Karakter)</label>
+						<input type="password" name="password" class="form-control" id="password" required/>
+					</div>
+					<div class="form-group">
+						<label for="major">Jurusan</label>
+						<input type="text" name="major" class="form-control" id="major"required>
+						</div>
+					<div class="form-button">
+					<button type="submit" class="btn btn-center" id="submit-register">Register</button>
+					</div>
+				</div>
 			</div>
 		</form>
-	  </div>
 	</div>
-  </div>
-  </div>
+</div>
+</div>
