@@ -73,6 +73,7 @@ Route::get('/test', function () {
     return view('test');
 });
 
-Route::post('/register', [LoginController::class, 'auth']);
+Route::post('/login', [LoginController::class, 'auth']);
+Route::post('/logout', [LoginController::class, 'logout']);
 
-Route::post('/register', [RegisterController::class, 'store'])->middleware('guest');
+Route::post('/register', [RegisterController::class, 'store']);

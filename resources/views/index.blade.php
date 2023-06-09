@@ -4,24 +4,11 @@
 	<!-- Notification Panel -->
 	<div class="notification-panel">
 		<div class="panel-container">
-<<<<<<< HEAD
-			<p>Percepat kelulusanmu dengan belajar di Goals Academy<span><a href="goalsacademy.id"
-						alt="">goalsacademy.id</a></span></p>
-=======
-			
-			@if (session()->has('login'))
-				<p>{{ session('success') }}</p>
-			@endif
-			@if (session()->has('loginError'))
-				<p>{{ session('loginError') }}</p>
-			@endif
-			
 			@if (session()->has('success'))
 				<p>{{ session('success') }}</p>
 			@else
 				<p>Percepat kelulusanmu dengan belajar di Goals Academy<span><a href="goalsacademy.id" alt="">goalsacademy.id</a></span></p>
 			@endif
->>>>>>> 0cd7f28fb7c86453a3b41e46befb7c0e88a06c1d
 			<i class="fa-solid fa-xmark" id="button-1"></i>
 		</div>
 	</div>
@@ -33,11 +20,17 @@
 		<div class="hero-container">
 			<div class="hero-left-content">
 				<h1>Percepat Kelulusanmu <br>Bersama Tutor yang<br>Solutif dan Friendly</h1>
+				@if (session()->has('login'))
+					<p>{{ session('login') }}</p>
+				@endif
+				
+				@if (session()->has('loginError'))
+					<p>{{ session('loginError') }}</p>
+				@endif
 
 				<p>Buat apa hidup kalau gak berburu diskon,<br>yuk isi emailmu sekarang!</p>
 				<!-- <button class="btn hero-btn"><a href="https://wa.me/6282147638286">Daftar Sekarang</a></button> -->
-
-
+				
 				<div class="input-group mb-3 hero-btn">
 					<input type="text" class="form-control" placeholder="Masukkan Email" aria-label="Masukkan Email"
 						aria-describedby="basic-addon2" id="email-diskon"> <!--Input Email -->
@@ -178,7 +171,8 @@
 						<div class="bottom">
 							<button class="btn product-btn btn-pc" id="join-now-1">Daftar Sekarang</button>
 							<!--button untuk pop up (>768px)-->
-							<button class="btn product-btn btn-mobile"><a class="links-hidden" href="dibimbing-sekali">Daftar Sekarang</a></button>
+							<button class="btn product-btn btn-mobile"><a class="links-hidden"
+									href="dibimbing-sekali.html">Daftar Sekarang</a></button>
 							<!--button untuk hp (< 485px)-->
 						</div>
 					</div>
@@ -295,7 +289,7 @@
 					<p>Rp 925.000</p>
 					<div class="kode-btn">
 						<p id="kode">Masukkan kode "<span style="font-weight: bold;">CEPATLULUS</span>" <br> untuk
-							mendapatkan diskon sebesar 20%</p>
+							mendapatkan diskon sebesar 20%)</p>
 						<a class="modal-btn btn-pay" href="https://lynk.id/goalsacademy" target="_blank">Daftar</a>
 					</div>
 				</div>
