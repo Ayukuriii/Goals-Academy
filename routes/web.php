@@ -69,6 +69,12 @@ Route::get('/dibimbing-sekali', function () {
     ]);
 });
 
+Route::get('/profile', function () {
+    return view('dashboard.profile_user', [
+        'title' => 'Profile'
+    ]);
+});
+
 Route::get('/test', function () {
     return view('test');
 });
