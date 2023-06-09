@@ -4,36 +4,36 @@
 	<!-- Notification Panel -->
 	<div class="notification-panel">
 		<div class="panel-container">
-			@if (session()->has('success'))
-			<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-				<div class="toast-header">
-					<img src="..." class="rounded me-2" alt="...">
-					<strong class="me-auto">Success</strong>
-					<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-				</div>
-				<div class="toast-body">
-					{{ session('success') }}
-				</div>
-			</div>
-			@else
-				<p>Percepat kelulusanmu dengan belajar di Goals Academy<span><a href="goalsacademy.id" alt="">goalsacademy.id</a></span></p>
-			@endif
+			<p>Percepat kelulusanmu dengan belajar di Goals Academy<span><a href="goalsacademy.id" alt="">goalsacademy.id</a></span></p>
 			<i class="fa-solid fa-xmark" id="button-1"></i>
 		</div>
 	</div>
 	<!-- End Notification Panel -->
 
 	<!-- Toast Register/Login -->
+	@if (session()->has('success'))
+	<div	v class="toast-container position-fixed top-1 end-0 p-3">
+		<div id="myToast" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+			<div class="d-flex">
+			  <div class="toast-body">
+				{{ session('success') }}
+			  </div>
+			  <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+			</div>
+		  </div>
+	</div>		
+	@endif
+
 	@if (session()->has('login'))
-	<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-		<div class="toast-header">
-			<img src="..." class="rounded me-2" alt="...">
-			<strong class="me-auto">Login</strong>
-			<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-		</div>
-		<div class="toast-body">
-			{{ session('login') }}
-		</div>
+	<div class="toast-container position-fixed top-1 end-0 p-3">
+		<div id="myToast" class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
+			<div class="d-flex">
+			  <div class="toast-body">
+				{{ session('login') }}
+			  </div>
+			  <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+			</div>
+		  </div>
 	</div>
 	@endif
 
