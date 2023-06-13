@@ -5,7 +5,7 @@
 		aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
 		<i class="fas fa-bars fs-1"></i>
 	  </button>
-	  <a href="" class="navbar-brand">
+	  <a href="/" class="navbar-brand">
 		<img src="image/assets/images/PNG-horison-hitam 1.png">
 	  </a>
 	  <div id="navbar" class="navbar-collapse collapse text-center justify-content-end">
@@ -42,7 +42,7 @@
 			  <i class="fa-solid fa-circle-user fa-lg" style="color: #ff8854;"></i>
 			</a>
 			<ul class="dropdown-menu">
-				<li><a class="dropdown-item" href="#">Profil</a></li> <!--Profil Perusahaan-->
+				<li><a class="dropdown-item" href="profile">Profil</a></li> <!--Profil User-->
 				<li>
 					<form action="/logout" method="POST">
 					@csrf

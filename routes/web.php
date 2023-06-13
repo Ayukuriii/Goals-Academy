@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 
@@ -69,11 +70,7 @@ Route::get('/dibimbing-sekali', function () {
     ]);
 });
 
-Route::get('/profile', function () {
-    return view('dashboard.profile_user', [
-        'title' => 'Profile'
-    ]);
-});
+Route::get('/profile', [ProfileController::class, 'index']);
 
 Route::get('/test', function () {
     return view('test');
