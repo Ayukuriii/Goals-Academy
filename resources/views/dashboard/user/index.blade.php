@@ -1,6 +1,7 @@
-@extends('dashboard.layouts.main')
+@extends('dashboard.user.layouts.main')
 
 @section('container')
+    {{-- {{ ddd($ongoing) }} --}}
     <!-- Isi Page -->
     <section id="user-profile" class="mb-3">
         <sidebar>
@@ -24,27 +25,35 @@
                 </div>
             </div>
         </sidebar>
+
+        {{-- content --}}
             <div class="card col ml-3 p-4 side-program">
+                
+                @if ($collections->count())
                 <h1 class="card-title">Program Yang Sedang Berlangsung</h1>
+                @foreach ($collections as $collection)    
                 <div class="card-body mt-3">
                     <div class="card product-item justify-content-between">
                         <div class="text-top-product d-flex flex-row justify-content-between">
-                        <h3 class="name-product">Dibimbing Sekali</h3>
-                        <p class="status-product fst-italic">Menunggu Pembayaran</p>
+                        <h3 class="name-product">{{ $collection->program->title }}</h3>
+                        <p class="status-product fst-italic">{{ $collection->payment_status->status }}</p>
                     </div>
                     <div class="text-bottom-product d-flex flex-row justify-content-between">
                         <div class="waktu-product">
-                            <p class="date-product">Kamis, 20 Februari 2023</p>
-                            <p class="time-product">14.10 - 15.10 WIB</p>
+                            <p class="date-product">{{ $collection->date }}</p>
+                            <p class="time-product">{{ $collection->program_session->sesi }}</p>
                         </div>
                         <p class="detail-product"><a href="">Lihat Detail</a></p>
                     </div>
                     </div>
                 </div>
-                <!-- <div class="card-body d-flex flex-column justify-content-center align-items-center text-center">
-                <p >Kamu belum bergabung di program apapun</p>
-                <a href="#" class="btn">Cari Program</a>
-            </div> -->
+                @endforeach
+                @else
+                <div class="card-body d-flex flex-column justify-content-center align-items-center text-center">
+                    <p >Kamu belum bergabung di program apapun</p>
+                    <a href="#" class="btn">Cari Program</a>
+                </div>
+                @endif
             </div>
         </div>
     </section>

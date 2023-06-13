@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\OngoingProgram;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -12,10 +13,17 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        // ddd(auth()->user());
-        return view('dashboard.profile_user', [
-            'posts' => auth()->user(),      //mengambil data dari session dicocokkan dengan tabel user
-            'title' => 'Profile'
+        $authuser = auth()->user();
+        $ongoing = OngoingProgram::latest()->where('user_id', $authuser->id)->get();
+
+        // foreach ($ongoing as $program) {
+        //     dd($program->payment_status->status);
+        // }
+
+        return view('dashboard.user.index', [
+            'posts' => $authuser,      //mengambil data dari session dicocokkan dengan tabel user
+            'title' => 'Profile',
+            'collections'  => $ongoing
         ]);
     }
 
