@@ -75,12 +75,24 @@ class DatabaseSeeder extends Seeder
             'tutor_id' => 1,
             'payment_status_id' => 1,
             'program_session_id' => 1,
-            'date' => now()
+            'date' => now()->addDays(7)
+        ]);
+        OngoingProgram::create([
+            'user_id' => 1,
+            'program_services_id' => 2,
+            'tutor_id' => 2,
+            'payment_status_id' => 1,
+            'program_session_id' => 2,
+            'date' => now()->addDays(20)
         ]);
 
         TutorNotes::create([
-            'ongoing_programs_id' => 1,
+            'ongoing_program_id' => 1,
             'body' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor rem incidunt nostrum reiciendis soluta alias labore nemo dignissimos itaque atque quibusdam id, animi sit quidem iste est molestiae libero perferendis blanditiis distinctio expedita veniam hic. Corrupti ipsam nam nesciunt veniam, doloremque totam quasi reiciendis, sunt ad officiis, dolor libero? Voluptas, est quisquam officiis incidunt facere, neque beatae, illum sed cupiditate adipisci iusto iure ipsum. Dolore natus deleniti asperiores adipisci! Deleniti saepe doloremque suscipit molestiae quas magnam repudiandae cumque eos laborum distinctio sunt modi, nam natus quae? Accusantium, optio tenetur, error reiciendis inventore eos sapiente ipsum quidem necessitatibus expedita molestiae earum!'
+        ]);
+        TutorNotes::create([
+            'ongoing_program_id' => 2,
+            'body' => 'sudah bagus program 2 nya'
         ]);
 
         ProgramSession::create([
