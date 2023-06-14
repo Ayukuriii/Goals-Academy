@@ -70,11 +70,10 @@ Route::get('/dibimbing-sekali', function () {
     ]);
 });
 
-Route::get('/profile', [ProfileController::class, 'index']);
 
-Route::get('/test', function () {
-    return view('test');
-});
+
+Route::get('/profile', [ProfileController::class, 'index']);
+Route::get('/profile/{id}', [ProfileController::class, 'detail']);
 
 Route::post('/login', [LoginController::class, 'auth']);
 Route::post('/logout', [LoginController::class, 'logout']);

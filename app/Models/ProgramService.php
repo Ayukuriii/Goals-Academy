@@ -11,7 +11,7 @@ class ProgramService extends Model
 
     protected $guarded = ['id'];
 
-    public function ongoing_program(){
-        return $this->hasMany(OngoingProgram::class);
+    public function ongoing_programs(){
+        return $this->hasMany(OngoingProgram::class, 'program_services_id');
     }
 }
