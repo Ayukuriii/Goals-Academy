@@ -11,12 +11,10 @@
 	  <div id="navbar" class="navbar-collapse collapse text-center justify-content-end">
 		<ul class="navbar-nav mx-auto">
 		  <li class="nav-item"> <!--Artikel Page -->
-			<a href="artikel" class="nav-link"
-			  onclick="alert('Halaman Artikel akan Segera Hadir! Ikuti Kami untuk Update Informasinya')">Artikel</a>
+			<a href="artikel" class="nav-link">Artikel</a>
 		  </li>
 		  <li class="nav-item"> <!--Diskusi Page -->
-			<a href="diskusi" class="nav-link"
-			  onclick="alert('Halaman Diskusi akan Segera Hadir! Ikuti Kami untuk Update Informasinya')">Diskusi</a>
+			<a href="diskusi" class="nav-link">Diskusi</a>
 		  </li>
 		  <li class="nav-item"> <!--Karir Page-->
 			<a href="karir" class="nav-link">Karir</a>
@@ -27,9 +25,7 @@
 			</a>
 			<ul class="dropdown-menu">
 			  <li><a class="dropdown-item" href="profil_company">Profil Perusahaan</a></li> <!--Profil Perusahaan-->
-			  <li><a class="dropdown-item"
-				  onclick="alert('Halaman Profil Tutor akan Segera Hadir! Ikuti Kami untuk Update Informasinya')"
-				  href="profil_tutor">Profil Tutor</a></li> <!--Profil Tutor-->
+			  <li><a class="dropdown-item" href="profil_tutor">Profil Tutor</a></li> <!--Profil Tutor-->
 			  <li><a class="dropdown-item" href="http://linktr.ee/goalsacademyid">Media Sosial</a></li>
 			  <!--Media Sosial-->
 			</ul>
@@ -57,51 +53,13 @@
 		</ul>
 	  </div>
 	</div>
-  </nav>
-  <!-- End Navbar -->
-  
-  <!-- Pop Up Login/Register -->
-  <div class="modal-container" id="modal-login-register">
-	<div class="login-register-content">
-	  <div class="welcome-login-register">
-		<h1>Selamat Datang di</h1>
-		<div class="photo-login">
-		  <img alt="" src="image\assets\icons\LOGO PRIMARY_PUTIH.png" width="320px" height="185px" style="margin: auto;">
-		</div>
-	  </div>
-	  <div class="card-login-register">
-		<h3>Login/Register</h3>
-		<div class="form-login-register">
-		  <form action="" method="GET">
-			<div class="form-group" style="margin-top: 10px;">
-			  <label for="email">Email</label>
-			  <input type="email" class="form-control" id="email" required>
-			</div>
-			<div class="form-button">
-			  <button type="submit" class="btn btn-center" id="next-submit">Lanjutkan</button>
-			  <p>Lupa Password?</p>
-			</div>
-		  </form>
-		  <h5>atau gunakan</h5>
-		  <div class="card-button">
-			<button type="submit" id="google-login"> <!--Login/Regist Google-->
-			  <img alt="" src="image/assets/images/login/icons8-google-48.png" width="25px" height="25px" />
-			  <p>Google</p>
-			</button>
-			<button type="submit" id="facebook-login"> <!--Login/Regist Facebook-->
-			  <img alt="" src="image/assets/images/login/icons8-facebook-48.png" width="25px" height="25px" />
-			  <p>Facebook</p>
-			</button>
-		  </div>
-		</div>
-	  </div>
-	</div>
-  </div>
-  
-  <!-- PopUp Login -->
-  <div class="modal-container" id="modal-login">
-	<div class="login-content">
-	  <div class="welcome-login-register">
+</nav>
+<!-- End Navbar -->
+
+<!-- PopUp Login -->
+<div class="modal-container" id="modal-login">
+<div class="login-content">
+	<div class="welcome-login-register">
 		<h1>Selamat Datang di</h1>
   
 		<div class="photo-login">
@@ -140,7 +98,6 @@
 		</div>
 		<p class="text-center" style="font-size: 12px; color: #363434;">Belum punya akun? <span class="fw-bold text-decoration-none" id="next-register" style="cursor: pointer">Daftar</p>
 	</div>
-	<p class="text-center" style="font-size: 12px; color: #363434;">Belum punya akun? <span class="fw-bold text-decoration-none" id="next-register" style="cursor: pointer">Daftar</p>
 </div>
 </div>
 </div>

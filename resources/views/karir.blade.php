@@ -145,6 +145,96 @@
               <a id="submit" class="btn btn-karir" href="https://docs.google.com/forms/d/e/1FAIpQLSfzl7tOOgtIKlQ9La6zWw9T0qP9nNAtt_axagw80oo8qf9m_A/viewform?usp=sharing">Lamar</a>
             </div>
           </div>
+          <div class="karir-card card-4">
+            <p
+              style="
+                text-align: right;
+                font-size: 9px;
+                font-style: italic;
+                color: #807d7d;
+              "
+            >
+              15 Juni 2023
+            </p>
+            <div class="top-karir">
+              <img
+                src="assets/icons/job.png"
+                alt=""
+                width="70px"
+                height="70px"
+              />
+              <div class="text-top-karir">
+                <h4 style="font-weight: bold; font-size: 15px">
+                  UI/UX Designer
+                </h4>
+                <h3 style="font-size: 10px">Internship</h3>
+              </div>
+              <div class="text-bottom-karir">
+                <hr />
+                <p
+                  style="font-weight: bold; font-size: 12px; padding-left: 20px"
+                >
+                  Kualifikasi:
+                </p>
+                <ul style="font-size: 9px;">
+                  <li>Familiar menggunakan figma</li>
+                  <li>Mampu mengilustrasikan ide desain menggunakan flowchart</li>
+                  <li>Memahami design system</li>
+                  <li>Mampu membuat wireframe, high-fidelity, dan prototyping</li>
+                  <li>Mempunyai portofolio UI/UX Design</li>
+                  <li>Mampu membuat design responsive (desktop, mobile, dan tablet)</li>
+                </ul>
+              </div>
+              <a id="submit" class="btn btn-karir" href="https://docs.google.com/forms/d/e/1FAIpQLSfzl7tOOgtIKlQ9La6zWw9T0qP9nNAtt_axagw80oo8qf9m_A/viewform?usp=sharing">
+                Lamar
+              </a>
+            </div>
+          </div>
+
+          <div class="karir-card card-5">
+            <p
+              style="
+                text-align: right;
+                font-size: 9px;
+                font-style: italic;
+                color: #807d7d;
+              "
+            >
+              15 Juni 2023
+            </p>
+            <div class="top-karir">
+              <img
+                src="assets/icons/job.png"
+                alt=""
+                width="70px"
+                height="70px"
+              />
+              <div class="text-top-karir">
+                <h4 style="font-weight: bold; font-size: 15px">
+                  Front-end Developer
+                </h4>
+                <h3 style="font-size: 10px">Internship</h3>
+              </div>
+              <div class="text-bottom-karir">
+                <hr />
+                <p
+                  style="font-weight: bold; font-size: 12px; padding-left: 20px"
+                >
+                  Kualifikasi:
+                </p>
+                <ul style="font-size: 9px;">
+                  <li>Menguasai dan mahir dalam penggunaan HTML, CSS, dan JavaScript</li>
+                  <li>Memiliki pengalaman menggunakan framework PHP, seperti laravel dan framework css, seperti Bootstrap.</li>
+                  <li>Mampu membangun dan mengoptimalisasi website</li>
+                  <li>Memahami browser Developer Tools</li>
+                  <li>Mmemiliki portofolio website menjadi nilai plus</li>
+                </ul>
+              </div>
+              <a id="submit" class="btn btn-karir" href="https://docs.google.com/forms/d/e/1FAIpQLSfzl7tOOgtIKlQ9La6zWw9T0qP9nNAtt_axagw80oo8qf9m_A/viewform?usp=sharing">
+                Lamar
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
