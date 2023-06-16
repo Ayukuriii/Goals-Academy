@@ -10,6 +10,7 @@
 	</div>
 	<!-- End Notification Panel -->
 
+	
 	<!-- Toast Register/Login -->
 	@if (session()->has('success'))
 	<div class="toast-container position-fixed top-1 end-0 p-3">
