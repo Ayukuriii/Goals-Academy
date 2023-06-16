@@ -1,11 +1,10 @@
 @extends('layouts.main')
 
 @section('container')
-    
-    <!-- Isi Page -->
+<!-- Isi Page -->
 <section id="profil">
     <div class="profil-image container justify-content-center align-items-center">
-        <img class="img-fluid" alt="" src="../image/assets/icons/LOGO PRIMARY_ORANGE.png" width="350px" height="290px" />
+        <img class="img-fluid logo-goals-photo" alt="" src="image/assets/icons/LOGO PRIMARY_ORANGE.png" width="350px" height="290px" />
     </div>
 
     <div class="text-profile">
@@ -25,5 +24,4 @@
     </div>
 </section>
 <!-- Last Page -->
-
 @endsection

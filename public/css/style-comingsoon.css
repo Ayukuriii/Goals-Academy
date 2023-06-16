@@ -1,0 +1,335 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    font-family: "Poppins";
+}
+
+body {
+    background-image: url("image/assets/images/background-white.png");
+    background-size: cover;
+    background-color: #fff;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #f0f8ff;
+    background-size: cover;
+    z-index: 3;
+    box-shadow: 0 2px 4px rgba(0, 4, 4, 0.5);
+}
+
+.navbar-brand img {
+    margin-left: -20px;
+}
+
+.nav-item a {
+    color: #363434;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.navbar-collapse {
+    flex-grow: 0;
+}
+.nav-item a:hover {
+    background-color: #ff8854;
+    color: #363434;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu {
+    background-color: #ffff;
+}
+
+.dropdown-item:hover {
+    background-color: #ff8854;
+}
+
+.btn-login {
+    background-color: rgba(255, 136, 84, 1);
+    color: #fff;
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+/* Segera Hadir*/
+
+#segera-hadir {
+    padding: 0 10px 0 10px;
+}
+#segera-hadir .text-left h3 {
+    margin-top: 200px;
+    font-size: 30px;
+    color: #4f3f85;
+    letter-spacing: 1px;
+}
+
+#segera-hadir .text-left h1 {
+    font-size: 80px;
+    color: #4f3f85;
+    letter-spacing: 1px;
+}
+
+.image-comingsoon img {
+    width: 1100px;
+    margin-top: -150px;
+}
+
+#segera-hadir .text-left p {
+    color: #4f3f85;
+    font-size: 20px;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+.list-socmed {
+    display: flex;
+    flex-direction: row;
+}
+
+.socmed-container {
+    margin-bottom: 150px;
+    margin-left: -5px;
+}
+#segera-hadir .socmed {
+    padding: 5px;
+    cursor: pointer;
+}
+
+footer {
+    display: none;
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    background: #00225b;
+    padding: 57px 40px;
+}
+
+.footer-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    color: #fff;
+    justify-content: space-between;
+}
+
+.footer-container .footer-logo {
+    margin-bottom: 24px;
+}
+
+.footer-left-content {
+    flex: 0.25;
+}
+
+.footer-left-content p {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 14px;
+}
+
+.footer-left-content p:nth-of-type(1) {
+    margin-bottom: 20px;
+}
+
+.footer-right-content {
+    flex: 0.7;
+    max-width: 100%;
+}
+
+.footer-right-top-content,
+.footer-right-bottom-content {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 50px 0;
+    justify-content: space-between;
+}
+
+.footer-right-top-content .product {
+    padding-top: 20px;
+}
+
+.footer-right-content .title {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 21px;
+}
+
+.footer-right-content ul {
+    list-style: none;
+}
+
+.footer-right-content li {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 9px;
+}
+
+.footer-right-content a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.footer-right-bottom-content p,
+.footer-right-bottom-content li {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.footer-right-bottom-content {
+    padding-left: 40px;
+}
+
+.footer-right-bottom-content li {
+    display: flex;
+    align-items: center;
+}
+
+.footer-right-bottom-content ul img {
+    margin-right: 8px;
+}
+
+.footer-right-bottom-content .social-media {
+    display: flex;
+}
+
+.footer-right-bottom-content .social-media a {
+    text-decoration: none;
+    margin: 0 6px;
+}
+
+@media (max-width: 985px) {
+    #navbar-full {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 985px;
+    }
+
+    .navbar-brand {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #segera-hadir {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .image-comingsoon img {
+        width: 900px;
+        margin-top: -570px;
+        margin-left: -650px;
+    }
+
+    #segera-hadir .text-left h3 {
+        margin-top: 350px;
+        font-size: 24px;
+    }
+
+    #segera-hadir .text-left h1 {
+        font-size: 70px;
+    }
+
+    #segera-hadir .text-left h1,
+    #segera-hadir .text-left p,
+    #segera-hadir .text-left h3 {
+        text-align: center;
+    }
+
+    .footer-right-content > p:nth-last-of-type(1) {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    #navbar-full {
+        margin-left: auto;
+    }
+
+    .footer-container {
+        display: block;
+    }
+
+    .footer-left-content {
+        text-align: center;
+        align-items: center;
+    }
+
+    .footer-container .footer-logo {
+        width: 250px;
+        height: auto;
+    }
+    .footer-right-bottom-content {
+        padding-left: 0;
+    }
+
+    .footer-right-bottom-content .contact {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 475px) {
+    .navbar-brand img {
+        width: 196px;
+        height: 34px;
+    }
+
+    .image-comingsoon img {
+        width: 700px;
+        margin-top: -700px;
+        margin-left: -500px;
+    }
+
+    #segera-hadir .text-left h3,
+    #segera-hadir .text-left p {
+        font-size: 15px;
+        letter-spacing: 2px;
+    }
+
+    #segera-hadir .text-left h1 {
+        font-size: 55px;
+        letter-spacing: 5px;
+    }
+
+    .socmed-1 img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .socmed-2 img {
+        width: 47px;
+        height: 47px;
+    }
+
+    .socmed-3 img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .socmed-4 img {
+        width: 37px;
+        height: 37px;
+    }
+
+    .socmed-5 img {
+        width: 50px;
+        height: 39px;
+    }
+
+    .socmed-6 img {
+        width: 45px;
+        height: 45px;
+        margin-top: 2px;
+    }
+}

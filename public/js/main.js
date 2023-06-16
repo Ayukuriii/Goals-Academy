@@ -1,6 +1,7 @@
 function test() {
     alert("test complete");
 }
+// Navbar Icon
 $(".navbar-toggler").click(function () {
     $(this).toggleClass("collapsed");
     if ($(this).hasClass("collapsed")) {
@@ -116,43 +117,43 @@ for (var i = 0; i < buttons.length; i++) {
 
 for (var i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener("click", function () {
-        // hapus kelas 'clicked' dari semua tombol
         for (var j = 0; j < buttons.length; j++) {
             buttons[j].classList.remove("clicked");
         }
 
-        // tambahkan kelas 'clicked' pada tombol yang diklik
         mySwiper.slideTo(this.getAttribute("data-slide"));
         this.classList.add("clicked");
     });
 }
-// Modal
+
+// Modal Pop Up (Semua Pop Up di Main Page)
 
 // Register/Login
 $("#step-login").click(function () {
-    $("#modal-login-register").css("display", "flex");
+    $("#modal-login").css("display", "flex");
 });
 
 $("body").click(function (event) {
-    if ($(event.target).is("#modal-login-register")) {
-        $("modal-login-register").hide();
+    if ($(event.target).is("#modal-login")) {
+        $("modal-login").hide();
     }
 });
 
 // Register
-// $("#step-login").click(function() {
-//     $("#modal-register").css("display", "flex");
-// });
+// Modal Product Dibimbing Sekali
+$("#next-register").click(function () {
+    $("#modal-register").css("display", "flex");
+});
 
-// $(".close-icon").click(function() {
-//     $("#modal-register").hide();
-// });
+$(".close-icon").click(function () {
+    $("#modal-register").hide();
+});
 
-// $('body').click(function(event) {
-//     if($(event.target).is('#modal-register')) {
-//         $("modal-register").hide();
-//     }
-// });
+$("body").click(function (event) {
+    if ($(event.target).is("#modal-register")) {
+        $("#modal-register").hide();
+    }
+});
 
 // Pop-Up Diskon
 $("#dapatkan-diskon").click(function () {
@@ -169,7 +170,6 @@ $("body").click(function (event) {
     }
 });
 
-// Get the modal
 var modallogreg = document.getElementById("modal-login-register");
 var modallogin = document.getElementById("modal-login");
 var modalregister = document.getElementById("modal-register");
@@ -190,7 +190,7 @@ $("#next-submit").click(function () {
     $("#modal-login").css("display", "flex");
 });
 
-// Modal Dibimbing Berkelompok
+// Modal Product Dibimbing Sekali
 $("#join-now-1").click(function () {
     $("#modal1").css("display", "flex");
 });
@@ -235,7 +235,7 @@ $("body").click(function (event) {
     }
 });
 
-// Modal Webinar Skripsi
+// Modal Dbimbing Gratis
 $("#join-now-4").click(function () {
     $("#modal4").css("display", "flex");
 });
@@ -250,7 +250,7 @@ $("body").click(function (event) {
     }
 });
 
-// Modal Webinar Skripsi
+// Modal Ebook Skripsi
 $("#join-now-5").click(function () {
     $("#modal5").css("display", "flex");
 });
@@ -271,7 +271,7 @@ $("#btn-play").magnificPopup({
     midClick: true,
 });
 
-// FAQ
+// Accordion FAQ
 const accordionItemHeaders = document.querySelectorAll(
     ".accordion-item-header"
 );
@@ -309,13 +309,6 @@ var testimoniSwiper = new Swiper("#slide-top", {
     },
 });
 
-// // $("#swiper-top").mouseenter(function () {
-// //     testimoniSwiper.autoplay.start();
-// // });
-// // $("#swiper-top").mouseleave(function () {
-// //     testimoniSwiper.autoplay.stop();
-// // });
-
 var testimoniSwiper2 = new Swiper("#slide-bottom", {
     autoplay: true,
     autoplaySpeed: 5000,
@@ -335,13 +328,7 @@ var testimoniSwiper2 = new Swiper("#slide-bottom", {
     },
 });
 
-// $("#swiper-bottom").mouseenter(function () {
-//     testimoniSwiper2.autoplay.start();
-// });
-// $("#swiper-bottom").mouseleave(function () {
-//     testimoniSwiper2.autoplay.stop();
-// });
-
+// Javascript for Responsive Mobile
 function mobileDisplay() {
     var productsSwiper = new Swiper(".slide-content", {
         slidesPerView: 1,
@@ -455,3 +442,8 @@ window.onresize = function () {
 // function test() {
 //   alert("mail sent");
 // }
+
+// Toast show function
+const myToast = document.getElementById("myToast");
+const toastBootstrap = bootstrap.Toast.getOrCreateInstance(myToast);
+toastBootstrap.show();

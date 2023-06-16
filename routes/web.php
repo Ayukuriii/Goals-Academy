@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,13 +23,13 @@ Route::get('/', function () {
 });
 
 Route::get('/artikel', function () {
-    return view('artikel',[
+    return view('coming_soon.artikel',[
         'title' => 'Artikel'
     ]);
 });
 
 Route::get('/diskusi', function () {
-    return view('diskusi', [
+    return view('coming_soon.diskusi', [
         'title' => 'Diskusi'
     ]);
 });
@@ -50,11 +53,33 @@ Route::get('/profil_company', function () {
 });
 
 Route::get('/profil_tutor', function () {
-    return view('profil_tutor', [
+    return view('coming_soon.profil_tutor', [
         'title' => 'Profil Tutor'
     ]);
 });
 
-Route::get('/test', function () {
-    return view('test');
+Route::get('/lupa-password', function () {
+    return view('lupa-password', [
+        'title' => 'Lupa Password'
+    ]);
 });
+
+Route::get('/dibimbing-sekali', function () {
+    return view('dibimbing-sekali', [
+        'title' => 'Dibimbing Sekali'
+    ]);
+});
+
+Route::get('/profile_tutor', function () {
+    return view('coming_soon.profil_tutor', [
+        'title' => 'Profil Tutor'
+    ]);
+});
+
+Route::get('/profile', [ProfileController::class, 'index']);
+Route::get('/profile/{id}', [ProfileController::class, 'detail']);
+
+Route::post('/login', [LoginController::class, 'auth']);
+Route::post('/logout', [LoginController::class, 'logout']);
+
+Route::post('/register', [RegisterController::class, 'store']);
