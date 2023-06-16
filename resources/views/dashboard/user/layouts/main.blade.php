@@ -19,9 +19,7 @@
 	<link href="{{ asset('css/style.css') }}" rel="stylesheet" /> <!-- // style main -->
 	<link href="{{ asset('css/style-login.css') }}" rel="stylesheet" /> <!-- // style login -->
 	<link href="{{ asset('css/style-karir.css') }}" rel="stylesheet" /> <!-- // style karir -->
-	<link href="{{ asset('css/style-user.css') }}" rel="stylesheet" /> <!-- style profile user -->
-	<link href="{{ asset('css/style-comingsoon.css') }}" rel="stylesheet" /> <!-- style coming soon -->
-	<link href="{{ asset('css/style-password.css') }}" rel="stylesheet" /> <!-- style ganti password -->
+	<link href="{{ asset('css/style-user.css') }}" rel="stylesheet" /> <!-- style profile -->
 	{{-- <link href="{{ asset('css/style-profil.css') }}" rel="stylesheet" /> <!-- // style profil --> --}}
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&amp;family=Work+Sans:wght@300;400;500;700&amp;display=swap" rel="stylesheet" /><script src="https://kit.fontawesome.com/3f9eda8ca0.js" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -35,11 +33,11 @@
 <body>
     @include('partials.navbar')
     
-    @yield('container')
-    
-    <footer class="footer-container">
-        @include('partials.footer')
-    </footer>
+    <section class="mt-5">
+		
+
+		@yield('container')
+	</section>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
