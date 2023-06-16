@@ -23,13 +23,13 @@ Route::get('/', function () {
 });
 
 Route::get('/artikel', function () {
-    return view('artikel',[
+    return view('coming_soon.artikel',[
         'title' => 'Artikel'
     ]);
 });
 
 Route::get('/diskusi', function () {
-    return view('diskusi', [
+    return view('coming_soon.diskusi', [
         'title' => 'Diskusi'
     ]);
 });
@@ -53,7 +53,7 @@ Route::get('/profil_company', function () {
 });
 
 Route::get('/profil_tutor', function () {
-    return view('profil_tutor', [
+    return view('coming_soon.profil_tutor', [
         'title' => 'Profil Tutor'
     ]);
 });
@@ -70,7 +70,11 @@ Route::get('/dibimbing-sekali', function () {
     ]);
 });
 
-
+Route::get('/profile_tutor', function () {
+    return view('coming_soon.profil_tutor', [
+        'title' => 'Profil Tutor'
+    ]);
+});
 
 Route::get('/profile', [ProfileController::class, 'index']);
 Route::get('/profile/{id}', [ProfileController::class, 'detail']);

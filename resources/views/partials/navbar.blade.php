@@ -11,12 +11,10 @@
 	  <div id="navbar" class="navbar-collapse collapse text-center justify-content-end">
 		<ul class="navbar-nav mx-auto">
 		  <li class="nav-item"> <!--Artikel Page -->
-			<a href="artikel" class="nav-link"
-			  onclick="alert('Halaman Artikel akan Segera Hadir! Ikuti Kami untuk Update Informasinya')">Artikel</a>
+			<a href="artikel" class="nav-link">Artikel</a>
 		  </li>
 		  <li class="nav-item"> <!--Diskusi Page -->
-			<a href="diskusi" class="nav-link"
-			  onclick="alert('Halaman Diskusi akan Segera Hadir! Ikuti Kami untuk Update Informasinya')">Diskusi</a>
+			<a href="diskusi" class="nav-link">Diskusi</a>
 		  </li>
 		  <li class="nav-item"> <!--Karir Page-->
 			<a href="karir" class="nav-link">Karir</a>
@@ -27,9 +25,7 @@
 			</a>
 			<ul class="dropdown-menu">
 			  <li><a class="dropdown-item" href="profil_company">Profil Perusahaan</a></li> <!--Profil Perusahaan-->
-			  <li><a class="dropdown-item"
-				  onclick="alert('Halaman Profil Tutor akan Segera Hadir! Ikuti Kami untuk Update Informasinya')"
-				  href="profil_tutor">Profil Tutor</a></li> <!--Profil Tutor-->
+			  <li><a class="dropdown-item" href="profil_tutor">Profil Tutor</a></li> <!--Profil Tutor-->
 			  <li><a class="dropdown-item" href="http://linktr.ee/goalsacademyid">Media Sosial</a></li>
 			  <!--Media Sosial-->
 			</ul>
