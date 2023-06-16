@@ -37,4 +37,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime'
     ];
+
+    public function ongoing_program(){
+        return $this->hasMany(OngoingProgram::class);
+    }
 }

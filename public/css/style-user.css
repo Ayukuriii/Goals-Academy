@@ -1,80 +1,77 @@
-  /* Isi */
-  #user-profile {
+/* Isi */
+#user-profile {
     margin-top: 100px;
     padding: 0 30px 0 30px;
-  }
-  
-  .side-profile {
+}
+
+.side-profile {
     max-width: 420px;
     height: 608px;
     border-radius: 12px;
-  }
-  
-  .side-profile p {
+}
+
+.side-profile p {
     font-size: 11px;
     letter-spacing: 1px;
-  }
-  
-  .side-profile h5 {
+}
+
+.side-profile h5 {
     font-size: 19px;
     letter-spacing: 1px;
-  }
-  
-  .side-profile .btn {
+}
+
+.side-profile .btn {
     font-size: 15px;
     border-radius: 5px;
     width: 175px;
     letter-spacing: 1px;
-  }
-  
-  .side-program {
-    max-width: 859px;
-    height: 608px;
+}
+
+.side-program {
     border-radius: 12px;
     margin-left: 20px;
-  }
-  
-  .side-program h1 {
+}
+
+.side-program h1 {
     color: #4f3f85;
     font-weight: bold;
     font-size: 25px;
-  }
-  
-  .side-program .card-body {
+}
+
+.side-program .card-body {
     padding: 0px;
-  }
-  
-  #user-profile .btn {
+}
+
+#user-profile .btn {
     background-color: #ff8854;
     border: none;
     color: #ffff;
-  }
-  
-  .side-program .product-item {
+}
+
+.side-program .product-item {
     padding: 18px;
     height: 121px;
     justify-content: space-between;
     color: #363434;
     letter-spacing: 1px;
-  }
-  
-  .side-program .name-product {
+}
+
+.side-program .name-product {
     font-size: 20px;
     font-weight: 600;
-  }
-  
-  .side-program .status-product {
+}
+
+.side-program .status-product {
     font-size: 11px;
-  }
-  
-  .side-program .detail-product a{
+}
+
+.side-program .detail-product a {
     font-size: 11px;
     color: #363434;
-  }
-  
-  .side-program .date-product , .side-program .time-product {
+}
+
+.side-program .date-product,
+.side-program .time-product {
     margin: 0px;
     font-size: 11px;
-  }
-
-  
+}

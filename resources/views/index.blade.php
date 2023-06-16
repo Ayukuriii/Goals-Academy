@@ -4,29 +4,58 @@
 	<!-- Notification Panel -->
 	<div class="notification-panel">
 		<div class="panel-container">
-			@if (session()->has('success'))
-				<p>{{ session('success') }}</p>
-			@else
-				<p>Percepat kelulusanmu dengan belajar di Goals Academy<span><a href="goalsacademy.id" alt="">goalsacademy.id</a></span></p>
-			@endif
+			<p>Percepat kelulusanmu dengan belajar di Goals Academy<span><a href="goalsacademy.id" alt="">goalsacademy.id</a></span></p>
 			<i class="fa-solid fa-xmark" id="button-1"></i>
 		</div>
 	</div>
-
 	<!-- End Notification Panel -->
+
+	<!-- Toast Register/Login -->
+	@if (session()->has('success'))
+	<div	v class="toast-container position-fixed top-1 end-0 p-3">
+		<div id="myToast" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+			<div class="d-flex">
+			  <div class="toast-body">
+				{{ session('success') }}
+			  </div>
+			  <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+			</div>
+		  </div>
+	</div>		
+	@endif
+
+	@if (session()->has('login'))
+	<div class="toast-container position-fixed top-1 end-0 p-3">
+		<div id="myToast" class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
+			<div class="d-flex">
+			  <div class="toast-body">
+				{{ session('login') }}
+			  </div>
+			  <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+			</div>
+		  </div>
+	</div>
+	@endif
+
+	@if (session()->has('loginError'))
+	<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+		<div class="toast-header">
+			<img src="..." class="rounded me-2" alt="...">
+			<strong class="me-auto">Login Error</strong>
+			<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+		</div>
+		<div class="toast-body">
+			{{ session('loginError') }}
+		</div>
+	</div>
+	@endif
+	<!-- End Toast Register/Login -->
 
 	<!-- Header -->
 	<section id="home">
 		<div class="hero-container">
 			<div class="hero-left-content">
 				<h1>Percepat Kelulusanmu <br>Bersama Tutor yang<br>Solutif dan Friendly</h1>
-				@if (session()->has('login'))
-					<p>{{ session('login') }}</p>
-				@endif
-				
-				@if (session()->has('loginError'))
-					<p>{{ session('loginError') }}</p>
-				@endif
 
 				<p>Buat apa hidup kalau gak berburu diskon,<br>yuk isi emailmu sekarang!</p>
 				<!-- <button class="btn hero-btn"><a href="https://wa.me/6282147638286">Daftar Sekarang</a></button> -->
