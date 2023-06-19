@@ -32,7 +32,7 @@
 	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="{{ Request::is('/') ? 'style-nav-footer-body' : 'comingsoon-body' }}">
     @include('partials.navbar')
     
     @yield('container')

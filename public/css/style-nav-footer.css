@@ -7,7 +7,7 @@
     font-family: "Poppins", sans-serif;
 }
 
-body {
+.style-nav-footer-body {
     background-image: url("../image/assets/images/background-blue-white.svg");
     background-position: 50%;
     background-size: cover;

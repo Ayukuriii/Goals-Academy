@@ -1,9 +1,9 @@
 <?php
 
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\VerificationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +20,7 @@ Route::get('/', function () {
     return view('index', [
         'title' => 'Home'
     ]);
-});
+})->name('index');
 
 Route::get('/artikel', function () {
     return view('coming_soon.artikel',[
@@ -76,10 +76,15 @@ Route::get('/profile_tutor', function () {
     ]);
 });
 
-Route::get('/profile', [ProfileController::class, 'index']);
-Route::get('/profile/{id}', [ProfileController::class, 'detail']);
+Route::middleware('auth', 'auth.session', 'verified')->group(function() {
+    Route::get('/profile', [ProfileController::class, 'index']);
+    Route::get('/profile/{id}', [ProfileController::class, 'detail']);
+});
 
-Route::post('/login', [LoginController::class, 'auth']);
-Route::post('/logout', [LoginController::class, 'logout']);
+Route::post('/login', [AuthController::class, 'post_login'])->name('login');
+Route::post('/logout', [AuthController::class, 'post_logout'])->name('logout');
 
-Route::post('/register', [RegisterController::class, 'store']);
+Route::post('/register', [AuthController::class, 'post_register'])->name('register');
+Route::get('/email/verify/email-verification', [VerificationController::class, 'notice'])->middleware('auth')->name('verification.notice');
+Route::get('/email/verify/{id}/{hash}', [VerificationController::class, 'verify'])->middleware('auth','signed')->name('verification.verify');
+Route::get('/email/verify/resend-verification', [VerificationController::class, 'resend'])->middleware('auth', 'throttle:6,1')->name('verification.resend');
