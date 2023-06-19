@@ -10,9 +10,10 @@
 	</div>
 	<!-- End Notification Panel -->
 
+	
 	<!-- Toast Register/Login -->
 	@if (session()->has('success'))
-	<div	v class="toast-container position-fixed top-1 end-0 p-3">
+	<div class="toast-container position-fixed top-1 end-0 p-3">
 		<div id="myToast" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
 			<div class="d-flex">
 			  <div class="toast-body">

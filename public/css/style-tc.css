@@ -1,294 +1,294 @@
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  font-family: "Poppins";
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    font-family: "Poppins";
 }
 
 body {
-  background-image: url("assets/images/background\ 1.svg");
-  background-size: cover;
-  background-color: #fff;
+    background-image: url("../image/assets/images/background-blue-white.svg");
+    background-size: cover;
+    background-color: #fff;
 }
 
 /* Navbar */
 .navbar {
-  background-color: #ffff;
-  background-size: cover;
-  z-index: 3;
-  box-shadow: 0 2px 4px rgba(0, 4, 4, 0.5);
+    background-color: #ffff;
+    background-size: cover;
+    z-index: 3;
+    box-shadow: 0 2px 4px rgba(0, 4, 4, 0.5);
 }
 
 #navbar-full {
-  margin-left: 140px;
+    margin-left: 140px;
 }
 .navbar-brand {
-  margin-left: auto;
-  margin-right: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .navbar-brand img {
-  margin-left: -20px;
+    margin-left: -20px;
 }
 
 .nav-item a {
-  color: #363434;
-  letter-spacing: 1.5px;
-  font-weight: bold;
-  font-size: 17px;
+    color: #363434;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+    font-size: 17px;
 }
 
 .nav-item a:hover {
-  background-color: #ff8854;
-  color: #363434;
+    background-color: #ff8854;
+    color: #363434;
 }
 
 .dropdown:hover .dropdown-menu {
-  display: block;
+    display: block;
 }
 
 .dropdown-menu {
-  background-color: #ffff;
+    background-color: #ffff;
 }
 
 .dropdown-item:hover {
-  background-color: #ff8854;
+    background-color: #ff8854;
 }
 
 .btn-login {
-  background-color: rgba(255, 136, 84, 1);
-  color: #fff;
-  font-weight: bold;
-  border-radius: 8px;
+    background-color: rgba(255, 136, 84, 1);
+    color: #fff;
+    font-weight: bold;
+    border-radius: 8px;
 }
 
 /* Profil */
 
 #t-c {
-  width: 100%;
-  max-width: 1360px;
-  margin-left: auto;
-  margin-right: auto;
-  align-items: center;
-  justify-content: center;
+    width: 100%;
+    max-width: 1360px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    justify-content: center;
 }
 
 .text-center h1 {
-  text-align: center;
-  color: #4f3f85;
-  font-size: 38px;
-  font-weight: bold;
-  letter-spacing: 1px;
-  margin-top: 100px;
-  margin-bottom: 50px;
+    text-align: center;
+    color: #4f3f85;
+    font-size: 38px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-top: 100px;
+    margin-bottom: 50px;
 }
 
 .tc-container {
-  width: fit-content;
-  height: fit-content;
-  background-color: #fff;
-  border-radius: 12px;
-  margin-left: 40px;
-  margin-right: 40px;
-  padding: 35px;
-  text-align: justify;
-  margin-bottom: 50px;
+    width: fit-content;
+    height: fit-content;
+    background-color: #fff;
+    border-radius: 12px;
+    margin-left: 40px;
+    margin-right: 40px;
+    padding: 35px;
+    text-align: justify;
+    margin-bottom: 50px;
 }
 .tc-container h1 {
-  font-weight: bold;
-  font-size: 32px;
-  letter-spacing: 1px;
+    font-weight: bold;
+    font-size: 32px;
+    letter-spacing: 1px;
 }
 
 .tc-container span {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 .tc-container ul {
-  list-style: decimal;
-  font-size: 20px;
-  margin-top: 10px;
+    list-style: decimal;
+    font-size: 20px;
+    margin-top: 10px;
 }
 /* Footer */
 footer {
-  width: 100%;
-  background: #00225b;
-  padding: 57px 40px;
+    width: 100%;
+    background: #00225b;
+    padding: 57px 40px;
 }
 
 .footer-container {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  color: #fff;
-  justify-content: space-between;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    color: #fff;
+    justify-content: space-between;
 }
 
 .footer-container .footer-logo {
-  margin-bottom: 24px;
+    margin-bottom: 24px;
 }
 
 .footer-left-content {
-  flex: 0.25;
+    flex: 0.25;
 }
 
 .footer-left-content p {
-  font-size: 14px;
-  font-weight: bold;
-  margin-bottom: 14px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 14px;
 }
 
 .footer-left-content p:nth-of-type(1) {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .footer-right-content {
-  flex: 0.7;
-  max-width: 100%;
+    flex: 0.7;
+    max-width: 100%;
 }
 
 .footer-right-top-content,
 .footer-right-bottom-content {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  margin: 50px 0;
-  justify-content: space-between;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 50px 0;
+    justify-content: space-between;
 }
 
 .footer-right-top-content .product {
-  padding-top: 20px;
+    padding-top: 20px;
 }
 
 .footer-right-content .title {
-  font-size: 14px;
-  font-weight: bold;
-  margin-bottom: 21px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 21px;
 }
 
 .footer-right-content ul {
-  list-style: none;
+    list-style: none;
 }
 
 .footer-right-content li {
-  font-size: 14px;
-  font-weight: 500;
-  margin-bottom: 9px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 9px;
 }
 
 .footer-right-content a {
-  text-decoration: none;
-  color: #fff;
+    text-decoration: none;
+    color: #fff;
 }
 
 .footer-right-bottom-content p,
 .footer-right-bottom-content li {
-  font-size: 14px;
-  font-weight: bold;
+    font-size: 14px;
+    font-weight: bold;
 }
 
 .footer-right-bottom-content {
-  padding-left: 40px;
+    padding-left: 40px;
 }
 
 .footer-right-bottom-content li {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .footer-right-bottom-content ul img {
-  margin-right: 8px;
+    margin-right: 8px;
 }
 
 .footer-right-bottom-content .social-media {
-  display: flex;
+    display: flex;
 }
 
 .footer-right-bottom-content .social-media a {
-  text-decoration: none;
-  margin: 0 6px;
+    text-decoration: none;
+    margin: 0 6px;
 }
 
 @media (max-width: 1080px) {
-  .navbar {
-    width: 100%;
-    padding: 0 10px;
-  }
+    .navbar {
+        width: 100%;
+        padding: 0 10px;
+    }
 
-  .navbar-link li {
-    padding: 0 8px;
-  }
+    .navbar-link li {
+        padding: 0 8px;
+    }
 
-  .btn-register,
-  .btn-login {
-    padding: 5px 10px;
-  }
+    .btn-register,
+    .btn-login {
+        padding: 5px 10px;
+    }
 
-  .menu-icon {
-    display: none;
-  }
+    .menu-icon {
+        display: none;
+    }
 }
 
 @media (max-width: 985px) {
-  #navbar-full {
-    margin-left: auto;
-    margin-right: auto;
-  }
+    #navbar-full {
+        margin-left: auto;
+        margin-right: auto;
+    }
 
-  .footer-right-content > p:nth-last-of-type(1) {
-    text-align: center;
-  }
+    .footer-right-content > p:nth-last-of-type(1) {
+        text-align: center;
+    }
 }
 
 @media (max-width: 768px) {
-  #navbar-full {
-    margin-left: auto;
-  }
+    #navbar-full {
+        margin-left: auto;
+    }
 
-  .text-center h1 {
-    font-size: 25px;
-    margin-top: 80px;
-    margin-bottom: 30px;
-  }
-  
-  .footer-container {
-    display: block;
-  }
+    .text-center h1 {
+        font-size: 25px;
+        margin-top: 80px;
+        margin-bottom: 30px;
+    }
 
-  .footer-right-bottom-content {
-    padding-left: 0;
-  }
+    .footer-container {
+        display: block;
+    }
 
-  .footer-right-bottom-content .contact {
-    margin-top: 20px;
-  }
+    .footer-right-bottom-content {
+        padding-left: 0;
+    }
+
+    .footer-right-bottom-content .contact {
+        margin-top: 20px;
+    }
 }
 
 @media (max-width: 475px) {
-  .navbar-brand img {
-    width: 180px;
-    height: 32px;
-  }
+    .navbar-brand img {
+        width: 180px;
+        height: 32px;
+    }
 
-  .text-center h1 {
-    font-size: 25px;
-    margin-top: 70px;
-    margin-bottom: 30px;
-  }
+    .text-center h1 {
+        font-size: 25px;
+        margin-top: 70px;
+        margin-bottom: 30px;
+    }
 
-  .tc-container {
-    margin-left: 0px;
-    margin-right: 0px;
-    padding: 25px;
-  }
+    .tc-container {
+        margin-left: 0px;
+        margin-right: 0px;
+        padding: 25px;
+    }
 
-  .tc-container h2 {
-    font-size: 15px;
-  }
+    .tc-container h2 {
+        font-size: 15px;
+    }
 
-  .tc-container ul {
-    font-size: 10px;
-  }
+    .tc-container ul {
+        font-size: 10px;
+    }
 }
