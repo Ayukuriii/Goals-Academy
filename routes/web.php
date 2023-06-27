@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\EmailController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\VerificationController;
 
@@ -23,7 +24,7 @@ Route::get('/', function () {
 })->name('index');
 
 Route::get('/artikel', function () {
-    return view('coming_soon.artikel',[
+    return view('coming_soon.artikel', [
         'title' => 'Artikel'
     ]);
 });
@@ -58,12 +59,6 @@ Route::get('/profil_tutor', function () {
     ]);
 });
 
-Route::get('/lupa-password', function () {
-    return view('lupa-password', [
-        'title' => 'Lupa Password'
-    ]);
-});
-
 Route::get('/dibimbing-sekali', function () {
     return view('dibimbing-sekali', [
         'title' => 'Dibimbing Sekali'
@@ -76,7 +71,13 @@ Route::get('/profile_tutor', function () {
     ]);
 });
 
-Route::middleware('auth', 'auth.session', 'verified')->group(function() {
+Route::get('/auth/lupa-password', function () {
+    return view('auth.lupa_password', [
+        'title' => 'Lupa Password'
+    ]);
+});
+
+Route::middleware('auth', 'auth.session', 'verified')->group(function () {
     Route::get('/profile', [ProfileController::class, 'index']);
     Route::get('/profile/{id}', [ProfileController::class, 'detail']);
 });
@@ -86,5 +87,12 @@ Route::post('/logout', [AuthController::class, 'post_logout'])->name('logout');
 
 Route::post('/register', [AuthController::class, 'post_register'])->name('register');
 Route::get('/email/verify/email-verification', [VerificationController::class, 'notice'])->middleware('auth')->name('verification.notice');
-Route::get('/email/verify/{id}/{hash}', [VerificationController::class, 'verify'])->middleware('auth','signed')->name('verification.verify');
+Route::get('/email/verify/{id}/{hash}', [VerificationController::class, 'verify'])->middleware('auth', 'signed')->name('verification.verify');
 Route::get('/email/verify/resend-verification', [VerificationController::class, 'resend'])->middleware('auth', 'throttle:6,1')->name('verification.resend');
+
+Route::get('/test', function () {
+    return view('test.test', [
+        'title' => 'Test'
+    ]);
+});
+Route::post('/send-email', [EmailController::class, 'sendEmail']);

@@ -81,7 +81,7 @@
 				</div>
 				<div class="form-button">
 				<button type="submit" class="btn btn-center" id="submit-login">Login</button>
-				<p><a href="lupa-password">Lupa Password?</a></p>
+				<p><a href="/auth/lupa-password">Lupa Password?</a></p>
 				</div>
 			</form>
 			<h5>atau gunakan</h5>

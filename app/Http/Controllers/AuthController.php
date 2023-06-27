@@ -28,6 +28,8 @@ class AuthController extends Controller
 
         event(new Registered($user));
 
+        Auth::login($user);
+
         return redirect()->route('verification.notice')->with('success', 'Registration successfull! Please check your email for verification');
         // return redirect('/')->with('success', 'Registration successfull! Please login');
     }
