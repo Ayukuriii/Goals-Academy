@@ -67,15 +67,19 @@
                 <!-- <button class="btn hero-btn"><a href="https://wa.me/6282147638286">Daftar Sekarang</a></button> -->
 
                 <form action="/send-email" method="POST">
-                    <div class="input-group mb-3 hero-btn">
+                    <div class="input-group mb-3 hero-btn justify-content-between">
                         @csrf
-                        <input type="email" class="form-control" placeholder="Masukkan Email" aria-label="Masukkan Email"
-                            aria-describedby="basic-addon2" name="email-code" id="email-diskon">
-                        <!--Input Email -->
+                        <div class="input-group-prepend">
+                            <input type="email" class="form-control" placeholder="Masukkan Email"
+                                aria-label="Masukkan Email" aria-describedby="basic-addon2" name="email-code"
+                                id="email-diskon" required>
+                            <!-- Input Email -->
+                        </div>
                         <div class="input-group-append">
-                            <button class="btn btn-outline-secondary" id="dapatkan-diskon" type="submit">Dapatkan
-                                Diskon></button>
-                            <!--Button Dapatkan Diskon-->
+                            <button class="btn btn-outline-secondary" style="margin-top: 0" id="dapatkan-diskon"
+                                type="submit">Dapatkan
+                                Diskon</button>
+                            <!-- Button Dapatkan Diskon -->
                         </div>
                     </div>
                 </form>
@@ -88,16 +92,6 @@
             </div>
     </section>
     <!-- End Header -->
-
-    <!-- Pop-Up Diskon -->
-    <div class="modal" id="popup-diskon">
-        <img class="img-fluid popup-diskon-dekstop" src="image/assets/images/header/popup-diskon-10.png" alt="" />
-        <!--Pamflet Popup Tab/Laptop-->
-        <img class="img-fluid popup-diskon-mobile" src="image/assets/images/header/popup-diskon-mobile.png"
-            alt="" />
-        <!--Pamflet Popup Hp -->
-        <!-- <i class="fas fa-times fs-1" id="close-icon"></i> -->
-    </div>
 
     <!-- Promo -->
     <div class="promo" id="promo">
@@ -194,19 +188,19 @@
     <div class="product-container" id="product">
         <h1>Pilih Produk Goals Academy <br> untuk solusi skripsimu</h1>
         <!-- <div class="list-product">
-                                  <button class="button-product" data-slide="1">Dibimbing Sekali</button>
-                                  <button class="button-product" data-slide="2">Dibimbing Kelompok</button>
-                                  <button class="button-product" data-slide="3">Webinar Skripsi</button>
-                                  <button class="button-product" data-slide="4">Dibimbing Gratis</button>
-                                  <button class="button-product" data-slide="5">E-book Skripsi</button>
-                                 </div> -->
+                                                  <button class="button-product" data-slide="1">Dibimbing Sekali</button>
+                                                  <button class="button-product" data-slide="2">Dibimbing Kelompok</button>
+                                                  <button class="button-product" data-slide="3">Webinar Skripsi</button>
+                                                  <button class="button-product" data-slide="4">Dibimbing Gratis</button>
+                                                  <button class="button-product" data-slide="5">E-book Skripsi</button>
+                                                 </div> -->
         <div class="swipper-container swiper">
             <!-- <div class="swipe-left">
-                                  <img src="image\assets\images\promo\left-arrow.png" id="button-product-left" onclick="swipeLeft">
-                                 </div>
-                                 <div class="swipe-right">
-                                  <img src="image\assets\images\promo\left-arrow.png" id="button-product-right" onclick="swipeRight">
-                                 </div> -->
+                                                  <img src="image\assets\images\promo\left-arrow.png" id="button-product-left" onclick="swipeLeft">
+                                                 </div>
+                                                 <div class="swipe-right">
+                                                  <img src="image\assets\images\promo\left-arrow.png" id="button-product-right" onclick="swipeRight">
+                                                 </div> -->
             <div class="slider">
                 <!-- <div class="card-wrapper swiper-wrapper"> -->
                 <div class="product-card card-1 swiper-slide">
@@ -228,44 +222,44 @@
                 </div>
 
                 <!-- <div class="product-card card-2 swiper-slide" id="dibimbingberkelompok">
-                                   <div class="product-image"><img class="img-fluid" alt="" src="image/assets/images/banner/program_3.png"/></div>
-                                   <div class="card-content">
-                                    <h3>Dibimbing Berkelompok</h3>
-                                    <p>Lulus cepet bareng bestie itu idaman gak sih? Coba bimbingan rame-rame, cuma 3 bulan bisa kelar skripsi bareng Tutor idaman kalian!</p>
-                                    <div class="bottom">
-                                     <button class="btn product-btn btn-pc" id="join-now-2">Daftar Sekarang</button>
-                                     <button class="btn product-btn btn-mobile"><a class="links-hidden" href="dibimbing-kelompok.html">Daftar Sekarang</a></button></div>
-                                    </div>
-                                  </div>
-                                  <div class="product-card card-3 swiper-slide" id="webinarskripsi">
-                                   <div class="product-image"><img class="img-fluid" alt="" src="image/assets/images/banner/program_1.png"/></div>
-                                   <div class="card-content">
-                                    <h3>Webinar Skripsi</h3>
-                                    <p>Skripsi kelar hanya gara-gara dengerin Tutor bahas materi lewat layar kalian loh, yuk ikut sekarang!</p>
-                                    <div class="bottom">
-                                     <button class="btn product-btn btn-pc" id="join-now-3">Cek Jadwal</button>
-                                     <button class="btn product-btn btn-mobile"><a class="links-hidden" href="dibimbing-sekali.html">Cek Jadwal</a></button></div>
-                                    </div>
-                                  </div>
-                                  <div class="product-card card-4 swiper-slide" id="dibimbinggratis">
-                                   <div class="product-image"><img class="img-fluid" alt="" src="image/assets/images/banner/program_1.png"/></div>
-                                   <div class="card-content">
-                                    <h3>Dibimbing Gratis</h3>
-                                    <p>Eh apanih? Coba bimbingan yuk, siapa tau kamu tercerahkan sama yang gratis-gratis. Eits, tapi kuotanya terbatas ya</p>
-                                    <div class="bottom">
-                                     <button class="btn product-btn btn-pc" id="join-now-4">Daftar Sekarang</button>
-                                     <button class="btn product-btn btn-mobile"><a class="links-hidden" href="dibimbing-sekali.html">Daftar Sekarang</a></button></div>
-                                    </div>
-                                  </div>
-                                  <div class="product-card card-5 swiper-slide" id="ebookskripsi">
-                                   <div class="product-image"><img class="img-fluid" alt="" src="image/assets/images/banner/program_1.png"/></div>
-                                   <div class="card-content">
-                                    <h3>E-book Skripsi</h3>
-                                    <p>Baca e-booknya biar skripsimu cepet kelar. Sssttt, banyak tipsnya loh!</p>
-                                    <div class="bottom">
-                                     <button class="btn product-btn btn-pc" id="join-now-5">Selengkapnya</button>
-                                     <button class="btn product-btn btn-mobile"><a class="links-hidden" href="dibimbing-sekali.html">Selengkapnya</a></button></div>
-                                    </div> -->
+                                                   <div class="product-image"><img class="img-fluid" alt="" src="image/assets/images/banner/program_3.png"/></div>
+                                                   <div class="card-content">
+                                                    <h3>Dibimbing Berkelompok</h3>
+                                                    <p>Lulus cepet bareng bestie itu idaman gak sih? Coba bimbingan rame-rame, cuma 3 bulan bisa kelar skripsi bareng Tutor idaman kalian!</p>
+                                                    <div class="bottom">
+                                                     <button class="btn product-btn btn-pc" id="join-now-2">Daftar Sekarang</button>
+                                                     <button class="btn product-btn btn-mobile"><a class="links-hidden" href="dibimbing-kelompok.html">Daftar Sekarang</a></button></div>
+                                                    </div>
+                                                  </div>
+                                                  <div class="product-card card-3 swiper-slide" id="webinarskripsi">
+                                                   <div class="product-image"><img class="img-fluid" alt="" src="image/assets/images/banner/program_1.png"/></div>
+                                                   <div class="card-content">
+                                                    <h3>Webinar Skripsi</h3>
+                                                    <p>Skripsi kelar hanya gara-gara dengerin Tutor bahas materi lewat layar kalian loh, yuk ikut sekarang!</p>
+                                                    <div class="bottom">
+                                                     <button class="btn product-btn btn-pc" id="join-now-3">Cek Jadwal</button>
+                                                     <button class="btn product-btn btn-mobile"><a class="links-hidden" href="dibimbing-sekali.html">Cek Jadwal</a></button></div>
+                                                    </div>
+                                                  </div>
+                                                  <div class="product-card card-4 swiper-slide" id="dibimbinggratis">
+                                                   <div class="product-image"><img class="img-fluid" alt="" src="image/assets/images/banner/program_1.png"/></div>
+                                                   <div class="card-content">
+                                                    <h3>Dibimbing Gratis</h3>
+                                                    <p>Eh apanih? Coba bimbingan yuk, siapa tau kamu tercerahkan sama yang gratis-gratis. Eits, tapi kuotanya terbatas ya</p>
+                                                    <div class="bottom">
+                                                     <button class="btn product-btn btn-pc" id="join-now-4">Daftar Sekarang</button>
+                                                     <button class="btn product-btn btn-mobile"><a class="links-hidden" href="dibimbing-sekali.html">Daftar Sekarang</a></button></div>
+                                                    </div>
+                                                  </div>
+                                                  <div class="product-card card-5 swiper-slide" id="ebookskripsi">
+                                                   <div class="product-image"><img class="img-fluid" alt="" src="image/assets/images/banner/program_1.png"/></div>
+                                                   <div class="card-content">
+                                                    <h3>E-book Skripsi</h3>
+                                                    <p>Baca e-booknya biar skripsimu cepet kelar. Sssttt, banyak tipsnya loh!</p>
+                                                    <div class="bottom">
+                                                     <button class="btn product-btn btn-pc" id="join-now-5">Selengkapnya</button>
+                                                     <button class="btn product-btn btn-mobile"><a class="links-hidden" href="dibimbing-sekali.html">Selengkapnya</a></button></div>
+                                                    </div> -->
                 <!-- </div> -->
             </div>
         </div>
@@ -457,13 +451,13 @@
                         </div>
                     </td>
                     <!-- <div class="video-2">
-                                   <td>
-                                    <li style="list-style: none;" id="list-video">
-                                    <ul id="items-video"><img alt="" src="assets/icons/video-logo.jpeg" width="250px" height="140px"/></ul>
-                                    <ul id="items-video"><img alt="" src="assets/icons/video-logo.jpeg" width="250px" height="140px"/></ul>
-                                    <ul id="items-video"><img alt="" src="assets/icons/video-logo.jpeg" width="250px" height="140px"/></ul>
-                                   </li>
-                                   </td> -->
+                                                   <td>
+                                                    <li style="list-style: none;" id="list-video">
+                                                    <ul id="items-video"><img alt="" src="assets/icons/video-logo.jpeg" width="250px" height="140px"/></ul>
+                                                    <ul id="items-video"><img alt="" src="assets/icons/video-logo.jpeg" width="250px" height="140px"/></ul>
+                                                    <ul id="items-video"><img alt="" src="assets/icons/video-logo.jpeg" width="250px" height="140px"/></ul>
+                                                   </li>
+                                                   </td> -->
                     <!-- </div> -->
                 </tr>
             </table>

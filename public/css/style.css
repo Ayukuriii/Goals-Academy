@@ -1,3 +1,10 @@
+.form-control {
+    height: 40px !important;
+}
+.input-group-append {
+    height: 40px;
+}
+
 /* Notification Panel */
 .notification-panel {
     display: flex;
@@ -113,6 +120,10 @@
     font-weight: bold;
     color: #ffff;
     border: none;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
 }
 
 #popup-diskon {

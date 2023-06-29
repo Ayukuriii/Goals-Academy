@@ -10,7 +10,7 @@
     <link href="image/site.webmanifest" rel="manifest" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="{{ asset('css/style-password.css') }}" rel="stylesheet"/> <!-- // style ubah password -->
+    <link href="{{ asset('css/style-password.css') }}" rel="stylesheet" /> <!-- // style ubah password -->
 
     <title>Goals Academy</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -31,18 +31,32 @@
         <div class="content container-fluid d-flex flex-column justify-content-center align-items-center">
             <div class="card d-flex justify-content-center align-items-center">
                 <h1 class="fw-bold">Email Verification</h1>
-                <p class="mt-1 mx-3 text-center text-masukkanpassword"> 
-                    @if ($message = Session::get('email-send'))
-                        {{ $message }}
+                <p class="mt-1 mx-3 text-center text-masukkanpassword">
+                    @if (session('email-send'))
+                        {{ session('email-send') }}
                     @endif
-                    @if ($message = Session::get('email-verified'))
-                        {{ $message }}
+                    @if (session('email-verified'))
+                        {{ session('email-verified') }}
                     @endif
                 </p>
-                
-                <form action="/email/verify/resend-verification">
-                    <button class="" id="join-now-1">Kirim Ulang Tautan</button>
-                </form>
+                @if (session('email-send'))
+                    <form action="/email/verify/resend-verification">
+                        <button class="" id="join-now-1">Kirim Ulang Tautan</button>
+                    </form>
+                    <small>
+                        <a href="/">
+                            <p>Kembali ke halaman awal.</p>
+                        </a>
+                    </small>
+                @else
+                    <small>
+                        <br>
+                        <a href="/">
+                            <p>Kembali ke halaman awal.</p>
+                        </a>
+                    </small>
+                @endif
+
                 <p>
                     @if ($message = Session::get('resend'))
                         {{ $message }}
