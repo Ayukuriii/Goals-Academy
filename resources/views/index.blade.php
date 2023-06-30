@@ -11,7 +11,6 @@
     </div>
     <!-- End Notification Panel -->
 
-
     <!-- Toast Login -->
     @if (session()->has('login'))
         <div class="toast-container position-fixed bottom-0 end-0 p-2">
@@ -54,15 +53,11 @@
                     <div class="input-group mb-3 hero-btn justify-content-between">
                         @csrf
                         <div class="input-group-prepend">
-                            <input type="email" class="form-control" placeholder="Masukkan Email"
-                                aria-label="Masukkan Email" aria-describedby="basic-addon2" name="email-code"
-                                id="email-diskon" required>
+                            <input type="email" class="form-control" placeholder="Masukkan Email" aria-label="Masukkan Email" aria-describedby="basic-addon2" name="email-code" id="email-diskon" required>
                             <!-- Input Email -->
                         </div>
                         <div class="input-group-append">
-                            <button class="btn btn-outline-secondary" style="margin-top: 0" id="dapatkan-diskon"
-                                type="submit">Dapatkan
-                                Diskon</button>
+                            <button class="btn btn-outline-secondary" style="margin-top: 0" id="dapatkan-diskon" type="submit">Dapatkan Diskon</button>
                             <!-- Button Dapatkan Diskon -->
                         </div>
                     </div>
@@ -112,7 +107,6 @@
         </div>
     </div>
     <!-- End Promo -->
-
 
     <!-- Reason -->
     <div class="reason-container" id="media">

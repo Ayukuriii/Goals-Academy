@@ -82,6 +82,14 @@ Route::middleware('auth', 'auth.session', 'verified')->group(function () {
     Route::get('/profile/{id}', [ProfileController::class, 'detail']);
 });
 
+Route::get('/login', function() {
+    return view('auth.login');
+});
+
+Route::get('/register', function() {
+    return view('auth.register');
+});
+
 Route::post('/login', [AuthController::class, 'post_login'])->name('login');
 Route::post('/logout', [AuthController::class, 'post_logout'])->name('logout');
 

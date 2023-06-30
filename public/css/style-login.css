@@ -1,12 +1,12 @@
 
 .popup-container {
     display: none;
-    position: fixed; 
+    position: fixed;
     left: 0;
     top: 0;
-    width: 100%; 
-    height: 100%; 
-    background-color: rgb(0,0,0); 
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.4);
     overflow: auto;
     justify-content: center;
@@ -16,12 +16,12 @@
 .modal-container {
     z-index: 100;
     display: none;
-    position: fixed; 
+    position: fixed;
     left: 0;
     top: 0;
-    width: 100%; 
-    height: 100%; 
-    background-color: rgb(0,0,0); 
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.4);
     overflow: auto;
     justify-content: center;
@@ -120,23 +120,9 @@
     color: #363434;
     letter-spacing: 1px;
     text-align: center;
-    font-size: 12px;  
+    font-size: 12px;
     font-weight: normal;
     margin-top: 15px;
-}
-
-#email {
-    border: 1px solid #959595;
-    border-radius: 8px;
-    width: 350px;
-    height: 40px;
-}
-
-#password {
-    border: 1px solid #959595;
-    border-radius: 8px;
-    width: 350px;
-    height: 40px;
 }
 
 .form-group input:valid {
@@ -155,10 +141,6 @@
 
 .form-group {
     padding: 5px;
-}
-
-.form-group input {
-    padding-left: 2px;
 }
 
 #next-submit {
@@ -272,7 +254,6 @@
 }
 
 .card-login {
-    width: 100%;
     max-width: 438px;
     height: 380px;
     background-color: #fff;
@@ -282,7 +263,6 @@
     margin-right: auto;
     align-items: center;
     padding: 20px;
-
 }
 
 .form-login {
@@ -305,7 +285,7 @@
     color: #363434;
     letter-spacing: 1px;
     text-align: center;
-    font-size: 12px;  
+    font-size: 12px;
     font-weight: normal;
     margin-top: 3px;
     margin-bottom: 0px;
@@ -359,12 +339,7 @@
 }
 
 .form-register {
-    width: 100%;
     max-width: 800px;
-    margin: auto;
-    justify-content: space-between;
-    display: flex;
-    flex-wrap: wrap;
     padding: 20px;
 }
 
@@ -381,13 +356,6 @@
     margin-top: 10px;
 }
 
-.form-register input {
-    width: 340px;
-    height: 50px;
-    border-radius: 10px;
-    border: 1px solid #5B5555;
-}
-
 #submit-register {
     background-color: #959595;
     border-radius: 12px;
@@ -395,7 +363,5 @@
     color: #fff;
     border: none;
     margin-top: 10px;
-    width: 350px;
-    height: 33px;
     letter-spacing: 2px;
 }

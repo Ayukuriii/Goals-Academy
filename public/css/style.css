@@ -1114,6 +1114,10 @@
     color: white;
 }
 
+.bg-orange {
+    background-color: #ff8854;
+}
+
 @media (max-width: 1080px) {
     .hero-image {
         right: 1%;
