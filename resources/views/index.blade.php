@@ -12,32 +12,16 @@
     <!-- End Notification Panel -->
 
 
-    <!-- Toast Register/Login -->
-    @if (session()->has('success'))
-        <div class="toast-container position-fixed top-1 end-0 p-3">
-            <div id="myToast" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive"
-                aria-atomic="true">
-                <div class="d-flex">
-                    <div class="toast-body">
-                        {{ session('success') }}
-                    </div>
-                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
-                        aria-label="Close"></button>
-                </div>
-            </div>
-        </div>
-    @endif
-
+    <!-- Toast Login -->
     @if (session()->has('login'))
-        <div class="toast-container position-fixed top-1 end-0 p-3">
-            <div id="myToast" class="toast align-items-center text-bg-primary border-0" role="alert"
+        <div class="toast-container position-fixed bottom-0 end-0 p-2">
+            <div id="myToast" class="toast text-bg-orange border-0" role="alert"
                 aria-live="assertive" aria-atomic="true">
                 <div class="d-flex">
                     <div class="toast-body">
-                        {{ session('login') }}
+                        {!! session('login') !!}
                     </div>
-                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
-                        aria-label="Close"></button>
+                    <button type="button" class="btn-close btn-close-white me-3 mt-2" data-bs-dismiss="toast" aria-label="Close"></button>
                 </div>
             </div>
         </div>
