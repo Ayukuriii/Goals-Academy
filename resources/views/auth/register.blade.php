@@ -49,29 +49,29 @@
                                 <div class="col-12 col-xl-6">
                                     <div class="form-group w-100">
                                         <label for="name">Nama Lengkap</label>
-                                        <input type="text" name="name" class="form-control" id="name" required/>
+                                        <input type="text" name="name" class="form-control" id="name" placeholder=" " required/>
                                     </div>
                                     <div class="form-group w-100">
                                         <label for="email">Email</label>
-                                        <input type="email" name="email" class="form-control" id="email" required/>
+                                        <input type="email" name="email" class="form-control" id="email" placeholder=" " required/>
                                     </div>
                                     <div class="form-group w-100">
                                         <label for="university">Universitas</label>
-                                        <input type="text" name="university" class="form-control" id="university" required/>
+                                        <input type="text" name="university" class="form-control" id="university" placeholder=" " required/>
                                     </div>
                                 </div>
                                 <div class="col-12 col-xl-6">
                                     <div class="form-group w-100">
                                         <label for="phone_number">No. Telp</label>
-                                        <input type="text" name="phone_number" class="form-control" id="university"required/>
+                                        <input type="text" name="phone_number" class="form-control" id="phone_number" placeholder=" " required/>
                                     </div>
                                     <div class="form-group w-100">
                                         <label for="password">Password* (Minimal 8 Karakter)</label>
-                                        <input type="password" name="password" class="form-control" id="password" required/>
+                                        <input type="password" name="password" class="form-control" id="password" placeholder=" " required/>
                                     </div>
                                     <div class="form-group w-100">
                                         <label for="major">Jurusan</label>
-                                        <input type="text" name="major" class="form-control" id="major"required>
+                                        <input type="text" name="major" class="form-control" id="major" placeholder=" " required>
                                     </div>
                                 </div>
                                 <div class="col-12">

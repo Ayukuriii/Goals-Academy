@@ -12,47 +12,87 @@ $(".navbar-toggler").click(function () {
 });
 
 // Login
-var input = document.getElementById("email");
-var button = document.getElementById("next-submit");
-input.addEventListener("change", function () {
-    if (input.value != "") {
-        input.style.border = "1px solid #FE7E1F";
-        button.style.backgroundColor = "#FE7E1F";
-    } else {
-        input.style.border = "";
-        button.style.backgroundColor = "";
-    }
-});
+// var input = document.getElementById("email");
+// var button = document.getElementById("next-submit");
+// input.addEventListener("change", function () {
+//     if (input.value != "") {
+//         input.style.border = "1px solid #FE7E1F";
+//         button.style.backgroundColor = "#FE7E1F";
+//     } else {
+//         input.style.border = "";
+//         button.style.backgroundColor = "";
+//     }
+// });
 
-var input = document.getElementsByClassName("form-control");
-var button = document.getElementById("submit-login");
+var $loginInput = $(".form-login .form-control");
+var $loginButton = $("#submit-login")[0];
+var $registerInput = $(".form-register .form-control");
+var $registerButton = $("#submit-register")[0];
 
-for (var i = 0; i < input.length; i++) {
-    input[i].addEventListener("change", function () {
-        if (this.value != "") {
-            this.style.border = "1px solid #FE7E1F";
-            button.style.backgroundColor = "#FE7E1F";
+function checkInput() {
+    var trigger = false;
+    $loginInput.each(function() {
+        if ($(this).val()) {
+            trigger = true;
         } else {
-            this.style.border = "";
-            button.style.backgroundColor = "";
+            trigger = false;
+            return false;
         }
-    });
+    })
+    return trigger;
 }
+
+function updateButton() {
+    checkInput() ? $loginButton.style.backgroundColor='#fe7e1f' : $loginButton.style.backgroundColor='';
+}
+
+$loginInput.each($(this).change(updateButton))
+
+function checkInput() {
+    var trigger = false;
+    $registerInput.each(function() {
+        if ($(this).val()) {
+            trigger = true;
+        } else {
+            trigger = false;
+            return false;
+        }
+    })
+    return trigger;
+}
+
+function updateButton() {
+    checkInput() ? $registerButton.style.backgroundColor='#fe7e1f' : $registerButton.style.backgroundColor='';
+}
+
+$registerInput.each($(this).change(updateButton))
+
+// for (var i = 0; i < input.length; i++) {
+//     input[i].addEventListener("change", function () {
+//         if (this.value != "") {
+//             // this.style.border = "1px solid #FE7E1F";
+//             button.style.backgroundColor = "#FE7E1F";
+//         } else {
+//             // this.style.border = "";
+//             button.style.backgroundColor = "";
+//         }
+//     });
+// }
 
 // Notification - Panel
-const notiificationPanel = document.querySelector(".notification-panel");
-const closeBtn = document.querySelector("#button-1");
+// const notiificationPanel = document.querySelector(".notification-panel");
+// const closeBtn = document.querySelector("#button-1");
 
-function closeNotificationPanel() {
-    notiificationPanel.style.display = "none";
-}
+// function closeNotificationPanel() {
+//     notiificationPanel.style.display = "none";
+// }
 
-closeBtn.addEventListener("click", closeNotificationPanel);
+// closeBtn.addEventListener("click", closeNotificationPanel);
 
-// Close Notification Panel
-$(".panel-icon").click(function () {
-    $(".notification-panel").hide();
-});
+// // Close Notification Panel
+// $(".panel-icon").click(function () {
+//     $(".notification-panel").hide();
+// });
 
 // Promo
 

@@ -50,14 +50,14 @@
                         @csrf
                         <div class="form-group w-100" style="margin-top: 10px;">
                             <label for="email">Email</label>
-                            <input type="email" name="email" class="form-control" id="email" required/>
+                            <input type="email" name="email" class="form-control" id="email" placeholder=" " required/>
                         </div>
                         <div class="form-group w-100">
                             <label for="password">Password</label>
-                            <input type="password" name="password" class="form-control" id="password" required/>
+                            <input type="password" name="password" class="form-control" id="password" placeholder=" " required/>
                         </div>
                         <div class="form-button">
-                            <button type="submit" class="btn btn-center" id="submit-login">Login</button>
+                            <button type="submit" class="btn btn-center w-100" id="submit-login">Login</button>
                         <p><a href="/auth/lupa-password">Lupa Password?</a></p>
                         </div>
                     </form>
@@ -86,9 +86,9 @@
     <!-- Animate AOS -->
 	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 	<script>AOS.init(); </script>
+    <!-- JavaScript links -->
+    <script src="{{ asset('js/main.js') }}"></script>
 </body>
-<!-- JavaScript links -->
-<script type="text/javascript" src="js/main.js"></script>
 
 </html>
 

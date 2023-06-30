@@ -129,7 +129,6 @@
     border: 2px solid #FE7E1F;
   }
 
-
 .orange-border {
     border: 1px solid #FE7E1F;
 }
@@ -294,12 +293,9 @@
 #submit-login {
     background-color: #959595;
     border-radius: 12px;
-    font-size: 16px;
     color: #fff;
     border: none;
     margin-top: 10px;
-    width: 350px;
-    height: 33px;
     letter-spacing: 2px;
 }
 
