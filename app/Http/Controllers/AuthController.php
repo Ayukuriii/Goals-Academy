@@ -23,7 +23,7 @@ class AuthController extends Controller
         ]);
 
         $validateData['password'] = Hash::make($validateData['password']);
-        
+
         $user = User::create($validateData);
 
         event(new Registered($user));
@@ -45,7 +45,10 @@ class AuthController extends Controller
 
         if (Auth::attempt($credentials)){
             $request->session()->regenerate();
-            return redirect()->intended('/')->with('login', 'Welcome back!');
+            return redirect()->intended('/')->with('login',
+            '<h5>Login Berhasil</h5>
+            <p>Selamat Datang! Kini kamu dapat menikmati berbagai fitur dan program Goals Academy</p>'
+        );
         }
         return back()->with('loginError', 'Email or Password incorrect');
     }
@@ -53,11 +56,11 @@ class AuthController extends Controller
     // memproses akses logout
     public function post_logout(Request $request){
         Auth::logout();
- 
+
         $request->session()->invalidate();
-    
+
         $request->session()->regenerateToken();
-    
+
         return redirect('/');
     }
 }

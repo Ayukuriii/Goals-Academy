@@ -1,6 +1,11 @@
 .form-control {
     height: 40px !important;
 }
+
+.form-control:not(:placeholder-shown) {
+    border: 2px solid #c5221f;
+}
+
 .input-group-append {
     height: 40px;
 }
@@ -669,25 +674,25 @@
         flex-direction: column;
         position: relative;
     }
-    
-    
+
+
     .video-content .btn-play i{
         font-size: 60px;
     }
-    
-    .btn-play:hover { 
+
+    .btn-play:hover {
         color: #fff;
         background: transparent;
         border: 3px solid #fff;
     }
-    
+
     .mfp-hide {
         position: relative;
         display: none !important;
         max-width: 75%;
         margin: 0 auto;
     }
-    
+
     iframe {
         width: 900px;
         height: 500px;
@@ -1106,6 +1111,15 @@
 
 .testimoni-cards .test-card .rating li {
     color: #ffce31;
+}
+
+.text-bg-orange {
+    background-color: #ff8854;
+    color: white;
+}
+
+.bg-orange {
+    background-color: #ff8854;
 }
 
 @media (max-width: 1080px) {

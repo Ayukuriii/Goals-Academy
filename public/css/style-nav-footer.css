@@ -37,11 +37,6 @@
     flex-grow: 0;
 }
 
-.nav-item a:hover {
-    background-color: #ff8854;
-    color: #363434;
-}
-
 .dropdown:hover .dropdown-menu {
     display: block;
 }
@@ -52,10 +47,6 @@
 
 .dropdown-item:hover {
     background-color: #ff8854;
-}
-
-#dropdown-profile:hover {
-    background-color: #ffff;
 }
 
 .dropdown-item,
