@@ -82,10 +82,14 @@ Route::middleware('auth', 'auth.session', 'verified')->group(function () {
     Route::get('/profile/{id}', [ProfileController::class, 'detail']);
 });
 
+
+
+Route::get('/login', [AuthController::class, 'get_login']);
+Route::get('/register', [AuthController::class, 'get_register']);
+Route::post('/register', [AuthController::class, 'post_register'])->name('register');
 Route::post('/login', [AuthController::class, 'post_login'])->name('login');
 Route::post('/logout', [AuthController::class, 'post_logout'])->name('logout');
 
-Route::post('/register', [AuthController::class, 'post_register'])->name('register');
 Route::get('/email/verify/email-verification', [VerificationController::class, 'notice'])->middleware('auth')->name('verification.notice');
 Route::get('/email/verify/{id}/{hash}', [VerificationController::class, 'verify'])->middleware('auth', 'signed')->name('verification.verify');
 Route::get('/email/verify/resend-verification', [VerificationController::class, 'resend'])->middleware('auth', 'throttle:6,1')->name('verification.resend');
