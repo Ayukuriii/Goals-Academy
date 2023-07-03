@@ -17,7 +17,7 @@
 	<script src="https://kit.fontawesome.com/1c256bdeea.js" crossorigin="anonymous"></script>
 	<link href="{{ asset('css/style-nav-footer.css') }}" rel="stylesheet" /> <!-- // style navbar & footer -->
 	<link href="{{ asset('css/style.css') }}" rel="stylesheet" /> <!-- // style main -->
-	<link href="{{ asset('css/style-login.css') }}" rel="stylesheet" /> <!-- // style login -->
+	<link href="{{ asset('css/style-form.css') }}" rel="stylesheet" /> <!-- // style login -->
 	<link href="{{ asset('css/style-karir.css') }}" rel="stylesheet" /> <!-- // style karir -->
 	<link href="{{ asset('css/style-user.css') }}" rel="stylesheet" /> <!-- style profile user -->
 	<link href="{{ asset('css/style-comingsoon.css') }}" rel="stylesheet" /> <!-- style coming soon -->
@@ -35,12 +35,11 @@
 <body class="d-flex align-items-center h-100 py-4 bg-orange">
 
     <main class="w-100 m-auto">
-        <div class="d-flex container align-items-center">
-            <div class="welcome-login-register d-none d-xl-block">
+        <div class="d-xl-flex container align-items-center justify-content-center">
+            <div class="col-xl-6 text-light text-center py-5">
                 <h1>Selamat Datang di</h1>
-
-                <div class="photo-login">
-                    <img alt="" src="image\assets\icons\LOGO PRIMARY_PUTIH.png" width="320px" height="185px" style="margin: auto;">
+                <div class="d-flex align-items-center pt-4 pt-xl-5 mt-2">
+                    <img class="col-4 col-xl-6" src="{{ asset('image\assets\icons\LOGO PRIMARY_PUTIH.png') }}" style="margin: auto;">
                 </div>
             </div>
             <div class="card-login w-100">
@@ -91,6 +90,7 @@
 	<script>AOS.init(); </script>
     <!-- JavaScript links -->
     <script src="{{ asset('js/main.js') }}"></script>
+    <script src="{{ asset('js/login.js') }}"></script>
 </body>
 
 </html>

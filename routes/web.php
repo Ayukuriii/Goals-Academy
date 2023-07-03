@@ -77,12 +77,30 @@ Route::get('/auth/lupa-password', function () {
     ]);
 });
 
+Route::get('/admin', function () {
+    return view('dashboard.admin.index', ['title' => 'Admin']);
+});
+
+Route::get('/admin/atur_jadwal', function () {
+    return view('dashboard.admin.atur-jadwal', ['title' => 'Admin']);
+});
+
+Route::get('/admin/bimbingan', function () {
+    return view('dashboard.admin.bimbingan', ['title' => 'Admin']);
+});
+
+Route::get('/admin/list_user', function () {
+    return view('dashboard.admin.list-user', ['title' => 'Admin']);
+});
+
+Route::get('/admin/tambah_user', function () {
+    return view('dashboard.admin.tambah-user', ['title' => 'Admin']);
+});
+
 Route::middleware('auth', 'auth.session', 'verified')->group(function () {
     Route::get('/profile', [ProfileController::class, 'index']);
     Route::get('/profile/{id}', [ProfileController::class, 'detail']);
 });
-
-
 
 Route::get('/login', [AuthController::class, 'get_login']);
 Route::get('/register', [AuthController::class, 'get_register']);
