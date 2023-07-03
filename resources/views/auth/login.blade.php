@@ -73,7 +73,10 @@
                         </button>
                     </div>
                 </div>
-                <p class="text-center" style="font-size: 12px; color: #363434;">Belum punya akun? <span class="fw-bold text-decoration-none" id="next-register" style="cursor: pointer">Daftar</p>
+                <p class="text-center" style="font-size: 12px; color: #363434;">
+                    Belum punya akun?
+                    <a href="/register" class="fw-bold text-decoration-none" id="next-register" style="cursor: pointer">Daftar</a>
+                </p>
             </div>
         </div>
     </main>
