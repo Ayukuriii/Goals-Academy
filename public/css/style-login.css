@@ -61,31 +61,6 @@
     cursor: pointer;
 }
 
-
-.welcome-login-register {
-    width: 100%;
-    max-width: 490px;
-    height: 250px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 15px;
-    margin-bottom: 50px;
-}
-
-.welcome-login-register h1{
-    font-size: 15px;
-    text-align: center;
-    color: #FFFF;
-}
-
-.photo-login {
-    padding-top: 15px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 350px;
-    height: 200px;
-}
-
 .card-login-register {
     width: 100%;
     max-width: 438px;
@@ -126,15 +101,15 @@
 }
 
 .form-group input:valid {
-    border: 2px solid #FE7E1F;
+    border: 2px solid #FF8854;
   }
 
 .orange-border {
-    border: 1px solid #FE7E1F;
+    border: 1px solid #FF8854;
 }
 
 .orange-button {
-    background-color: #FE7E1F;
+    background-color: #FF8854;
     color: white;
 }
 
@@ -161,16 +136,8 @@
     text-align: right;
     font-size: 12px;
     color: #EA4335;
-    padding-top: 5px;
 }
 
-.form-button {
-    width: 100%;
-    margin-right: auto;
-    margin-left: auto;
-    text-align: center;
-    margin-top: 10px;
-}
 .card-button {
     display: flex;
     flex-direction: wrap;
@@ -227,16 +194,6 @@
     transition: 0.5 ease;
 }
 
-.welcome-login-register {
-    width: 100%;
-    max-width: 490px;
-    height: 250px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 15px;
-    margin-bottom: 50px;
-}
-
 .welcome-login-register h1{
     font-size: 40px;
     font-weight: bold;
@@ -244,24 +201,14 @@
     color: #FFFF;
 }
 
-.photo-login {
-    padding-top: 15px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 350px;
-    height: 200px;
-}
-
 .card-login {
     max-width: 438px;
-    height: 380px;
-    background-color: #fff;
+    background-color: white;
     /* box-shadow: 0 2px 4px rgba(0, 4.0, 4.0, 0.5); */
     border-radius: 12px;
-    margin-left: auto ;
-    margin-right: auto;
+    margin: 0 auto;
     align-items: center;
-    padding: 20px;
+    padding: 50px;
 }
 
 .form-login {
@@ -303,10 +250,8 @@
 .register-content {
     justify-content: center;
     align-items: center;
-    width: 1100px;
-    min-height: 500px;
-	background: #fff;
-    padding: 54px 48px;
+	background: white;
+    padding: 100px 160px;
     border-radius: 24px;
     transition: 0.5 ease;
 }
@@ -334,11 +279,6 @@
     display: none;
 }
 
-.form-register {
-    max-width: 800px;
-    padding: 20px;
-}
-
 .form-register .form-group {
     font-size: 10px;
     color: #363434;
@@ -358,6 +298,11 @@
     font-size: 16px;
     color: #fff;
     border: none;
-    margin-top: 10px;
     letter-spacing: 2px;
+}
+
+@media (max-width: 1200px) {
+    .register-content {
+        padding: 10% 10%;
+    }
 }

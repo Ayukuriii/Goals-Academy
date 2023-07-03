@@ -3,7 +3,7 @@
 }
 
 .form-control:not(:placeholder-shown) {
-    border: 2px solid #c5221f;
+    border: 2px solid black;
 }
 
 .input-group-append {
@@ -1122,6 +1122,10 @@
     background-color: #ff8854;
 }
 
+.bg-xl-orange {
+    background-color: #ff8854;
+}
+
 @media (max-width: 1080px) {
     .hero-image {
         right: 1%;
@@ -1172,6 +1176,11 @@
     }
 }
 
+@media (max-width: 1200px) {
+    .bg-xl-orange {
+        background-color: white;
+    }
+}
 @media (max-width: 985px) {
     .notification-panel {
         height: fit-content;
