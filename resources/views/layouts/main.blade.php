@@ -8,16 +8,16 @@
 	<link href="image/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" /> <!-- Logo Title -->
 	<link href="image/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" /> <!-- Logo Title -->
 	<link href="image/site.webmanifest" rel="manifest" /><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
+
     <title>Goals Academy | {{ $title }}</title><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    
+
     <!-- Bootstrap -->
     <link href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 	<!-- Fontawesome -->
 	<script src="https://kit.fontawesome.com/1c256bdeea.js" crossorigin="anonymous"></script>
 	<link href="{{ asset('css/style-nav-footer.css') }}" rel="stylesheet" /> <!-- // style navbar & footer -->
 	<link href="{{ asset('css/style.css') }}" rel="stylesheet" /> <!-- // style main -->
-	<link href="{{ asset('css/style-login.css') }}" rel="stylesheet" /> <!-- // style login -->
+	<link href="{{ asset('css/style-form.css') }}" rel="stylesheet" /> <!-- // style login -->
 	<link href="{{ asset('css/style-karir.css') }}" rel="stylesheet" /> <!-- // style karir -->
 	<link href="{{ asset('css/style-user.css') }}" rel="stylesheet" /> <!-- style profile user -->
 	<link href="{{ asset('css/style-comingsoon.css') }}" rel="stylesheet" /> <!-- style coming soon -->
@@ -34,16 +34,16 @@
 
 <body class="{{ Request::is('/') ? 'style-nav-footer-body' : 'comingsoon-body' }}">
     @include('partials.navbar')
-    
+
     @yield('container')
-    
+
     <footer class="footer-container">
         @include('partials.footer')
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
-    
+
     <!-- Bootstrap Javascript Links -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Animate AOS -->

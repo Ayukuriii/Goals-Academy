@@ -7,9 +7,9 @@
         <div class="row gap-4">
 
             @include('dashboard.user.layouts.sidebar')
-            
+
                 <div class="card col ml-3 p-4 side-program">
-                
+
                     @if ($collections->count())
                     <h1 class="card-title">Program Yang Sedang Berlangsung</h1>
                     @foreach ($collections as $collection)
@@ -26,12 +26,12 @@
                             </div>
                             <p class="detail-product"><a href="/profile/{{ $collection->id }}">Lihat Detail</a></p>
                         </div>
-                        </div>
+                    </div>
                     </div>
                     @endforeach
                     @else
-                    <div class="card-body d-flex flex-column justify-content-center align-items-center text-center">
-                        <p >Kamu belum bergabung di program apapun</p>
+                    <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                        <p>Kamu belum bergabung di program apapun</p>
                         <a href="#" class="btn">Cari Program</a>
                     </div>
                     @endif

@@ -17,7 +17,7 @@
 	<script src="https://kit.fontawesome.com/1c256bdeea.js" crossorigin="anonymous"></script>
 	<link href="{{ asset('css/style-nav-footer.css') }}" rel="stylesheet" /> <!-- // style navbar & footer -->
 	<link href="{{ asset('css/style.css') }}" rel="stylesheet" /> <!-- // style main -->
-	<link href="{{ asset('css/style-login.css') }}" rel="stylesheet" /> <!-- // style login -->
+	<link href="{{ asset('css/style-form.css') }}" rel="stylesheet" /> <!-- // style login -->
 	<link href="{{ asset('css/style-karir.css') }}" rel="stylesheet" /> <!-- // style karir -->
 	<link href="{{ asset('css/style-user.css') }}" rel="stylesheet" /> <!-- style profile user -->
 	<link href="{{ asset('css/style-comingsoon.css') }}" rel="stylesheet" /> <!-- style coming soon -->

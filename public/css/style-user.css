@@ -20,13 +20,6 @@
     letter-spacing: 1px;
 }
 
-.side-profile .btn {
-    font-size: 15px;
-    border-radius: 5px;
-    width: 175px;
-    letter-spacing: 1px;
-}
-
 .side-program {
     border-radius: 12px;
     margin-left: 20px;
@@ -40,12 +33,6 @@
 
 .side-program .card-body {
     padding: 0px;
-}
-
-#user-profile .btn {
-    background-color: #ff8854;
-    border: none;
-    color: #ffff;
 }
 
 .side-program .product-item {
