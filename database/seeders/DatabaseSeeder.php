@@ -34,7 +34,7 @@ class DatabaseSeeder extends Seeder
             'university'    => 'Cambridge',
             'major' => 'Software Engineering',
             'user_level' => 'admin',
-            'password'      => bcrypt('admin'),
+            'password'      => bcrypt('admin123'),
             'email_verified_at' => now()
         ]);
         User::create([
@@ -44,7 +44,7 @@ class DatabaseSeeder extends Seeder
             'university'    => 'Cambridge',
             'major' => 'Software Engineering',
             'user_level' => 'moderator',
-            'password'      => bcrypt('moderator'),
+            'password'      => bcrypt('moderator123'),
             'email_verified_at' => now()
         ]);
         User::create([
@@ -54,7 +54,7 @@ class DatabaseSeeder extends Seeder
             'university'    => 'Cambridge',
             'major' => 'Software Engineering',
             'user_level' => 'tutor',
-            'password'      => bcrypt('tutor'),
+            'password'      => bcrypt('tutor123'),
             'email_verified_at' => now()
         ]);
         User::create([
