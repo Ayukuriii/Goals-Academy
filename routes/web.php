@@ -86,8 +86,8 @@ Route::middleware('auth', 'auth.session', 'verified')->group(function () {
     Route::get('/profile/{id}', [ProfileController::class, 'detail']);
 });
 
-Route::get('/login', [AuthController::class, 'get_login']);
-Route::get('/register', [AuthController::class, 'get_register']);
+Route::get('/login', [AuthController::class, 'get_login'])->middleware('guest');
+Route::get('/register', [AuthController::class, 'get_register'])->middleware('guest');
 Route::post('/register', [AuthController::class, 'post_register'])->name('register');
 Route::post('/login', [AuthController::class, 'post_login'])->name('login');
 Route::post('/logout', [AuthController::class, 'post_logout'])->name('logout');
@@ -118,6 +118,7 @@ Route::group(['middleware' => ['auth']], function () {
 });
 
 // Route Admin
+
 Route::get('/admin', [AdminController::class, 'index'])->name('admin');
 Route::get('/admin/atur_jadwal', [AdminController::class, 'atur_jadwal'])->name('admin.atur-jadwal');
 Route::get('/admin/bimbingan', [AdminController::class, 'bimbingan'])->name('admin.bimbingan');
