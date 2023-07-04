@@ -1152,8 +1152,8 @@
 .btn-nav {
     background-color: white;
     border-radius: 12px;
-    border: 2px solid black;
-    color: black;
+    border: 1px solid #807D7D;
+    color: #807D7D;
     text-decoration: none;
 }
 

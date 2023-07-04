@@ -28,14 +28,46 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         User::create([
+            'name'  => 'admin',
+            'email' => 'admin@gmail.com',
+            'phone_number'  => '089231231231',
+            'university'    => 'Cambridge',
+            'major' => 'Software Engineering',
+            'user_level' => 'admin',
+            'password'      => bcrypt('admin'),
+            'email_verified_at' => now()
+        ]);
+        User::create([
+            'name'  => 'Moderator',
+            'email' => 'moderator@gmail.com',
+            'phone_number'  => '089123123123',
+            'university'    => 'Cambridge',
+            'major' => 'Software Engineering',
+            'user_level' => 'moderator',
+            'password'      => bcrypt('moderator'),
+            'email_verified_at' => now()
+        ]);
+        User::create([
+            'name'  => 'tutor',
+            'email' => 'tutor@gmail.com',
+            'phone_number'  => '089321321321',
+            'university'    => 'Cambridge',
+            'major' => 'Software Engineering',
+            'user_level' => 'tutor',
+            'password'      => bcrypt('tutor'),
+            'email_verified_at' => now()
+        ]);
+        User::create([
             'name'  => 'Ekadian Haris',
             'email' => 'ekadianharis@gmail.com',
             'phone_number'  => '087763420873',
             'university'    => 'Politeknik Negeri Malang',
             'major' => 'Teknik Elektronika',
-            'password'      => bcrypt('qwe12334')
+            'user_level' => 'user',
+            'password'      => bcrypt('qwe12334'),
+            'email_verified_at' => now()
         ]);
-        
+
         ProgramService::create([
             'title' => 'Dibimbing Online',
             'description' => 'Bimbingan skripsi untuk mahasiswa tingkat akhir yang dilaksanakan secara online, durasi 30 menit.',
@@ -70,15 +102,16 @@ class DatabaseSeeder extends Seeder
         ]);
 
         OngoingProgram::create([
-            'user_id' => 1,
+            'user_id' => 4,
             'program_services_id' => 1,
             'tutor_id' => 1,
             'payment_status_id' => 1,
             'program_session_id' => 1,
-            'date' => now()->addDays(7)
+            'date' => now()->addDays(7),
+            'links' => 'www.google.com'
         ]);
         OngoingProgram::create([
-            'user_id' => 1,
+            'user_id' => 4,
             'program_services_id' => 2,
             'tutor_id' => 2,
             'payment_status_id' => 1,

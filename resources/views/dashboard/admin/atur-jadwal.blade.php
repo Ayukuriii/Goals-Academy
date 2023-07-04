@@ -1,4 +1,4 @@
-@extends('dashboard.admin.layouts.main')
+@extends('dashboard.layouts.main')
 
 @section('container')
     {{-- {{ dd($collections) }} --}}

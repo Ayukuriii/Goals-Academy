@@ -1,4 +1,4 @@
-@extends('dashboard.admin.layouts.main')
+@extends('dashboard.layouts.main')
 
 @section('container')
     {{-- {{ dd($collections) }} --}}
@@ -14,27 +14,33 @@
                         @csrf
                         <div class="col-6 mb-3">
                             <label class="form-label small" for="nama">NAMA</label>
-                            <input type="text" name="nama" class="form-control" id="nama" placeholder=" " required/>
+                            <input type="text" name="nama" class="form-control" id="nama" placeholder=" "
+                                required />
                         </div>
                         <div class="col-6 mb-3">
                             <label class="form-label small" for="universitas">UNIVERSITAS</label>
-                            <input type="text" name="universitas" class="form-control" id="universitas" placeholder=" " required/>
+                            <input type="text" name="universitas" class="form-control" id="universitas" placeholder=" "
+                                required />
                         </div>
                         <div class="col-6 mb-3">
                             <label class="form-label small" for="email">EMAIL</label>
-                            <input type="email" name="email" class="form-control" id="email" placeholder=" " required/>
+                            <input type="email" name="email" class="form-control" id="email" placeholder=" "
+                                required />
                         </div>
                         <div class="col-6 mb-3">
                             <label class="form-label small" for="jurusan">JURUSAN</label>
-                            <input type="text" name="jurusan" class="form-control" id="jurusan" placeholder=" " required/>
+                            <input type="text" name="jurusan" class="form-control" id="jurusan" placeholder=" "
+                                required />
                         </div>
                         <div class="col-6 mb-3">
                             <label class="form-label small" for="nomor_hp">NOMOR HP.</label>
-                            <input type="text" name="nomor_hp" class="form-control" id="nomor_hp" placeholder=" " required/>
+                            <input type="text" name="nomor_hp" class="form-control" id="nomor_hp" placeholder=" "
+                                required />
                         </div>
                         <div class="col-6 mb-3">
                             <label class="form-label small" for="password">PASSWORD</label>
-                            <input type="password" name="password" class="form-control" id="password" placeholder=" " required/>
+                            <input type="password" name="password" class="form-control" id="password" placeholder=" "
+                                required />
                         </div>
                         <div class="col-6 mb-3">
                             <label class="form-label small" for="user_level">USER LEVEL</label>
@@ -46,13 +52,14 @@
                             </select>
                         </div>
                         <div class="col-6 mb-3 d-flex justify-content-end pt-4">
-                            <input class="btn-orange px-4 d-inline text-end small" id="button" type="submit" value="Simpan">
+                            <input class="btn-orange px-4 d-inline text-end small" id="button" type="submit"
+                                value="Simpan">
                         </div>
                     </form>
-                    </div>
                 </div>
             </div>
         </div>
+        </div>
     </section>
     <!-- Last Page -->
-   @endsection
+@endsection

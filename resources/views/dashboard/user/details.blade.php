@@ -1,13 +1,13 @@
-@extends('dashboard.user.layouts.main')
+@extends('dashboard.layouts.main')
 
 @section('container')
     {{-- {{ dd($data->tutor_notes) }} --}}
     <!-- Isi Page -->
     <section class="container mb-5" id="user-profile">
         <div class="row gap-4">
-            
-            @include('dashboard.user.layouts.sidebar')
-            
+
+            @include('dashboard.user.partials.sidebar')
+
             <div class="card col ml-3 side-program py-3">
                 <h1 class="card-title">{{ $data->program->title }}</h1>
                 <table class="table">
@@ -42,8 +42,9 @@
                         </tr>
                         <tr>
                             <td>TEMPAT</td>
-                            <td><a href="#">Link Zoom</a></td>
-                        </tr>
+                            <td><a href="{{ strpos($data->links, 'http') === 0 ? $data->links : 'https://' . $data->links }}">Link
+                                    Zoom</a></td>
+                        </tr>   
                     </tbody>
                 </table>
 
@@ -57,4 +58,4 @@
         </div>
     </section>
     <!-- Last Page -->
-   @endsection
+@endsection

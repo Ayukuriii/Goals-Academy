@@ -1,4 +1,4 @@
-@extends('dashboard.admin.layouts.main')
+@extends('dashboard.layouts.main')
 
 @section('container')
     {{-- {{ dd($collections) }} --}}
@@ -75,4 +75,4 @@
         </div>
     </section>
     <!-- Last Page -->
-   @endsection
+@endsection

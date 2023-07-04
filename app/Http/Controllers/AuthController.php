@@ -54,10 +54,15 @@ class AuthController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended('/')->with('login',
-                '<h5>Login Berhasil</h5>
-                <p>Selamat Datang! Kini kamu dapat menikmati berbagai fitur dan program Goals Academy</p>'
-            );
+            if (auth()->user()->user_level === 'user') {
+                return redirect()->intended('/')->with(
+                    'login',
+                    '<h5>Login Berhasil</h5>
+                    <p>Selamat Datang! Kini kamu dapat menikmati berbagai fitur dan program Goals Academy</p>'
+                );
+            } else {
+                return redirect()->intended('/dashboard');
+            }
         }
         return back()->with('loginError', 'Email or Password incorrect');
     }
