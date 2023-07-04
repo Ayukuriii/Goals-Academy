@@ -117,22 +117,9 @@ Route::group(['middleware' => ['auth']], function () {
     });
 });
 
-Route::get('/admin', function () {
-    return view('dashboard.admin.index', ['title' => 'Admin']);
-});
-
-Route::get('/admin/atur_jadwal', function () {
-    return view('dashboard.admin.atur-jadwal', ['title' => 'Admin']);
-});
-
-Route::get('/admin/bimbingan', function () {
-    return view('dashboard.admin.bimbingan', ['title' => 'Admin']);
-});
-
-Route::get('/admin/list_user', function () {
-    return view('dashboard.admin.list-user', ['title' => 'Admin']);
-});
-
-Route::get('/admin/tambah_user', function () {
-    return view('dashboard.admin.tambah-user', ['title' => 'Admin']);
-});
+Route::get('/admin', [AdminController::class, 'index']);
+Route::get('/admin/atur_jadwal', [AdminController::class, 'atur_jadwal']);
+Route::get('/admin/bimbingan', [AdminController::class, 'bimbingan']);
+Route::get('/admin/list_user', [AdminController::class, 'list_user'])->name('admin.list_user');
+Route::get('/admin/tambah_user/create', [AdminController::class, 'create'])->name('admin.create');
+Route::post('/admin/tambah_user/store', [AdminController::class, 'store'])->name('admin.store');
