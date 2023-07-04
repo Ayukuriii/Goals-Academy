@@ -15,32 +15,32 @@
                         <div class="form-group col-6 mb-2">
                             <label class="form-label small" for="nama">NAMA</label>
                             <input type="text" name="nama" class="form-control" id="nama" placeholder=" "
-                                required />
+                                disabled/>
                         </div>
                         <div class="form-group col-6 mb-2">
                             <label class="form-label small" for="universitas">UNIVERSITAS</label>
                             <input type="text" name="universitas" class="form-control" id="universitas" placeholder=" "
-                                required />
+                                disabled />
                         </div>
                         <div class="form-group col-6 mb-2">
                             <label class="form-label small" for="email">EMAIL</label>
                             <input type="email" name="email" class="form-control" id="email" placeholder=" "
-                                required />
+                                disabled />
                         </div>
                         <div class="form-group col-6 mb-2">
                             <label class="form-label small" for="jurusan">JURUSAN</label>
                             <input type="text" name="jurusan" class="form-control" id="jurusan" placeholder=" "
-                                required />
+                                disabled />
                         </div>
                         <div class="form-group col-6 mb-2">
                             <label class="form-label small" for="nomor_hp">NOMOR HP.</label>
                             <input type="text" name="nomor_hp" class="form-control" id="nomor_hp" placeholder=" "
-                                required />
+                                disabled />
                         </div>
                         <div class="form-group col-6 mb-2">
                             <label class="form-label small" for="pembelian">PEMBELIAN</label>
                             <input type="text" name="pembelian" class="form-control" id="pembelian" placeholder=" "
-                                required />
+                                disabled />
                         </div>
                         <div class="form-group col-6 mb-2">
                             <label class="form-label small" for="jadwal">JADWAL</label>

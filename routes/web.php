@@ -128,3 +128,10 @@ Route::get('/admin/tambah_user', [AdminController::class, 'tambah_user'])->name(
 Route::get('/moderator', [ModeratorController::class, 'index'])->name('moderator');
 Route::get('/moderator/atur_jadwal', [ModeratorController::class, 'atur_jadwal'])->name('moderator.atur-jadwal');
 Route::get('/moderator/edit_jadwal', [ModeratorController::class, 'edit_jadwal'])->name('moderator.edit-jadwal');
+
+// Route Tutor
+Route::get('/tutor', [TutorController::class, 'index'])->name('tutor');
+Route::get('/tutor/bimbingan', [TutorController::class, 'bimbingan'])->name('tutor');
+Route::get('/tutor/riwayat', [TutorController::class, 'riwayat'])->name('tutor');
+Route::get('/tutor/edit', [TutorController::class, 'edit'])->name('tutor');
+Route::get('/tutor/detail', [TutorController::class, 'detail'])->name('tutor');
