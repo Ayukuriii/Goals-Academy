@@ -121,8 +121,9 @@ Route::group(['middleware' => ['auth']], function () {
 Route::get('/admin', [AdminController::class, 'index'])->name('admin');
 Route::get('/admin/atur_jadwal', [AdminController::class, 'atur_jadwal'])->name('admin.atur-jadwal');
 Route::get('/admin/bimbingan', [AdminController::class, 'bimbingan'])->name('admin.bimbingan');
-Route::get('/admin/list_user', [AdminController::class, 'list_user'])->name('admin.list-user');
-Route::get('/admin/tambah_user', [AdminController::class, 'tambah_user'])->name('admin.tambah_user');
+Route::get('/admin/list_user', [AdminController::class, 'list_user'])->name('admin.list_user');
+Route::get('/admin/tambah_user/create', [AdminController::class, 'create'])->name('admin.create');
+Route::post('/admin/tambah_user/store', [AdminController::class, 'store'])->name('admin.store');
 
 // Route Moderator
 Route::get('/moderator', [ModeratorController::class, 'index'])->name('moderator');

@@ -13,19 +13,25 @@
                     <div
                         class="col-3 gap-3 d-flex text-center align-items-center justify-content-center d-inline-block border rounded py-4 px-3">
                         <div class="d-inline-block text-warning h1 mx-0"><i class="bi bi-exclamation-lg"></i></div>
-                        <div class="d-inline-block h3">5</div>
+                        <div class="d-inline-block h3">
+                            {{ $emptylink }}
+                        </div>
                         <div class="d-inline-block w-75 text-start">Link Masih Kosong</div>
                     </div>
                     <div
                         class="col-3 gap-3 d-flex text-center align-items-center justify-content-center d-inline-block border rounded py-4 px-3">
                         <div class="d-inline-block text-warning h1 mx-0"><i class="bi bi-exclamation-lg"></i></div>
-                        <div class="d-inline-block h3">6</div>
+                        <div class="d-inline-block h3">
+                            {{ $datas->count() }}
+                        </div>
                         <div class="d-inline-block w-75 text-start">Bimbingan Baru</div>
                     </div>
                     <div
                         class="col-3 gap-3 d-flex text-center align-items-center justify-content-center d-inline-block border rounded py-4 px-3">
                         <div class="d-inline-block text-info h1 mx-0"><i class="bi bi-check-all"></i></div>
-                        <div class="d-inline-block h3">10</div>
+                        <div class="d-inline-block h3">
+                            {{ $datas->count() }}
+                        </div>
                         <div class="d-inline-block w-75 text-start">Total Bimbingan</div>
                     </div>
                 </div>

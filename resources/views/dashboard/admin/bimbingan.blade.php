@@ -26,48 +26,37 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Ekadian Haris</td>
-                                <td>Dibimbing Sekali</td>
-                                <td>Jumat - 04 Juli</td>
-                                <td>10.10</td>
-                                <td>BERLANGSUNG</td>
-                                <td class="h4">
-                                    <div class="d-flex gap-2">
-                                        <a href="#" class="text-decoration-none">
-                                            <i class="bi bi-pencil-square text-success"></i>
-                                        </a>
-                                        <a href="#" class="text-decoration-none">
-                                            <i class="bi bi-eye text-dark"></i>
-                                        </a>
-                                        <a href="#" class="text-decoration-none">
-                                            <i class="bi bi-check-lg text-orange"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Akhmad Roziqin</td>
-                                <td>Dibimbing Berkelompok</td>
-                                <td>Jumat - 04 Juli</td>
-                                <td>18.00</td>
-                                <td>AKAN BERLANGSUNG</td>
-                                <td class="h4">
-                                    <div class="d-flex gap-2">
-                                        <a href="#" class="text-decoration-none">
-                                            <i class="bi bi-pencil-square text-success"></i>
-                                        </a>
-                                        <a href="#" class="text-decoration-none">
-                                            <i class="bi bi-eye text-dark"></i>
-                                        </a>
-                                        <a href="#" class="text-decoration-none">
-                                            <i class="bi bi-check-lg text-orange"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
+                            @foreach ($datas as $data)
+                                <tr>
+                                    <td>{{ $loop->iteration }}</td>
+                                    <td>{{ $data->user->name }}</td>
+                                    <td>{{ $data->program->title }}</td>
+                                    <td>{{ \Carbon\Carbon::parse($data->date)->toFormattedDateString() }}</td>
+                                    <td>{{ $data->program_session->sesi }}</td>
+                                    <td>
+                                        @if (\Carbon\Carbon::now() < $data->date)
+                                            AKAN BERLANGSUNG
+                                        @elseif (\Carbon\Carbon::now() >= $data->date && \Carbon\Carbon::now() <= \Carbon\Carbon::parse($data->date)->addHour())
+                                            BERLANGSUNG
+                                        @else
+                                            SELESAI
+                                        @endif
+                                    </td>
+                                    <td class="h4">
+                                        <div class="d-flex gap-2">
+                                            <a href="#" class="text-decoration-none">
+                                                <i class="bi bi-pencil-square text-success"></i>
+                                            </a>
+                                            <a href="#" class="text-decoration-none">
+                                                <i class="bi bi-eye text-dark"></i>
+                                            </a>
+                                            <a href="#" class="text-decoration-none">
+                                                <i class="bi bi-check-lg text-orange"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

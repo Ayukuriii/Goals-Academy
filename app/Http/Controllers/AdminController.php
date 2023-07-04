@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
+use App\Models\User;
 use Illuminate\Http\Request;
+use App\Models\OngoingProgram;
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
@@ -11,27 +15,34 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('dashboard.admin.index', ['title' => 'Admin']);
+        // $datas = OngoingProgram::where('links', '=', null)->count();
+        // dd($datas);
+        return view('dashboard.admin.index', [
+            'title' => 'Admin',
+            'datas' => OngoingProgram::all(),
+            'emptylink' => OngoingProgram::where('links', '=', null)->count()
+        ]);
     }
-
     public function atur_jadwal()
     {
-        return view('dashboard.admin.atur-jadwal', ['title' => 'Admin']);
+        return view('dashboard.admin.atur-jadwal', [
+            'title' => 'Admin',
+            'datas' => OngoingProgram::all()
+        ]);
     }
-
     public function bimbingan()
     {
-        return view('dashboard.admin.bimbingan', ['title' => 'Admin']);
+        return view('dashboard.admin.bimbingan', [
+            'title' => 'Admin',
+            'datas' => OngoingProgram::all()
+        ]);
     }
-
     public function list_user()
     {
-        return view('dashboard.admin.list-user', ['title' => 'Admin']);
-    }
-
-    public function tambah_user()
-    {
-        return view('dashboard.admin.tambah-user', ['title' => 'Admin']);
+        return view('dashboard.admin.list_user', [
+            'title' => 'Admin',
+            'datas' => User::all()
+        ]);
     }
 
     /**
@@ -39,7 +50,9 @@ class AdminController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.admin.tambah_user', [
+            'title' => 'Admin'
+        ]);
     }
 
     /**
@@ -47,7 +60,22 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request);
+        $validateData = $request->validate([
+            'name' => 'required|max:255',
+            'email' => 'required|email|unique:users',
+            'phone_number' => 'required',
+            'university' => 'required',
+            'major' => 'required',
+            'password' => 'required',
+            'user_level' => 'required'
+        ]);
+
+        $validateData['password'] = Hash::make($validateData['password']);
+
+        // dd($validateData);
+        User::create($validateData);
+        return redirect()->route('admin.list_user');
     }
 
     /**
