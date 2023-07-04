@@ -51,33 +51,29 @@
                         @csrf
                         <div class="form-register pt-4 m-auto">
                             <div class="row">
-                                <div class="col-12 col-md-6">
-                                    <div class="form-group w-100">
-                                        <label for="name">Nama Lengkap</label>
-                                        <input type="text" name="name" class="form-control" id="name" placeholder=" " required/>
-                                    </div>
-                                    <div class="form-group w-100">
-                                        <label for="email">Email</label>
-                                        <input type="email" name="email" class="form-control" id="email" placeholder=" " required/>
-                                    </div>
-                                    <div class="form-group w-100">
-                                        <label for="university">Universitas</label>
-                                        <input type="text" name="university" class="form-control" id="university" placeholder=" " required/>
-                                    </div>
+                                <div class="col-6 form-group">
+                                    <label for="name">Nama Lengkap</label>
+                                    <input type="text" name="name" class="form-control" id="name" placeholder=" " required/>
                                 </div>
-                                <div class="col-12 col-md-6">
-                                    <div class="form-group w-100">
-                                        <label for="phone_number">No. Telp</label>
-                                        <input type="text" name="phone_number" class="form-control" id="phone_number" placeholder=" " required/>
-                                    </div>
-                                    <div class="form-group w-100">
-                                        <label for="password">Password* (Minimal 8 Karakter)</label>
-                                        <input type="password" name="password" class="form-control" id="password" placeholder=" " required/>
-                                    </div>
-                                    <div class="form-group w-100">
-                                        <label for="major">Jurusan</label>
-                                        <input type="text" name="major" class="form-control" id="major" placeholder=" " required>
-                                    </div>
+                                <div class="col-6 form-group">
+                                    <label for="phone_number">No. Telp</label>
+                                    <input type="text" name="phone_number" class="form-control" id="phone_number" placeholder=" " required/>
+                                </div>
+                                <div class="col-6 form-group">
+                                    <label for="university">Universitas</label>
+                                    <input type="text" name="university" class="form-control" id="university" placeholder=" " required/>
+                                </div>
+                                <div class="col-6 form-group">
+                                    <label for="major">Jurusan</label>
+                                    <input type="text" name="major" class="form-control" id="major" placeholder=" " required>
+                                </div>
+                                <div class="col-6 form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" name="email" class="form-control" id="email" placeholder=" " required/>
+                                </div>
+                                <div class="col-6 form-group">
+                                    <label for="password">Password* (Minimal 8 Karakter)</label>
+                                    <input type="password" name="password" class="form-control" id="password" placeholder=" " required/>
                                 </div>
                                 <div class="col-12 mt-3">
                                     <div class="row">
@@ -88,7 +84,7 @@
                                             </div>
                                         </div>
                                         <div class="form-button col-6">
-                                            <button type="submit" class="btn btn-center w-100" id="submit-register">Register</button>
+                                            <button type="submit" class="btn btn-orange-static w-100" id="submit-register" disabled>Register</button>
                                         </div>
                                     </div>
                                 </div>
@@ -109,10 +105,10 @@
 	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 	<script>AOS.init(); </script>
 
-    <script src="{{ asset('js/register.js') }}"></script>
+    <script src="{{ asset('js/form.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/main.js') }}"></script>
 </body>
 <!-- JavaScript links -->
-<script type="text/javascript" src="js/main.js"></script>
 
 </html>
 

@@ -1149,6 +1149,28 @@
     text-decoration: none;
 }
 
+.btn-orange-static {
+    background-color: #ff8854;
+    border-radius: 12px;
+    border: 2px solid #ff8854;
+    color: white;
+    text-decoration: none;
+}
+
+.btn-orange-static:hover {
+    background-color: #ff6f31;
+    border-radius: 12px;
+    border: 2px solid #ff6f31;
+    color: white;
+    text-decoration: none;
+}
+
+.btn-orange-static:disabled {
+    background-color: #807d7d;
+    border-color: #807d7d;
+    color: white;
+}
+
 .btn-nav {
     background-color: white;
     border-radius: 12px;
@@ -1158,7 +1180,7 @@
 }
 
 .btn-orange:hover, .btn-nav:hover {
-    background-color: unset;
+    background-color: white;
     border-color: #ff8854;
     color: #ff8854;
 }

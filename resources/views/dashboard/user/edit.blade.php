@@ -19,4 +19,4 @@
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
     <!-- Last Page -->
-@endsection
+   @endsection

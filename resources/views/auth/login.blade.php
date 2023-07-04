@@ -43,7 +43,7 @@
                 </div>
             </div>
             <div class="card-login w-100">
-                <h3>Login/Register</h3>
+                <h3>Login</h3>
                 <div class="form-login">
                     <form action="/login" method="POST">
                         @csrf
@@ -56,7 +56,7 @@
                             <input type="password" name="password" class="form-control" id="password" placeholder=" " required/>
                         </div>
                         <div class="form-button">
-                            <button type="submit" class="btn btn-center w-100" id="submit-login">Login</button>
+                            <button type="submit" class="btn btn-orange-static w-100" id="submit-login" disabled>Login</button>
                         <p><a href="/auth/lupa-password">Lupa Password?</a></p>
                         </div>
                     </form>
@@ -90,7 +90,7 @@
 	<script>AOS.init(); </script>
     <!-- JavaScript links -->
     <script src="{{ asset('js/main.js') }}"></script>
-    <script src="{{ asset('js/login.js') }}"></script>
+    <script src="{{ asset('js/form.js') }}"></script>
 </body>
 
 </html>

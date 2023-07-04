@@ -3,7 +3,7 @@
 @section('container')
     {{-- {{ dd($collections) }} --}}
     <!-- Isi Page -->
-    <section class="container mb-5" id="user-profile">
+    <section class="container-fluid mb-5" id="user-profile">
         <div class="row gap-2">
             @include('dashboard.admin.partials.sidebar')
 
