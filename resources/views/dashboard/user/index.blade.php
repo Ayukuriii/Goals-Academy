@@ -1,4 +1,4 @@
-@extends('dashboard.user.layouts.main')
+@extends('dashboard.layouts.main')
 
 @section('container')
     {{-- {{ dd($collections) }} --}}
@@ -6,7 +6,7 @@
     <section class="container mb-5" id="user-profile">
         <div class="row gap-4">
 
-            @include('dashboard.user.layouts.sidebar')
+            @include('dashboard.user.partials.sidebar')
 
                 <div class="card col ml-3 p-4 side-program">
 

@@ -1,4 +1,4 @@
-@extends('dashboard.user.layouts.main')
+@extends('dashboard.layouts.main')
 
 @section('container')
     <!-- Isi Page -->
