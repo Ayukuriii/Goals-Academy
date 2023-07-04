@@ -117,22 +117,14 @@ Route::group(['middleware' => ['auth']], function () {
     });
 });
 
-Route::get('/admin', function () {
-    return view('dashboard.admin.index', ['title' => 'Admin']);
-});
+// Route Admin
+Route::get('/admin', [AdminController::class, 'index'])->name('admin');
+Route::get('/admin/atur_jadwal', [AdminController::class, 'atur_jadwal'])->name('admin.atur-jadwal');
+Route::get('/admin/bimbingan', [AdminController::class, 'bimbingan'])->name('admin.bimbingan');
+Route::get('/admin/list_user', [AdminController::class, 'list_user'])->name('admin.list-user');
+Route::get('/admin/tambah_user', [AdminController::class, 'tambah_user'])->name('admin.tambah_user');
 
-Route::get('/admin/atur_jadwal', function () {
-    return view('dashboard.admin.atur-jadwal', ['title' => 'Admin']);
-});
-
-Route::get('/admin/bimbingan', function () {
-    return view('dashboard.admin.bimbingan', ['title' => 'Admin']);
-});
-
-Route::get('/admin/list_user', function () {
-    return view('dashboard.admin.list-user', ['title' => 'Admin']);
-});
-
-Route::get('/admin/tambah_user', function () {
-    return view('dashboard.admin.tambah-user', ['title' => 'Admin']);
-});
+// Route Moderator
+Route::get('/moderator', [ModeratorController::class, 'index'])->name('moderator');
+Route::get('/moderator/atur_jadwal', [ModeratorController::class, 'atur_jadwal'])->name('moderator.atur-jadwal');
+Route::get('/moderator/edit_jadwal', [ModeratorController::class, 'edit_jadwal'])->name('moderator.edit-jadwal');

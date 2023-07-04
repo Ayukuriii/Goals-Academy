@@ -11,10 +11,27 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('dashboard.admin.index', [
-            'title' => 'Admin',
-            
-        ]);
+        return view('dashboard.admin.index', ['title' => 'Admin']);
+    }
+
+    public function atur_jadwal()
+    {
+        return view('dashboard.admin.atur-jadwal', ['title' => 'Admin']);
+    }
+
+    public function bimbingan()
+    {
+        return view('dashboard.admin.bimbingan', ['title' => 'Admin']);
+    }
+
+    public function list_user()
+    {
+        return view('dashboard.admin.list-user', ['title' => 'Admin']);
+    }
+
+    public function tambah_user()
+    {
+        return view('dashboard.admin.tambah-user', ['title' => 'Admin']);
     }
 
     /**
