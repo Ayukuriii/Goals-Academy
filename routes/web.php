@@ -117,9 +117,22 @@ Route::group(['middleware' => ['auth']], function () {
     });
 });
 
-Route::get('/admin', [AdminController::class, 'index']);
-Route::get('/admin/atur_jadwal', [AdminController::class, 'atur_jadwal']);
-Route::get('/admin/bimbingan', [AdminController::class, 'bimbingan']);
+// Route Admin
+Route::get('/admin', [AdminController::class, 'index'])->name('admin');
+Route::get('/admin/atur_jadwal', [AdminController::class, 'atur_jadwal'])->name('admin.atur-jadwal');
+Route::get('/admin/bimbingan', [AdminController::class, 'bimbingan'])->name('admin.bimbingan');
 Route::get('/admin/list_user', [AdminController::class, 'list_user'])->name('admin.list_user');
 Route::get('/admin/tambah_user/create', [AdminController::class, 'create'])->name('admin.create');
 Route::post('/admin/tambah_user/store', [AdminController::class, 'store'])->name('admin.store');
+
+// Route Moderator
+Route::get('/moderator', [ModeratorController::class, 'index'])->name('moderator');
+Route::get('/moderator/atur_jadwal', [ModeratorController::class, 'atur_jadwal'])->name('moderator.atur-jadwal');
+Route::get('/moderator/edit_jadwal', [ModeratorController::class, 'edit_jadwal'])->name('moderator.edit-jadwal');
+
+// Route Tutor
+Route::get('/tutor', [TutorController::class, 'index'])->name('tutor');
+Route::get('/tutor/bimbingan', [TutorController::class, 'bimbingan'])->name('tutor');
+Route::get('/tutor/riwayat', [TutorController::class, 'riwayat'])->name('tutor');
+Route::get('/tutor/edit', [TutorController::class, 'edit'])->name('tutor');
+Route::get('/tutor/detail', [TutorController::class, 'detail'])->name('tutor');

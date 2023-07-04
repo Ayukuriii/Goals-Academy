@@ -51,7 +51,7 @@
                                                 <i class="bi bi-eye text-dark"></i>
                                             </a>
                                             <a href="#" class="text-decoration-none">
-                                                <i class="bi bi-trash3 text-orange"></i>
+                                                <i class="bi bi-check-lg text-orange"></i>
                                             </a>
                                         </div>
                                     </td>

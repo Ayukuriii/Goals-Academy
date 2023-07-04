@@ -14,6 +14,16 @@ class ModeratorController extends Controller
         return view('dashboard.moderator.index', ['title' => 'Moderator']);
     }
 
+    public function atur_jadwal()
+    {
+        return view('dashboard.moderator.atur-jadwal', ['title' => 'Moderator']);
+    }
+
+    public function edit_jadwal()
+    {
+        return view('dashboard.moderator.edit-jadwal', ['title' => 'Moderator']);
+    }
+
     /**
      * Show the form for creating a new resource.
      */
