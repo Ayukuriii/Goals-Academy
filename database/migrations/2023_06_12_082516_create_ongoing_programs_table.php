@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('tutor_id');
             $table->string('payment_status_id');
             $table->string('program_session_id');
+            $table->string('links')->nullable();
             $table->date('date');
             $table->timestamps();
         });

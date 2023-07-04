@@ -72,4 +72,4 @@
         </div>
     </section>
     <!-- Last Page -->
-   @endsection
+@endsection

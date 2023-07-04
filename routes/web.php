@@ -1,9 +1,13 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\EmailController;
+use App\Http\Controllers\ModeratorController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TutorController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\VerificationController;
 
 /*
@@ -77,26 +81,6 @@ Route::get('/auth/lupa-password', function () {
     ]);
 });
 
-Route::get('/admin', function () {
-    return view('dashboard.admin.index', ['title' => 'Admin']);
-});
-
-Route::get('/admin/atur_jadwal', function () {
-    return view('dashboard.admin.atur-jadwal', ['title' => 'Admin']);
-});
-
-Route::get('/admin/bimbingan', function () {
-    return view('dashboard.admin.bimbingan', ['title' => 'Admin']);
-});
-
-Route::get('/admin/list_user', function () {
-    return view('dashboard.admin.list-user', ['title' => 'Admin']);
-});
-
-Route::get('/admin/tambah_user', function () {
-    return view('dashboard.admin.tambah-user', ['title' => 'Admin']);
-});
-
 Route::middleware('auth', 'auth.session', 'verified')->group(function () {
     Route::get('/profile', [ProfileController::class, 'index']);
     Route::get('/profile/{id}', [ProfileController::class, 'detail']);
@@ -118,3 +102,37 @@ Route::get('/test', function () {
     ]);
 });
 Route::post('/send-email', [EmailController::class, 'sendEmail']);
+
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/dashboard', function () {
+        if (auth()->user()->user_level === 'admin') {
+            return app(AdminController::class)->index();
+        } elseif (auth()->user()->user_level === 'moderator') {
+            return app(ModeratorController::class)->index();
+        } elseif (auth()->user()->user_level === 'tutor') {
+            return app(TutorController::class)->index();
+        } else {
+            return app(UserController::class)->index();
+        }
+    });
+});
+
+Route::get('/admin', function () {
+    return view('dashboard.admin.index', ['title' => 'Admin']);
+});
+
+Route::get('/admin/atur_jadwal', function () {
+    return view('dashboard.admin.atur-jadwal', ['title' => 'Admin']);
+});
+
+Route::get('/admin/bimbingan', function () {
+    return view('dashboard.admin.bimbingan', ['title' => 'Admin']);
+});
+
+Route::get('/admin/list_user', function () {
+    return view('dashboard.admin.list-user', ['title' => 'Admin']);
+});
+
+Route::get('/admin/tambah_user', function () {
+    return view('dashboard.admin.tambah-user', ['title' => 'Admin']);
+});
