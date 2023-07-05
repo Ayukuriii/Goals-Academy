@@ -33,6 +33,6 @@ class TutorController extends Controller
 
     public function detail()
     {
-        return view('dashboard.tutor.bimbingan.detail', ['title' => 'Tutor']);
+        return view('dashboard.tutor.bimbingan.detail-bimbingan', ['title' => 'Tutor']);
     }
 }

@@ -28,6 +28,7 @@ class AuthController extends Controller
         ]);
 
         $validateData['password'] = Hash::make($validateData['password']);
+        $validateData['user_level'] = 'user';
 
         $user = User::create($validateData);
 

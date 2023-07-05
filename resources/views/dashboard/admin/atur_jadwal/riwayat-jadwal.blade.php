@@ -9,8 +9,7 @@
 
             <div class="card col ml-3 p-4 side-program">
                 <div class="d-flex justify-content-between">
-                    <h3 class="d-inline text-purple fw-bold">Atur Jadwal</h3>
-                    <a href="/admin/riwayat_jadwal" class="d-inline btn-outline-orange py-2 px-4 small">Riwayat</a>
+                    <h3 class="d-inline text-purple fw-bold">Riwayat Jadwal</h3>
                 </div>
                 <div class="p-2 mt-2">
                     <table class="table">
@@ -22,7 +21,6 @@
                                 <th>Hari/Tanggal</th>
                                 <th>Sesi</th>
                                 <th>Status Link</th>
-                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -40,16 +38,6 @@
                                         @else
                                             TERISI
                                         @endif
-                                    </td>
-                                    <td class="h4">
-                                        <div class="d-flex gap-2">
-                                            <a href="/admin/edit_jadwal" class="text-decoration-none">
-                                                <i class="bi bi-pencil-square text-success"></i>
-                                            </a>
-                                            <a href="#" class="text-decoration-none">
-                                                <i class="bi bi-check-lg text-orange"></i>
-                                            </a>
-                                        </div>
                                     </td>
                                 </tr>
                             @endforeach

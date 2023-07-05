@@ -19,7 +19,6 @@ class ModeratorController extends Controller
             'emptylink' => OngoingProgram::where('links', '=', null)->count()
         ]);
     }
-
     public function atur_jadwal()
     {
         return view('dashboard.moderator.atur_jadwal.atur-jadwal', [

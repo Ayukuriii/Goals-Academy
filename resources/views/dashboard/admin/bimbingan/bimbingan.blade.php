@@ -10,7 +10,7 @@
             <div class="card col ml-3 p-4 side-program">
                 <div class="d-flex justify-content-between">
                     <h3 class="d-inline text-purple fw-bold">Bimbingan</h3>
-                    <a href="#" class="d-inline btn-outline-orange py-2 px-4 small">Riwayat</a>
+                    <a href="/admin/riwayat_bimbingan" class="d-inline btn-outline-orange py-2 px-4 small">Riwayat</a>
                 </div>
                 <div class="p-2 mt-2">
                     <table class="table">
@@ -47,7 +47,7 @@
                                             <a href="#" class="text-decoration-none">
                                                 <i class="bi bi-pencil-square text-success"></i>
                                             </a>
-                                            <a href="#" class="text-decoration-none">
+                                            <a href="/admin/detail_bimbingan" class="text-decoration-none">
                                                 <i class="bi bi-eye text-dark"></i>
                                             </a>
                                             <a href="#" class="text-decoration-none">
