@@ -8,10 +8,10 @@
         <p>Tahapan Seleksi</p>
       </div>
       <div class="photo-karir">
-        <img class="img-fluid" src="image/assets/icons/steps.svg" />
+        <img class="img-fluid" src="{{ asset('image/assets/icons/steps.svg') }}" />
       </div>
       <div class="photo-karir-mobile">
-        <img class="img-fluid" src="image/assets/icons/karir-mobile.svg" />
+        <img class="img-fluid" src="{{ asset('image/assets/icons/karir-mobile.svg') }}" />
       </div>
       {{-- <div class="karir-input">
         <!-- <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #ff8854;"></i> -->
@@ -33,7 +33,7 @@
             </p>
             <div class="top-karir">
               <img
-                src="image/assets/icons/job.png"
+                src="{{ asset('image/assets/icons/job.png') }}"
                 alt=""
                 width="70px"
                 height="70px"
@@ -58,7 +58,7 @@
                   <li>Berpengalaman dalam Penulisan dan Penelitian Karya Tulis</li>
                 </ul>
               </div>
-              <a id="submit" class="btn btn-karir" href="https://docs.google.com/forms/d/e/1FAIpQLSfzl7tOOgtIKlQ9La6zWw9T0qP9nNAtt_axagw80oo8qf9m_A/viewform?usp=sharing">
+              <a id="submit" class="btn-orange-static w-100 text-center py-1" href="https://docs.google.com/forms/d/e/1FAIpQLSfzl7tOOgtIKlQ9La6zWw9T0qP9nNAtt_axagw80oo8qf9m_A/viewform?usp=sharing">
                 Lamar
               </a>
             </div>
@@ -76,7 +76,7 @@
             </p>
             <div class="top-karir">
               <img
-                src="image/assets/icons/job.png"
+                src="{{ asset('image/assets/icons/job.png') }}"
                 alt=""
                 width="70px"
                 height="70px"
@@ -101,7 +101,7 @@
                   <li>Memiliki Kemauan untuk Mencari Jaringan Pemasaran Affiliasi</li>
                 </ul>
               </div>
-              <a id="submit" class="btn btn-karir" href="https://forms.gle/RqJtqzsMyhm3i2s27">Lamar</a>
+              <a id="submit" class="btn-orange-static w-100 text-center py-1" href="https://forms.gle/RqJtqzsMyhm3i2s27">Lamar</a>
             </div>
           </div>
           <div class="karir-card card-3">
@@ -117,7 +117,7 @@
             </p>
             <div class="top-karir">
               <img
-                src="image/assets/icons/job.png"
+                src="{{ asset('image/assets/icons/job.png') }}"
                 alt=""
                 width="70px"
                 height="70px"
@@ -142,97 +142,7 @@
                   <li>Memiliki Kemampuan Komunikasi yang Baik</li>
                 </ul>
               </div>
-              <a id="submit" class="btn btn-karir" href="https://docs.google.com/forms/d/e/1FAIpQLSfzl7tOOgtIKlQ9La6zWw9T0qP9nNAtt_axagw80oo8qf9m_A/viewform?usp=sharing">Lamar</a>
-            </div>
-          </div>
-          <div class="karir-card card-4">
-            <p
-              style="
-                text-align: right;
-                font-size: 9px;
-                font-style: italic;
-                color: #807d7d;
-              "
-            >
-              15 Juni 2023
-            </p>
-            <div class="top-karir">
-              <img
-                src="assets/icons/job.png"
-                alt=""
-                width="70px"
-                height="70px"
-              />
-              <div class="text-top-karir">
-                <h4 style="font-weight: bold; font-size: 15px">
-                  UI/UX Designer
-                </h4>
-                <h3 style="font-size: 10px">Internship</h3>
-              </div>
-              <div class="text-bottom-karir">
-                <hr />
-                <p
-                  style="font-weight: bold; font-size: 12px; padding-left: 20px"
-                >
-                  Kualifikasi:
-                </p>
-                <ul style="font-size: 9px;">
-                  <li>Familiar menggunakan figma</li>
-                  <li>Mampu mengilustrasikan ide desain menggunakan flowchart</li>
-                  <li>Memahami design system</li>
-                  <li>Mampu membuat wireframe, high-fidelity, dan prototyping</li>
-                  <li>Mempunyai portofolio UI/UX Design</li>
-                  <li>Mampu membuat design responsive (desktop, mobile, dan tablet)</li>
-                </ul>
-              </div>
-              <a id="submit" class="btn btn-karir" href="https://docs.google.com/forms/d/e/1FAIpQLSfzl7tOOgtIKlQ9La6zWw9T0qP9nNAtt_axagw80oo8qf9m_A/viewform?usp=sharing">
-                Lamar
-              </a>
-            </div>
-          </div>
-
-          <div class="karir-card card-5">
-            <p
-              style="
-                text-align: right;
-                font-size: 9px;
-                font-style: italic;
-                color: #807d7d;
-              "
-            >
-              15 Juni 2023
-            </p>
-            <div class="top-karir">
-              <img
-                src="assets/icons/job.png"
-                alt=""
-                width="70px"
-                height="70px"
-              />
-              <div class="text-top-karir">
-                <h4 style="font-weight: bold; font-size: 15px">
-                  Front-end Developer
-                </h4>
-                <h3 style="font-size: 10px">Internship</h3>
-              </div>
-              <div class="text-bottom-karir">
-                <hr />
-                <p
-                  style="font-weight: bold; font-size: 12px; padding-left: 20px"
-                >
-                  Kualifikasi:
-                </p>
-                <ul style="font-size: 9px;">
-                  <li>Menguasai dan mahir dalam penggunaan HTML, CSS, dan JavaScript</li>
-                  <li>Memiliki pengalaman menggunakan framework PHP, seperti laravel dan framework css, seperti Bootstrap.</li>
-                  <li>Mampu membangun dan mengoptimalisasi website</li>
-                  <li>Memahami browser Developer Tools</li>
-                  <li>Mmemiliki portofolio website menjadi nilai plus</li>
-                </ul>
-              </div>
-              <a id="submit" class="btn btn-karir" href="https://docs.google.com/forms/d/e/1FAIpQLSfzl7tOOgtIKlQ9La6zWw9T0qP9nNAtt_axagw80oo8qf9m_A/viewform?usp=sharing">
-                Lamar
-              </a>
+              <a id="submit" class="btn-orange-static w-100 text-center py-1" href="https://docs.google.com/forms/d/e/1FAIpQLSfzl7tOOgtIKlQ9La6zWw9T0qP9nNAtt_axagw80oo8qf9m_A/viewform?usp=sharing">Lamar</a>
             </div>
           </div>
         </div>

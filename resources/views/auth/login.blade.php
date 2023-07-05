@@ -56,7 +56,7 @@
                             <input type="password" name="password" class="form-control" id="password" placeholder=" " required/>
                         </div>
                         <div class="form-button">
-                            <button type="submit" class="btn btn-orange-static w-100" id="submit-login" disabled>Login</button>
+                            <button type="submit" class="btn-orange-static w-100" id="submit-login" disabled>Login</button>
                         <p><a href="/auth/lupa-password">Lupa Password?</a></p>
                         </div>
                     </form>

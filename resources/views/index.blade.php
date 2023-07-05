@@ -57,7 +57,7 @@
                             <!-- Input Email -->
                         </div>
                         <div class="input-group-append">
-                            <button class="btn btn-outline-secondary" style="margin-top: 0" id="dapatkan-diskon" type="submit">Dapatkan Diskon</button>
+                            <button class="btn-orange-static py-2" style="margin-top: 0" id="dapatkan-diskon" type="submit">Dapatkan Diskon</button>
                             <!-- Button Dapatkan Diskon -->
                         </div>
                     </div>
@@ -190,7 +190,7 @@
                         <p>Si introvert yang malu-malu kucing juga bisa konsultasi private sekali bareng Tutor Goals
                             kok. Langsung sikat!</p>
                         <div class="bottom">
-                            <button class="btn product-btn btn-pc" id="join-now-1">Daftar Sekarang</button>
+                            <button class="btn-orange-static py-2 product-btn btn-pc" id="join-now-1">Daftar Sekarang</button>
                             <!--button untuk pop up (>768px)-->
                             <button class="btn product-btn btn-mobile"><a class="links-hidden"
                                     href="dibimbing-sekali.html">Daftar Sekarang</a></button>
@@ -450,7 +450,7 @@
             <h3>Klik <span>Tanya Sekarang</span> untuk <span>konsultasi</span> ke kami <br>
                 mengenai rekomendasi program<br> yang cocok buat kamu.</h3>
         </div>
-        <button type="submit" class="btn btn-center"><a href="https://wa.me/6282147638286" alt="">Tanya
+        <button type="submit" class="btn-orange-static py-2"><a href="https://wa.me/6282147638286" alt="">Tanya
                 Sekarang</a></button>
     </div>
     <!-- End Daftar Sekarang -->

@@ -112,10 +112,7 @@
 
 #dapatkan-diskon {
     border-radius: 20px;
-    background-color: #ff8854;
     font-weight: bold;
-    color: #ffff;
-    border: none;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     -ms-border-radius: 20px;
@@ -456,11 +453,7 @@
 
 .bottom button {
     margin-top: 20px;
-    background-color: #ff8854;
     font-size: 16px;
-    color: #ffff;
-    border-radius: 10px;
-    border: none;
     width: 180px;
     height: 40px;
     z-index: 1;
@@ -727,9 +720,6 @@
 
 .daftar-container button {
     margin-left: 90px;
-    background-color: #fe7e1f;
-    border-radius: 12px;
-    border: none;
     margin-top: 10px;
     width: 243px;
     height: 55px;
@@ -1138,6 +1128,7 @@
 }
 
 .btn-orange-static {
+    align-self: center;
     background-color: #ff8854;
     border-radius: 12px;
     border: 2px solid #ff8854;
@@ -1147,10 +1138,12 @@
 
 .btn-orange-static:hover {
     background-color: #ff6f31;
-    border-radius: 12px;
     border: 2px solid #ff6f31;
-    color: white;
-    text-decoration: none;
+}
+
+.btn-orange-static:active {
+    background-color: #ff8854;
+    border: 2px solid #ff8854;
 }
 
 .btn-orange-static:disabled {

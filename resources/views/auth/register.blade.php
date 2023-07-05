@@ -84,7 +84,7 @@
                                             </div>
                                         </div>
                                         <div class="form-button col-6">
-                                            <button type="submit" class="btn btn-orange-static w-100" id="submit-register" disabled>Register</button>
+                                            <button type="submit" class="btn-orange-static w-100" id="submit-register" disabled>Register</button>
                                         </div>
                                     </div>
                                 </div>
