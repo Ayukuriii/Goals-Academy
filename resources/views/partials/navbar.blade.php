@@ -45,7 +45,7 @@
                             <i class="fa-solid fa-circle-user fa-lg" style="color: #ff8854;"></i>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="/dashboard">Profil</a></li>
+                            <li><a class="dropdown-item" href="/{{ auth()->user()->user_level }}">Profil</a></li>
                             <!--Profil User-->
                             <li>
                                 <form action="/logout" method="POST">
