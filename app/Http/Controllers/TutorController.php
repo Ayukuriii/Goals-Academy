@@ -13,21 +13,16 @@ class TutorController extends Controller
 
     public function bimbingan()
     {
-        return view('dashboard.tutor.bimbingan', ['title' => 'Tutor']);
+        return view('dashboard.tutor.bimbingan.bimbingan', ['title' => 'Tutor']);
     }
 
     public function riwayat()
     {
-        return view('dashboard.tutor.riwayat', ['title' => 'Tutor']);
-    }
-
-    public function edit()
-    {
-        return view('dashboard.tutor.edit', ['title' => 'Tutor']);
+        return view('dashboard.tutor.bimbingan.riwayat', ['title' => 'Tutor']);
     }
 
     public function detail()
     {
-        return view('dashboard.tutor.detail', ['title' => 'Tutor']);
+        return view('dashboard.tutor.bimbingan.detail', ['title' => 'Tutor']);
     }
 }
