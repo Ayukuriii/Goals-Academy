@@ -26,42 +26,32 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Ekadian Haris</td>
-                                <td>Dibimbing Sekali</td>
-                                <td>Jumat - 04 Juli</td>
-                                <td>10.10</td>
-                                <td>TERISI</td>
-                                <td class="h4">
-                                    <div class="d-flex gap-2">
-                                        <a href="/moderator/edit_jadwal" class="text-decoration-none">
-                                            <i class="bi bi-pencil-square text-success"></i>
-                                        </a>
-                                        <a href="#" class="text-decoration-none">
-                                            <i class="bi bi-check-lg text-orange"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Akhmad Roziqin</td>
-                                <td>Dibimbing Berkelompok</td>
-                                <td>Jumat - 04 Juli</td>
-                                <td>18.00</td>
-                                <td>KOSONG</td>
-                                <td class="h4">
-                                    <div class="d-flex gap-2">
-                                        <a href="/moderator/edit_jadwal" class="text-decoration-none">
-                                            <i class="bi bi-pencil-square text-success"></i>
-                                        </a>
-                                        <a href="#" class="text-decoration-none">
-                                            <i class="bi bi-check-lg text-orange"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
+                            @foreach ($datas as $data)
+                                <tr>
+                                    <td>{{ $loop->iteration }}</td>
+                                    <td>{{ $data->user->name }}</td>
+                                    <td>{{ $data->program->title }}</td>
+                                    <td>{{ \Carbon\Carbon::parse($data->date)->toFormattedDateString() }}</td>
+                                    <td>{{ $data->program_session->sesi }}</td>
+                                    <td>
+                                        @if ($data->links === null)
+                                            KOSONG
+                                        @else
+                                            TERISI
+                                        @endif
+                                    </td>
+                                    <td class="h4">
+                                        <div class="d-flex gap-2">
+                                            <a href="/moderator/{{ $data->id }}/edit" class="text-decoration-none">
+                                                <i class="bi bi-pencil-square text-success"></i>
+                                            </a>
+                                            <a href="#" class="text-decoration-none">
+                                                <i class="bi bi-check-lg text-orange"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
@@ -69,4 +59,4 @@
         </div>
     </section>
     <!-- Last Page -->
-   @endsection
+@endsection

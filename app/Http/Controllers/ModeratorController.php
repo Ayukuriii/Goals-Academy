@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\OngoingProgram;
+use App\Models\ProgramSession;
 
 class ModeratorController extends Controller
 {
@@ -11,19 +13,18 @@ class ModeratorController extends Controller
      */
     public function index()
     {
-        return view('dashboard.moderator.index', ['title' => 'Moderator']);
+        return view('dashboard.moderator.index', [
+            'title' => 'Moderator',
+            'datas' => OngoingProgram::all(),
+            'emptylink' => OngoingProgram::where('links', '=', null)->count()
+        ]);
     }
     public function atur_jadwal()
     {
-        return view('dashboard.moderator.atur_jadwal.atur-jadwal', ['title' => 'Moderator']);
-    }
-    public function riwayat_jadwal()
-    {
-        return view('dashboard.moderator.atur_jadwal.riwayat-jadwal', ['title' => 'Moderator']);
-    }
-    public function edit_jadwal()
-    {
-        return view('dashboard.moderator.atur_jadwal.edit-jadwal', ['title' => 'Moderator']);
+        return view('dashboard.moderator.atur_jadwal.atur-jadwal', [
+            'title' => 'Moderator',
+            'datas' => OngoingProgram::all()
+        ]);
     }
 
     /**
@@ -55,7 +56,11 @@ class ModeratorController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return view('dashboard.moderator.atur_jadwal.edit-jadwal', [
+            'title' => 'Moderator',
+            'program_session' => ProgramSession::all(),
+            'data' => OngoingProgram::find($id)
+        ]);
     }
 
     /**

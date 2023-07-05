@@ -24,7 +24,7 @@
                                         <p class="date-product">{{ $datecarbon[$loop->index] }}</p>
                                         <p class="time-product">{{ $collection->program_session->sesi }}</p>
                                     </div>
-                                    <p class="detail-product"><a href="/profile/{{ $collection->id }}">Lihat Detail</a></p>
+                                    <p class="detail-product"><a href="/user/{{ $collection->id }}">Lihat Detail</a></p>
                                 </div>
                             </div>
                         </div>
