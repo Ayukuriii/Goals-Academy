@@ -58,10 +58,7 @@
 }
 
 .btn-login {
-    background-color: rgba(255, 136, 84, 1);
-    color: #fff;
     font-weight: bold;
-    border-radius: 8px;
     width: 90px;
     margin-left: 10px;
     font-size: 17px;

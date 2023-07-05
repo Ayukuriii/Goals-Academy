@@ -57,7 +57,7 @@
                         </ul>
                     </li>
                 @else
-                    <a href="/login" class="btn btn-login" id="step-login">Login</a>
+                    <a href="/login" class="btn btn-orange-static btn-login" id="step-login">Login</a>
                     <!--Button Login-->
                 @endauth
             </ul>
