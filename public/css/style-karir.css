@@ -119,22 +119,6 @@ hr {
   padding: 6px;
 }
 
-.btn-karir {
-  display: flex;
-  width: 100%;
-  max-width: 350px;
-  max-height: 30px;
-  height: 100%;
-  padding: 10px 15px;
-  border-radius: 7px;
-  font-size: 16px;
-  color: #ffff;
-  align-items: center;
-  margin: 0 4px;
-  justify-content: center;
-  background-color: rgba(255, 136, 84, 1);
-}
-
 @media (max-width: 475px) {
   .text-karir p {
     display: none;
