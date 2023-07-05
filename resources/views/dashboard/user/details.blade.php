@@ -42,9 +42,10 @@
                         </tr>
                         <tr>
                             <td>TEMPAT</td>
-                            <td><a href="{{ strpos($data->links, 'http') === 0 ? $data->links : 'https://' . $data->links }}">Link
+                            <td><a
+                                    href="{{ strpos($data->links, 'http') === 0 ? $data->links : 'https://' . $data->links }}">Link
                                     Zoom</a></td>
-                        </tr>   
+                        </tr>
                     </tbody>
                 </table>
 
@@ -58,4 +59,4 @@
         </div>
     </section>
     <!-- Last Page -->
-   @endsection
+@endsection

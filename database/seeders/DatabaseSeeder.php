@@ -107,8 +107,10 @@ class DatabaseSeeder extends Seeder
             'tutor_id' => 1,
             'payment_status_id' => 1,
             'program_session_id' => 1,
+            'location' => 'online',
             'date' => now()->addDays(7),
-            'links' => 'www.google.com'
+            'links' => 'www.google.com',
+            'program_status' => false
         ]);
         OngoingProgram::create([
             'user_id' => 4,
@@ -116,7 +118,20 @@ class DatabaseSeeder extends Seeder
             'tutor_id' => 2,
             'payment_status_id' => 1,
             'program_session_id' => 2,
-            'date' => now()->addDays(20)
+            'location' => 'offline',
+            'date' => now()->addDays(20),
+            'program_status' => false
+        ]);
+        OngoingProgram::create([
+            'user_id' => 4,
+            'program_services_id' => 1,
+            'tutor_id' => 1,
+            'payment_status_id' => 1,
+            'program_session_id' => 4,
+            'location' => 'online',
+            'date' => now()->addDays(20),
+            'links' => 'www.google.com',
+            'program_status' => true
         ]);
 
         TutorNotes::create([
@@ -129,7 +144,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         ProgramSession::create([
-            'sesi' => '09:30'
+            'sesi' => '09:00'
         ]);
         ProgramSession::create([
             'sesi' => '10:10'

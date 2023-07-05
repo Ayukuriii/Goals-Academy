@@ -2,7 +2,7 @@
     <div class="card-image pb-4 mx-auto">
         <img src="{{ asset('image/assets/images/login/profile-grey.png') }}" />
     </div>
-    <a href="/profile/{{ $posts->name }}/edit" class="mx-auto fw-bold btn-orange py-2 px-5">Edit Profil</a>
+    <a href="/user/{{ $posts->id }}/edit" class="mx-auto fw-bold btn-orange py-2 px-5">Edit Profil</a>
     <div class="card-body">
         <p class="card-title">Nama</p>
         <h5 id="nama-user">{{ $posts['name'] }}</h5>

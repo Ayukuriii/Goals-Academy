@@ -81,11 +81,6 @@ Route::get('/auth/lupa-password', function () {
     ]);
 });
 
-Route::middleware('auth', 'auth.session', 'verified')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'index']);
-    Route::get('/profile/{id}', [ProfileController::class, 'detail']);
-});
-
 Route::get('/login', [AuthController::class, 'get_login'])->middleware('guest');
 Route::get('/register', [AuthController::class, 'get_register'])->middleware('guest');
 Route::post('/register', [AuthController::class, 'post_register'])->name('register');
@@ -120,7 +115,7 @@ Route::middleware(['auth', 'check.level:moderator'])->group(function () {
     Route::controller(ModeratorController::class)->group(function () {
         Route::get('/moderator', 'index')->name('moderator');
         Route::get('/moderator/atur_jadwal', 'atur_jadwal')->name('moderator.atur-jadwal');
-        Route::get('/moderator/edit_jadwal', 'edit_jadwal')->name('moderator.edit-jadwal');
+        Route::get('/moderator/{id}/edit', 'edit')->name('moderator.edit-jadwal');
     });
 });
 
@@ -133,4 +128,10 @@ Route::middleware(['auth', 'check.level:tutor'])->group(function () {
         Route::get('/tutor/edit', 'edit')->name('tutor');
         Route::get('/tutor/detail', 'detail')->name('tutor');
     });
+});
+
+Route::middleware('auth', 'check.level:user', 'auth.session', 'verified')->group(function () {
+    Route::get('/user', [UserController::class, 'index']);
+    Route::get('/user/{id}', [UserController::class, 'detail']);
+    Route::get('/user/{id}/edit', [UserController::class, 'edit']);
 });
