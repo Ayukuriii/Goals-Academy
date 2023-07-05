@@ -25,21 +25,21 @@ class AdminController extends Controller
     }
     public function atur_jadwal()
     {
-        return view('dashboard.admin.atur-jadwal', [
+        return view('dashboard.admin.atur_jadwal.atur-jadwal', [
             'title' => 'Admin',
             'datas' => OngoingProgram::all()
         ]);
     }
     public function bimbingan()
     {
-        return view('dashboard.admin.bimbingan', [
+        return view('dashboard.admin.bimbingan.bimbingan', [
             'title' => 'Admin',
             'datas' => OngoingProgram::all()
         ]);
     }
     public function list_user()
     {
-        return view('dashboard.admin.list_user', [
+        return view('dashboard.admin.list_user.list_user', [
             'title' => 'Admin',
             'datas' => User::all()
         ]);
@@ -50,7 +50,7 @@ class AdminController extends Controller
      */
     public function create()
     {
-        return view('dashboard.admin.tambah_user', [
+        return view('dashboard.admin.list_user.tambah_user', [
             'title' => 'Admin'
         ]);
     }

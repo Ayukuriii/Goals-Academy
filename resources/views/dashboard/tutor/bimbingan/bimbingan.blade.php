@@ -35,10 +35,7 @@
                                 <td>BERLANGSUNG</td>
                                 <td class="h4">
                                     <div class="d-flex gap-2">
-                                        <a href="/tutor/edit" class="text-decoration-none">
-                                            <i class="bi bi-pencil-square text-success"></i>
-                                        </a>
-                                        <a href="#" class="text-decoration-none">
+                                        <a href="/tutor/detail" class="text-decoration-none">
                                             <i class="bi bi-eye text-dark"></i>
                                         </a>
                                         <a href="#" class="text-decoration-none">
@@ -56,10 +53,7 @@
                                 <td>AKAN BERLANGSUNG</td>
                                 <td class="h4">
                                     <div class="d-flex gap-2">
-                                        <a href="/tutor/edit" class="text-decoration-none">
-                                            <i class="bi bi-pencil-square text-success"></i>
-                                        </a>
-                                        <a href="#" class="text-decoration-none">
+                                        <a href="/tutor/detail" class="text-decoration-none">
                                             <i class="bi bi-eye text-dark"></i>
                                         </a>
                                         <a href="#" class="text-decoration-none">
