@@ -119,8 +119,8 @@ Route::middleware(['auth', 'check.level:admin'])->group(function () {
 Route::middleware(['auth', 'check.level:moderator'])->group(function () {
     Route::controller(ModeratorController::class)->group(function () {
         Route::get('/moderator', 'index')->name('moderator');
-        Route::get('/moderator/atur_jadwal', 'atur_jdwal')->name('moderator.atur-jadwal');
-        Route::get('/moderator/edit_jadwal', 'edit_jdwal')->name('moderator.edit-jadwal');
+        Route::get('/moderator/atur_jadwal', 'atur_jadwal')->name('moderator.atur-jadwal');
+        Route::get('/moderator/edit_jadwal', 'edit_jadwal')->name('moderator.edit-jadwal');
     });
 });
 

@@ -51,10 +51,10 @@ class AuthController extends Controller
             'email' => 'required|email:dns',
             'password' => 'required'
         ]);
-        $auth = auth()->user()->user_level;
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
+            $auth = auth()->user()->user_level;
             if ($auth === 'user') {
                 return redirect()->intended('/')->with(
                     'login',
