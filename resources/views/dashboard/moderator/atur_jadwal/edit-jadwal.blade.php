@@ -5,7 +5,7 @@
     <!-- Isi Page -->
     <section class="container-fluid mb-5" id="user-profile">
         <div class="row gap-2">
-            @include('dashboard.moderator.partials.sidebar')
+            @include('dashboard.layouts.sidebar')
 
             <div class="card col ml-3 p-4 side-program">
                 <h3 class="text-purple fw-bold">Edit Jadwal</h3>

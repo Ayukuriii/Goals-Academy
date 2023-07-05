@@ -103,20 +103,6 @@ Route::get('/test', function () {
 });
 Route::post('/send-email', [EmailController::class, 'sendEmail']);
 
-Route::group(['middleware' => ['auth']], function () {
-    Route::get('/dashboard', function () {
-        if (auth()->user()->user_level === 'admin') {
-            return app(AdminController::class)->index();
-        } elseif (auth()->user()->user_level === 'moderator') {
-            return app(ModeratorController::class)->index();
-        } elseif (auth()->user()->user_level === 'tutor') {
-            return app(TutorController::class)->index();
-        } else {
-            return app(UserController::class)->index();
-        }
-    });
-});
-
 // Route Admin
 Route::middleware(['auth', 'check.level:admin'])->group(function () {
     Route::controller(AdminController::class)->group(function () {
