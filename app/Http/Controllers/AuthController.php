@@ -51,17 +51,18 @@ class AuthController extends Controller
             'email' => 'required|email:dns',
             'password' => 'required'
         ]);
+        $auth = auth()->user()->user_level;
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            if (auth()->user()->user_level === 'user') {
+            if ($auth === 'user') {
                 return redirect()->intended('/')->with(
                     'login',
                     '<h5>Login Berhasil</h5>
                     <p>Selamat Datang! Kini kamu dapat menikmati berbagai fitur dan program Goals Academy</p>'
                 );
             } else {
-                return redirect()->intended('/dashboard');
+                return redirect()->intended('/' . $auth);
             }
         }
         return back()->with('loginError', 'Email or Password incorrect');
