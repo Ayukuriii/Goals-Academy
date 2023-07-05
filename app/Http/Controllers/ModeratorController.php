@@ -13,12 +13,14 @@ class ModeratorController extends Controller
     {
         return view('dashboard.moderator.index', ['title' => 'Moderator']);
     }
-
     public function atur_jadwal()
     {
         return view('dashboard.moderator.atur_jadwal.atur-jadwal', ['title' => 'Moderator']);
     }
-
+    public function riwayat_jadwal()
+    {
+        return view('dashboard.moderator.atur_jadwal.riwayat-jadwal', ['title' => 'Moderator']);
+    }
     public function edit_jadwal()
     {
         return view('dashboard.moderator.atur_jadwal.edit-jadwal', ['title' => 'Moderator']);

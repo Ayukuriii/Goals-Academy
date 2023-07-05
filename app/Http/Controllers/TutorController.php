@@ -18,11 +18,11 @@ class TutorController extends Controller
 
     public function riwayat()
     {
-        return view('dashboard.tutor.bimbingan.riwayat', ['title' => 'Tutor']);
+        return view('dashboard.tutor.bimbingan.riwayat-bimbingan', ['title' => 'Tutor']);
     }
 
     public function detail()
     {
-        return view('dashboard.tutor.bimbingan.detail', ['title' => 'Tutor']);
+        return view('dashboard.tutor.bimbingan.detail-bimbingan', ['title' => 'Tutor']);
     }
 }

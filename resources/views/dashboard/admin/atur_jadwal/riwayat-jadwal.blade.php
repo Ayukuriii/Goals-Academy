@@ -9,8 +9,7 @@
 
             <div class="card col ml-3 p-4 side-program">
                 <div class="d-flex justify-content-between">
-                    <h3 class="d-inline text-purple fw-bold">Bimbingan</h3>
-                    <a href="/admin/riwayat_bimbingan" class="d-inline btn-outline-orange py-2 px-4 small">Riwayat</a>
+                    <h3 class="d-inline text-purple fw-bold">Riwayat Jadwal</h3>
                 </div>
                 <div class="p-2 mt-2">
                     <table class="table">
@@ -21,12 +20,12 @@
                                 <th>Kategori</th>
                                 <th>Hari/Tanggal</th>
                                 <th>Sesi</th>
-                                <th>Keterangan</th>
-                                <th>Action</th>
+                                <th>Status Link</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($datas as $data)
+                                {{-- {{ dd($data) }} --}}
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $data->user->name }}</td>
@@ -34,26 +33,11 @@
                                     <td>{{ \Carbon\Carbon::parse($data->date)->toFormattedDateString() }}</td>
                                     <td>{{ $data->program_session->sesi }}</td>
                                     <td>
-                                        @if (\Carbon\Carbon::now() < $data->date)
-                                            AKAN BERLANGSUNG
-                                        @elseif (\Carbon\Carbon::now() >= $data->date && \Carbon\Carbon::now() <= \Carbon\Carbon::parse($data->date)->addHour())
-                                            BERLANGSUNG
+                                        @if ($data->links === null)
+                                            KOSONG
                                         @else
-                                            SELESAI
+                                            TERISI
                                         @endif
-                                    </td>
-                                    <td class="h4">
-                                        <div class="d-flex gap-2">
-                                            <a href="#" class="text-decoration-none">
-                                                <i class="bi bi-pencil-square text-success"></i>
-                                            </a>
-                                            <a href="/admin/detail_bimbingan" class="text-decoration-none">
-                                                <i class="bi bi-eye text-dark"></i>
-                                            </a>
-                                            <a href="#" class="text-decoration-none">
-                                                <i class="bi bi-check-lg text-orange"></i>
-                                            </a>
-                                        </div>
                                     </td>
                                 </tr>
                             @endforeach

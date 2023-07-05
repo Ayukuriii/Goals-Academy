@@ -30,9 +30,37 @@ class AdminController extends Controller
             'datas' => OngoingProgram::all()
         ]);
     }
+    public function riwayat_jadwal()
+    {
+        return view('dashboard.admin.atur_jadwal.riwayat-jadwal', [
+            'title' => 'Admin',
+            'datas' => OngoingProgram::all()
+        ]);
+    }
+    public function edit_jadwal()
+    {
+        return view('dashboard.admin.atur_jadwal.edit-jadwal', [
+            'title' => 'Admin',
+            'datas' => OngoingProgram::all()
+        ]);
+    }
     public function bimbingan()
     {
         return view('dashboard.admin.bimbingan.bimbingan', [
+            'title' => 'Admin',
+            'datas' => OngoingProgram::all()
+        ]);
+    }
+    public function riwayat_bimbingan()
+    {
+        return view('dashboard.admin.bimbingan.riwayat-bimbingan', [
+            'title' => 'Admin',
+            'datas' => OngoingProgram::all()
+        ]);
+    }
+    public function detail_bimbingan()
+    {
+        return view('dashboard.admin.bimbingan.detail-bimbingan', [
             'title' => 'Admin',
             'datas' => OngoingProgram::all()
         ]);

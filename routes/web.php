@@ -122,7 +122,11 @@ Route::middleware(['auth', 'check.level:admin'])->group(function () {
     Route::controller(AdminController::class)->group(function () {
         Route::get('/admin', 'index')->name('admin');
         Route::get('/admin/atur_jadwal', 'atur_jadwal')->name('admin.atur-jadwal');
+        Route::get('/admin/riwayat_jadwal', 'riwayat_jadwal')->name('admin.riwayat-jadwal');
+        Route::get('/admin/edit_jadwal', 'edit_jadwal')->name('admin.riwayat-jadwal');
         Route::get('/admin/bimbingan', 'bimbingan')->name('admin.bimbingan');
+        Route::get('/admin/riwayat_bimbingan', 'riwayat_bimbingan')->name('admin.riwayat-bimbingan');
+        Route::get('/admin/detail_bimbingan', 'detail_bimbingan')->name('admin.detail-bimbingan');
         Route::get('/admin/list_user', 'list_user')->name('admin.list_user');
         Route::get('/admin/tambah_user/create', 'create')->name('admin.create');
         Route::post('/admin/tambah_user/store', 'store')->name('admin.store');
@@ -133,8 +137,9 @@ Route::middleware(['auth', 'check.level:admin'])->group(function () {
 Route::middleware(['auth', 'check.level:moderator'])->group(function () {
     Route::controller(ModeratorController::class)->group(function () {
         Route::get('/moderator', 'index')->name('moderator');
-        Route::get('/moderator/atur_jadwal', 'atur_jdwal')->name('moderator.atur-jadwal');
-        Route::get('/moderator/edit_jadwal', 'edit_jdwal')->name('moderator.edit-jadwal');
+        Route::get('/moderator/atur_jadwal', 'atur_jadwal')->name('moderator.atur-jadwal');
+        Route::get('/moderator/riwayat_jadwal', 'riwayat_jadwal')->name('moderator.riwayat-jadwal');
+        Route::get('/moderator/edit_jadwal', 'edit_jadwal')->name('moderator.edit-jadwal');
     });
 });
 
