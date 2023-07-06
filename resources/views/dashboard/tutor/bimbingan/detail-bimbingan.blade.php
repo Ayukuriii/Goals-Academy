@@ -16,32 +16,39 @@
                         <tbody>
                             <tr>
                                 <td>PEMBELIAN</td>
-                                <td class="fw-bold small">Selasa, 23 Februari 2023<br>12:50</td>
+                                <td class="fw-bold small">{!! \Carbon\Carbon::parse($data->created_at)->isoFormat('dddd, D MMMM Y </br> HH:mm') !!}</td>
                             </tr>
                             <tr>
                                 <td>TUTOR</td>
-                                <td class="fw-bold small">Kak Yordhan</td>
+                                <td class="fw-bold small">Kak {{ $data->tutor->user->name }}</td>
                             </tr>
                             <tr>
                                 <td>JADWAL</td>
-                                <td class="fw-bold small">Selasa, 30 Februari 2023<br>18:15</td>
+                                <td class="fw-bold small">
+                                    {{ \Carbon\Carbon::parse($data->date)->isoFormat('dddd, D MMMM Y') }}<br>{{ $data->program_session->sesi }}
+                                </td>
                             </tr>
                             <tr>
                                 <td>PELAKSANAAN</td>
-                                <td class="fw-bold small">Online</td>
+                                <td class="fw-bold small">{{ $data->location }}</td>
                             </tr>
                             <tr>
                                 <td>TEMPAT</td>
-                                <td class="fw-bold small"><a href="#">linkroommeetzoom</a></td>
+                                <td class="fw-bold small"><a
+                                        href="{{ strpos($data->links, 'http') === 0 ? $data->links : 'https://' . $data->links }}">Link
+                                        Zoom</a>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
                 <hr class="m-0 w-100">
-                <form action="" class="form">
+                <form action="/tutor/edit/{{ $data->id }}" method="POST" class="form">
+                    @csrf
+                    @method('put')
                     <div class="form-group p-3 pb-0 mt-2">
                         <label class="form-label h4 fw-bold mb-4" for="catatan">Catatan dari Tutor</label>
-                        <textarea class="form-control" name="catatan" id="catatan" rows="5" placeholder="Comments"></textarea>
+                        <textarea class="form-control" name="body" id="body" rows="5" placeholder="Comments">{{ optional($data->tutor_notes->first())->body }}</textarea>
                     </div>
                     <div class="row">
                         <div class="col-6 form-group p-3 pb-0 mt-2">
@@ -49,7 +56,8 @@
                             <input class="form-control" type="file" name="dokumen" id="dokumen" placeholder=" ">
                         </div>
                         <div class="form-button col-6 mb-3 d-flex justify-content-end pt-5">
-                            <button class="btn-orange-static mt-4 px-4 d-inline text-end" id="button" type="submit">Simpan</button>
+                            <button class="btn-orange-static mt-4 px-4 d-inline text-end" id="button"
+                                type="submit">Simpan</button>
                         </div>
                     </div>
                 </form>

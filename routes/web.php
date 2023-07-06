@@ -114,6 +114,8 @@ Route::middleware(['auth', 'check.level:admin'])->group(function () {
         Route::get('/admin/list_user', 'list_user')->name('admin.list_user');
         Route::get('/admin/tambah_user/create', 'create')->name('admin.create');
         Route::post('/admin/tambah_user/store', 'store')->name('admin.store');
+        Route::get('/admin/tambah_user/edit/{id}', 'edit')->name('admin.edit');
+        Route::put('/admin/tambah_user/update/{id}', 'update')->name('admin.update');
         Route::post('/admin/{id}/destroy', 'destroy')->name('admin.destroy');
     });
 });
@@ -136,8 +138,8 @@ Route::middleware(['auth', 'check.level:tutor'])->group(function () {
         Route::get('/tutor', 'index')->name('tutor');
         Route::get('/tutor/bimbingan', 'bimbingan')->name('tutor');
         Route::get('/tutor/riwayat', 'riwayat')->name('tutor');
-        Route::get('/tutor/edit', 'edit')->name('tutor');
-        Route::get('/tutor/detail', 'detail')->name('tutor');
+        Route::put('/tutor/edit/{id}', 'edit')->name('tutor');
+        Route::get('/tutor/detail/{id}', 'detail')->name('tutor');
     });
 });
 
