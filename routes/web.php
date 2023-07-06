@@ -114,6 +114,8 @@ Route::middleware(['auth', 'check.level:admin'])->group(function () {
         Route::get('/admin/list_user', 'list_user')->name('admin.list_user');
         Route::get('/admin/tambah_user/create', 'create')->name('admin.create');
         Route::post('/admin/tambah_user/store', 'store')->name('admin.store');
+        Route::get('/admin/tambah_user/edit/{id}', 'edit')->name('admin.edit');
+        Route::put('/admin/tambah_user/update/{id}', 'update')->name('admin.update');
         Route::post('/admin/{id}/destroy', 'destroy')->name('admin.destroy');
     });
 });
