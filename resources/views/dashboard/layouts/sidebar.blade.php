@@ -6,7 +6,6 @@
         <p class="d-inline text-center fs-6">Nama Admin</p>
         <div class="d-flex flex-row flex-wrap gap-2 mt-2">
             <a href="/admin" class="mx-auto fw-bold btn-nav p-2 w-100">Dashboard</a>
-            <a href="/admin/atur_jadwal" class="mx-auto fw-bold btn-nav p-2 w-100">Atur Jadwal</a>
             <a href="/admin/bimbingan" class="mx-auto fw-bold btn-nav p-2 w-100">Bimbingan</a>
             <a href="/admin/list_user" class="mx-auto fw-bold btn-nav p-2 w-100">List User</a>
         </div>

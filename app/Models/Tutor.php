@@ -8,8 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Tutor extends Model
 {
     use HasFactory;
-    
-    public function ongoing_program(){
+
+    protected $guarded = ['id'];
+
+    public function ongoing_program()
+    {
         return $this->hasMany(OngoingProgram::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }

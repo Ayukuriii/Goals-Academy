@@ -41,9 +41,12 @@
                                             <a href="#" class="text-decoration-none">
                                                 <i class="bi bi-pencil-square text-success"></i>
                                             </a>
-                                            <a href="#" class="text-decoration-none">
-                                                <i class="bi bi-trash3 text-orange"></i>
-                                            </a>
+                                            <form action="/admin/{{ $data->id }}/destroy" method="POST">
+                                                @csrf
+                                                <button type="submit" class="text-decoration-none border-0 bg-transparent">
+                                                    <i class="bi bi-trash3 text-orange"></i>
+                                                </button>
+                                            </form>
                                         </div>
                                     </td>
                                 </tr>

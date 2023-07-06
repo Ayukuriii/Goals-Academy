@@ -29,6 +29,7 @@ class DatabaseSeeder extends Seeder
 
         User::create([
             'name'  => 'admin',
+            'username' => 'admin',
             'email' => 'admin@gmail.com',
             'phone_number'  => '089231231231',
             'university'    => 'Cambridge',
@@ -39,6 +40,7 @@ class DatabaseSeeder extends Seeder
         ]);
         User::create([
             'name'  => 'Moderator',
+            'username' => 'moderator',
             'email' => 'moderator@gmail.com',
             'phone_number'  => '089123123123',
             'university'    => 'Cambridge',
@@ -49,6 +51,7 @@ class DatabaseSeeder extends Seeder
         ]);
         User::create([
             'name'  => 'tutor',
+            'username' => 'tutor',
             'email' => 'tutor@gmail.com',
             'phone_number'  => '089321321321',
             'university'    => 'Cambridge',
@@ -59,6 +62,7 @@ class DatabaseSeeder extends Seeder
         ]);
         User::create([
             'name'  => 'Ekadian Haris',
+            'username' => 'ayukuriii',
             'email' => 'ekadianharis@gmail.com',
             'phone_number'  => '087763420873',
             'university'    => 'Politeknik Negeri Malang',
@@ -85,10 +89,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Tutor::create([
-            'name'  => 'Hilda'
-        ]);
-        Tutor::create([
-            'name'  => 'Herinda'
+            'user_id'  => '3'
         ]);
 
         PaymentStatus::create([

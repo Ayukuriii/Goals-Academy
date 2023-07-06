@@ -21,17 +21,31 @@
                                 <th>Hari/Tanggal</th>
                                 <th>Sesi</th>
                                 <th>Status Link</th>
+                                <th>Status</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Ekadian Haris</td>
-                                <td>Dibimbing Sekali</td>
-                                <td>Jumat - 04 Juli</td>
-                                <td>10.10</td>
-                                <td>TERISI</td>
-                            </tr>
+                            @foreach ($datas as $data)
+                                <tr>
+                                    <td>{{ $loop->iteration }}</td>
+                                    <td>{{ $data->user->name }}</td>
+                                    <td>{{ $data->program->title }}</td>
+                                    <td>{{ \Carbon\Carbon::parse($data->date)->toFormattedDateString() }}</td>
+                                    <td>{{ $data->program_session->sesi }}</td>
+                                    <td>
+                                        @if ($data->links === null)
+                                            KOSONG
+                                        @else
+                                            TERISI
+                                        @endif
+                                    </td>
+                                    <td>
+                                        @if ($data->program_status === 1)
+                                            SELESAI
+                                        @endif
+                                    </td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

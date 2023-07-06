@@ -6,6 +6,10 @@ use Carbon\Carbon;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\OngoingProgram;
+use App\Models\ProgramService;
+use App\Models\ProgramSession;
+use App\Models\Tutor;
+use App\Models\TutorNotes;
 use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
@@ -23,48 +27,66 @@ class AdminController extends Controller
             'emptylink' => OngoingProgram::where('links', '=', null)->count()
         ]);
     }
-    public function atur_jadwal()
-    {
-        return view('dashboard.admin.atur_jadwal.atur-jadwal', [
-            'title' => 'Admin',
-            'datas' => OngoingProgram::all()
-        ]);
-    }
-    public function riwayat_jadwal()
-    {
-        return view('dashboard.admin.atur_jadwal.riwayat-jadwal', [
-            'title' => 'Admin',
-            'datas' => OngoingProgram::all()
-        ]);
-    }
-    public function edit_jadwal()
-    {
-        return view('dashboard.admin.atur_jadwal.edit-jadwal', [
-            'title' => 'Admin',
-            'datas' => OngoingProgram::all()
-        ]);
-    }
+
     public function bimbingan()
     {
+        // $tutors = Tutor::with('user')->get();
         return view('dashboard.admin.bimbingan.bimbingan', [
             'title' => 'Admin',
-            'datas' => OngoingProgram::all()
+            // 'tutors' => $tutors,
+            'datas' => OngoingProgram::where('program_status', 0)->with('tutor.user')->get()
         ]);
     }
     public function riwayat_bimbingan()
     {
         return view('dashboard.admin.bimbingan.riwayat-bimbingan', [
             'title' => 'Admin',
-            'datas' => OngoingProgram::all()
+            'datas' => OngoingProgram::where('program_status', 1)->get()
         ]);
     }
-    public function detail_bimbingan()
+    public function show_bimbingan(string $id)
+    {
+        return view('dashboard.admin.bimbingan.edit-jadwal', [
+            'title' => 'Admin',
+            'program_session' => ProgramSession::all(),
+            'tutor_data' => Tutor::all(),
+            'program_services' => ProgramService::all(),
+            'data' => OngoingProgram::find($id)
+        ]);
+    }
+    public function update_bimbingan(Request $request, string $id)
+    {
+        $data = OngoingProgram::findOrFail($id);
+        $data->fill($request->only([
+            'date',
+            'program_session_id',
+            'program_services_id',
+            'tutor_id',
+            'location',
+            'links'
+        ]));
+        $data->save();
+        return redirect('/admin/bimbingan');
+    }
+    public function detail_bimbingan(string $id)
     {
         return view('dashboard.admin.bimbingan.detail-bimbingan', [
             'title' => 'Admin',
-            'datas' => OngoingProgram::all()
+            'data' => OngoingProgram::find($id)
         ]);
     }
+    public function edit_bimbingan(Request $request, string $id)
+    {
+        $data = TutorNotes::find($id);
+        $data->fill($request->only([
+            'body',
+            'file'
+        ]));
+        $data->save();
+        return redirect('/admin/bimbingan');
+    }
+
+    // section list user
     public function list_user()
     {
         return view('dashboard.admin.list_user.list_user', [
@@ -88,9 +110,10 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request);
+
         $validateData = $request->validate([
             'name' => 'required|max:255',
+            'username' => 'required',
             'email' => 'required|email|unique:users',
             'phone_number' => 'required',
             'university' => 'required',
@@ -101,8 +124,13 @@ class AdminController extends Controller
 
         $validateData['password'] = Hash::make($validateData['password']);
 
-        // dd($validateData);
-        User::create($validateData);
+        $user = User::create($validateData);
+
+        if ($validateData['user_level'] === 'tutor') {
+            Tutor::create([
+                'user_id' => $user->id
+            ]);
+        }
         return redirect()->route('admin.list_user');
     }
 
@@ -135,6 +163,7 @@ class AdminController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        User::destroy($id);
+        return redirect('/admin/list_user');
     }
 }

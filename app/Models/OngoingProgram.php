@@ -11,22 +11,28 @@ class OngoingProgram extends Model
 
     protected $guarded = ['id'];
 
-    public function user(){
+    public function user()
+    {
         return $this->belongsTo(User::class);
     }
-    public function program(){
+    public function program()
+    {
         return $this->belongsTo(ProgramService::class, 'program_services_id');
     }
-    public function tutor(){
+    public function tutor()
+    {
         return $this->belongsTo(Tutor::class);
     }
-    public function program_session(){
+    public function program_session()
+    {
         return $this->belongsTo(ProgramSession::class);
     }
-    public function payment_status(){
+    public function payment_status()
+    {
         return $this->belongsTo(PaymentStatus::class);
     }
-    public function tutor_notes(){
+    public function tutor_notes()
+    {
         return $this->hasMany(TutorNotes::class);
     }
 }

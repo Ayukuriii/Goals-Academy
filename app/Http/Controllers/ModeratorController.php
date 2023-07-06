@@ -23,7 +23,22 @@ class ModeratorController extends Controller
     {
         return view('dashboard.moderator.atur_jadwal.atur-jadwal', [
             'title' => 'Moderator',
-            'datas' => OngoingProgram::all()
+            'datas' => OngoingProgram::where('program_status', 0)->get()
+        ]);
+    }
+    public function selesai(string $id)
+    {
+        $data = OngoingProgram::findOrFail($id);
+        $data['program_status'] = 1;
+        $data->save();
+
+        return redirect('/moderator/atur_jadwal');
+    }
+    public function riwayat_jadwal()
+    {
+        return view('dashboard.moderator.atur_jadwal.riwayat-jadwal', [
+            'title' => 'Moderator',
+            'datas' => OngoingProgram::where('program_status', 1)->get()
         ]);
     }
 
@@ -68,7 +83,16 @@ class ModeratorController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $data = OngoingProgram::findOrFail($id);
+        $data->fill($request->only([
+            'jadwal',
+            'program_session_id',
+            'location',
+            'links'
+        ]));
+        // dd($data);
+        $data->save();
+        return redirect('/moderator/atur_jadwal');
     }
 
     /**

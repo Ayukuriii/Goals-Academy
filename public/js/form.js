@@ -36,3 +36,4 @@ formInput.forEach(element => {
         updateButton()
     });
 });
+updateButton()

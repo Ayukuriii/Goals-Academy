@@ -18,11 +18,6 @@
                                 required />
                         </div>
                         <div class="form-group col-6 mb-3">
-                            <label class="form-label small" for="name">USERNAME</label>
-                            <input type="text" name="username" class="form-control" id="username" placeholder=" "
-                                required />
-                        </div>
-                        <div class="form-group col-6 mb-3">
                             <label class="form-label small" for="university">UNIVERSITAS</label>
                             <input type="text" name="university" class="form-control" id="university" placeholder=" "
                                 required />

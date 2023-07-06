@@ -10,7 +10,7 @@
             <div class="card col ml-3 p-4 side-program">
                 <h3 class="text-purple fw-bold">Edit Jadwal</h3>
                 <div class="form w-75 mt-3">
-                    <form class="row" action="/moderator/{{ $data->id }}/update" method="POST">
+                    <form class="row" action="/admin/bimbingan/update/{{ $data->id }}" method="POST">
                         @method('put')
                         @csrf
                         <div class="form-group col-6 mb-2">
@@ -44,8 +44,8 @@
                                 placeholder="{{ $data->created_at }}" disabled />
                         </div>
                         <div class="form-group col-6 mb-2">
-                            <label class="form-label small" for="jadwal">JADWAL</label>
-                            <input type="date" name="jadwal" class="form-control" id="jadwal" placeholder=""
+                            <label class="form-label small" for="date">JADWAL</label>
+                            <input type="date" name="date" class="form-control" id="date" placeholder=""
                                 value="{{ $data->date }}" required />
                         </div>
                         <div class="form-group col-6 mb-2">
@@ -56,6 +56,28 @@
                                     <option value="{{ $item->id }}"
                                         {{ $item->id == $data->program_session_id ? 'selected' : '' }}>
                                         {{ $item->sesi }}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group col-6 mb-2">
+                            <label class="form-label small" for="program_services_id">KATEGORI</label>
+                            <select class="form-select border-orange" name="program_services_id" id="program_services_id">
+                                @foreach ($program_services as $program)
+                                    <option value="{{ $program->id }}"
+                                        {{ $program->id == $data->program_services_id ? 'selected' : '' }}>
+                                        {{ $program->title }}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group col-6 mb-2">
+                            <label class="form-label small" for="tutor_id">TUTOR</label>
+                            <select class="form-select border-orange" name="tutor_id" id="tutor_id">
+                                @foreach ($tutor_data as $tutor)
+                                    <option value="{{ $tutor->id }}"
+                                        {{ $tutor->id == $data->tutor_id ? 'selected' : '' }}>
+                                        {{ $tutor->user->name }}
                                     </option>
                                 @endforeach
                             </select>

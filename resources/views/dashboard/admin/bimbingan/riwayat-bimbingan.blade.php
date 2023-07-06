@@ -18,28 +18,28 @@
                                 <th>#</th>
                                 <th>Nama</th>
                                 <th>Kategori</th>
+                                <th>Tutor</th>
                                 <th>Hari/Tanggal</th>
                                 <th>Sesi</th>
-                                <th>Keterangan</th>
+                                <th>Status Program</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Ekadian Haris</td>
-                                <td>Dibimbing Sekali</td>
-                                <td>Jumat - 04 Juli</td>
-                                <td>10.10</td>
-                                <td>SELESAI</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Akhmad Roziqin</td>
-                                <td>Dibimbing Berkelompok</td>
-                                <td>Jumat - 04 Juli</td>
-                                <td>18.00</td>
-                                <td>SELESAI</td>
-                            </tr>
+                            @foreach ($datas as $data)
+                                <tr>
+                                    <td>{{ $loop->iteration }}</td>
+                                    <td>{{ $data->user->name }}</td>
+                                    <td>{{ $data->program->title }}</td>
+                                    <td>{{ $data->tutor->user->name }}</td>
+                                    <td>{{ \Carbon\Carbon::parse($data->date)->toFormattedDateString() }}</td>
+                                    <td>{{ $data->program_session->sesi }}</td>
+                                    <td>
+                                        @if ($data->program_status === 1)
+                                            SELESAI
+                                        @endif
+                                    </td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

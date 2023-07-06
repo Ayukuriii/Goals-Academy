@@ -33,10 +33,8 @@
                                     <td>{{ \Carbon\Carbon::parse($data->date)->toFormattedDateString() }}</td>
                                     <td>{{ $data->program_session->sesi }}</td>
                                     <td>
-                                        @if ($data->links === null)
-                                            KOSONG
-                                        @else
-                                            TERISI
+                                        @if ($data->program_status === 1)
+                                            SELESAI
                                         @endif
                                     </td>
                                 </tr>

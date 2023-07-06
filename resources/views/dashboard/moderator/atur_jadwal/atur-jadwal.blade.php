@@ -45,9 +45,13 @@
                                             <a href="/moderator/{{ $data->id }}/edit" class="text-decoration-none">
                                                 <i class="bi bi-pencil-square text-success"></i>
                                             </a>
-                                            <a href="#" class="text-decoration-none">
-                                                <i class="bi bi-check-lg text-orange"></i>
-                                            </a>
+                                            <form action="/moderator/{{ $data->id }}/selesai" method="POST">
+                                                @csrf
+                                                @method('put')
+                                                <button type="submit" class="text-decoration-none border-0 bg-transparent">
+                                                    <i class="bi bi-check-lg text-orange"></i>
+                                                </button>
+                                            </form>
                                         </div>
                                     </td>
                                 </tr>

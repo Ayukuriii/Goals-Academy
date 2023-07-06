@@ -19,9 +19,10 @@
                                 <th>#</th>
                                 <th>Nama</th>
                                 <th>Kategori</th>
+                                <th>Tutor</th>
                                 <th>Hari/Tanggal</th>
                                 <th>Sesi</th>
-                                <th>Keterangan</th>
+                                <th>Status Link</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -31,28 +32,33 @@
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $data->user->name }}</td>
                                     <td>{{ $data->program->title }}</td>
-                                    <td>{{ \Carbon\Carbon::parse($data->date)->toFormattedDateString() }}</td>
+                                    <td>{{ $data->tutor->user->name ?? 'Kosong' }}</td>
+                                    <td>{{ \Carbon\Carbon::parse($data->date)->isoFormat('dddd, D MMMM Y') }}</td>
                                     <td>{{ $data->program_session->sesi }}</td>
                                     <td>
-                                        @if (\Carbon\Carbon::now() < $data->date)
-                                            AKAN BERLANGSUNG
-                                        @elseif (\Carbon\Carbon::now() >= $data->date && \Carbon\Carbon::now() <= \Carbon\Carbon::parse($data->date)->addHour())
-                                            BERLANGSUNG
+                                        @if ($data->links === null)
+                                            KOSONG
                                         @else
-                                            SELESAI
+                                            TERISI
                                         @endif
                                     </td>
                                     <td class="h4">
                                         <div class="d-flex gap-2">
-                                            <a href="#" class="text-decoration-none">
+                                            <a href="/admin/bimbingan/show/{{ $data->id }}"
+                                                class="text-decoration-none">
                                                 <i class="bi bi-pencil-square text-success"></i>
                                             </a>
-                                            <a href="/admin/detail_bimbingan" class="text-decoration-none">
+                                            <a href="/admin/bimbingan/detail/{{ $data->id }}"
+                                                class="text-decoration-none">
                                                 <i class="bi bi-eye text-dark"></i>
                                             </a>
-                                            <a href="#" class="text-decoration-none">
-                                                <i class="bi bi-check-lg text-orange"></i>
-                                            </a>
+                                            <form action="/admin/bimbingan/selesai/{{ $data->id }}" method="POST">
+                                                @csrf
+                                                @method('put')
+                                                <button type="submit" class="text-decoration-none border-0 bg-transparent">
+                                                    <i class="bi bi-check-lg text-orange"></i>
+                                                </button>
+                                            </form>
                                         </div>
                                     </td>
                                 </tr>

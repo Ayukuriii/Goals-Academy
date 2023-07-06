@@ -102,15 +102,19 @@ Route::post('/send-email', [EmailController::class, 'sendEmail']);
 Route::middleware(['auth', 'check.level:admin'])->group(function () {
     Route::controller(AdminController::class)->group(function () {
         Route::get('/admin', 'index')->name('admin');
-        Route::get('/admin/atur_jadwal', 'atur_jadwal')->name('admin.atur-jadwal');
-        Route::get('/admin/riwayat_jadwal', 'riwayat_jadwal')->name('admin.riwayat-jadwal');
-        Route::get('/admin/edit_jadwal', 'edit_jadwal')->name('admin.riwayat-jadwal');
+
         Route::get('/admin/bimbingan', 'bimbingan')->name('admin.bimbingan');
         Route::get('/admin/riwayat_bimbingan', 'riwayat_bimbingan')->name('admin.riwayat-bimbingan');
-        Route::get('/admin/detail_bimbingan', 'detail_bimbingan')->name('admin.detail-bimbingan');
+        Route::get('/admin/bimbingan/show/{id}', 'show_bimbingan')->name('admin.show-bimbingan');
+        Route::put('/admin/bimbingan/update/{id}', 'update_bimbingan')->name('admin.update-bimbingan');
+        Route::get('/admin/bimbingan/detail/{id}', 'detail_bimbingan')->name('admin.detail-bimbingan');
+        Route::put('/admin/bimbingan/edit/{id}', 'edit_bimbingan')->name('admin.edit-bimbingan');
+        Route::put('/admin/bimbingan/selesai/{id}', 'selesai_bimbingan')->name('admin.selesai-bimbingan');
+
         Route::get('/admin/list_user', 'list_user')->name('admin.list_user');
         Route::get('/admin/tambah_user/create', 'create')->name('admin.create');
         Route::post('/admin/tambah_user/store', 'store')->name('admin.store');
+        Route::post('/admin/{id}/destroy', 'destroy')->name('admin.destroy');
     });
 });
 
@@ -118,9 +122,11 @@ Route::middleware(['auth', 'check.level:admin'])->group(function () {
 Route::middleware(['auth', 'check.level:moderator'])->group(function () {
     Route::controller(ModeratorController::class)->group(function () {
         Route::get('/moderator', 'index')->name('moderator');
-        Route::get('/moderator/atur_jadwal', 'atur_jadwal')->name('moderator.atur-jadwal');
-        Route::get('/moderator/riwayat_jadwal', 'riwayat_jadwal')->name('moderator.riwayat-jadwal');
-        Route::get('/moderator/{id}/edit', 'edit')->name('moderator.edit-jadwal');
+        Route::get('/moderator/atur_jadwal', 'atur_jadwal')->name('moderator.atur-jadwal.show');
+        Route::get('/moderator/riwayat_jadwal', 'riwayat_jadwal')->name('moderator.riwayat-jadwal.show');
+        Route::get('/moderator/{id}/edit', 'edit')->name('moderator.edit-jadwal.edit');
+        Route::put('/moderator/{id}/update', 'update')->name('moderator.edit-jadwal.update');
+        Route::put('/moderator/{id}/selesai', 'selesai')->name('moderator.edit-jadwal.selesai');
     });
 });
 
