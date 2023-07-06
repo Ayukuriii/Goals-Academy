@@ -147,7 +147,10 @@ class AdminController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return view('dashboard.admin.list_user.edit_user', [
+            'title' => 'Admin',
+            'data' => User::find($id)
+        ]);
     }
 
     /**
@@ -155,8 +158,32 @@ class AdminController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $data = User::findOrFail($id);
+        $request['password'] = Hash::make($request['password']);
+
+        // Check if the role has changed from 'tutor' to 'user'
+        $oldRole = $data['user_level'];
+        $newRole = $request['user_level'];
+
+        $data->fill($request->except([
+            '_token',
+            '_method'
+        ]));
+        $data->save();
+
+        if ($oldRole === 'tutor' && $newRole === 'user') {
+            // Delete the tutor record associated with the user
+            Tutor::where('user_id', $data->id)->delete();
+        } elseif ($oldRole !== 'tutor' && $newRole === 'tutor') {
+            // Create a new tutor record for the user
+            Tutor::create([
+                'user_id' => $data->id
+            ]);
+        }
+
+        return redirect('/admin/list_user');
     }
+
 
     /**
      * Remove the specified resource from storage.

@@ -10,32 +10,38 @@
             <div class="card col ml-3 p-4 side-program">
                 <h3 class="text-purple fw-bold">Tambah User</h3>
                 <div class="form w-75 mt-3">
-                    <form class="row" action="{{ route('admin.store') }}" method="POST">
+                    <form class="row" action="/admin/tambah_user/update/{{ $data->id }}" method="POST">
                         @csrf
+                        @method('put')
                         <div class="form-group col-6 mb-3">
                             <label class="form-label small" for="name">NAMA</label>
-                            <input type="text" name="name" class="form-control" id="name" placeholder=" "
-                                required />
+                            <input type="text" name="name" class="form-control" id="name"
+                                value="{{ $data->name }}" placeholder=" " required />
+                        </div>
+                        <div class="form-group col-6 mb-3">
+                            <label class="form-label small" for="name">USERNAME</label>
+                            <input type="text" name="username" class="form-control" id="username"
+                                value="{{ $data->username }}" placeholder=" " required />
                         </div>
                         <div class="form-group col-6 mb-3">
                             <label class="form-label small" for="university">UNIVERSITAS</label>
-                            <input type="text" name="university" class="form-control" id="university" placeholder=" "
-                                required />
+                            <input type="text" name="university" class="form-control" id="university"
+                                value="{{ $data->university }}" placeholder=" " required />
                         </div>
                         <div class="form-group col-6 mb-3">
                             <label class="form-label small" for="email">EMAIL</label>
-                            <input type="email" name="email" class="form-control" id="email" placeholder=" "
-                                required />
+                            <input type="email" name="email" class="form-control" id="email"
+                                value="{{ $data->email }}" placeholder=" " required />
                         </div>
                         <div class="form-group col-6 mb-3">
                             <label class="form-label small" for="major">JURUSAN</label>
-                            <input type="text" name="major" class="form-control" id="major" placeholder=" "
-                                required />
+                            <input type="text" name="major" class="form-control" id="major"
+                                value="{{ $data->major }}" placeholder=" " required />
                         </div>
                         <div class="form-group col-6 mb-3">
                             <label class="form-label small" for="phone_number">NOMOR HP.</label>
-                            <input type="text" name="phone_number" class="form-control" id="phone_number" placeholder=" "
-                                required />
+                            <input type="text" name="phone_number" class="form-control" id="phone_number"
+                                value="{{ $data->phone_number }}" placeholder=" " required />
                         </div>
                         <div class="form-group col-6 mb-3">
                             <label class="form-label small" for="password">PASSWORD</label>

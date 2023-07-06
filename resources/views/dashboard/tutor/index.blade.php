@@ -14,7 +14,7 @@
                         class="col-3 gap-3 d-flex text-center align-items-center justify-content-center d-inline-block border rounded py-4 px-3">
                         <div class="d-inline-block text-warning h1 mx-0"><i class="bi bi-exclamation-lg"></i></div>
                         <div class="d-inline-block h3">
-                            {{ $datas->count() }}
+                            {{ $data }}
                         </div>
                         <div class="d-inline-block w-75 text-start">Bimbingan Baru</div>
                     </div>

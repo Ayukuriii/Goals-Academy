@@ -31,7 +31,7 @@
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $data->user->name }}</td>
                                     <td>{{ $data->program->title }}</td>
-                                    <td>{{ \Carbon\Carbon::parse($data->date)->toFormattedDateString() }}</td>
+                                    <td>{{ \Carbon\Carbon::parse($data->date)->isoFormat('dddd, D MMMM Y') }}</td>
                                     <td>{{ $data->program_session->sesi }}</td>
                                     <td>
                                         @if (\Carbon\Carbon::now() < $data->date)
@@ -44,7 +44,7 @@
                                     </td>
                                     <td class="h4">
                                         <div class="d-flex gap-2">
-                                            <a href="/tutor/detail" class="text-decoration-none">
+                                            <a href="/tutor/detail/{{ $data->id }}" class="text-decoration-none">
                                                 <i class="bi bi-eye text-dark"></i>
                                             </a>
                                             <a href="#" class="text-decoration-none">
