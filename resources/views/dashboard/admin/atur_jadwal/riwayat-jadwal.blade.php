@@ -7,7 +7,7 @@
         <div class="row gap-2">
             @include('dashboard.layouts.sidebar')
 
-            <div class="card col ml-3 p-4 side-program">
+            <div id="datatable" class="card col ml-3 p-4 side-program">
                 <div class="d-flex justify-content-between">
                     <h3 class="d-inline text-purple fw-bold">Riwayat Jadwal</h3>
                 </div>
@@ -46,4 +46,16 @@
         </div>
     </section>
     <!-- Last Page -->
+
+    <script>
+        $('document').ready(function() {
+            $('#datatable').DataTable({
+                'processing': true,
+                dom: 'Bfrtip',
+                buttons: [
+                    'copy', 'csv', 'excel', 'pdf'
+                ]
+            })
+        })
+    </script>
 @endsection

@@ -13,7 +13,7 @@
                     <a href="/tutor/riwayat" class="d-inline btn-outline-orange py-2 px-4 small">Riwayat</a>
                 </div>
                 <div class="p-2 mt-2">
-                    <table class="table">
+                    <table id="datatable" class="table">
                         <thead>
                             <tr>
                                 <th>#</th>
@@ -26,7 +26,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($datas as $data) 
+                            @foreach ($datas as $data)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $data->user->name }}</td>
@@ -61,4 +61,16 @@
         </div>
     </section>
     <!-- Last Page -->
+
+    <script>
+        $('document').ready(function() {
+            $('#datatable').DataTable({
+                'processing': true,
+                dom: 'Bfrtip',
+                buttons: [
+                    'copy', 'csv', 'excel', 'pdf'
+                ]
+            })
+        })
+    </script>
 @endsection

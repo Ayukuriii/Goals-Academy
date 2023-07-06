@@ -12,7 +12,7 @@
                     <h3 class="d-inline text-purple fw-bold">Riwayat Bimbingan</h3>
                 </div>
                 <div class="p-2 mt-2">
-                    <table class="table">
+                    <table id="datatable" class="table">
                         <thead>
                             <tr>
                                 <th>#</th>
@@ -47,4 +47,16 @@
         </div>
     </section>
     <!-- Last Page -->
+
+    <script>
+        $('document').ready(function() {
+            $('#datatable').DataTable({
+                'processing': true,
+                dom: 'Bfrtip',
+                buttons: [
+                    'copy', 'csv', 'excel', 'pdf'
+                ]
+            })
+        })
+    </script>
 @endsection
