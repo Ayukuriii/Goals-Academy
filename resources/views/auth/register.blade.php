@@ -74,6 +74,7 @@
                                 <div class="col-6 form-group">
                                     <label for="password">Password* (Minimal 8 Karakter)</label>
                                     <input type="password" name="password" class="form-control" id="password" placeholder=" " required/>
+                                    <i id="eye" class="bi bi-eye-slash text-secondary d-inline-block mt-2" style="cursor: pointer"> Show Password</i>
                                 </div>
                                 <div class="col-12 mt-3">
                                     <div class="row">
@@ -107,6 +108,14 @@
 
     <script src="{{ asset('js/form.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/main.js') }}"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const passwordInput = document.querySelector('#password')
+            const eyeButton = document.querySelector('#eye')
+            passwordToggle(passwordInput, eyeButton)
+        })
+    </script>
 </body>
 <!-- JavaScript links -->
 

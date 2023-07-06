@@ -1,3 +1,6 @@
+form label, form #eye {
+    font-size: 0.8rem;
+}
 
 .popup-container {
     display: none;
@@ -224,13 +227,6 @@ textarea:not(:placeholder-shown) {
     padding: 50px;
 }
 
-.form-login {
-    width: 100%;
-    max-width: 360px;
-    margin: auto;
-    font-size: 10px;
-}
-
 .card-login h3{
     color: #363434;
     letter-spacing: 1px;
@@ -290,7 +286,6 @@ textarea:not(:placeholder-shown) {
 }
 
 .form-register .form-group {
-    font-size: 10px;
     color: #363434;
 }
 

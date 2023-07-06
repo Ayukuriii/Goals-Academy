@@ -12,42 +12,37 @@
                 <div class="form w-75 mt-3">
                     <form class="row" action="{{ route('admin.store') }}" method="POST">
                         @csrf
-                        <div class="form-group col-6 mb-3">
+                        <div class="form-group col-6 mb-2">
                             <label class="form-label small" for="name">NAMA</label>
                             <input type="text" name="name" class="form-control" id="name" placeholder=" "
                                 required />
                         </div>
-                        <div class="form-group col-6 mb-3">
+                        <div class="form-group col-6 mb-2">
                             <label class="form-label small" for="name">USERNAME</label>
                             <input type="text" name="username" class="form-control" id="username" placeholder=" "
                                 required />
                         </div>
-                        <div class="form-group col-6 mb-3">
+                        <div class="form-group col-6 mb-2">
                             <label class="form-label small" for="university">UNIVERSITAS</label>
                             <input type="text" name="university" class="form-control" id="university" placeholder=" "
                                 required />
                         </div>
-                        <div class="form-group col-6 mb-3">
-                            <label class="form-label small" for="email">EMAIL</label>
-                            <input type="email" name="email" class="form-control" id="email" placeholder=" "
-                                required />
-                        </div>
-                        <div class="form-group col-6 mb-3">
+                        <div class="form-group col-6 mb-2">
                             <label class="form-label small" for="major">JURUSAN</label>
                             <input type="text" name="major" class="form-control" id="major" placeholder=" "
                                 required />
                         </div>
-                        <div class="form-group col-6 mb-3">
+                        <div class="form-group col-6 mb-2">
+                            <label class="form-label small" for="email">EMAIL</label>
+                            <input type="email" name="email" class="form-control" id="email" placeholder=" "
+                                required />
+                        </div>
+                        <div class="form-group col-6 mb-2">
                             <label class="form-label small" for="phone_number">NOMOR HP.</label>
                             <input type="text" name="phone_number" class="form-control" id="phone_number" placeholder=" "
                                 required />
                         </div>
-                        <div class="form-group col-6 mb-3">
-                            <label class="form-label small" for="password">PASSWORD</label>
-                            <input type="password" name="password" class="form-control" id="password" placeholder=" "
-                                required />
-                        </div>
-                        <div class="form-group col-6 mb-3">
+                        <div class="form-group col-6 mb-2">
                             <label class="form-label small" for="user_level">USER LEVEL</label>
                             <select class="form-select border-orange" name="user_level" id="user_level"
                                 aria-label="Default select example">
@@ -57,7 +52,13 @@
                                 <option value="admin">Admin</option>
                             </select>
                         </div>
-                        <div class="form-button col-12 mb-3 d-flex justify-content-end">
+                        <div class="form-group col-6 mb-2">
+                            <label class="form-label small" for="password">PASSWORD</label>
+                            <input type="password" name="password" class="form-control" id="password" placeholder=" "
+                                required />
+                            <i id="eye" class="bi bi-eye-slash position-relative fs-5 text-secondary" style="top: -33%; left: 92%; cursor: pointer;"></i>
+                        </div>
+                        <div class="form-button col-12 mb-2 d-flex justify-content-end">
                             <button class="btn-orange-static px-4 d-inline text-end small" id="button"
                                 type="submit" disabled>Simpan</button>
                         </div>
@@ -68,4 +69,12 @@
         </div>
     </section>
     <!-- Last Page -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const passwordInput = document.querySelector('#password')
+            const eyeButton = document.querySelector('#eye')
+            passwordToggle(passwordInput, eyeButton)
+        })
+    </script>
 @endsection

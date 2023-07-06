@@ -2,6 +2,19 @@
 const formInput = document.querySelectorAll(".form-group input")
 const formButton = document.querySelector(".form-button button")
 
+// Function untuk show/hide password
+const passwordToggle = (passwordInput, eyeButton) => {
+    eyeButton.addEventListener('click', () => {
+        if (passwordInput.getAttribute('type') == 'password') {
+            passwordInput.setAttribute('type', 'text')
+            eyeButton.classList.replace('bi-eye-slash', 'bi-eye')
+        } else {
+            passwordInput.setAttribute('type', 'password')
+            eyeButton.classList.replace('bi-eye', 'bi-eye-slash')
+        }
+    })
+}
+
 // Function tampilan tombol submit
 const checkInput = () => {
     let trigger = false
@@ -36,4 +49,5 @@ formInput.forEach(element => {
         updateButton()
     });
 });
+
 updateButton()
