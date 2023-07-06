@@ -136,8 +136,8 @@ Route::middleware(['auth', 'check.level:tutor'])->group(function () {
         Route::get('/tutor', 'index')->name('tutor');
         Route::get('/tutor/bimbingan', 'bimbingan')->name('tutor');
         Route::get('/tutor/riwayat', 'riwayat')->name('tutor');
-        Route::get('/tutor/edit', 'edit')->name('tutor');
-        Route::get('/tutor/detail', 'detail')->name('tutor');
+        Route::put('/tutor/edit/{id}', 'edit')->name('tutor');
+        Route::get('/tutor/detail/{id}', 'detail')->name('tutor');
     });
 });
 

@@ -31,7 +31,7 @@
                                     <td>{{ $data->user->name }}</td>
                                     <td>{{ $data->program->title }}</td>
                                     <td>{{ $data->tutor->user->name }}</td>
-                                    <td>{{ \Carbon\Carbon::parse($data->date)->toFormattedDateString() }}</td>
+                                    <td>{{ \Carbon\Carbon::parse($data->date)->isoFormat('dddd, D MMMM Y') }}</td>
                                     <td>{{ $data->program_session->sesi }}</td>
                                     <td>
                                         @if ($data->program_status === 1)
