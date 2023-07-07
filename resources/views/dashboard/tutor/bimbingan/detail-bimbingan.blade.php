@@ -9,7 +9,8 @@
 
             <div class="card col ml-3 p-4 side-program">
                 <div class="d-flex justify-content-between">
-                    <h3 class="d-inline text-purple fw-bold">Beri catatan pada Ekadian Haris</h3>
+                    <h3 class="d-inline text-purple fw-bold">Beri catatan pada {{ $data->user->name }}</h3>
+                    <a class="d-inline btn-outline-orange py-2 px-4 small" onclick="history.back()" style="cursor: pointer">Back</a>
                 </div>
                 <div class="p-2 pb-0 mt-2">
                     <table class="table table-borderless w-50">

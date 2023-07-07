@@ -10,7 +10,10 @@
 
             <div class="card col ml-3 p-4 side-program">
                 <div>
-                    <h3 class="d-inline text-purple fw-bold">Edit Profil</h3>
+                    <div class="d-flex justify-content-between">
+                        <h3 class="d-inline text-purple fw-bold">Edit Profil</h3>
+                        <a class="d-inline btn-outline-orange py-2 px-4 small" onclick="history.back()" style="cursor: pointer">Back</a>
+                    </div>
                     <form action="#" method="POST" class="from row mt-3 px-2">
                         @csrf
                         <div class="d-flex align-items-center form-group mb-2">
@@ -79,18 +82,18 @@
                     <form action="#" method="POST" class="from row mt-3 px-2">
                         @csrf
                         <div class="form-group col-6 mb-2">
-                            <label class="form-label small" for="password">PASSWORD</label>
-                            <input type="password" name="password" class="form-control" id="password" placeholder=" "
+                            <label class="form-label small" for="new_password">PASSWORD BARU</label>
+                            <input type="password" name="new_password" class="form-control" id="new_password" placeholder=" "
                                 required />
                         </div>
                         <div class="form-group col-6 mb-2">
-                            <label class="form-label small" for="password">PASSWORD</label>
-                            <input type="password" name="password" class="form-control" id="password" placeholder=" "
+                            <label class="form-label small" for="old_password">PASSWORD LAMA</label>
+                            <input type="password" name="old_password" class="form-control" id="old_password" placeholder=" "
                                 required />
                         </div>
                         <div class="form-group col-6 mb-2">
-                            <label class="form-label small" for="password">PASSWORD</label>
-                            <input type="password" name="password" class="form-control" id="password" placeholder=" "
+                            <label class="form-label small" for="confirmation_password">ULANGI PASSWORD BARU</label>
+                            <input type="password" name="confirmation_password" class="form-control" id="confirmation_password" placeholder=" "
                                 required />
                         </div>
                         <div class="form-button col-6 mb-3 d-flex justify-content-end pt-3">

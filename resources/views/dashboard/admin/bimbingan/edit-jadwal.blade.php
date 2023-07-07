@@ -8,7 +8,10 @@
             @include('dashboard.layouts.sidebar')
 
             <div class="card col ml-3 p-4 side-program">
-                <h3 class="text-purple fw-bold">Edit Jadwal</h3>
+                <div class="d-flex justify-content-between w-75">
+                    <h3 class="text-purple fw-bold">Edit Jadwal</h3>
+                    <a class="d-inline btn-outline-orange py-2 px-4 small" onclick="history.back()" style="cursor: pointer">Back</a>
+                </div>
                 <div class="form w-75 mt-3">
                     <form class="row" action="/admin/bimbingan/update/{{ $data->id }}" method="POST">
                         @method('put')
