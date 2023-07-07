@@ -53,13 +53,13 @@
                                 <option value="admin">Admin</option>
                             </select>
                         </div>
-                        <div class="form-group col-6 mb-3">
+                        {{-- <div class="form-group col-6 mb-3">
                             <label class="form-label small" for="password">PASSWORD</label>
                             <input type="password" name="password" class="form-control" id="password" placeholder=" "
                                 required />
-                        </div>
-                        <div class="form-button col-12 mb-3 d-flex justify-content-end">
-                            <button class="btn-orange-static px-4 d-inline text-end small" id="button"
+                        </div> --}}
+                        <div class="form-button col-6 mb-3 d-flex justify-content-end pt-5">
+                            <button class="btn-orange-static px-4 mt-2 d-inline text-end small" id="button"
                                 type="submit" disabled>Simpan</button>
                         </div>
                     </form>

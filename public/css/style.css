@@ -15,6 +15,14 @@
     z-index: 2;
 }
 
+.table-responsive .modal-content {
+    background-color: white;
+    width: unset;
+    padding: unset;
+    border-radius: 12px;
+    min-height: unset;
+}
+
 .panel-container {
     display: flex;
     justify-content: center;

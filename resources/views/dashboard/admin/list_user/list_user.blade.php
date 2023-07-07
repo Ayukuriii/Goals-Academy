@@ -41,15 +41,35 @@
                                             <a href="/admin/tambah_user/edit/{{ $data->id }}" class="text-decoration-none">
                                                 <i class="bi bi-pencil-square text-success"></i>
                                             </a>
-                                            <form action="/admin/{{ $data->id }}/destroy" method="POST">
-                                                @csrf
-                                                <button type="submit" class="text-decoration-none border-0 bg-transparent">
-                                                    <i class="bi bi-trash3 text-orange"></i>
-                                                </button>
-                                            </form>
+                                            <button type="submit" class="text-decoration-none border-0 bg-transparent" data-bs-toggle="modal" data-bs-target="#deleteModal{{ $data->id }}">
+                                                <i class="bi bi-trash3 text-orange"></i>
+                                            </button>
                                         </div>
                                     </td>
                                 </tr>
+                                <!-- Modal -->
+                                <div class="modal fade" id="deleteModal{{ $data->id }}" tabindex="-1" aria-labelledby="deleteModal{{ $data->id }}Label" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="deleteModal{{ $data->id }}Label">Delete Data</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Apakah Anda yakin ingin menghapus data dengan email : {{ $data->email }}?</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            <form action="/admin/{{ $data->id }}/destroy" method="POST">
+                                                @csrf
+                                                <button type="submit" class="btn btn-danger">
+                                                    Delete
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
                             @endforeach
                         </tbody>
                     </table>
