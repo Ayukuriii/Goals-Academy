@@ -12,6 +12,13 @@
                     <h3 class="d-inline text-purple fw-bold">Bimbingan</h3>
                     <a href="/admin/riwayat_bimbingan" class="d-inline btn-outline-orange py-2 px-4 small">Riwayat</a>
                 </div>
+
+                <!-- Alert -->
+                <div class="alert alert-info alert-dismissible fade mt-4 show" role="alert">
+                    Message appear here
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+
                 <div class="p-2 mt-2">
                     <table id="datatable" class="table">
                         <thead>

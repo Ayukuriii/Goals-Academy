@@ -8,45 +8,69 @@
             @include('dashboard.layouts.sidebar')
 
             <div class="card col ml-3 p-4 side-program">
-                <h3 class="text-purple fw-bold">Edit Jadwal</h3>
+                <div class="d-flex justify-content-between w-75">
+                    <h3 class="text-purple fw-bold">Edit Jadwal</h3>
+                    <a class="d-inline btn-outline-orange py-2 px-4 small" onclick="history.back()" style="cursor: pointer">Back</a>
+                </div>
                 <div class="form w-75 mt-3">
                     <form class="row" action="/moderator/update/{{ $data->id }}" method="POST">
                         @method('put')
                         @csrf
                         <div class="form-group col-6 mb-2">
                             <label class="form-label" for="nama">NAMA</label>
-                            <input type="text" name="nama" class="form-control" id="nama"
+                            <input type="text" name="nama" class="form-control is-invalid" id="nama"
                                 placeholder="{{ $data->user->name }}" disabled />
+                            <div class="invalid-feedback">
+                                Invalid message
+                            </div>
                         </div>
                         <div class="form-group col-6 mb-2">
                             <label class="form-label" for="universitas">UNIVERSITAS</label>
-                            <input type="text" name="universitas" class="form-control" id="universitas"
+                            <input type="text" name="universitas" class="form-control is-invalid" id="universitas"
                                 placeholder="{{ $data->user->university }}" disabled />
+                            <div class="invalid-feedback">
+                                Invalid message
+                            </div>
                         </div>
                         <div class="form-group col-6 mb-2">
                             <label class="form-label" for="email">EMAIL</label>
-                            <input type="email" name="email" class="form-control" id="email"
+                            <input type="email" name="email" class="form-control is-invalid" id="email"
                                 placeholder="{{ $data->user->email }}" disabled />
+                            <div class="invalid-feedback">
+                                Invalid message
+                            </div>
                         </div>
                         <div class="form-group col-6 mb-2">
                             <label class="form-label" for="jurusan">JURUSAN</label>
-                            <input type="text" name="jurusan" class="form-control" id="jurusan"
+                            <input type="text" name="jurusan" class="form-control is-invalid" id="jurusan"
                                 placeholder="{{ $data->user->major }}" disabled />
+                            <div class="invalid-feedback">
+                                Invalid message
+                            </div>
                         </div>
                         <div class="form-group col-6 mb-2">
                             <label class="form-label" for="nomor_hp">NOMOR HP.</label>
-                            <input type="text" name="nomor_hp" class="form-control" id="nomor_hp"
+                            <input type="text" name="nomor_hp" class="form-control is-invalid" id="nomor_hp"
                                 placeholder="{{ $data->user->phone_number }}" disabled />
+                            <div class="invalid-feedback">
+                                Invalid message
+                            </div>
                         </div>
                         <div class="form-group col-6 mb-2">
                             <label class="form-label" for="kategori">Kategori</label>
                             <input type="text" name="kategori" class="form-control" id="kategori"
                                 placeholder="{{ $data->program->title }}" disabled />
+                            <div class="invalid-feedback">
+                                Invalid message
+                            </div>
                         </div>
                         <div class="form-group col-6 mb-2">
                             <label class="form-label" for="jadwal">JADWAL</label>
-                            <input type="date" name="jadwal" class="form-control" id="jadwal" placeholder=""
+                            <input type="date" name="jadwal" class="form-control is-invalid" id="jadwal" placeholder=""
                                 value="{{ $data->date }}" required />
+                            <div class="invalid-feedback">
+                                Invalid message
+                            </div>
                         </div>
                         <div class="form-group col-6 mb-2">
                             <label class="form-label" for="pelaksanaan">SESI</label>
@@ -59,6 +83,9 @@
                                     </option>
                                 @endforeach
                             </select>
+                            <div class="invalid-feedback">
+                                Invalid message
+                            </div>
                         </div>
                         <div class="form-group col-6 mb-2">
                             <label class="form-label" for="tutor_id">TUTOR</label>
@@ -70,12 +97,18 @@
                                     </option>
                                 @endforeach
                             </select>
+                            <div class="invalid-feedback">
+                                Invalid message
+                            </div>
                         </div>
                         @if ($data->program->category == 'online')
                             <div class="form-group col-6 mb-2">
                                 <label class="form-label" for="tempat">LINK</label>
                                 <input type="text" name="links" class="form-control" id="links" placeholder=" "
                                     value="{{ $data->links }}" />
+                                <div class="invalid-feedback">
+                                    Invalid message
+                                </div>
                             </div>
                         @else
                             <div class="form-group col-6 mb-2">
