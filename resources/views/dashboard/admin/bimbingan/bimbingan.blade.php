@@ -29,7 +29,9 @@
                                 <th>Tutor</th>
                                 <th>Hari/Tanggal</th>
                                 <th>Sesi</th>
-                                <th>Status Link</th>
+                                <th>Link/Tempat</th>
+                                <th>Tutor</th>
+                                <th>Moderator</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -43,10 +45,29 @@
                                     <td>{{ \Carbon\Carbon::parse($data->date)->isoFormat('dddd, D MMMM Y') }}</td>
                                     <td>{{ $data->program_session->sesi }}</td>
                                     <td>
-                                        @if ($data->links === null)
-                                            KOSONG
+                                        @if ($data->program->category == 'online' && $data->links !== null)
+                                            <a
+                                                href="{{ strpos($data->links, 'http') === 0 ? $data->links : 'https://' . $data->links }}">
+                                                Link
+                                            </a>
+                                        @elseif ($data->program->category == 'offline')
+                                            {{ $data->links }}
                                         @else
-                                            TERISI
+                                            -
+                                        @endif
+                                    </td>
+                                    <td>
+                                        @if ($data->is_tutor == false)
+                                            <i class="bi bi-dash fs-4 text-orange"></i>
+                                        @else
+                                            <i class="bi bi-check fs-4 text-orange"></i>
+                                        @endif
+                                    </td>
+                                    <td>
+                                        @if ($data->is_moderator == false)
+                                            <i class="bi bi-dash fs-4 text-orange"></i>
+                                        @else
+                                            <i class="bi bi-check fs-4 text-orange"></i>
                                         @endif
                                     </td>
                                     <td class="h4">
@@ -63,7 +84,7 @@
                                                 @csrf
                                                 @method('put')
                                                 <button type="submit" class="text-decoration-none border-0 bg-transparent">
-                                                    <i class="bi bi-check-lg text-orange"></i>
+                                                    <i class="bi bi-check-all text-orange"></i>
                                                 </button>
                                             </form>
                                         </div>
@@ -73,12 +94,13 @@
                         </tbody>
                     </table>
                 </div>
+                {{ $datas->links() }}
             </div>
         </div>
     </section>
     <!-- Last Page -->
 
-    <script>
+    {{-- <script>
         $('document').ready(function() {
             $('#datatable').DataTable({
                 'processing': true,
@@ -88,5 +110,5 @@
                 ]
             })
         })
-    </script>
+    </script> --}}
 @endsection

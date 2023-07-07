@@ -19,6 +19,7 @@
                                 <th>#</th>
                                 <th>Nama</th>
                                 <th>Kategori</th>
+                                <th>Tutor</th>
                                 <th>Hari/Tanggal</th>
                                 <th>Sesi</th>
                                 <th>Keterangan</th>
@@ -30,13 +31,10 @@
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $data->user->name }}</td>
                                     <td>{{ $data->program->title }}</td>
+                                    <td>{{ $data->tutor->user->name }}</td>
                                     <td>{{ \Carbon\Carbon::parse($data->date)->isoFormat('dddd, D MMMM Y') }}</td>
                                     <td>{{ $data->program_session->sesi }}</td>
-                                    <td>
-                                        @if ($data->program_status === 1)
-                                            SELESAI
-                                        @endif
-                                    </td>
+                                    <td>SELESAI</td>
                                 </tr>
                             @endforeach
                         </tbody>
