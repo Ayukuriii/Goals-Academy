@@ -44,6 +44,13 @@
             </div>
             <div class="card-login w-100">
                 <h3>Login</h3>
+
+                <!-- Alert -->
+                <div class="alert alert-info alert-dismissible fade mt-4 show" role="alert">
+                    Message appear here
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+
                 <div class="form-login">
                     <form action="/login" method="POST">
                         @csrf

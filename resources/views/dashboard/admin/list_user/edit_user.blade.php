@@ -18,33 +18,51 @@
                         @method('put')
                         <div class="form-group col-6 mb-3">
                             <label class="form-label small" for="name">NAMA</label>
-                            <input type="text" name="name" class="form-control" id="name"
+                            <input type="text" name="name" class="form-control is-invalid" id="name"
                                 value="{{ $data->name }}" placeholder=" " required />
+                            <div class="invalid-feedback">
+                                Invalid message
+                            </div>
                         </div>
                         <div class="form-group col-6 mb-3">
                             <label class="form-label small" for="name">USERNAME</label>
-                            <input type="text" name="username" class="form-control" id="username"
+                            <input type="text" name="username" class="form-control is-invalid" id="username"
                                 value="{{ $data->username }}" placeholder=" " required />
+                            <div class="invalid-feedback">
+                                Invalid message
+                            </div>
                         </div>
                         <div class="form-group col-6 mb-3">
                             <label class="form-label small" for="university">UNIVERSITAS</label>
-                            <input type="text" name="university" class="form-control" id="university"
+                            <input type="text" name="university" class="form-control is-invalid" id="university"
                                 value="{{ $data->university }}" placeholder=" " required />
+                            <div class="invalid-feedback">
+                                Invalid message
+                            </div>
                         </div>
                         <div class="form-group col-6 mb-3">
                             <label class="form-label small" for="major">JURUSAN</label>
-                            <input type="text" name="major" class="form-control" id="major"
+                            <input type="text" name="major" class="form-control is-invalid" id="major"
                                 value="{{ $data->major }}" placeholder=" " required />
+                            <div class="invalid-feedback">
+                                Invalid message
+                            </div>
                         </div>
                         <div class="form-group col-6 mb-3">
                             <label class="form-label small" for="email">EMAIL</label>
-                            <input type="email" name="email" class="form-control" id="email"
+                            <input type="email" name="email" class="form-control is-invalid" id="email"
                                 value="{{ $data->email }}" placeholder=" " required />
+                            <div class="invalid-feedback">
+                                Invalid message
+                            </div>
                         </div>
                         <div class="form-group col-6 mb-3">
                             <label class="form-label small" for="phone_number">NOMOR HP.</label>
-                            <input type="text" name="phone_number" class="form-control" id="phone_number"
+                            <input type="text" name="phone_number" class="form-control is-invalid" id="phone_number"
                                 value="{{ $data->phone_number }}" placeholder=" " required />
+                            <div class="invalid-feedback">
+                                Invalid message
+                            </div>
                         </div>
                         <div class="form-group col-6 mb-3">
                             <label class="form-label small" for="user_level">USER LEVEL</label>
@@ -55,10 +73,13 @@
                                 <option value="tutor">Tutor</option>
                                 <option value="admin">Admin</option>
                             </select>
+                            <div class="invalid-feedback">
+                                Invalid message
+                            </div>
                         </div>
                         {{-- <div class="form-group col-6 mb-3">
                             <label class="form-label small" for="password">PASSWORD</label>
-                            <input type="password" name="password" class="form-control" id="password" placeholder=" "
+                            <input type="password" name="password" class="form-control is-invalid" id="password" placeholder=" "
                                 required />
                         </div> --}}
                         <div class="form-button col-6 mb-3 d-flex justify-content-end pt-5">
