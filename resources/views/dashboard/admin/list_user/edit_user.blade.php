@@ -8,7 +8,7 @@
             @include('dashboard.layouts.sidebar')
 
             <div class="card col ml-3 p-4 side-program">
-                <h3 class="text-purple fw-bold">Tambah User</h3>
+                <h3 class="text-purple fw-bold">Edit User</h3>
                 <div class="form w-75 mt-3">
                     <form class="row" action="/admin/tambah_user/update/{{ $data->id }}" method="POST">
                         @csrf
@@ -29,14 +29,14 @@
                                 value="{{ $data->university }}" placeholder=" " required />
                         </div>
                         <div class="form-group col-6 mb-3">
-                            <label class="form-label small" for="email">EMAIL</label>
-                            <input type="email" name="email" class="form-control" id="email"
-                                value="{{ $data->email }}" placeholder=" " required />
-                        </div>
-                        <div class="form-group col-6 mb-3">
                             <label class="form-label small" for="major">JURUSAN</label>
                             <input type="text" name="major" class="form-control" id="major"
                                 value="{{ $data->major }}" placeholder=" " required />
+                        </div>
+                        <div class="form-group col-6 mb-3">
+                            <label class="form-label small" for="email">EMAIL</label>
+                            <input type="email" name="email" class="form-control" id="email"
+                                value="{{ $data->email }}" placeholder=" " required />
                         </div>
                         <div class="form-group col-6 mb-3">
                             <label class="form-label small" for="phone_number">NOMOR HP.</label>
@@ -53,8 +53,13 @@
                                 <option value="admin">Admin</option>
                             </select>
                         </div>
-                        <div class="form-button col-6 mb-3 d-flex justify-content-end pt-4">
-                            <button class="btn-orange-static mt-2 px-4 d-inline text-end small" id="button"
+                        <div class="form-group col-6 mb-3">
+                            <label class="form-label small" for="password">PASSWORD</label>
+                            <input type="password" name="password" class="form-control" id="password" placeholder=" "
+                                required />
+                        </div>
+                        <div class="form-button col-12 mb-3 d-flex justify-content-end">
+                            <button class="btn-orange-static px-4 d-inline text-end small" id="button"
                                 type="submit" disabled>Simpan</button>
                         </div>
                     </form>
