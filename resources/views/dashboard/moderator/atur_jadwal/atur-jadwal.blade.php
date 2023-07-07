@@ -21,7 +21,7 @@
                                 <th>Kategori</th>
                                 <th>Hari/Tanggal</th>
                                 <th>Sesi</th>
-                                <th>Status Link</th>
+                                <th>Link/Tempat</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -34,24 +34,34 @@
                                     <td>{{ \Carbon\Carbon::parse($data->date)->toFormattedDateString() }}</td>
                                     <td>{{ $data->program_session->sesi }}</td>
                                     <td>
-                                        @if ($data->links === null)
-                                            KOSONG
+                                        @if ($data->program->category == 'online' && $data->links !== null)
+                                            <a
+                                                href="{{ strpos($data->links, 'http') === 0 ? $data->links : 'https://' . $data->links }}">
+                                                Link
+                                            </a>
+                                        @elseif ($data->program->category == 'offline')
+                                            {{ $data->links }}
                                         @else
-                                            TERISI
+                                            -
                                         @endif
                                     </td>
                                     <td class="h4">
                                         <div class="d-flex gap-2">
-                                            <a href="/moderator/{{ $data->id }}/edit" class="text-decoration-none">
+                                            <a href="/moderator/edit/{{ $data->id }}" class="text-decoration-none">
                                                 <i class="bi bi-pencil-square text-success"></i>
                                             </a>
-                                            <form action="/moderator/{{ $data->id }}/selesai" method="POST">
-                                                @csrf
-                                                @method('put')
-                                                <button type="submit" class="text-decoration-none border-0 bg-transparent">
-                                                    <i class="bi bi-check-lg text-orange"></i>
-                                                </button>
-                                            </form>
+                                            @if ($data->is_moderator === 0)
+                                                <form action="/moderator/selesai/{{ $data->id }}" method="POST">
+                                                    @csrf
+                                                    @method('put')
+                                                    <button type="submit"
+                                                        class="text-decoration-none border-0 bg-transparent">
+                                                        <i class="bi bi-check-lg text-orange"></i>
+                                                    </button>
+                                                </form>
+                                            @else
+                                                <i class="bi bi-check-all fs-4 text-info"></i>
+                                            @endif
                                         </div>
                                     </td>
                                 </tr>

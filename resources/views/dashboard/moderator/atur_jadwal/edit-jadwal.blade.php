@@ -10,7 +10,7 @@
             <div class="card col ml-3 p-4 side-program">
                 <h3 class="text-purple fw-bold">Edit Jadwal</h3>
                 <div class="form w-75 mt-3">
-                    <form class="row" action="/moderator/{{ $data->id }}/update" method="POST">
+                    <form class="row" action="/moderator/update/{{ $data->id }}" method="POST">
                         @method('put')
                         @csrf
                         <div class="form-group col-6 mb-2">
@@ -39,9 +39,9 @@
                                 placeholder="{{ $data->user->phone_number }}" disabled />
                         </div>
                         <div class="form-group col-6 mb-2">
-                            <label class="form-label" for="pembelian">PEMBELIAN</label>
-                            <input type="text" name="pembelian" class="form-control" id="pembelian"
-                                placeholder="{{ $data->created_at }}" disabled />
+                            <label class="form-label" for="kategori">Kategori</label>
+                            <input type="text" name="kategori" class="form-control" id="kategori"
+                                placeholder="{{ $data->program->title }}" disabled />
                         </div>
                         <div class="form-group col-6 mb-2">
                             <label class="form-label" for="jadwal">JADWAL</label>
@@ -61,22 +61,36 @@
                             </select>
                         </div>
                         <div class="form-group col-6 mb-2">
-                            <label class="form-label" for="pelaksanaan">PELAKSANAAN</label>
-                            <select class="form-select border-orange" name="location" aria-label="Default select example">
-                                <option value="online" {{ $data->location == 'online' ? 'selected' : '' }}>Online</option>
-                                <option value="offline" {{ $data->location == 'offline' ? 'selected' : '' }}>Offline
-                                </option>
+                            <label class="form-label" for="tutor_id">TUTOR</label>
+                            <select class="form-select border-orange" name="tutor_id" id="tutor_id">
+                                @foreach ($tutor_data as $tutor)
+                                    <option value="{{ $tutor->id }}"
+                                        {{ $tutor->id == $data->tutor_id ? 'selected' : '' }}>
+                                        {{ $tutor->user->name }}
+                                    </option>
+                                @endforeach
                             </select>
                         </div>
-                        <div class="form-group col-6 mb-2">
-                            <label class="form-label" for="tempat">TEMPAT</label>
-                            <input type="text" name="links" class="form-control" id="links" placeholder=" "
-                                value="{{ $data->links }}" />
-                        </div>
+                        @if ($data->program->category == 'online')
+                            <div class="form-group col-6 mb-2">
+                                <label class="form-label" for="tempat">LINK</label>
+                                <input type="text" name="links" class="form-control" id="links" placeholder=" "
+                                    value="{{ $data->links }}" />
+                            </div>
+                        @else
+                            <div class="form-group col-6 mb-2">
+                                <label class="form-label" for="tempat">TEMPAT</label>
+                                <select class="form-select border-orange" name="links" id="links">
+                                    <option value="Nakoa">Nakoa</option>
+                                    <option value="Nakoa">Kongca</option>
+                                    <option value="Nakoa">Pavo</option>
+                                </select>
+                            </div>
+                        @endif
                         <div class="form-button col-12 my-2 d-flex justify-content-end">
                             <br><br>
-                            <button class="btn-orange-static my-1 px-4 d-inline text-end" id="button"
-                                type="submit" disabled>Simpan</button>
+                            <button class="btn-orange-static my-1 px-4 d-inline text-end" id="button" type="submit"
+                                disabled>Simpan</button>
                         </div>
                     </form>
                 </div>

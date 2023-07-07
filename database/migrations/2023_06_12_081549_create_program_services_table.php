@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('program_services', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('category');
             $table->text('description');
             $table->decimal('price');
             $table->timestamps();

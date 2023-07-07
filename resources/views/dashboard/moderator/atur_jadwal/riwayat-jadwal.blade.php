@@ -20,7 +20,7 @@
                                 <th>Kategori</th>
                                 <th>Hari/Tanggal</th>
                                 <th>Sesi</th>
-                                <th>Status Link</th>
+                                <th>Link/Tempat</th>
                                 <th>Status</th>
                             </tr>
                         </thead>
@@ -33,17 +33,18 @@
                                     <td>{{ \Carbon\Carbon::parse($data->date)->toFormattedDateString() }}</td>
                                     <td>{{ $data->program_session->sesi }}</td>
                                     <td>
-                                        @if ($data->links === null)
-                                            KOSONG
+                                        @if ($data->program->category == 'online' && $data->links !== null)
+                                            <a
+                                                href="{{ strpos($data->links, 'http') === 0 ? $data->links : 'https://' . $data->links }}">
+                                                Link
+                                            </a>
+                                        @elseif ($data->program->category == 'offline')
+                                            {{ $data->links }}
                                         @else
-                                            TERISI
+                                            -
                                         @endif
                                     </td>
-                                    <td>
-                                        @if ($data->program_status === 1)
-                                            SELESAI
-                                        @endif
-                                    </td>
+                                    <td>SELESAI</td>
                                 </tr>
                             @endforeach
                         </tbody>

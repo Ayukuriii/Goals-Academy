@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Tutor;
 use Illuminate\Http\Request;
 use App\Models\OngoingProgram;
 use App\Models\ProgramSession;
@@ -23,13 +24,13 @@ class ModeratorController extends Controller
     {
         return view('dashboard.moderator.atur_jadwal.atur-jadwal', [
             'title' => 'Moderator',
-            'datas' => OngoingProgram::where('program_status', 0)->get()
+            'datas' => OngoingProgram::where('is_tutor', 0)->orWhere('is_moderator', 0)->with('tutor.user')->get()
         ]);
     }
     public function selesai(string $id)
     {
         $data = OngoingProgram::findOrFail($id);
-        $data['program_status'] = 1;
+        $data['is_moderator'] = 1;
         $data->save();
 
         return redirect('/moderator/atur_jadwal');
@@ -38,7 +39,7 @@ class ModeratorController extends Controller
     {
         return view('dashboard.moderator.atur_jadwal.riwayat-jadwal', [
             'title' => 'Moderator',
-            'datas' => OngoingProgram::where('program_status', 1)->get()
+            'datas' => OngoingProgram::where('is_tutor', 1)->Where('is_moderator', 1)->with('tutor.user')->get()
         ]);
     }
 
@@ -74,6 +75,7 @@ class ModeratorController extends Controller
         return view('dashboard.moderator.atur_jadwal.edit-jadwal', [
             'title' => 'Moderator',
             'program_session' => ProgramSession::all(),
+            'tutor_data' => Tutor::all(),
             'data' => OngoingProgram::find($id)
         ]);
     }

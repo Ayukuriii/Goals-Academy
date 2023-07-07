@@ -110,6 +110,7 @@ Route::middleware(['auth', 'check.level:admin'])->group(function () {
         Route::get('/admin/bimbingan/detail/{id}', 'detail_bimbingan')->name('admin.detail-bimbingan');
         Route::put('/admin/bimbingan/edit/{id}', 'edit_bimbingan')->name('admin.edit-bimbingan');
         Route::put('/admin/bimbingan/selesai/{id}', 'selesai_bimbingan')->name('admin.selesai-bimbingan');
+        Route::put('/admin/bimbingan/restore/{id}', 'restore_bimbingan')->name('admin.restore-bimbingan');
 
         Route::get('/admin/list_user', 'list_user')->name('admin.list_user');
         Route::get('/admin/tambah_user/create', 'create')->name('admin.create');
@@ -126,9 +127,9 @@ Route::middleware(['auth', 'check.level:moderator'])->group(function () {
         Route::get('/moderator', 'index')->name('moderator');
         Route::get('/moderator/atur_jadwal', 'atur_jadwal')->name('moderator.atur-jadwal.show');
         Route::get('/moderator/riwayat_jadwal', 'riwayat_jadwal')->name('moderator.riwayat-jadwal.show');
-        Route::get('/moderator/{id}/edit', 'edit')->name('moderator.edit-jadwal.edit');
-        Route::put('/moderator/{id}/update', 'update')->name('moderator.edit-jadwal.update');
-        Route::put('/moderator/{id}/selesai', 'selesai')->name('moderator.edit-jadwal.selesai');
+        Route::get('/moderator/edit/{id}', 'edit')->name('moderator.edit-jadwal.edit');
+        Route::put('/moderator/update/{id}', 'update')->name('moderator.edit-jadwal.update');
+        Route::put('/moderator/selesai/{id}', 'selesai')->name('moderator.edit-jadwal.selesai');
     });
 });
 
@@ -136,10 +137,12 @@ Route::middleware(['auth', 'check.level:moderator'])->group(function () {
 Route::middleware(['auth', 'check.level:tutor'])->group(function () {
     Route::controller(TutorController::class)->group(function () {
         Route::get('/tutor', 'index')->name('tutor');
-        Route::get('/tutor/bimbingan', 'bimbingan')->name('tutor');
-        Route::get('/tutor/riwayat', 'riwayat')->name('tutor');
-        Route::put('/tutor/edit/{id}', 'edit')->name('tutor');
-        Route::get('/tutor/detail/{id}', 'detail')->name('tutor');
+        Route::get('/tutor/bimbingan', 'bimbingan')->name('tutor.bimbingan');
+        Route::get('/tutor/riwayat', 'riwayat')->name('tutor.riwayat');
+        Route::put('/tutor/edit/{id}', 'edit')->name('tutor.edit');
+        Route::get('/tutor/detail/{id}', 'detail')->name('tutor.detail');
+        Route::put('/tutor/selesai/{id}', 'selesai')->name('tutor.selesai');
+        Route::put('/tutor/restore/{id}', 'restore')->name('tutor.restore');
     });
 });
 

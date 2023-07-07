@@ -19,6 +19,7 @@
                                 <th>#</th>
                                 <th>Nama</th>
                                 <th>Kategori</th>
+                                <th>Tutor</th>
                                 <th>Hari/Tanggal</th>
                                 <th>Sesi</th>
                                 <th>Keterangan</th>
@@ -31,6 +32,7 @@
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $data->user->name }}</td>
                                     <td>{{ $data->program->title }}</td>
+                                    <td>{{ $data->tutor->user->name ?? 'Kosong' }}</td>
                                     <td>{{ \Carbon\Carbon::parse($data->date)->isoFormat('dddd, D MMMM Y') }}</td>
                                     <td>{{ $data->program_session->sesi }}</td>
                                     <td>
@@ -47,9 +49,18 @@
                                             <a href="/tutor/detail/{{ $data->id }}" class="text-decoration-none">
                                                 <i class="bi bi-eye text-dark"></i>
                                             </a>
-                                            <a href="#" class="text-decoration-none">
-                                                <i class="bi bi-check-lg text-orange"></i>
-                                            </a>
+                                            @if ($data->is_tutor === 0)
+                                                <form action="/tutor/selesai/{{ $data->id }}" method="POST">
+                                                    @csrf
+                                                    @method('put')
+                                                    <button type="submit"
+                                                        class="text-decoration-none border-0 bg-transparent">
+                                                        <i class="bi bi-check-lg text-orange"></i>
+                                                    </button>
+                                                </form>
+                                            @else
+                                                <i class="bi bi-check-all fs-4 text-info"></i>
+                                            @endif
                                         </div>
                                     </td>
                                 </tr>

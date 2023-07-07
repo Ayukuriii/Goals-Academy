@@ -38,7 +38,8 @@
                                     <td>{{ $data->user_level }}</td>
                                     <td class="h4">
                                         <div class="d-flex gap-2">
-                                            <a href="/admin/tambah_user/edit/{{ $data->id }}" class="text-decoration-none">
+                                            <a href="/admin/tambah_user/edit/{{ $data->id }}"
+                                                class="text-decoration-none">
                                                 <i class="bi bi-pencil-square text-success"></i>
                                             </a>
                                             <form action="/admin/{{ $data->id }}/destroy" method="POST">

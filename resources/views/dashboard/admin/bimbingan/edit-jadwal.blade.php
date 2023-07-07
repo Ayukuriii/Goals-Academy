@@ -1,7 +1,6 @@
 @extends('dashboard.layouts.main')
 
 @section('container')
-    {{-- {{ dd($collections) }} --}}
     <!-- Isi Page -->
     <section class="container-fluid mb-5" id="user-profile">
         <div class="row gap-2">
@@ -97,8 +96,8 @@
                         </div>
                         <div class="form-button col-12 my-2 d-flex justify-content-end">
                             <br><br>
-                            <button class="btn-orange-static my-1 px-4 d-inline text-end" id="button"
-                                type="submit" disabled>Simpan</button>
+                            <button class="btn-orange-static my-1 px-4 d-inline text-end" id="button" type="submit"
+                                disabled>Simpan</button>
                         </div>
                     </form>
                 </div>
