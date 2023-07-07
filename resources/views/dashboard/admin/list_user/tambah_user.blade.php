@@ -56,7 +56,6 @@
                             <label class="form-label small" for="password">PASSWORD</label>
                             <input type="password" name="password" class="form-control" id="password" placeholder=" "
                                 required />
-                            <i id="eye" class="bi bi-eye-slash position-relative fs-5 text-secondary" style="top: -33%; left: 92%; cursor: pointer;"></i>
                         </div>
                         <div class="form-button col-12 mb-2 d-flex justify-content-end">
                             <button class="btn-orange-static px-4 d-inline text-end small" id="button"
@@ -69,12 +68,4 @@
         </div>
     </section>
     <!-- Last Page -->
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const passwordInput = document.querySelector('#password')
-            const eyeButton = document.querySelector('#eye')
-            passwordToggle(passwordInput, eyeButton)
-        })
-    </script>
 @endsection

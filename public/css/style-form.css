@@ -1,5 +1,14 @@
 form label, form #eye {
     font-size: 0.8rem;
+    user-select: none;
+    -mox-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+}
+
+#register-body {
+    background-color: #FF8854;
 }
 
 .popup-container {
@@ -257,7 +266,7 @@ textarea:not(:placeholder-shown) {
     justify-content: center;
     align-items: center;
 	background: white;
-    padding: 100px 160px;
+    padding: 80px 140px;
     border-radius: 24px;
     transition: 0.5 ease;
 }
@@ -300,7 +309,10 @@ textarea:not(:placeholder-shown) {
 }
 
 @media (max-width: 1200px) {
+    #register-body {
+        background-color: #fff;
+    }
     .register-content {
-        padding: 10% 10%;
+        padding: 5% 5%;
     }
 }

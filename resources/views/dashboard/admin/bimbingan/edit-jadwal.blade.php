@@ -93,7 +93,7 @@
                         <div class="form-group col-6 mb-2">
                             <label class="form-label" for="tempat">TEMPAT</label>
                             <input type="text" name="links" class="form-control" id="links" placeholder=" "
-                                value="{{ $data->links }}" required />
+                                value="{{ $data->links }}" />
                         </div>
                         <div class="form-button col-12 my-2 d-flex justify-content-end">
                             <br><br>

@@ -32,7 +32,7 @@
 	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
-<body class="d-flex align-items-center h-100 py-4 bg-orange w-75 mx-auto">
+<body class="d-flex align-items-center h-100 mx-auto" id="register-body">
 
     <main class="w-100 m-auto">
         <div class="d-flex container-xl align-items-center">
@@ -51,30 +51,38 @@
                         @csrf
                         <div class="form-register pt-4 m-auto">
                             <div class="row">
-                                <div class="col-6 form-group">
+                                <div class="col-12 col-md-6 form-group">
                                     <label for="name">Nama Lengkap</label>
                                     <input type="text" name="name" class="form-control" id="name" placeholder=" " required/>
                                 </div>
-                                <div class="col-6 form-group">
-                                    <label for="phone_number">No. Telp</label>
-                                    <input type="text" name="phone_number" class="form-control" id="phone_number" placeholder=" " required/>
+                                <div class="col-12 col-md-6 form-group">
+                                    <label for="name">Username</label>
+                                    <input type="text" name="username" class="form-control" id="username" placeholder=" "
+                                        required />
                                 </div>
-                                <div class="col-6 form-group">
+                                <div class="col-12 col-md-6 form-group">
                                     <label for="university">Universitas</label>
                                     <input type="text" name="university" class="form-control" id="university" placeholder=" " required/>
                                 </div>
-                                <div class="col-6 form-group">
+                                <div class="col-12 col-md-6 form-group">
                                     <label for="major">Jurusan</label>
                                     <input type="text" name="major" class="form-control" id="major" placeholder=" " required>
                                 </div>
-                                <div class="col-6 form-group">
+                                <div class="col-12 col-md-6 form-group">
                                     <label for="email">Email</label>
                                     <input type="email" name="email" class="form-control" id="email" placeholder=" " required/>
                                 </div>
-                                <div class="col-6 form-group">
+                                <div class="col-12 col-md-6 form-group">
+                                    <label for="phone_number">No. Telp</label>
+                                    <input type="text" name="phone_number" class="form-control" id="phone_number" placeholder=" " required/>
+                                </div>
+                                <div class="col-12 col-md-6 form-group">
                                     <label for="password">Password* (Minimal 8 Karakter)</label>
                                     <input type="password" name="password" class="form-control" id="password" placeholder=" " required/>
-                                    <i id="eye" class="bi bi-eye-slash text-secondary d-inline-block mt-2" style="cursor: pointer"> Show Password</i>
+                                </div>
+                                <div class="col-12 col-md-6 form-group">
+                                    <label for="confirmation_password">Ulangi Password</label>
+                                    <input type="password" name="confirmation_password" class="form-control" id="confirmation_password" placeholder=" " required/>
                                 </div>
                                 <div class="col-12 mt-3">
                                     <div class="row">
@@ -108,14 +116,6 @@
 
     <script src="{{ asset('js/form.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/main.js') }}"></script>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const passwordInput = document.querySelector('#password')
-            const eyeButton = document.querySelector('#eye')
-            passwordToggle(passwordInput, eyeButton)
-        })
-    </script>
 </body>
 <!-- JavaScript links -->
 

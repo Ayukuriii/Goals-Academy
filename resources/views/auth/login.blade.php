@@ -54,7 +54,6 @@
                         <div class="form-group w-100">
                             <label for="password">Password</label>
                             <input type="password" name="password" class="form-control" id="password" placeholder=" " required/>
-                            <i id="eye" class="bi bi-eye-slash text-secondary d-inline-block mt-2" style="cursor: pointer"> Show Password</i>
                         </div>
                         <div class="form-button">
                             <button type="submit" class="btn-orange-static w-100" id="submit-login" disabled>Login</button>
@@ -92,14 +91,6 @@
     <!-- JavaScript links -->
     <script src="{{ asset('js/main.js') }}"></script>
     <script src="{{ asset('js/form.js') }}"></script>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const passwordInput = document.querySelector('#password')
-            const eyeButton = document.querySelector('#eye')
-            passwordToggle(passwordInput, eyeButton)
-        })
-    </script>
 </body>
 
 </html>

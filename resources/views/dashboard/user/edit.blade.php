@@ -1,22 +1,106 @@
 @extends('dashboard.layouts.main')
 
 @section('container')
+    {{-- {{ dd($collections) }} --}}
     <!-- Isi Page -->
-    <form>
-        <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    <section class="container mb-5" id="user-profile">
+        <div class="row gap-4">
+
+            @include('dashboard.user.partials.sidebar')
+
+            <div class="card col ml-3 p-4 side-program">
+                <div>
+                    <h3 class="d-inline text-purple fw-bold">Edit Profil</h3>
+                    <form action="#" method="POST" class="from row mt-3 px-2">
+                        @csrf
+                        <div class="d-flex align-items-center form-group mb-2">
+                            <img src="{{ asset('image/assets/images/login/profile-grey.png') }}" width="80px" />
+                            <div class="ms-3">
+                                <label for="photo" class="btn-outline-orange px-3 py-2 fw-bold" style="cursor: pointer;">Unggah Foto</label><br>
+                                <small style="font-size: 0.7rem">*Maksimum 2MB</small>
+                            </div>
+                            <input type="file" class="form-control d-none" name="photo" id="photo">
+                        </div>
+                        <div class="form-group col-6 mb-2">
+                            <label class="form-label small" for="name">NAMA</label>
+                            <input type="text" name="name" class="form-control" id="name" placeholder=" "
+                                required />
+                        </div>
+                        <div class="form-group col-6 mb-2">
+                            <label class="form-label small" for="name">USERNAME</label>
+                            <input type="text" name="username" class="form-control" id="username" placeholder=" "
+                                required />
+                        </div>
+                        <div class="form-group col-6 mb-2">
+                            <label class="form-label small" for="university">UNIVERSITAS</label>
+                            <input type="text" name="university" class="form-control" id="university" placeholder=" "
+                                required />
+                        </div>
+                        <div class="form-group col-6 mb-2">
+                            <label class="form-label small" for="major">JURUSAN</label>
+                            <input type="text" name="major" class="form-control" id="major" placeholder=" "
+                                required />
+                        </div>
+                        <div class="form-group col-6 mb-2">
+                            <label class="form-label small" for="phone_number">NOMOR HP.</label>
+                            <input type="text" name="phone_number" class="form-control" id="phone_number" placeholder=" "
+                                required />
+                        </div>
+                        <div class="form-button col-6 mb-3 d-flex justify-content-end pt-5">
+                            <button class="btn-orange-static px-4 d-inline text-end" id="button"
+                                type="submit">Simpan</button>
+                        </div>
+                    </form>
+                </div>
+                <hr class="w-100">
+                <div>
+                    <h3 class="d-inline text-purple fw-bold">Ubah Email</h3>
+                    <form action="#" method="POST" class="from row mt-3 px-2">
+                        @csrf
+                        <div class="form-group col-6 mb-2">
+                            <label class="form-label small" for="email">EMAIL</label>
+                            <input type="email" name="email" class="form-control" id="email" placeholder=" "
+                                required />
+                        </div>
+                        <div class="form-group col-6 mb-2">
+                            <label class="form-label small" for="password">PASSWORD</label>
+                            <input type="password" name="password" class="form-control" id="password" placeholder=" "
+                                required />
+                        </div>
+                        <div class="form-button col-12 mb-3 d-flex justify-content-end">
+                            <button class="btn-orange-static px-4 d-inline text-end" id="button"
+                                type="submit">Simpan</button>
+                        </div>
+                    </form>
+                </div>
+                <hr class="w-100">
+                <div>
+                    <h3 class="d-inline text-purple fw-bold">Ubah Password</h3>
+                    <form action="#" method="POST" class="from row mt-3 px-2">
+                        @csrf
+                        <div class="form-group col-6 mb-2">
+                            <label class="form-label small" for="password">PASSWORD</label>
+                            <input type="password" name="password" class="form-control" id="password" placeholder=" "
+                                required />
+                        </div>
+                        <div class="form-group col-6 mb-2">
+                            <label class="form-label small" for="password">PASSWORD</label>
+                            <input type="password" name="password" class="form-control" id="password" placeholder=" "
+                                required />
+                        </div>
+                        <div class="form-group col-6 mb-2">
+                            <label class="form-label small" for="password">PASSWORD</label>
+                            <input type="password" name="password" class="form-control" id="password" placeholder=" "
+                                required />
+                        </div>
+                        <div class="form-button col-6 mb-3 d-flex justify-content-end pt-3">
+                            <button class="btn-orange-static px-4 d-inline text-end" id="button"
+                                type="submit">Simpan</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
-        </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+    </section>
     <!-- Last Page -->
-   @endsection
+@endsection

@@ -78,7 +78,8 @@ class UserController extends Controller
     public function edit(string $id)
     {
         return view('dashboard.user.edit', [
-            'title' => 'Edit Profile'
+            'title' => 'Edit Profile',
+            'posts' => auth()->user()
         ]);
     }
 
