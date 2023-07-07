@@ -110,7 +110,7 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-
+        // dd($request);
         $validateData = $request->validate([
             'name' => 'required|max:255',
             'username' => 'required',
