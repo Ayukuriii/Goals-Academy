@@ -44,11 +44,6 @@
                                 value="{{ $data->phone_number }}" placeholder=" " required />
                         </div>
                         <div class="form-group col-6 mb-3">
-                            <label class="form-label small" for="password">PASSWORD</label>
-                            <input type="password" name="password" class="form-control" id="password" placeholder=" "
-                                required />
-                        </div>
-                        <div class="form-group col-6 mb-3">
                             <label class="form-label small" for="user_level">USER LEVEL</label>
                             <select class="form-select border-orange" name="user_level" id="user_level"
                                 aria-label="Default select example">
