@@ -16,36 +16,40 @@ const formButton = document.querySelector(".form-button button")
 // }
 
 // Function tampilan tombol submit
-const checkInput = () => {
-    let trigger = false
-    for (let i = formInput.length - 1; i >= 0; i -= 1) {
-        if (formInput[i].getAttribute('type') == 'password') {
-            if (formInput[i].value.length < 8) {
-                formInput[i].setCustomValidity('invalid')
-                trigger = false
-                break
-            } else {
-                formInput[i].setCustomValidity('')
-                trigger = true
-            }
+const validate = target => {
+    if (target.getAttribute('type') == 'password') {
+        if (target.value.length < 8) {
+            target.classList.add('is-invalid')
+            target.setCustomValidity('Input invalid')
+            return false
         } else {
-            if (formInput[i].checkValidity()) {
-                trigger = true
-            } else {
-                trigger = false
-                break
-            }
+            target.classList.remove('is-invalid')
+            target.setCustomValidity('')
+            return true
+        }
+    } else {
+        if (target.checkValidity() == false) {
+            target.classList.add('is-invalid')
+            return false
+        } else {
+            target.classList.remove('is-invalid')
+            return true
         }
     }
-    return trigger
 }
 
-function updateButton() {
-    checkInput() ? formButton.removeAttribute('disabled') : formButton.setAttribute('disabled', true);
+const updateButton = () => {
+    result = true
+    formInput.forEach(element => {
+        result *= validate(element)
+    })
+
+    result ? formButton.removeAttribute('disabled') : formButton.setAttribute('disabled', true);
 }
 
 formInput.forEach(element => {
-    element.addEventListener('change', () => {
+    element.addEventListener('change', e => {
+        validate(e.target)
         updateButton()
     });
 });
