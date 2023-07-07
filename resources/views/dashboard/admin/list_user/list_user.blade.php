@@ -13,7 +13,7 @@
                     <a href="{{ route('admin.create') }}" class="d-inline btn-green py-2 px-4 small">Tambah User</a>
                 </div>
                 <div class="p-2 mt-2 table-responsive">
-                    <table class="table">
+                    <table id="datatable" class="table">
                         <thead>
                             <tr>
                                 <th>#</th>
@@ -23,7 +23,7 @@
                                 <th>Jurusan</th>
                                 <th>Nomor Hp.</th>
                                 <th>User Level</th>
-                                <th colspan="2">Action</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -58,4 +58,16 @@
         </div>
     </section>
     <!-- Last Page -->
+
+    <script>
+        $('document').ready(function() {
+            $('#datatable').DataTable({
+                'processing': true,
+                dom: 'Bfrtip',
+                buttons: [
+                    'copy', 'csv', 'excel', 'pdf'
+                ]
+            })
+        })
+    </script>
 @endsection

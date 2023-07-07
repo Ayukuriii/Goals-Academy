@@ -7,12 +7,12 @@
         <div class="row gap-2">
             @include('dashboard.layouts.sidebar')
 
-            <div class="card col ml-3 p-4 side-program">
+            <div id="datatable" class="card col ml-3 p-4 side-program">
                 <div class="d-flex justify-content-between">
-                    <h3 class="d-inline text-purple fw-bold">Riwayat Bimbingan</h3>
+                    <h3 class="d-inline text-purple fw-bold">Riwayat Jadwal</h3>
                 </div>
                 <div class="p-2 mt-2">
-                    <table id="datatable" class="table">
+                    <table class="table">
                         <thead>
                             <tr>
                                 <th>#</th>
@@ -20,16 +20,17 @@
                                 <th>Kategori</th>
                                 <th>Hari/Tanggal</th>
                                 <th>Sesi</th>
-                                <th>Keterangan</th>
+                                <th>Status Link</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($datas as $data)
+                                {{-- {{ dd($data) }} --}}
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $data->user->name }}</td>
                                     <td>{{ $data->program->title }}</td>
-                                    <td>{{ \Carbon\Carbon::parse($data->date)->isoFormat('dddd, D MMMM Y') }}</td>
+                                    <td>{{ \Carbon\Carbon::parse($data->date)->toFormattedDateString() }}</td>
                                     <td>{{ $data->program_session->sesi }}</td>
                                     <td>
                                         @if ($data->program_status === 1)
