@@ -50,7 +50,7 @@ class DatabaseSeeder extends Seeder
             'email_verified_at' => now()
         ]);
         User::create([
-            'name'  => 'tutor',
+            'name'  => 'Yordhan',
             'username' => 'tutor',
             'email' => 'tutor@gmail.com',
             'phone_number'  => '089321321321',
@@ -74,16 +74,19 @@ class DatabaseSeeder extends Seeder
 
         ProgramService::create([
             'title' => 'Dibimbing Online',
+            'category' => 'online',
             'description' => 'Bimbingan skripsi untuk mahasiswa tingkat akhir yang dilaksanakan secara online, durasi 30 menit.',
             'price' => '47000'
         ]);
         ProgramService::create([
             'title' => 'Dibimbing Online Premium',
+            'category' => 'online',
             'description' => 'Bimbingan skripsi untuk mahasiswa tingkat akhir yang dilaksanakan secara online, durasi 45 menit.',
             'price' => '85000'
         ]);
         ProgramService::create([
             'title' => 'Dibimbing Offline',
+            'category' => 'offline',
             'description' => 'Bimbingan skripsi untuk mahasiswa tingkat akhir yang dilaksanakan secara offline, durasi 60 menit.',
             'price' => '98000'
         ]);
@@ -111,7 +114,8 @@ class DatabaseSeeder extends Seeder
             'location' => 'online',
             'date' => now()->addDays(7),
             'links' => 'www.google.com',
-            'program_status' => false
+            'is_tutor' => false,
+            'is_moderator' => false
         ]);
         OngoingProgram::create([
             'user_id' => 4,
@@ -121,7 +125,8 @@ class DatabaseSeeder extends Seeder
             'program_session_id' => 2,
             'location' => 'offline',
             'date' => now()->addDays(20),
-            'program_status' => false
+            'is_tutor' => false,
+            'is_moderator' => false
         ]);
         OngoingProgram::create([
             'user_id' => 4,
@@ -132,7 +137,20 @@ class DatabaseSeeder extends Seeder
             'location' => 'online',
             'date' => now()->addDays(20),
             'links' => 'www.google.com',
-            'program_status' => true
+            'is_tutor' => true,
+            'is_moderator' => false
+        ]);
+        OngoingProgram::create([
+            'user_id' => 4,
+            'program_services_id' => 3,
+            'tutor_id' => 1,
+            'payment_status_id' => 1,
+            'program_session_id' => 4,
+            'location' => 'online',
+            'date' => now()->addDays(10),
+            'links' => 'www.google.com',
+            'is_tutor' => true,
+            'is_moderator' => true
         ]);
 
         TutorNotes::create([

@@ -22,7 +22,9 @@
                                 <th>Tutor</th>
                                 <th>Hari/Tanggal</th>
                                 <th>Sesi</th>
-                                <th>Status Program</th>
+                                <th>Tutor</th>
+                                <th>Moderator</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -35,9 +37,29 @@
                                     <td>{{ \Carbon\Carbon::parse($data->date)->isoFormat('dddd, D MMMM Y') }}</td>
                                     <td>{{ $data->program_session->sesi }}</td>
                                     <td>
-                                        @if ($data->program_status === 1)
-                                            SELESAI
+                                        @if ($data->is_tutor == false)
+                                            <i class="bi bi-dash fs-4 text-orange"></i>
+                                        @else
+                                            <i class="bi bi-check fs-4 text-orange"></i>
                                         @endif
+                                    </td>
+                                    <td>
+                                        @if ($data->is_moderator == false)
+                                            <i class="bi bi-dash fs-4 text-orange"></i>
+                                        @else
+                                            <i class="bi bi-check fs-4 text-orange"></i>
+                                        @endif
+                                    </td>
+                                    <td class="h4">
+                                        <div class="d-flex gap-2">
+                                            <form action="/admin/bimbingan/restore/{{ $data->id }}" method="POST">
+                                                @csrf
+                                                @method('put')
+                                                <button type="submit" class="text-decoration-none border-0 bg-transparent">
+                                                    <i class="bi bi-reply-fill text-orange"></i>
+                                                </button>
+                                            </form>
+                                        </div>
                                     </td>
                                 </tr>
                             @endforeach

@@ -13,7 +13,7 @@ class TutorController extends Controller
         return view('dashboard.tutor.index', [
             'title' => 'Tutor',
             'datas' => OngoingProgram::all(),
-            'data' => OngoingProgram::where('program_status', '=', 0)->count()
+            'data' => OngoingProgram::where('is_tutor', '=', 0)->orWhere('is_moderator', '=', 0)->count()
         ]);
     }
 
@@ -21,7 +21,7 @@ class TutorController extends Controller
     {
         return view('dashboard.tutor.bimbingan.bimbingan', [
             'title' => 'Tutor',
-            'datas' => OngoingProgram::where('program_status', 0)->get()
+            'datas' => OngoingProgram::where('is_tutor', 0)->orWhere('is_moderator', 0)->with('tutor.user')->get()
         ]);
     }
 
@@ -29,7 +29,7 @@ class TutorController extends Controller
     {
         return view('dashboard.tutor.bimbingan.riwayat-bimbingan', [
             'title' => 'Tutor',
-            'datas' => OngoingProgram::where('program_status', 1)->get()
+            'datas' => OngoingProgram::where('is_tutor', 1)->Where('is_moderator', 1)->with('tutor.user')->get()
         ]);
     }
 
@@ -49,5 +49,12 @@ class TutorController extends Controller
         ]));
         $data->save();
         return redirect('/tutor/bimbingan');
+    }
+    public function selesai(string $id)
+    {
+        $data = OngoingProgram::findOrFail($id);
+        $data['is_tutor'] = 1;
+        $data->save();
+        return back();
     }
 }

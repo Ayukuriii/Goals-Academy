@@ -46,7 +46,8 @@
                                     <td>{{ $data->user_level }}</td>
                                     <td class="h4">
                                         <div class="d-flex gap-2">
-                                            <a href="/admin/tambah_user/edit/{{ $data->id }}" class="text-decoration-none">
+                                            <a href="/admin/tambah_user/edit/{{ $data->id }}"
+                                                class="text-decoration-none">
                                                 <i class="bi bi-pencil-square text-success"></i>
                                             </a>
                                             <button type="submit" class="text-decoration-none border-0 bg-transparent" data-bs-toggle="modal" data-bs-target="#deleteModal{{ $data->id }}">

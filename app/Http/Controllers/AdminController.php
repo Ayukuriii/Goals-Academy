@@ -33,15 +33,14 @@ class AdminController extends Controller
         // $tutors = Tutor::with('user')->get();
         return view('dashboard.admin.bimbingan.bimbingan', [
             'title' => 'Admin',
-            // 'tutors' => $tutors,
-            'datas' => OngoingProgram::where('program_status', 0)->with('tutor.user')->get()
+            'datas' => OngoingProgram::where('is_tutor', 0)->orWhere('is_moderator', 0)->with('tutor.user')->paginate(1)
         ]);
     }
     public function riwayat_bimbingan()
     {
         return view('dashboard.admin.bimbingan.riwayat-bimbingan', [
             'title' => 'Admin',
-            'datas' => OngoingProgram::where('program_status', 1)->get()
+            'datas' => OngoingProgram::where('is_tutor', 1)->Where('is_moderator', 1)->with('tutor.user')->get()
         ]);
     }
     public function show_bimbingan(string $id)
@@ -85,6 +84,26 @@ class AdminController extends Controller
         $data->save();
         return redirect('/admin/bimbingan');
     }
+    public function selesai_bimbingan(string $id)
+    {
+        $data = OngoingProgram::find($id);
+        $data->fill([
+            'is_tutor' => 1,
+            'is_moderator' => 1
+        ]);
+        $data->save();
+        return redirect()->route('admin.bimbingan');
+    }
+    public function restore_bimbingan(string $id)
+    {
+        $data = OngoingProgram::find($id);
+        $data->fill([
+            'is_tutor' => 0,
+            'is_moderator' => 0
+        ]);
+        $data->save();
+        return redirect()->route('admin.bimbingan');
+    }
 
     // section list user
     public function list_user()
@@ -110,7 +129,7 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-
+        // dd($request);
         $validateData = $request->validate([
             'name' => 'required|max:255',
             'username' => 'required',

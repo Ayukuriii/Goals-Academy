@@ -21,7 +21,8 @@ return new class extends Migration
             $table->enum('location', ['online', 'offline']);
             $table->string('links')->nullable();
             $table->date('date');
-            $table->boolean('program_status');
+            $table->boolean('is_tutor');
+            $table->boolean('is_moderator');
             $table->timestamps();
         });
     }
