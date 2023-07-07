@@ -107,7 +107,7 @@
                                 <input type="text" name="links" class="form-control" id="links" placeholder=" "
                                     value="{{ $data->links }}" />
                                 <div class="invalid-feedback">
-                                    Invalid message
+                                    Input tidak valid
                                 </div>
                             </div>
                         @else
