@@ -99,7 +99,7 @@
     </section>
     <!-- Last Page -->
 
-    {{-- <script>
+    <script>
         $('document').ready(function() {
             $('#datatable').DataTable({
                 'processing': true,
@@ -109,5 +109,5 @@
                 ]
             })
         })
-    </script> --}}
+    </script>
 @endsection
