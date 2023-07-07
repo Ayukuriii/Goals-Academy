@@ -7,11 +7,19 @@
         <div class="row gap-2">
             @include('dashboard.layouts.sidebar')
 
+
             <div class="card col ml-3 p-4 side-program">
                 <div class="d-flex justify-content-between">
                     <h3 class="d-inline text-purple fw-bold">List User</h3>
                     <a href="{{ route('admin.create') }}" class="d-inline btn-green py-2 px-4 small">Tambah User</a>
                 </div>
+
+                <!-- Alert -->
+                <div class="alert alert-info alert-dismissible fade mt-4 show" role="alert">
+                    Message appear here
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+
                 <div class="p-2 mt-2 table-responsive">
                     <table id="datatable" class="table">
                         <thead>
