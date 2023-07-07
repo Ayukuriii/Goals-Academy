@@ -20,7 +20,7 @@
                             <input type="text" name="nama" class="form-control is-invalid" id="nama"
                                 placeholder="{{ $data->user->name }}" disabled />
                             <div class="invalid-feedback">
-                                Invalid message
+                                Input tidak valid
                             </div>
                         </div>
                         <div class="form-group col-6 mb-2">
@@ -28,7 +28,7 @@
                             <input type="text" name="universitas" class="form-control is-invalid" id="universitas"
                                 placeholder="{{ $data->user->university }}" disabled />
                             <div class="invalid-feedback">
-                                Invalid message
+                                Input tidak valid
                             </div>
                         </div>
                         <div class="form-group col-6 mb-2">
@@ -36,7 +36,7 @@
                             <input type="email" name="email" class="form-control is-invalid" id="email"
                                 placeholder="{{ $data->user->email }}" disabled />
                             <div class="invalid-feedback">
-                                Invalid message
+                                Input tidak valid
                             </div>
                         </div>
                         <div class="form-group col-6 mb-2">
@@ -44,7 +44,7 @@
                             <input type="text" name="jurusan" class="form-control is-invalid" id="jurusan"
                                 placeholder="{{ $data->user->major }}" disabled />
                             <div class="invalid-feedback">
-                                Invalid message
+                                Input tidak valid
                             </div>
                         </div>
                         <div class="form-group col-6 mb-2">
@@ -52,7 +52,7 @@
                             <input type="text" name="nomor_hp" class="form-control is-invalid" id="nomor_hp"
                                 placeholder="{{ $data->user->phone_number }}" disabled />
                             <div class="invalid-feedback">
-                                Invalid message
+                                Input tidak valid
                             </div>
                         </div>
                         <div class="form-group col-6 mb-2">
@@ -60,7 +60,7 @@
                             <input type="text" name="pembelian" class="form-control is-invalid" id="pembelian"
                                 placeholder="{{ $data->created_at }}" disabled />
                             <div class="invalid-feedback">
-                                Invalid message
+                                Input tidak valid
                             </div>
                         </div>
                         <div class="form-group col-6 mb-2">
@@ -68,7 +68,7 @@
                             <input type="date" name="date" class="form-control is-invalid" id="date" placeholder=""
                                 value="{{ $data->date }}" required />
                             <div class="invalid-feedback">
-                                Invalid message
+                                Input tidak valid
                             </div>
                         </div>
                         <div class="form-group col-6 mb-2">
@@ -83,7 +83,7 @@
                                 @endforeach
                             </select>
                             <div class="invalid-feedback">
-                                Invalid message
+                                Input tidak valid
                             </div>
                         </div>
                         <div class="form-group col-6 mb-2">
@@ -97,7 +97,7 @@
                                 @endforeach
                             </select>
                             <div class="invalid-feedback">
-                                Invalid message
+                                Input tidak valid
                             </div>
                         </div>
                         <div class="form-group col-6 mb-2">
@@ -111,7 +111,7 @@
                                 @endforeach
                             </select>
                             <div class="invalid-feedback">
-                                Invalid message
+                                Input tidak valid
                             </div>
                         </div>
                         <div class="form-group col-6 mb-2">
@@ -122,7 +122,7 @@
                                 </option>
                             </select>
                             <div class="invalid-feedback">
-                                Invalid message
+                                Input tidak valid
                             </div>
                         </div>
                         <div class="form-group col-6 mb-2">
@@ -130,7 +130,7 @@
                             <input type="text" name="links" class="form-control is-invalid" id="links" placeholder=" "
                                 value="{{ $data->links }}" />
                             <div class="invalid-feedback">
-                                Invalid message
+                                Input tidak valid
                             </div>
                         </div>
                         <div class="form-button col-12 my-2 d-flex justify-content-end">

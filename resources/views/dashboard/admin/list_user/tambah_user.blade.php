@@ -20,7 +20,7 @@
                             <input type="text" name="name" class="form-control is-invalid" id="name" placeholder=" "
                                 required />
                             <div class="invalid-feedback">
-                                Invalid message
+                                Input tidak valid
                             </div>
                         </div>
                         <div class="form-group col-6 mb-2">
@@ -28,7 +28,7 @@
                             <input type="text" name="username" class="form-control is-invalid" id="username" placeholder=" "
                                 required />
                             <div class="invalid-feedback">
-                                Invalid message
+                                Input tidak valid
                             </div>
                         </div>
                         <div class="form-group col-6 mb-2">
@@ -36,7 +36,7 @@
                             <input type="text" name="university" class="form-control is-invalid" id="university" placeholder=" "
                                 required />
                             <div class="invalid-feedback">
-                                Invalid message
+                                Input tidak valid
                             </div>
                         </div>
                         <div class="form-group col-6 mb-2">
@@ -44,7 +44,7 @@
                             <input type="text" name="major" class="form-control is-invalid" id="major" placeholder=" "
                                 required />
                             <div class="invalid-feedback">
-                                Invalid message
+                                Input tidak valid
                             </div>
                         </div>
                         <div class="form-group col-6 mb-2">
@@ -52,7 +52,7 @@
                             <input type="email" name="email" class="form-control is-invalid" id="email" placeholder=" "
                                 required />
                             <div class="invalid-feedback">
-                                Invalid message
+                                Input tidak valid
                             </div>
                         </div>
                         <div class="form-group col-6 mb-2">
@@ -60,7 +60,7 @@
                             <input type="text" name="phone_number" class="form-control is-invalid" id="phone_number" placeholder=" "
                                 required />
                             <div class="invalid-feedback">
-                                Invalid message
+                                Input tidak valid
                             </div>
                         </div>
                         <div class="form-group col-6 mb-2">
@@ -73,7 +73,7 @@
                                 <option value="admin">Admin</option>
                             </select>
                             <div class="invalid-feedback">
-                                Invalid message
+                                Input tidak valid
                             </div>
                         </div>
                         <div class="form-group col-6 mb-2">
@@ -81,7 +81,7 @@
                             <input type="password" name="password" class="form-control is-invalid" id="password" placeholder=" "
                                 required />
                             <div class="invalid-feedback">
-                                Invalid message
+                                Input tidak valid
                             </div>
                         </div>
                         <div class="form-button col-12 mb-2 d-flex justify-content-end">

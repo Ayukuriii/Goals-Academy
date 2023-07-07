@@ -55,7 +55,7 @@
                                     <label for="name">Nama Lengkap</label>
                                     <input type="text" name="name" class="form-control is-invalid" id="name" placeholder=" " required/>
                                     <div class="invalid-feedback">
-                                        Invalid message
+                                        Input tidak valid
                                     </div>
                                 </div>
                                 <div class="col-12 col-md-6 form-group">
@@ -63,49 +63,49 @@
                                     <input type="text" name="username" class="form-control is-invalid" id="username" placeholder=" "
                                         required />
                                     <div class="invalid-feedback">
-                                        Invalid message
+                                        Input tidak valid
                                     </div>
                                 </div>
                                 <div class="col-12 col-md-6 form-group">
                                     <label for="university">Universitas</label>
                                     <input type="text" name="university" class="form-control is-invalid" id="university" placeholder=" " required/>
                                     <div class="invalid-feedback">
-                                        Invalid message
+                                        Input tidak valid
                                     </div>
                                 </div>
                                 <div class="col-12 col-md-6 form-group">
                                     <label for="major">Jurusan</label>
                                     <input type="text" name="major" class="form-control is-invalid" id="major" placeholder=" " required>
                                     <div class="invalid-feedback">
-                                        Invalid message
+                                        Input tidak valid
                                     </div>
                                 </div>
                                 <div class="col-12 col-md-6 form-group">
                                     <label for="email">Email</label>
                                     <input type="email" name="email" class="form-control is-invalid" id="email" placeholder=" " required/>
                                     <div class="invalid-feedback">
-                                        Invalid message
+                                        Input tidak valid
                                     </div>
                                 </div>
                                 <div class="col-12 col-md-6 form-group">
                                     <label for="phone_number">No. Telp</label>
                                     <input type="text" name="phone_number" class="form-control is-invalid" id="phone_number" placeholder=" " required/>
                                     <div class="invalid-feedback">
-                                        Invalid message
+                                        Input tidak valid
                                     </div>
                                 </div>
                                 <div class="col-12 col-md-6 form-group">
                                     <label for="password">Password* (Minimal 8 Karakter)</label>
                                     <input type="password" name="password" class="form-control is-invalid" id="password" placeholder=" " required/>
                                     <div class="invalid-feedback">
-                                        Invalid message
+                                        Input tidak valid
                                     </div>
                                 </div>
                                 <div class="col-12 col-md-6 form-group">
                                     <label for="confirmation_password">Ulangi Password</label>
                                     <input type="password" name="confirmation_password" class="form-control is-invalid" id="confirmation_password" placeholder=" " required/>
                                     <div class="invalid-feedback">
-                                        Invalid message
+                                        Input tidak valid
                                     </div>
                                 </div>
                                 <div class="col-12 mt-3">

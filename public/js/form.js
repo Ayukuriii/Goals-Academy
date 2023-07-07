@@ -20,7 +20,7 @@ const validate = target => {
     if (target.getAttribute('type') == 'password') {
         if (target.value.length < 8) {
             target.classList.add('is-invalid')
-            target.setCustomValidity('Input invalid')
+            target.setCustomValidity('Input tidak valid')
             return false
         } else {
             target.classList.remove('is-invalid')

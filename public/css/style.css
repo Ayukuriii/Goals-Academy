@@ -1210,6 +1210,10 @@
     color: #198754;
 }
 
+#datatable {
+    overflow-x: auto;
+}
+
 @media (max-width: 1080px) {
     .hero-image {
         right: 1%;
