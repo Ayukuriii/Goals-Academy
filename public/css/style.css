@@ -1210,7 +1210,7 @@
     color: #198754;
 }
 
-div.dataTables_wrapper {
+#datatable {
     overflow-x: auto;
 }
 
