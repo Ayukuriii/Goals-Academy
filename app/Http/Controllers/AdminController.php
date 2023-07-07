@@ -33,7 +33,7 @@ class AdminController extends Controller
         // $tutors = Tutor::with('user')->get();
         return view('dashboard.admin.bimbingan.bimbingan', [
             'title' => 'Admin',
-            'datas' => OngoingProgram::where('is_tutor', 0)->orWhere('is_moderator', 0)->with('tutor.user')->paginate(1)
+            'datas' => OngoingProgram::where('is_tutor', 0)->orWhere('is_moderator', 0)->with('tutor.user')->get()
         ]);
     }
     public function riwayat_bimbingan()
