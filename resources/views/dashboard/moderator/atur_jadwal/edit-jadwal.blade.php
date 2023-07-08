@@ -20,49 +20,31 @@
                             <label class="form-label" for="nama">NAMA</label>
                             <input type="text" name="nama" class="form-control is-invalid" id="nama"
                                 placeholder="{{ $data->user->name }}" disabled />
-                            <div class="invalid-feedback">
-                                Input tidak valid
-                            </div>
                         </div>
                         <div class="form-group col-6 mb-2">
                             <label class="form-label" for="universitas">UNIVERSITAS</label>
                             <input type="text" name="universitas" class="form-control is-invalid" id="universitas"
                                 placeholder="{{ $data->user->university }}" disabled />
-                            <div class="invalid-feedback">
-                                Input tidak valid
-                            </div>
                         </div>
                         <div class="form-group col-6 mb-2">
                             <label class="form-label" for="email">EMAIL</label>
                             <input type="email" name="email" class="form-control is-invalid" id="email"
                                 placeholder="{{ $data->user->email }}" disabled />
-                            <div class="invalid-feedback">
-                                Input tidak valid
-                            </div>
                         </div>
                         <div class="form-group col-6 mb-2">
                             <label class="form-label" for="jurusan">JURUSAN</label>
                             <input type="text" name="jurusan" class="form-control is-invalid" id="jurusan"
                                 placeholder="{{ $data->user->major }}" disabled />
-                            <div class="invalid-feedback">
-                                Input tidak valid
-                            </div>
                         </div>
                         <div class="form-group col-6 mb-2">
                             <label class="form-label" for="nomor_hp">NOMOR HP.</label>
                             <input type="text" name="nomor_hp" class="form-control is-invalid" id="nomor_hp"
                                 placeholder="{{ $data->user->phone_number }}" disabled />
-                            <div class="invalid-feedback">
-                                Input tidak valid
-                            </div>
                         </div>
                         <div class="form-group col-6 mb-2">
-                            <label class="form-label" for="kategori">Kategori</label>
+                            <label class="form-label" for="kategori">KATEGORI</label>
                             <input type="text" name="kategori" class="form-control" id="kategori"
                                 placeholder="{{ $data->program->title }}" disabled />
-                            <div class="invalid-feedback">
-                                Input tidak valid
-                            </div>
                         </div>
                         <div class="form-group col-6 mb-2">
                             <label class="form-label" for="jadwal">JADWAL</label>

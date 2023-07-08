@@ -10,8 +10,18 @@
             <div class="card col ml-3 p-4 side-program">
                 <div class="d-flex justify-content-between w-75">
                     <h3 class="text-purple fw-bold">Edit User</h3>
-                    <a class="d-inline btn-outline-orange py-2 px-4 small" onclick="history.back()" style="cursor: pointer">Back</a>
+                    <a class="d-inline btn-outline-orange py-2 px-4 small" onclick="history.back()"
+                        style="cursor: pointer">Back</a>
                 </div>
+
+                <!-- Alert -->
+                @if (session()->has('update-failed'))
+                    <div class="alert alert-danger alert-dismissible fade mt-4 show" role="alert">
+                        {{ session('update-failed') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @endif
+
                 <div class="form w-75 mt-3">
                     <form class="row" action="/admin/tambah_user/update/{{ $data->id }}" method="POST">
                         @csrf
@@ -21,7 +31,7 @@
                             <input type="text" name="name" class="form-control is-invalid" id="name"
                                 value="{{ $data->name }}" placeholder=" " required />
                             <div class="invalid-feedback">
-                                Input tidak valid
+                                {{ $message }}
                             </div>
                         </div>
                         <div class="form-group col-6 mb-3">
@@ -29,7 +39,7 @@
                             <input type="text" name="username" class="form-control is-invalid" id="username"
                                 value="{{ $data->username }}" placeholder=" " required />
                             <div class="invalid-feedback">
-                                Input tidak valid
+                                {{ $message }}
                             </div>
                         </div>
                         <div class="form-group col-6 mb-3">
@@ -37,7 +47,7 @@
                             <input type="text" name="university" class="form-control is-invalid" id="university"
                                 value="{{ $data->university }}" placeholder=" " required />
                             <div class="invalid-feedback">
-                                Input tidak valid
+                                {{ $message }}
                             </div>
                         </div>
                         <div class="form-group col-6 mb-3">
@@ -45,7 +55,7 @@
                             <input type="text" name="major" class="form-control is-invalid" id="major"
                                 value="{{ $data->major }}" placeholder=" " required />
                             <div class="invalid-feedback">
-                                Input tidak valid
+                                {{ $message }}
                             </div>
                         </div>
                         <div class="form-group col-6 mb-3">
@@ -53,7 +63,7 @@
                             <input type="email" name="email" class="form-control is-invalid" id="email"
                                 value="{{ $data->email }}" placeholder=" " required />
                             <div class="invalid-feedback">
-                                Input tidak valid
+                                {{ $message }}
                             </div>
                         </div>
                         <div class="form-group col-6 mb-3">
@@ -61,7 +71,7 @@
                             <input type="text" name="phone_number" class="form-control is-invalid" id="phone_number"
                                 value="{{ $data->phone_number }}" placeholder=" " required />
                             <div class="invalid-feedback">
-                                Input tidak valid
+                                {{ $message }}
                             </div>
                         </div>
                         <div class="form-group col-6 mb-3">
@@ -73,9 +83,6 @@
                                 <option value="tutor">Tutor</option>
                                 <option value="admin">Admin</option>
                             </select>
-                            <div class="invalid-feedback">
-                                Input tidak valid
-                            </div>
                         </div>
                         {{-- <div class="form-group col-6 mb-3">
                             <label class="form-label small" for="password">PASSWORD</label>

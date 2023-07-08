@@ -67,7 +67,7 @@ class AuthController extends Controller
                 return redirect()->intended('/' . $auth);
             }
         }
-        return back()->with('loginError', 'Email or Password incorrect');
+        return back()->with('login-failed', 'Email atau Password anda salah')->withInput();
     }
 
     // memproses akses logout
