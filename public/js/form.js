@@ -4,7 +4,9 @@ const formButton = document.querySelector(".form-button button");
 
 // Function tampilan tombol submit
 const validate = (target) => {
-    if (target.getAttribute("type") == "password") {
+    if (target.value == "") {
+        return false
+    } else if (target.getAttribute("type") == "password") {
         if (target.value.length < 8) {
             target.classList.add("is-invalid");
             target.setCustomValidity("Input tidak valid");
