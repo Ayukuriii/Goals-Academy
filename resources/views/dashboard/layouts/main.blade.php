@@ -57,6 +57,7 @@
     <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
     <script type="text/javascript" src="{{ asset('js/main.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/form.js') }}"></script>
+    @yield('script')
 </body>
 <!-- JavaScript links -->
 

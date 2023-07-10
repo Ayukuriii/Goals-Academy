@@ -1,33 +1,34 @@
 /* Isi */
 #user-profile {
     margin-top: 100px;
-    padding: 0 30px 0 30px;
+    font-size: 1rem;
+}
+
+#user-profile .card-title {
+    color: #4f3f85;
+    font-weight: bold;
 }
 
 .side-profile {
-    max-width: 420px;
-    height: 608px;
     border-radius: 12px;
-}
-
-.side-profile p {
-    font-size: 11px;
     letter-spacing: 1px;
 }
 
-.side-profile h5 {
-    font-size: 19px;
-    letter-spacing: 1px;
+.side-profile small {
+    font-size: .8rem;
+}
+
+.side-profile .card-header {
+    background-color: white;
+    border-radius: 12px;
+    border: none;
 }
 
 .side-program {
     border-radius: 12px;
-    margin-left: 20px;
 }
 
 .side-program h1 {
-    color: #4f3f85;
-    font-weight: bold;
     font-size: 25px;
 }
 
@@ -48,17 +49,34 @@
     font-weight: 600;
 }
 
-.side-program .status-product {
+.side-program p {
     font-size: 11px;
 }
 
 .side-program .detail-product a {
-    font-size: 11px;
     color: #363434;
 }
 
 .side-program .date-product,
 .side-program .time-product {
     margin: 0px;
-    font-size: 11px;
+}
+
+@media (max-width: 960px) {
+    #user-profile {
+        margin-top: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    #user-profile {
+        margin-top: 70px;
+        font-size: .8rem;
+    }
+    .side-profile img {
+        width: 100%;
+    }
+    .side-profile small {
+        font-size: .6rem;
+    }
 }

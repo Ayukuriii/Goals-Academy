@@ -104,8 +104,7 @@
                         @endif
                         <div class="form-button col-12 my-2 d-flex justify-content-end">
                             <br><br>
-                            <button class="btn-orange-static my-1 px-4 d-inline text-end" id="button" type="submit"
-                                disabled>Simpan</button>
+                            <button class="btn-orange-static my-1 px-4 d-inline text-end" id="button" type="submit">Simpan</button>
                         </div>
                     </form>
                 </div>
@@ -114,4 +113,14 @@
         </div>
     </section>
     <!-- Last Page -->
+@endsection
+
+@section('script')
+    <script>
+        formInput.forEach((element) => {
+            element.addEventListener("change", (e) => {
+                validate(e.target);
+            });
+        });
+    </script>
 @endsection
