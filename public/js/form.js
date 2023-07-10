@@ -37,12 +37,3 @@ const updateButton = () => {
         ? formButton.removeAttribute("disabled")
         : formButton.setAttribute("disabled", true);
 };
-
-formInput.forEach((element) => {
-    element.addEventListener("change", (e) => {
-        validate(e.target);
-        updateButton();
-    });
-});
-
-updateButton();

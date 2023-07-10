@@ -140,6 +140,16 @@
 
     <script src="{{ asset('js/form.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/main.js') }}"></script>
+    <script>
+        formInput.forEach((element) => {
+            element.addEventListener("change", (e) => {
+                validate(e.target);
+                updateButton();
+            });
+        });
+
+        updateButton();
+    </script>
 </body>
 <!-- JavaScript links -->
 
