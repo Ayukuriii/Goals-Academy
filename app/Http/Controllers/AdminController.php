@@ -43,6 +43,16 @@ class AdminController extends Controller
             'datas' => OngoingProgram::where('is_tutor', 1)->where('is_moderator', 1)->with('tutor.user')->get()
         ]);
     }
+    public function riwayat_bimbingan_detail(string $id)
+    {
+        return view('dashboard.admin.bimbingan.riwayat-bimbingan-detail', [
+            'title' => 'Admin',
+            'program_session' => ProgramSession::all(),
+            'tutor_data' => Tutor::all(),
+            'program_services' => ProgramService::all(),
+            'data' => OngoingProgram::find($id)
+        ]);
+    }
     public function show_bimbingan(string $id)
     {
         return view('dashboard.admin.bimbingan.edit-jadwal', [
@@ -135,11 +145,12 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request);
+        // ddd($request);
         $validateData = $request->validate([
             'name' => 'required|max:255|unique:users,name',
             'username' => 'required|unique:users,username',
             'email' => 'required|email|unique:users',
+            'image' => 'image|file|max:5120',
             'phone_number' => 'required',
             'university' => 'required',
             'major' => 'required',
@@ -148,6 +159,10 @@ class AdminController extends Controller
         ]);
 
         $validateData['password'] = Hash::make($validateData['password']);
+
+        if ($request->file('image')) {
+            $validateData['image'] = $request->file('image')->store('profile-images');
+        }
 
         if ($user = User::create($validateData)) {
             if ($validateData['user_level'] === 'tutor') {
@@ -185,19 +200,28 @@ class AdminController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $data = User::findOrFail($id);
-        $request['password'] = Hash::make($request['password']);
-
         // Check if the role has changed from 'tutor' to 'user'
+        $data = User::findOrFail($id);
         $oldRole = $data['user_level'];
         $newRole = $request['user_level'];
 
-        $data->fill($request->except([
-            '_token',
-            '_method'
-        ]));
+        $validateData = $request->validate([
+            'name' => 'required|max:255',
+            'username' => 'required|unique:users,username,' . $data->id,
+            'email' => 'required|email|unique:users,email,' . $data->id,
+            'image' => 'image|file|max:5120',
+            'phone_number' => 'required',
+            'university' => 'required',
+            'major' => 'required',
+            'user_level' => 'required'
+        ]);
 
-        if ($data->save()) {
+        //store image to profile-images
+        if ($request->file('image')) {
+            $validateData['image'] = $request->file('image')->store('profile-images');
+        }
+
+        if ($data->update($validateData)) {
             if ($oldRole === 'tutor' && $newRole === 'user') {
                 // Delete the tutor record associated with the user
                 Tutor::where('user_id', $data->id)->delete();

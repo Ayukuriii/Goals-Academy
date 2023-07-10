@@ -59,10 +59,13 @@
                                                 class="text-decoration-none">
                                                 <i class="bi bi-pencil-square text-success"></i>
                                             </a>
-                                            <button type="submit" class="text-decoration-none border-0 bg-transparent"
-                                                data-bs-toggle="modal" data-bs-target="#deleteModal{{ $data->id }}">
-                                                <i class="bi bi-trash3 text-orange"></i>
-                                            </button>
+                                            @if ($data->user_level !== 'admin')
+                                                <button type="submit" class="text-decoration-none border-0 bg-transparent"
+                                                    data-bs-toggle="modal"
+                                                    data-bs-target="#deleteModal{{ $data->id }}">
+                                                    <i class="bi bi-trash3 text-orange"></i>
+                                                </button>
+                                            @endif
                                         </div>
                                     </td>
                                 </tr>

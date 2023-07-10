@@ -18,7 +18,8 @@ return new class extends Migration
             $table->string('tutor_id');
             $table->string('payment_status_id');
             $table->string('program_session_id');
-            $table->enum('location', ['online', 'offline']);
+            $table->text('catatan');
+            $table->string('file');
             $table->string('links')->nullable();
             $table->date('date');
             $table->boolean('is_tutor');

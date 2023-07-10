@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DownloadController;
 use App\Http\Controllers\EmailController;
 use App\Http\Controllers\ModeratorController;
 use App\Http\Controllers\ProfileController;
@@ -98,6 +99,9 @@ Route::get('/test', function () {
 });
 Route::post('/send-email', [EmailController::class, 'sendEmail']);
 
+//Route Download
+Route::get('/download/{filename}', [DownloadController::class, 'download_bimbingan'])->middleware('auth')->name('file-download');
+
 // Route Admin
 Route::middleware(['auth', 'check.level:admin'])->group(function () {
     Route::controller(AdminController::class)->group(function () {
@@ -105,6 +109,7 @@ Route::middleware(['auth', 'check.level:admin'])->group(function () {
 
         Route::get('/admin/bimbingan', 'bimbingan')->name('admin.bimbingan');
         Route::get('/admin/riwayat_bimbingan', 'riwayat_bimbingan')->name('admin.riwayat-bimbingan');
+        Route::get('/admin/riwayat_bimbingan_detail/{id}', 'riwayat_bimbingan_detail')->name('admin.riwayat-bimbingan');
         Route::get('/admin/bimbingan/show/{id}', 'show_bimbingan')->name('admin.show-bimbingan');
         Route::put('/admin/bimbingan/update/{id}', 'update_bimbingan')->name('admin.update-bimbingan');
         Route::get('/admin/bimbingan/detail/{id}', 'detail_bimbingan')->name('admin.detail-bimbingan');
