@@ -14,10 +14,19 @@
                 </div>
 
                 <!-- Alert -->
-                <div class="alert alert-info alert-dismissible fade mt-4 show" role="alert">
-                    Message appear here
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
+                @if (session()->has('update-success'))
+                    <div class="alert alert-success alert-dismissible fade mt-4 show" role="alert">
+                        <i class="bi bi-check-circle-fill"></i>
+                        {{ session('update-success') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @endif
+                @if (session()->has('update-error'))
+                    <div class="alert alert-danger alert-dismissible fade mt-4 show" role="alert">
+                        {{ session('update-success') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @endif
 
                 <div class="p-2 mt-2">
                     <table id="datatable" class="table">

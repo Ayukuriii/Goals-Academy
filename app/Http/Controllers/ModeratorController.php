@@ -93,8 +93,11 @@ class ModeratorController extends Controller
             'links'
         ]));
         // dd($data);
-        $data->save();
-        return redirect('/moderator/atur_jadwal');
+        if ($data->save()) {
+            return redirect('/moderator/atur_jadwal')->with('update-success', 'Data ' . $data->user->name . ' berhasil di ubah');
+        } else {
+            return back()->with('update-failed', 'Invalid Data');
+        }
     }
 
     /**

@@ -40,7 +40,7 @@ class AdminController extends Controller
     {
         return view('dashboard.admin.bimbingan.riwayat-bimbingan', [
             'title' => 'Admin',
-            'datas' => OngoingProgram::where('is_tutor', 1)->Where('is_moderator', 1)->with('tutor.user')->get()
+            'datas' => OngoingProgram::where('is_tutor', 1)->where('is_moderator', 1)->with('tutor.user')->get()
         ]);
     }
     public function show_bimbingan(string $id)
@@ -64,8 +64,11 @@ class AdminController extends Controller
             'location',
             'links'
         ]));
-        $data->save();
-        return redirect('/admin/bimbingan');
+        if ($data->save()) {
+            return redirect('/admin/bimbingan')->with('update-success', 'Data ' . $data->user->name . ' berhasil di update');
+        } else {
+            return back()->with('update-error', 'Data gagal di update');
+        }
     }
     public function detail_bimbingan(string $id)
     {
@@ -101,8 +104,11 @@ class AdminController extends Controller
             'is_tutor' => 0,
             'is_moderator' => 0
         ]);
-        $data->save();
-        return redirect()->route('admin.bimbingan');
+        if ($data->save()) {
+            return redirect('/admin/bimbingan')->with('update-success', 'Data ' . $data->user->name . ' berhasil di update');
+        } else {
+            return back()->with('update-error', 'Data gagal di update');
+        }
     }
 
     // section list user
@@ -131,8 +137,8 @@ class AdminController extends Controller
     {
         // dd($request);
         $validateData = $request->validate([
-            'name' => 'required|max:255',
-            'username' => 'required',
+            'name' => 'required|max:255|unique:users,name',
+            'username' => 'required|unique:users,username',
             'email' => 'required|email|unique:users',
             'phone_number' => 'required',
             'university' => 'required',
@@ -143,14 +149,16 @@ class AdminController extends Controller
 
         $validateData['password'] = Hash::make($validateData['password']);
 
-        $user = User::create($validateData);
-
-        if ($validateData['user_level'] === 'tutor') {
-            Tutor::create([
-                'user_id' => $user->id
-            ]);
+        if ($user = User::create($validateData)) {
+            if ($validateData['user_level'] === 'tutor') {
+                Tutor::create([
+                    'user_id' => $user->id
+                ]);
+            }
+            return redirect()->route('admin.list_user')->with('create-success', 'Data ' . $user->name . ' berhasil di buat!');
+        } else {
+            return back()->with('create-failed', 'Invalid data')->withInput();
         }
-        return redirect()->route('admin.list_user');
     }
 
     /**
@@ -188,19 +196,19 @@ class AdminController extends Controller
             '_token',
             '_method'
         ]));
-        $data->save();
 
-        if ($oldRole === 'tutor' && $newRole === 'user') {
-            // Delete the tutor record associated with the user
-            Tutor::where('user_id', $data->id)->delete();
-        } elseif ($oldRole !== 'tutor' && $newRole === 'tutor') {
-            // Create a new tutor record for the user
-            Tutor::create([
-                'user_id' => $data->id
-            ]);
+        if ($data->save()) {
+            if ($oldRole === 'tutor' && $newRole === 'user') {
+                // Delete the tutor record associated with the user
+                Tutor::where('user_id', $data->id)->delete();
+            } elseif ($oldRole !== 'tutor' && $newRole === 'tutor') {
+                // Create a new tutor record for the user
+                Tutor::create(['user_id' => $data->id]);
+            }
+            return redirect('/admin/list_user');
+        } else {
+            return back()->with('update-failed', 'Update gagal!')->withInput();
         }
-
-        return redirect('/admin/list_user');
     }
 
 

@@ -71,6 +71,17 @@ class DatabaseSeeder extends Seeder
             'password'      => bcrypt('qwe12334'),
             'email_verified_at' => now()
         ]);
+        User::create([
+            'name'  => 'Vicky Bellarina',
+            'username' => 'ciki',
+            'email' => 'ciki@gmail.com',
+            'phone_number'  => '087763420871',
+            'university'    => 'Universitas Brawijaya',
+            'major' => 'FIB',
+            'user_level' => 'tutor',
+            'password'      => bcrypt('qwe12334'),
+            'email_verified_at' => now()
+        ]);
 
         ProgramService::create([
             'title' => 'Dibimbing Online',
@@ -93,6 +104,9 @@ class DatabaseSeeder extends Seeder
 
         Tutor::create([
             'user_id'  => '3'
+        ]);
+        Tutor::create([
+            'user_id'  => '5'
         ]);
 
         PaymentStatus::create([
