@@ -61,7 +61,12 @@
                     </table>
                 </div>
                 <hr class="m-0 w-100">
-
+                <div class="form-group p-3 pb-0 my-2">
+                    <label class="form-label h4 fw-bold mb-4" for="catatan">Catatan dari
+                        {{ $data->user->name }}</label>
+                    <textarea class="form-control" name="body" id="body" rows="5" placeholder="Comments" disabled>{{ $data->catatan }}</textarea>
+                </div>
+                <hr class="m-0 w-100">
                 <div class="form-group p-3 pb-0 mt-2">
                     <label class="form-label h4 fw-bold mb-4" for="catatan">Catatan dari Tutor</label>
                     <textarea class="form-control" name="body" id="body" rows="5" placeholder="Comments" disabled>{{ optional($data->tutor_notes->first())->body }}</textarea>
