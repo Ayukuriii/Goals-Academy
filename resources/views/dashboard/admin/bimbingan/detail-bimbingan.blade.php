@@ -23,7 +23,7 @@
                             </tr>
                             <tr>
                                 <td>TUTOR</td>
-                                <td class="fw-bold small">Kak {{ $data->tutor->user->name }}</td>
+                                <td class="fw-bold small">Kak {{ $data->tutor->user->name ?? 'Kosong' }}</td>
                             </tr>
                             <tr>
                                 <td>JADWAL</td>
