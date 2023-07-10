@@ -53,6 +53,10 @@
                                     </td>
                                     <td class="h4">
                                         <div class="d-flex gap-2">
+                                            <a href="/admin/riwayat_bimbingan_detail/{{ $data->id }}"
+                                                class="text-decoration-none">
+                                                <i class="bi bi-eye text-dark"></i>
+                                            </a>
                                             <form action="/admin/bimbingan/restore/{{ $data->id }}" method="POST">
                                                 @csrf
                                                 @method('put')

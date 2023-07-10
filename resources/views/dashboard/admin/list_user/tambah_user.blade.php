@@ -20,7 +20,7 @@
                     </div>
                 @endif
                 <div class="form w-75 mt-3">
-                    <form class="row" action="{{ route('admin.store') }}" method="POST">
+                    <form class="row" action="{{ route('admin.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group col-6 mb-2">
                             <label class="form-label small" for="name">NAMA</label>
@@ -107,7 +107,20 @@
                                 </div>
                             @enderror
                         </div>
-                        <div class="form-button col-12 mb-2 d-flex justify-content-end">
+
+                        <!-- Profile Image -->
+                        <div class="form-group col-6 mb-2">
+                            <label for="image" class="form-label">Profile Image</label>
+                            <input class="form-control @error('image') is-invalid @enderror" type="file"
+                                name="image" id="image">
+                            @error('image')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+
+                        <div class="form-button col-6 mb-2 d-flex justify-content-end">
                             <button class="btn-orange-static px-4 d-inline text-end small" id="button" type="submit"
                                 disabled>Simpan</button>
                         </div>

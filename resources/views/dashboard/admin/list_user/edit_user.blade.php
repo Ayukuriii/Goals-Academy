@@ -23,72 +23,116 @@
                 @endif
 
                 <div class="form w-75 mt-3">
-                    <form class="row" action="/admin/tambah_user/update/{{ $data->id }}" method="POST">
+                    <form class="row" action="/admin/tambah_user/update/{{ $data->id }}" method="POST"
+                        enctype="multipart/form-data">
                         @csrf
                         @method('put')
                         <div class="form-group col-6 mb-3">
                             <label class="form-label small" for="name">NAMA</label>
-                            <input type="text" name="name" class="form-control is-invalid" id="name"
-                                value="{{ $data->name }}" placeholder=" " required />
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
+                            <input type="text" name="name" class="form-control @error('name') is-invalid @enderror"
+                                id="name" value="{{ $data->name }}" placeholder=" " required />
+                            @error('')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
-                        <div class="form-group col-6 mb-3">
+                        <div class="form-group
+                                col-6 mb-3">
                             <label class="form-label small" for="name">USERNAME</label>
-                            <input type="text" name="username" class="form-control is-invalid" id="username"
+                            <input type="text" name="username"
+                                class="form-control @error('username') is-invalid @enderror" id="username"
                                 value="{{ $data->username }}" placeholder=" " required />
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
+                            @error('')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
-                        <div class="form-group col-6 mb-3">
+                        <div class="form-group
+                                col-6 mb-3">
                             <label class="form-label small" for="university">UNIVERSITAS</label>
-                            <input type="text" name="university" class="form-control is-invalid" id="university"
+                            <input type="text" name="university"
+                                class="form-control @error('university') is-invalid @enderror" id="university"
                                 value="{{ $data->university }}" placeholder=" " required />
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
+                            @error('')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
-                        <div class="form-group col-6 mb-3">
+                        <div class="form-group
+                                col-6 mb-3">
                             <label class="form-label small" for="major">JURUSAN</label>
-                            <input type="text" name="major" class="form-control is-invalid" id="major"
-                                value="{{ $data->major }}" placeholder=" " required />
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
+                            <input type="text" name="major" class="form-control @error('major') is-invalid @enderror"
+                                id="major" value="{{ $data->major }}" placeholder=" " required />
+                            @error('')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
-                        <div class="form-group col-6 mb-3">
+                        <div class="form-group
+                                col-6 mb-3">
                             <label class="form-label small" for="email">EMAIL</label>
-                            <input type="email" name="email" class="form-control is-invalid" id="email"
-                                value="{{ $data->email }}" placeholder=" " required />
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
+                            <input type="email" name="email" class="form-control @error('email') is-invalid @enderror"
+                                id="email" value="{{ $data->email }}" placeholder=" " required />
+                            @error('')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
-                        <div class="form-group col-6 mb-3">
+                        <div class="form-group
+                                col-6 mb-3">
                             <label class="form-label small" for="phone_number">NOMOR HP.</label>
-                            <input type="text" name="phone_number" class="form-control is-invalid" id="phone_number"
+                            <input type="text" name="phone_number"
+                                class="form-control @error('phone_number') is-invalid @enderror" id="phone_number"
                                 value="{{ $data->phone_number }}" placeholder=" " required />
-                            <div class="invalid-feedback">
-                                {{ $message }}
+                            @error('')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                        @if ($data->user_level !== 'admin')
+                            <div class="form-group
+                                col-6 mb-3">
+                                <label class="form-label small" for="user_level">USER LEVEL</label>
+                                <select class="form-select border-orange" name="user_level" id="user_level"
+                                    aria-label="Default select example">
+                                    <option value="user" {{ $data->user_level == 'user' ? 'selected' : '' }}>User
+                                    </option>
+                                    <option value="moderator" {{ $data->user_level == 'moderator' ? 'selected' : '' }}>
+                                        Moderator</option>
+                                    <option value="tutor" {{ $data->user_level == 'tutor' ? 'selected' : '' }}>Tutor
+                                    </option>
+                                    <option value="admin" {{ $data->user_level == 'admin' ? 'selected' : '' }}>Admin
+                                    </option>
+                                </select>
                             </div>
+                        @else
+                            <div class="form-group
+                                col-6 mb-3">
+                                <label class="form-label small" for="user_level">USER LEVEL</label>
+                                <select class="form-select border-orange" name="user_level" id="user_level"
+                                    aria-label="Default select example">
+                                    <option value="admin" {{ $data->user_level == 'admin' ? 'selected' : '' }}>Admin
+                                    </option>
+                                </select>
+                            </div>
+                        @endif
+                        <!-- Profile Image -->
+                        <div class="form-group col-6 mb-2">
+                            <label for="image" class="form-label">Profile Image</label>
+                            <input class="form-control @error('image') is-invalid @enderror" type="file"
+                                name="image" id="image">
+                            @error('image')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
-                        <div class="form-group col-6 mb-3">
-                            <label class="form-label small" for="user_level">USER LEVEL</label>
-                            <select class="form-select border-orange" name="user_level" id="user_level"
-                                aria-label="Default select example">
-                                <option value="user" selected>User</option>
-                                <option value="moderator">Moderator</option>
-                                <option value="tutor">Tutor</option>
-                                <option value="admin">Admin</option>
-                            </select>
-                        </div>
-                        {{-- <div class="form-group col-6 mb-3">
-                            <label class="form-label small" for="password">PASSWORD</label>
-                            <input type="password" name="password" class="form-control is-invalid" id="password" placeholder=" "
-                                required />
-                        </div> --}}
                         <div class="form-button col-6 mb-3 d-flex justify-content-end pt-5">
                             <button class="btn-orange-static px-4 mt-2 d-inline text-end small" id="button"
                                 type="submit" disabled>Simpan</button>

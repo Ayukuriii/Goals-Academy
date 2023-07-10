@@ -125,7 +125,8 @@ class DatabaseSeeder extends Seeder
             'tutor_id' => 1,
             'payment_status_id' => 1,
             'program_session_id' => 1,
-            'location' => 'online',
+            'catatan' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, odio.',
+            'file' => 'F-12 Form Penyerahan.pdf',
             'date' => now()->addDays(7),
             'links' => 'www.google.com',
             'is_tutor' => false,
@@ -137,7 +138,8 @@ class DatabaseSeeder extends Seeder
             'tutor_id' => 2,
             'payment_status_id' => 1,
             'program_session_id' => 2,
-            'location' => 'offline',
+            'catatan' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, odio.',
+            'file' => '',
             'date' => now()->addDays(20),
             'is_tutor' => false,
             'is_moderator' => false
@@ -148,7 +150,8 @@ class DatabaseSeeder extends Seeder
             'tutor_id' => 1,
             'payment_status_id' => 1,
             'program_session_id' => 4,
-            'location' => 'online',
+            'catatan' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, odio.',
+            'file' => '',
             'date' => now()->addDays(20),
             'links' => 'www.google.com',
             'is_tutor' => true,
@@ -160,9 +163,10 @@ class DatabaseSeeder extends Seeder
             'tutor_id' => 1,
             'payment_status_id' => 1,
             'program_session_id' => 4,
-            'location' => 'online',
+            'catatan' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, odio.',
+            'file' => 'F-12 Form Penyerahan.pdf',
             'date' => now()->addDays(10),
-            'links' => 'www.google.com',
+            'links' => 'Nakoa',
             'is_tutor' => true,
             'is_moderator' => true
         ]);
@@ -175,6 +179,11 @@ class DatabaseSeeder extends Seeder
             'ongoing_program_id' => 2,
             'body' => 'sudah bagus program 2 nya'
         ]);
+        TutorNotes::create([
+            'ongoing_program_id' => 4,
+            'body' => 'sudah bagus program 2 nya'
+        ]);
+        
 
         ProgramSession::create([
             'sesi' => '09:00'
