@@ -52,6 +52,11 @@ class UserController extends Controller
         ]);
     }
 
+    public function upload(Request $request)
+    {
+        return response()->json(['success'=>'Foto profil sukses diupload!', 'image'=>$request->image]);
+    }
+
     /**
      * Show the form for creating a new resource.
      */

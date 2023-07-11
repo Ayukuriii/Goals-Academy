@@ -170,3 +170,5 @@ Route::middleware('auth')->group(function () {
         Route::get('/midtrans', 'index_midtrans')->name('midtrans.index');
     });
 });
+
+Route::post('/upload', [UserController::class, 'upload'])->name('image.upload');
