@@ -110,7 +110,7 @@
 
                         <!-- Profile Image -->
                         <div class="form-group col-6 mb-2">
-                            <label for="image" class="form-label">Profile Image</label>
+                            <label for="image" class="form-label">PROFILE IMAGE</label>
                             <input class="form-control @error('image') is-invalid @enderror" type="file"
                                 name="image" id="image">
                             @error('image')
@@ -121,8 +121,9 @@
                         </div>
 
                         <div class="form-button col-6 mb-2 d-flex justify-content-end">
-                            <button class="btn-orange-static px-4 d-inline text-end small" id="button" type="submit"
-                                disabled>Simpan</button>
+                            <button class="btn-orange-static px-4 d-inline text-end small" id="button" type="submit">
+                                Simpan
+                            </button>
                         </div>
                     </form>
                 </div>

@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('user_id');
             $table->string('program_services_id');
             $table->string('tutor_id');
-            $table->string('payment_status_id');
+            $table->enum('payment_status', ['success', 'failed', 'pending']);
             $table->string('program_session_id');
             $table->text('catatan');
             $table->string('file');

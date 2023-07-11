@@ -24,11 +24,11 @@
                     </tr>
                     <tr>
                         <td>STATUS</td>
-                        <td>{{ $data->payment_status->status }}</td>
+                        <td>{{ $data->payment_status }}</td>
                     </tr>
                     <tr>
-                        <td>MENTOR</td>
-                        <td>{{ $data->tutor->name }}</td>
+                        <td>TUTOR</td>
+                        <td>{{ $data->tutor->user->name }}</td>
                     </tr>
                     <tr>
                         <td>JADWAL</td>
@@ -40,8 +40,7 @@
                     </tr>
                     <tr>
                         <td>TEMPAT</td>
-                        <td><a
-                                href="{{ strpos($data->links, 'http') === 0 ? $data->links : 'https://' . $data->links }}">Link
+                        <td><a href="{{ strpos($data->links, 'http') === 0 ? $data->links : 'https://' . $data->links }}">Link
                                 Zoom</a></td>
                     </tr>
                 </tbody>
@@ -49,7 +48,7 @@
 
             <div class="">
                 <h5>Catatan dari tutor</h5>
-                <p>{{ optional($data->tutor_notes->first())->body }}</p>
+                <p class="fs-6">{{ optional($data->tutor_notes->first())->body }}</p>
             </div>
 
         </div>

@@ -15,7 +15,7 @@
                         <div class="card product-item justify-content-between">
                             <div class="text-top-product d-flex flex-row justify-content-between">
                                 <h3 class="name-product">{{ $collection->program->title }}</h3>
-                                <p class="status-product fst-italic">{{ $collection->payment_status->status }}</p>
+                                <p class="status-product fst-italic">{{ $collection->payment_status }}</p>
                             </div>
                             <div class="text-bottom-product d-flex flex-row justify-content-between">
                                 <div class="waktu-product">

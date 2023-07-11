@@ -157,6 +157,7 @@ class AdminController extends Controller
             'password' => 'required',
             'user_level' => 'required'
         ]);
+        
 
         $validateData['password'] = Hash::make($validateData['password']);
 

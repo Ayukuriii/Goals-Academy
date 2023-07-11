@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\OngoingProgram;
 use Carbon\Carbon;
+use App\Models\User;
 use Illuminate\Http\Request;
+use App\Models\OngoingProgram;
+use Illuminate\Support\Facades\Hash;
+
+use function PHPUnit\Framework\returnSelf;
 
 class UserController extends Controller
 {
@@ -79,16 +83,57 @@ class UserController extends Controller
     {
         return view('dashboard.user.edit', [
             'title' => 'Edit Profile',
-            'posts' => auth()->user()
+            'posts' => auth()->user($id)
         ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update_profile(Request $request, string $id)
     {
-        //
+        dd($request);
+    }
+    public function update_email(Request $request, string $id)
+    {
+        $data = User::find($id);
+        $validateData = $request->validate([
+            'email' => 'required|email:dns',
+            'password' => 'required|min:8|max:255',
+        ]);
+
+        $check = Hash::check($request->password, $data->password);
+
+        if ($check) {
+            $data->email = $validateData['email'];
+            $data->save();
+
+            return back()->with('update-success', 'Selamat, update data berhasil');
+        } else {
+            return back()->with('update-failed', 'Update data gagal!');
+        }
+    }
+    public function update_password(Request $request, string $id)
+    {
+        $data = User::find($id);
+        $validateData = $request->validate([
+            'old_password' => 'required|min:8|max:255',
+            'new_password' => 'required|min:8|max:255',
+            'confirmation_password' => 'required|min:8|max:255',
+        ]);
+
+        $check = Hash::check($request->old_password, $data->password);
+        if ($check) {
+            if ($request->new_password == $request->confirmation_password) {
+                $hashed = Hash::make($request->new_password);
+                $data->password = $hashed;
+                $data->save();
+
+                return back()->with('update-success', 'Selamat, update data berhasil');
+            } else {
+                return back()->with('update-failed', 'Update data gagal!');
+            }
+        }
     }
 
     /**
