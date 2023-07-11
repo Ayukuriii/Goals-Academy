@@ -26,7 +26,7 @@
                     <div id="cropper" class="bg-fixed d-flex d-none">
                         <div class="card d-flex m-auto gap-3 p-3" style="overflow: hidden">
                             <img id="temp-image" class="border rounded" src="{{ asset('image/assets/icons/video-goals.svg') }}" alt="Temporary Image" style="object-fit: cover">
-                            <a id="save-image" class="btn btn-primary">Crop</a>
+                            <a id="save-image" class="btn btn-primary">Submit</a>
                         </div>
                     </div>
                 </form>
@@ -211,16 +211,16 @@
                     const croppedCanvas = cropper.getCroppedCanvas({width: 512, height: 512});
                     // Round
                     const roundedCanvas = getRoundedCanvas(croppedCanvas);
-                    // Show
-                    previewImage.src = roundedCanvas.toDataURL();
 
                     $.ajax({
                         type: 'post',
                         url: '/upload',
-                        data: {'_token': $('meta[name="_token"]').attr('content'), 'image': previewImage.src},
+                        data: {'_token': $('meta[name="_token"]').attr('content'), 'image': roundedCanvas.toDataURL()},
                         dataType: 'json',
                         success: function (response) {
-                            document.querySelector('#profile img').src = response.success;
+                            alert(response.success);
+                            document.querySelector('#profile img').src = response.image;
+                            previewImage.src = response.image;
                         }
                     });
 
