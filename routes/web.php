@@ -1,14 +1,15 @@
 <?php
 
-use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\DownloadController;
-use App\Http\Controllers\EmailController;
-use App\Http\Controllers\ModeratorController;
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\TutorController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\EmailController;
+use App\Http\Controllers\ImageController;
+use App\Http\Controllers\TutorController;
+use App\Http\Controllers\DownloadController;
+use App\Http\Controllers\ModeratorController;
+use App\Http\Controllers\TestController;
 use App\Http\Controllers\VerificationController;
 
 /*
@@ -92,11 +93,6 @@ Route::get('/email/verify/email-verification', [VerificationController::class, '
 Route::get('/email/verify/{id}/{hash}', [VerificationController::class, 'verify'])->middleware('auth', 'signed')->name('verification.verify');
 Route::get('/email/verify/resend-verification', [VerificationController::class, 'resend'])->middleware('auth', 'throttle:6,1')->name('verification.resend');
 
-Route::get('/test', function () {
-    return view('test.test', [
-        'title' => 'Test'
-    ]);
-});
 Route::post('/send-email', [EmailController::class, 'sendEmail']);
 
 //Route Download
@@ -152,9 +148,27 @@ Route::middleware(['auth', 'check.level:tutor'])->group(function () {
 });
 
 Route::middleware('auth', 'check.level:user', 'auth.session', 'verified')->group(function () {
-    Route::get('/user', [UserController::class, 'index']);
-    Route::get('/user/{id}', [UserController::class, 'detail']);
-    Route::get('/user/{id}/edit', [UserController::class, 'edit']);
+    Route::controller(UserController::class)->group(function () {
+        Route::get('/user', 'index')->name('user.index');
+        Route::get('/user/{id}', 'detail')->name('user.detail');
+        Route::get('/user/edit/{id}', 'edit')->name('user.edit');
+        Route::put('/user/update/profile/{id}', 'update_profile')->name('user.update.profile');
+        Route::put('/user/update/email/{id}', 'update_email')->name('user.update.email');
+        Route::put('/user/update/password/{id}', 'update_password')->name('user.update.password');
+    });
+});
+
+// Test Route
+Route::get('/test', function () {
+    return view('test.test', [
+        'title' => 'Test'
+    ]);
+});
+
+Route::middleware('auth')->group(function () {
+    Route::controller(TestController::class)->group(function () {
+        Route::get('/midtrans', 'index_midtrans')->name('midtrans.index');
+    });
 });
 
 Route::post('/upload', [UserController::class, 'upload'])->name('image.upload');

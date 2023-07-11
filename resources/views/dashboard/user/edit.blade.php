@@ -1,7 +1,6 @@
 @extends('dashboard.layouts.main')
 
 @section('container')
-    {{-- {{ dd($collections) }} --}}
     <!-- Isi Page -->
     <section class="d-flex flex-column flex-xl-row container-fluid container-xl gap-3 gap-xl-4" id="user-profile">
         @include('dashboard.user.partials.sidebar')
@@ -10,9 +9,11 @@
             <div>
                 <div class="d-flex justify-content-between">
                     <h3 class="d-inline text-purple fw-bold">Edit Profil</h3>
-                    <a class="d-inline btn-outline-orange py-2 px-4 small" onclick="history.back()" style="cursor: pointer">Back</a>
+                    <a class="d-inline btn-outline-orange py-2 px-4 small" onclick="history.back()"
+                        style="cursor: pointer">Back</a>
                 </div>
-                <form method="POST" enctype="multipart/form-data">
+                <form action="/user/update/profile/{{ auth()->user()->id }}" method="POST" class="from row mt-3 px-2">
+                    @method('put')
                     @csrf
                     <div class="d-flex align-items-center form-group mb-2">
                         <img id="preview-image" src="{{ asset('image/assets/images/login/profile-grey.png') }}" width="80px" height="80px" alt="Image Preview"/>
@@ -35,40 +36,42 @@
                     @csrf
                     <div class="form-group col-12 col-xl-6 mb-xl-2">
                         <label class="form-label small" for="name">NAMA</label>
-                        <input type="text" name="name" class="form-control is-invalid" id="name" placeholder=" "
-                            required />
+                        <input type="text" name="name" class="form-control @error('name') is-invalid @enderror"
+                            id="name" placeholder=" " value="{{ $posts->name }}" required />
                         <div class="invalid-feedback">
                             Input tidak valid
                         </div>
                     </div>
                     <div class="form-group col-12 col-xl-6 mb-xl-2">
                         <label class="form-label small" for="name">USERNAME</label>
-                        <input type="text" name="username" class="form-control is-invalid" id="username" placeholder=" "
-                            required />
+                        <input type="text" name="username" class="form-control @error('username') is-invalid @enderror"
+                            id="username" placeholder=" " value="{{ $posts->username }}" required />
                         <div class="invalid-feedback">
                             Input tidak valid
                         </div>
                     </div>
                     <div class="form-group col-12 col-xl-6 mb-xl-2">
                         <label class="form-label small" for="university">UNIVERSITAS</label>
-                        <input type="text" name="university" class="form-control is-invalid" id="university" placeholder=" "
-                            required />
+                        <input type="text" name="university"
+                            class="form-control @error('university') is-invalid @enderror" id="university" placeholder=" "
+                            value="{{ $posts->university }}" required />
                         <div class="invalid-feedback">
                             Input tidak valid
                         </div>
                     </div>
                     <div class="form-group col-12 col-xl-6 mb-xl-2">
                         <label class="form-label small" for="major">JURUSAN</label>
-                        <input type="text" name="major" class="form-control is-invalid" id="major" placeholder=" "
-                            required />
+                        <input type="text" name="major" class="form-control @error('major') is-invalid @enderror"
+                            id="major" placeholder=" " value="{{ $posts->major }}" required />
                         <div class="invalid-feedback">
                             Input tidak valid
                         </div>
                     </div>
                     <div class="form-group col-12 col-xl-6 mb-xl-2">
                         <label class="form-label small" for="phone_number">NOMOR HP.</label>
-                        <input type="text" name="phone_number" class="form-control is-invalid" id="phone_number" placeholder=" "
-                            required />
+                        <input type="text" name="phone_number"
+                            class="form-control @error('phone_number') is-invalid @enderror" id="phone_number"
+                            placeholder=" " value="{{ $posts->phone_number }}" required />
                         <div class="invalid-feedback">
                             Input tidak valid
                         </div>
@@ -82,7 +85,8 @@
             <hr class="w-100">
             <div id="form2">
                 <h3 class="d-inline text-purple fw-bold">Ubah Email</h3>
-                <form action="#" method="POST" class="from mt-3 px-2 d-none d-xl-block">
+                <form action="/user/update/email/{{ auth()->user()->id }}" method="POST" class="from mt-3 px-2 d-none d-xl-block">
+                    @method('put')
                     @csrf
                     <div class="row">
                         <div class="form-group col-12 col-xl-6 mb-xl-2">
@@ -111,7 +115,9 @@
             <hr class="w-100">
             <div id="form3">
                 <h3 class="d-inline text-purple fw-bold">Ubah Password</h3>
-                <form action="#" method="POST" class="from mt-3 px-2 d-none d-xl-block">
+                <form action="/user/update/password/{{ auth()->user()->id }}" method="POST"
+                    class="from row mt-3 px-2 d-none d-xl-block">
+                    @method('put')
                     @csrf
                     <div class="row">
                         <div class="col-12 col-xl-6">
@@ -237,6 +243,5 @@
                 validate(e.target);
             });
         });
-
     </script>
 @endsection

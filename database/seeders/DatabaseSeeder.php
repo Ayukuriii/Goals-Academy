@@ -109,21 +109,11 @@ class DatabaseSeeder extends Seeder
             'user_id'  => '5'
         ]);
 
-        PaymentStatus::create([
-            'status' => 'success'
-        ]);
-        PaymentStatus::create([
-            'status' => 'pending'
-        ]);
-        PaymentStatus::create([
-            'status' => 'failed'
-        ]);
-
         OngoingProgram::create([
             'user_id' => 4,
             'program_services_id' => 1,
             'tutor_id' => 1,
-            'payment_status_id' => 1,
+            'payment_status' => 'success',
             'program_session_id' => 1,
             'catatan' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, odio.',
             'file' => 'F-12 Form Penyerahan.pdf',
@@ -136,7 +126,7 @@ class DatabaseSeeder extends Seeder
             'user_id' => 4,
             'program_services_id' => 2,
             'tutor_id' => 2,
-            'payment_status_id' => 1,
+            'payment_status' => 'success',
             'program_session_id' => 2,
             'catatan' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, odio.',
             'file' => '',
@@ -148,7 +138,7 @@ class DatabaseSeeder extends Seeder
             'user_id' => 4,
             'program_services_id' => 1,
             'tutor_id' => 1,
-            'payment_status_id' => 1,
+            'payment_status' => 'success',
             'program_session_id' => 4,
             'catatan' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, odio.',
             'file' => '',
@@ -161,7 +151,7 @@ class DatabaseSeeder extends Seeder
             'user_id' => 4,
             'program_services_id' => 3,
             'tutor_id' => 1,
-            'payment_status_id' => 1,
+            'payment_status' => 'success',
             'program_session_id' => 4,
             'catatan' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, odio.',
             'file' => 'F-12 Form Penyerahan.pdf',
