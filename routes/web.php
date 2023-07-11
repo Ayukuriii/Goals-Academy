@@ -156,3 +156,5 @@ Route::middleware('auth', 'check.level:user', 'auth.session', 'verified')->group
     Route::get('/user/{id}', [UserController::class, 'detail']);
     Route::get('/user/{id}/edit', [UserController::class, 'edit']);
 });
+
+Route::post('/upload', [UserController::class, 'upload'])->name('image.upload');

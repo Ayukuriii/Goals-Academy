@@ -4,6 +4,7 @@
     <meta charset="us-ascii">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="_token" content="{{ csrf_token() }}">
     <link href="{{ asset('image/apple-touch-icon.png') }}" rel="apple-touch-icon" sizes="180x180" />
 	<link href="{{ asset('image/favicon-32x32.png') }}" rel="icon" sizes="32x32" type="image/png" /> <!-- Logo Title -->
 	<link href="{{ asset('image/favicon-16x16.png') }}" rel="icon" sizes="16x16" type="image/png" /> <!-- Logo Title -->
@@ -20,6 +21,7 @@
 	<link href="{{ asset('css/style-form.css') }}" rel="stylesheet" /> <!-- // style login -->
 	<link href="{{ asset('css/style-karir.css') }}" rel="stylesheet" /> <!-- // style karir -->
 	<link href="{{ asset('css/style-user.css') }}" rel="stylesheet" /> <!-- style profile -->
+	<link href="{{ asset('css/cropper.min.css') }}" rel="stylesheet" /> <!-- style profile -->
 	{{-- <link href="{{ asset('css/style-profil.css') }}" rel="stylesheet" /> <!-- // style profil --> --}}
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     {{-- DataTable CSS --}}
@@ -55,6 +57,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
     <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
+    <script type="text/javascript" src="{{ asset('js/cropper.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/main.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/form.js') }}"></script>
     @yield('script')

@@ -62,6 +62,16 @@
     width: 100%;
 }
 
+.bg-fixed {
+    z-index: 99;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    background-color: #36343475;
+}
+
 .hero-container {
     position: relative;
     display: flex;
@@ -1214,6 +1224,22 @@
     overflow-x: auto;
 }
 
+#cropper img {
+    height: 412px;
+    width: 466px;
+}
+
+.cropper-view-box,
+.cropper-face {
+    border-radius: 50%;
+}
+
+/* The css styles for `outline` do not follow `border-radius` on iOS/Safari (#979). */
+.cropper-view-box {
+    outline: 0;
+    box-shadow: 0 0 0 1px #39f;
+}
+
 @media (max-width: 1080px) {
     .hero-image {
         right: 1%;
@@ -1624,7 +1650,7 @@
     }
 }
 
-@media (max-width: 475px) {
+@media (max-width: 500px) {
     #email-diskon,
     #dapatkan-diskon {
         font-size: 12px;
@@ -1761,6 +1787,11 @@
 
     .quotes-container {
         min-height: 130px;
+    }
+
+    #cropper img {
+        height: 222px;
+        width: 270px;
     }
 }
 
