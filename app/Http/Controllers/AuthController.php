@@ -20,24 +20,28 @@ class AuthController extends Controller
         // dd($request);
         $validateData = $request->validate([
             'name' => 'required|max:255',
-            'username' => 'required',
-            'email' => 'required|email|unique:users',
+            'username' => 'required|min:5|unique:users,username',
+            'email' => 'required|email|unique:users,email',
             'phone_number' => 'required',
             'university' => 'required',
             'major' => 'required',
             'password' => 'required'
         ]);
 
-        $validateData['password'] = Hash::make($validateData['password']);
-        $validateData['user_level'] = 'user';
+        if ($request->password === $request->confirmation_password) {
+            $validateData['password'] = Hash::make($validateData['password']);
+            $validateData['user_level'] = 'user';
 
-        $user = User::create($validateData);
+            $user = User::create($validateData);
 
-        event(new Registered($user));
+            event(new Registered($user));
 
-        Auth::login($user);
+            Auth::login($user);
 
-        return redirect()->route('verification.notice')->with('success', 'Registration successfull! Please check your email for verification');
+            return redirect()->route('verification.notice')->with('success', 'Registration successfull! Please check your email for verification');
+        } else {
+            return back()->with('create-failed', 'Akun gagal dibuat, periksa kembali data anda!');
+        }
         // return redirect('/')->with('success', 'Registration successfull! Please login');
     }
 

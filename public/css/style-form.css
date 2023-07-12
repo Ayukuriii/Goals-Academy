@@ -1,4 +1,5 @@
-form label, form #eye {
+form label,
+form #eye {
     font-size: 0.8rem;
     user-select: none;
     -mox-user-select: none;
@@ -12,7 +13,7 @@ form label, form #eye {
 }
 
 #register-body {
-    background-color: #FF8854;
+    background-color: #ff8854;
 }
 
 .popup-container {
@@ -22,8 +23,8 @@ form label, form #eye {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
     overflow: auto;
     justify-content: center;
     align-items: center;
@@ -37,8 +38,8 @@ form label, form #eye {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
     overflow: auto;
     justify-content: center;
     align-items: center;
@@ -55,7 +56,7 @@ form label, form #eye {
     align-items: center;
     width: 1100px;
     min-height: 500px;
-	background-color: #FF8854;
+    background-color: #ff8854;
     padding: 54px 48px;
     border-radius: 24px;
     transition: 0.5 ease;
@@ -66,11 +67,11 @@ form label, form #eye {
     display: flex;
     right: -20px;
     top: -30px;
-    color: #5B5555;
+    color: #5b5555;
     font-size: 18px;
     width: 31px;
     height: 31px;
-    border: 3px solid #5B5555;
+    border: 3px solid #5b5555;
     border-radius: 50%;
     align-items: center;
     justify-content: center;
@@ -84,11 +85,10 @@ form label, form #eye {
     background-color: #fff;
     /* box-shadow: 0 2px 4px rgba(0, 4.0, 4.0, 0.5); */
     border-radius: 12px;
-    margin-left: auto ;
+    margin-left: auto;
     margin-right: auto;
     align-items: center;
     padding: 20px;
-
 }
 
 input:not(:placeholder-shown) {
@@ -96,7 +96,7 @@ input:not(:placeholder-shown) {
 }
 
 textarea:not(:placeholder-shown) {
-    border: 2px solid #FF8854;
+    border: 2px solid #ff8854;
 }
 
 .input-group-append {
@@ -110,7 +110,7 @@ textarea:not(:placeholder-shown) {
     font-size: 10px;
 }
 
-.card-login-register h3{
+.card-login-register h3 {
     color: #363434;
     letter-spacing: 1px;
     text-align: center;
@@ -129,16 +129,15 @@ textarea:not(:placeholder-shown) {
 }
 
 .form-group input:valid {
-    border: 2px solid #FF8854;
+    border: 2px solid #ff8854;
 }
 
-
 .orange-border {
-    border: 1px solid #FF8854;
+    border: 1px solid #ff8854;
 }
 
 .orange-button {
-    background-color: #FF8854;
+    background-color: #ff8854;
     color: white;
 }
 
@@ -159,12 +158,12 @@ textarea:not(:placeholder-shown) {
 }
 
 #next-submit:hover {
-    background-color: #FE7E1F;
+    background-color: #fe7e1f;
 }
-.form-button p{
+.form-button p {
     text-align: right;
     font-size: 12px;
-    color: #EA4335;
+    color: #ea4335;
 }
 
 .card-button {
@@ -177,7 +176,7 @@ textarea:not(:placeholder-shown) {
     width: 100%;
 }
 
-.card-button button{
+.card-button button {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -185,7 +184,7 @@ textarea:not(:placeholder-shown) {
     text-align: center;
     font-size: 10px;
     color: #363434;
-    background-color: #D9D9D9;
+    background-color: #d9d9d9;
     border: none;
     max-width: 220px;
     width: 100%;
@@ -200,7 +199,7 @@ textarea:not(:placeholder-shown) {
 }
 
 .card-button button:hover {
-    background-color: #A9A9A9;
+    background-color: #a9a9a9;
     border: none;
 }
 
@@ -217,17 +216,17 @@ textarea:not(:placeholder-shown) {
     align-items: center;
     width: 1100px;
     min-height: 500px;
-	background-color: #FF8854;
+    background-color: #ff8854;
     padding: 54px 48px;
     border-radius: 24px;
     transition: 0.5 ease;
 }
 
-.welcome-login-register h1{
+.welcome-login-register h1 {
     font-size: 40px;
     font-weight: bold;
     text-align: center;
-    color: #FFFF;
+    color: #ffff;
 }
 
 .card-login {
@@ -240,7 +239,7 @@ textarea:not(:placeholder-shown) {
     padding: 50px;
 }
 
-.card-login h3{
+.card-login h3 {
     color: #363434;
     letter-spacing: 1px;
     text-align: center;
@@ -269,7 +268,7 @@ textarea:not(:placeholder-shown) {
 .register-content {
     justify-content: center;
     align-items: center;
-	background: white;
+    background: white;
     padding: 80px 140px;
     border-radius: 24px;
     transition: 0.5 ease;

@@ -132,6 +132,7 @@ Route::middleware(['auth', 'check.level:moderator'])->group(function () {
         Route::get('/moderator/edit/{id}', 'edit')->name('moderator.edit-jadwal.edit');
         Route::put('/moderator/update/{id}', 'update')->name('moderator.edit-jadwal.update');
         Route::put('/moderator/selesai/{id}', 'selesai')->name('moderator.edit-jadwal.selesai');
+        Route::get('/moderator/riwayat_jadwal_detail/{id}', 'riwayat_jadwal_detail')->name('moderator.riwayat_jadwal');
     });
 });
 
