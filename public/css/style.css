@@ -944,6 +944,12 @@
     font-weight: bold;
 }
 
+/* Program */
+
+#program {
+    letter-spacing: 1.5px;
+}
+
 /* Testimoni */
 
 .testimoni-container {

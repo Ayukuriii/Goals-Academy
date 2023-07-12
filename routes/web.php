@@ -65,6 +65,12 @@ Route::get('/profil_tutor', function () {
     ]);
 });
 
+Route::get('/program', function () {
+    return view('program', [
+        'title' => 'Program'
+    ]);
+});
+
 Route::get('/dibimbing-sekali', function () {
     return view('dibimbing-sekali', [
         'title' => 'Dibimbing Sekali'
