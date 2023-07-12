@@ -20,24 +20,6 @@
                     </div>
                 @endif
                 <div class="form w-75 mt-3">
-                    <form method="POST" enctype="multipart/form-data">
-                        @csrf
-                        <div class="d-flex align-items-center form-group mb-2">
-                            <img id="preview-image" src="{{ asset('image/assets/images/login/profile-grey.png') }}" width="80px" height="80px" alt="Image Preview"/>
-                            <div class="ms-3">
-                                <label for="input-image" class="btn-outline-orange px-3 py-2 fw-bold" style="cursor: pointer;">Unggah Foto</label><br>
-                                <small style="font-size: 0.7rem">*Maksimum 2MB</small>
-                            </div>
-                            <input type="file" accept="image/*" class="form-control is-invalid d-none" name="input-image" id="input-image">
-                        </div>
-                        {{-- popup --}}
-                        <div id="cropper" class="bg-fixed d-flex d-none">
-                            <div class="card d-flex m-auto gap-3 p-3" style="overflow: hidden">
-                                <img id="temp-image" class="border rounded" src="{{ asset('image/assets/icons/video-goals.svg') }}" alt="Temporary Image" style="object-fit: cover">
-                                <a id="save-image" class="btn btn-primary">Submit</a>
-                            </div>
-                        </div>
-                    </form>
                     <form class="row" action="{{ route('admin.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group col-6 mb-2">
@@ -138,7 +120,6 @@
         </div>
     </section>
     <!-- Last Page -->
-
 @endsection
 
 @section('script')
@@ -163,7 +144,7 @@
                     dragMode: 'move',
                     scalable: true,
                     center: true,
-                    ready: function () {
+                    ready: function() {
                         croppable = true;
                     },
                 })
@@ -174,7 +155,10 @@
                     }
 
                     // Crop
-                    const croppedCanvas = cropper.getCroppedCanvas({width: 512, height: 512});
+                    const croppedCanvas = cropper.getCroppedCanvas({
+                        width: 512,
+                        height: 512
+                    });
                     // Round
                     const roundedCanvas = getRoundedCanvas(croppedCanvas);
                     // Show
@@ -183,9 +167,12 @@
                     $.ajax({
                         type: 'post',
                         url: '/upload',
-                        data: {'_token': $('meta[name="_token"]').attr('content'), 'image': roundedCanvas.toDataURL()},
+                        data: {
+                            '_token': $('meta[name="_token"]').attr('content'),
+                            'image': roundedCanvas.toDataURL()
+                        },
                         dataType: 'json',
-                        success: function (response) {
+                        success: function(response) {
                             alert(response.success);
                             previewImage.src = response.image;
                         }

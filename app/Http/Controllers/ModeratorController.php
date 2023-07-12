@@ -86,11 +86,9 @@ class ModeratorController extends Controller
     public function update(Request $request, string $id)
     {
         $data = OngoingProgram::findOrFail($id);
-        $data->fill($request->only([
-            'jadwal',
-            'program_session_id',
-            'location',
-            'links'
+        $data->fill($request->except([
+            '_method',
+            '_token',
         ]));
         // dd($data);
         if ($data->save()) {

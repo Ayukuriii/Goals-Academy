@@ -119,6 +119,7 @@ Route::middleware(['auth', 'check.level:admin'])->group(function () {
         Route::get('/admin/tambah_user/edit/{id}', 'edit')->name('admin.edit');
         Route::put('/admin/tambah_user/update/{id}', 'update')->name('admin.update');
         Route::post('/admin/{id}/destroy', 'destroy')->name('admin.destroy');
+        Route::post('/admin/upload', 'upload')->name('image.upload');
     });
 });
 
@@ -143,7 +144,7 @@ Route::middleware(['auth', 'check.level:tutor'])->group(function () {
         Route::put('/tutor/edit/{id}', 'edit')->name('tutor.edit');
         Route::get('/tutor/detail/{id}', 'detail')->name('tutor.detail');
         Route::put('/tutor/selesai/{id}', 'selesai')->name('tutor.selesai');
-        Route::put('/tutor/restore/{id}', 'restore')->name('tutor.restore');
+        Route::get('/tutor/riwayat_bimbingan_detail/{id}', 'riwayat_bimbingan_detail')->name('tutor.riwayat_bimbingan');
     });
 });
 
@@ -155,6 +156,7 @@ Route::middleware('auth', 'check.level:user', 'auth.session', 'verified')->group
         Route::put('/user/update/profile/{id}', 'update_profile')->name('user.update.profile');
         Route::put('/user/update/email/{id}', 'update_email')->name('user.update.email');
         Route::put('/user/update/password/{id}', 'update_password')->name('user.update.password');
+        Route::post('/upload', 'upload')->name('image.upload');
     });
 });
 
@@ -170,5 +172,3 @@ Route::middleware('auth')->group(function () {
         Route::get('/midtrans', 'index_midtrans')->name('midtrans.index');
     });
 });
-
-Route::post('/upload', [UserController::class, 'upload'])->name('image.upload');

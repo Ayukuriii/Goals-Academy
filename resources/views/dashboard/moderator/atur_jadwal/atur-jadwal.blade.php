@@ -28,6 +28,7 @@
                                 <th>#</th>
                                 <th>Nama</th>
                                 <th>Kategori</th>
+                                <th>Tutor</th>
                                 <th>Hari/Tanggal</th>
                                 <th>Sesi</th>
                                 <th>Link/Tempat</th>
@@ -40,6 +41,7 @@
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $data->user->name }}</td>
                                     <td>{{ $data->program->title }}</td>
+                                    <td>{{ $data->tutor->user->name ?? 'Kosong' }}</td>
                                     <td>{{ \Carbon\Carbon::parse($data->date)->toFormattedDateString() }}</td>
                                     <td>{{ $data->program_session->sesi }}</td>
                                     <td>

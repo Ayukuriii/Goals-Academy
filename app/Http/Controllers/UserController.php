@@ -6,9 +6,9 @@ use Carbon\Carbon;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\OngoingProgram;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
-use function PHPUnit\Framework\returnSelf;
 
 class UserController extends Controller
 {
@@ -54,7 +54,10 @@ class UserController extends Controller
 
     public function upload(Request $request)
     {
-        return response()->json(['success'=>'Foto profil sukses diupload!', 'image'=>$request->image]);
+        $data = User::find(auth()->user()->id);
+        $data->image = $request->image;
+        $data->save();
+        return response()->json(['success' => 'Foto profil sukses diupload!', 'image' => $request->image]);
     }
 
     /**

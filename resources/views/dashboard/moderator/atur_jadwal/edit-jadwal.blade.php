@@ -10,7 +10,8 @@
             <div class="card col ml-3 p-4 side-program">
                 <div class="d-flex justify-content-between w-75">
                     <h3 class="text-purple fw-bold">Edit Jadwal</h3>
-                    <a class="d-inline btn-outline-orange py-2 px-4 small" onclick="history.back()" style="cursor: pointer">Back</a>
+                    <a class="d-inline btn-outline-orange py-2 px-4 small" onclick="history.back()"
+                        style="cursor: pointer">Back</a>
                 </div>
                 <div class="form w-75 mt-3">
                     <form class="row" action="/moderator/update/{{ $data->id }}" method="POST">
@@ -18,27 +19,27 @@
                         @csrf
                         <div class="form-group col-6 mb-2">
                             <label class="form-label" for="nama">NAMA</label>
-                            <input type="text" name="nama" class="form-control is-invalid" id="nama"
+                            <input type="text" name="nama" class="form-control" id="nama"
                                 placeholder="{{ $data->user->name }}" disabled />
                         </div>
                         <div class="form-group col-6 mb-2">
                             <label class="form-label" for="universitas">UNIVERSITAS</label>
-                            <input type="text" name="universitas" class="form-control is-invalid" id="universitas"
+                            <input type="text" name="universitas" class="form-control" id="universitas"
                                 placeholder="{{ $data->user->university }}" disabled />
                         </div>
                         <div class="form-group col-6 mb-2">
                             <label class="form-label" for="email">EMAIL</label>
-                            <input type="email" name="email" class="form-control is-invalid" id="email"
+                            <input type="email" name="email" class="form-control" id="email"
                                 placeholder="{{ $data->user->email }}" disabled />
                         </div>
                         <div class="form-group col-6 mb-2">
                             <label class="form-label" for="jurusan">JURUSAN</label>
-                            <input type="text" name="jurusan" class="form-control is-invalid" id="jurusan"
+                            <input type="text" name="jurusan" class="form-control" id="jurusan"
                                 placeholder="{{ $data->user->major }}" disabled />
                         </div>
                         <div class="form-group col-6 mb-2">
                             <label class="form-label" for="nomor_hp">NOMOR HP.</label>
-                            <input type="text" name="nomor_hp" class="form-control is-invalid" id="nomor_hp"
+                            <input type="text" name="nomor_hp" class="form-control" id="nomor_hp"
                                 placeholder="{{ $data->user->phone_number }}" disabled />
                         </div>
                         <div class="form-group col-6 mb-2">
@@ -47,8 +48,8 @@
                                 placeholder="{{ $data->program->title }}" disabled />
                         </div>
                         <div class="form-group col-6 mb-2">
-                            <label class="form-label" for="jadwal">JADWAL</label>
-                            <input type="date" name="jadwal" class="form-control is-invalid" id="jadwal" placeholder=""
+                            <label class="form-label" for="date">JADWAL</label>
+                            <input type="date" name="date" class="form-control" id="date" placeholder=""
                                 value="{{ $data->date }}" required />
                             <div class="invalid-feedback">
                                 Input tidak valid
@@ -97,14 +98,15 @@
                                 <label class="form-label" for="tempat">TEMPAT</label>
                                 <select class="form-select border-orange" name="links" id="links">
                                     <option value="Nakoa">Nakoa</option>
-                                    <option value="Nakoa">Kongca</option>
-                                    <option value="Nakoa">Pavo</option>
+                                    <option value="Kongca">Kongca</option>
+                                    <option value="Pavo">Pavo</option>
                                 </select>
                             </div>
                         @endif
                         <div class="form-button col-12 my-2 d-flex justify-content-end">
                             <br><br>
-                            <button class="btn-orange-static my-1 px-4 d-inline text-end" id="button" type="submit">Simpan</button>
+                            <button class="btn-orange-static my-1 px-4 d-inline text-end" id="button"
+                                type="submit">Simpan</button>
                         </div>
                     </form>
                 </div>
