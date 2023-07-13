@@ -11,6 +11,7 @@ use App\Http\Controllers\DownloadController;
 use App\Http\Controllers\ModeratorController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\VerificationController;
+use App\Http\Livewire\Purchase;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,6 +63,12 @@ Route::get('/profil_company', function () {
 Route::get('/profil_tutor', function () {
     return view('coming_soon.profil_tutor', [
         'title' => 'Profil Tutor'
+    ]);
+});
+
+Route::get('/program', function () {
+    return view('program', [
+        'title' => 'Program'
     ]);
 });
 
@@ -173,3 +180,8 @@ Route::middleware('auth')->group(function () {
         Route::get('/midtrans', 'index_midtrans')->name('midtrans.index');
     });
 });
+Route::get('/purchase', function () {
+    return view('purchase.index', [
+        'title' => 'Purchase'
+    ]);
+})->name('purchase.index');
