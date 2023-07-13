@@ -11,6 +11,7 @@ use App\Http\Controllers\DownloadController;
 use App\Http\Controllers\ModeratorController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\VerificationController;
+use App\Http\Livewire\Purchase;
 
 /*
 |--------------------------------------------------------------------------
@@ -178,3 +179,9 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::post('/upload', [UserController::class, 'upload'])->name('image.upload');
+
+Route::get('/purchase', function () {
+    return view('purchase.index', [
+        'title' => 'Purchase'
+    ]);
+})->name('purchase.index');

@@ -1118,6 +1118,14 @@
     color: #ffce31;
 }
 
+.text-gray {
+    color: #959595;
+}
+
+.bg-gray {
+    background-color: #959595;
+}
+
 .text-bg-orange {
     background-color: #ff8854;
     color: white;
@@ -1125,6 +1133,12 @@
 
 .border-orange {
     border: 2px solid #ff8854;
+    background-color: white;
+}
+
+.border-orange-bold {
+    border: 4px solid #ff8854;
+    background-color: white;
 }
 
 .bg-orange {
@@ -1152,6 +1166,7 @@
     border: 2px solid #ff8854;
     color: white;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .btn-orange-static {
@@ -1161,6 +1176,7 @@
     border: 2px solid #ff8854;
     color: white;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .btn-orange-static:hover {
@@ -1185,6 +1201,7 @@
     border: 1px solid #807D7D;
     color: #807D7D;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .btn-orange:hover, .btn-nav:hover {
@@ -1205,6 +1222,7 @@
     border: 2px solid #ff8854;
     text-decoration: none;
     border-radius: 12px;
+    cursor: pointer;
 }
 
 .btn-outline-orange:hover {
@@ -1218,6 +1236,7 @@
     border: 2px solid #198754;
     color: white;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .btn-green:hover {

@@ -1,0 +1,66 @@
+.progress-bar {
+    background-color: #ff8854;
+}
+
+.border-gray {
+    border: 2px solid lightgray;
+}
+
+.btn-program {
+    background-color: white;
+    color: #ff8854;
+    border: 2px solid #ff8854;
+    text-decoration: none;
+    border-radius: 12px;
+    cursor: pointer;
+    width: 120px;
+    height: 40px;
+    text-align: center;
+}
+
+.btn-program:hover, .btn-program:active {
+    background-color: #ff8854;
+    color: white;
+}
+
+.btn-program-checked {
+    background-color: #ff8854;
+    color: white;
+    border: 2px solid #ff8854;
+    text-decoration: none;
+    border-radius: 12px;
+    width: 120px;
+    height: 40px;
+    text-align: center;
+}
+
+.multi-wizard-step p {
+    margin-top: 12px;
+}
+.stepwizard-row {
+    display: table-row;
+}
+.stepwizard {
+    display: table;
+    position: relative;
+    width: 100%;
+}
+.multi-wizard-step button[disabled] {
+    filter: alpha(opacity=100) !important;
+    opacity: 1 !important;
+}
+.stepwizard-row:before {
+    top: 14px;
+    bottom: 0;
+    content: " ";
+    width: 100%;
+    height: 1px;
+    z-index: 0;
+    position: absolute;
+    background-color: #fefefe;
+}
+.multi-wizard-step {
+    text-align: center;
+    position: relative;
+    display: table-cell;
+}
