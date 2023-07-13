@@ -1,0 +1,43 @@
+.progress-bar {
+    background-color: #ff8854;
+}
+
+.border-gray {
+    border: 2px solid lightgray;
+}
+
+.btn-program {
+    background-color: white;
+    color: #ff8854;
+    border: 2px solid #ff8854;
+    text-decoration: none;
+    border-radius: 12px;
+    cursor: pointer;
+    width: 120px;
+    height: 40px;
+    text-align: center;
+}
+
+.btn-program:hover, .btn-program:active {
+    background-color: #ff8854;
+    color: white;
+}
+
+.btn-program-checked {
+    background-color: #ff8854;
+    color: white;
+    border: 2px solid #ff8854;
+    text-decoration: none;
+    border-radius: 12px;
+    width: 120px;
+    height: 40px;
+    text-align: center;
+}
+
+.purchase-method {
+    border: 2px solid lightgray;
+}
+
+.purchase-method:hover {
+    border: 2px solid #ff8854;
+}
