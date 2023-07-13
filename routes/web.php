@@ -171,5 +171,7 @@ Route::get('/test', function () {
 Route::middleware('auth')->group(function () {
     Route::controller(TestController::class)->group(function () {
         Route::get('/midtrans', 'index_midtrans')->name('midtrans.index');
+        Route::get('/midtrans/order/{id}', 'order')->name('midtrans.order');
+        Route::post('/midtrans/payment/{id}', 'payment')->name('midtrans.payment');
     });
 });

@@ -20,20 +20,22 @@
     @endif
 
     <div class="row text-center mt-5">
-        <h1>Midtrans Test</h1>
+        <h1>Our Services</h1>
     </div>
     <div class="row">
-        <div class="container col-4">
-            <form action="/send-email" method="POST">
-                @csrf
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" name="email-code"
-                        aria-describedby="emailHelp">
-                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        <div class="container col-5">
+            @foreach ($datas as $data)
+                <div class="card my-2">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ $data->title }}</h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">Rp. {{ $data->price }}</h6>
+                        <p class="card-text">
+                            {{ $data->description }}
+                        </p>
+                        <a href="/midtrans/order/{{ $data->id }}" class="card-link">Beli Sekarang!</a>
+                    </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
+            @endforeach
         </div>
     </div>
 
