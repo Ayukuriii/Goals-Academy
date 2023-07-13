@@ -2,8 +2,7 @@
     <div class="col-2 side-profile card py-5 d-flex flex-direction-column">
         <div class="card-image mb-4 mx-auto">
             @if (auth()->user()->image)
-                <img class="rounded-circle" src="{{ asset('storage/' . auth()->user()->image) }}" width="120"
-                    height="120" />
+                <img class="rounded-circle" src="{{ auth()->user()->image }}" width="120" height="120" />
             @else
                 <img src="{{ asset('image/assets/images/login/profile-grey.png') }}" />
             @endif

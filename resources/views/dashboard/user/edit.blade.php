@@ -12,32 +12,34 @@
                     <a class="d-inline btn-outline-orange py-2 px-4 small" onclick="history.back()"
                         style="cursor: pointer">Back</a>
                 </div>
-                <form action="/user/update/profile/{{ auth()->user()->id }}" method="POST" class="from row mt-3 px-2">
-                    @method('put')
-                    @csrf
-                    <div class="d-flex align-items-center form-group mb-2">
+
+                <div class="d-flex align-items-center form-group mb-2">
+                    @if ($posts->image)
+                        <img id="preview-image" src="{{ $posts->image }}" width="80px" height="80px"
+                            alt="Image Preview" />
+                    @else
                         <img id="preview-image" src="{{ asset('image/assets/images/login/profile-grey.png') }}"
                             width="80px" height="80px" alt="Image Preview" />
-                        <div class="ms-3">
-                            <label for="input-image" class="btn-outline-orange px-3 py-2 fw-bold"
-                                style="cursor: pointer;">Unggah Foto</label><br>
-                            <small style="font-size: 0.7rem">*Maksimum 2MB</small>
-                        </div>
-                        <input type="file" accept="image/*" class="form-control is-invalid d-none" name="input-image"
-                            id="input-image">
+                    @endif
+                    <div class="ms-3">
+                        <label for="input-image" class="btn-outline-orange px-3 py-2 fw-bold"
+                            style="cursor: pointer;">Unggah Foto</label><br>
+                        <small style="font-size: 0.7rem">*Maksimum 2MB</small>
                     </div>
-                    {{-- popup --}}
-                    <div id="cropper" class="bg-fixed d-flex d-none">
-                        <div class="card d-flex m-auto gap-3 p-3" style="overflow: hidden">
-                            <img id="temp-image" class="border rounded"
-                                src="{{ asset('image/assets/icons/video-goals.svg') }}" alt="Temporary Image"
-                                style="object-fit: cover">
-                            <a id="save-image" class="btn btn-primary">Submit</a>
-                        </div>
+                    <input type="file" accept="image/*" class="form-control is-invalid d-none" name="input-image"
+                        id="input-image">
+                </div>
+                {{-- popup --}}
+                <div id="cropper" class="bg-fixed d-flex d-none">
+                    <div class="card d-flex m-auto gap-3 p-3" style="overflow: hidden">
+                        <img id="temp-image" class="border rounded" src="{{ asset('image/assets/icons/video-goals.svg') }}"
+                            alt="Temporary Image" style="object-fit: cover">
+                        <a id="save-image" class="btn btn-primary">Submit</a>
                     </div>
-                </form>
+                </div>
 
-                <form action="#" method="POST" class="from row mt-3 px-2">
+                <form action="/user/update/profile/{{ auth()->user()->id }}" method="POST" class="from row mt-3 px-2">
+                    @method('put')
                     @csrf
                     <div class="form-group col-12 col-xl-6 mb-xl-2">
                         <label class="form-label small" for="name">NAMA</label>
@@ -244,6 +246,9 @@
                             alert(response.success);
                             document.querySelector('#profile img').src = response.image;
                             previewImage.src = response.image;
+                        },
+                        error: function(xhr, status, error) {
+                            console.log(xhr.responseText);
                         }
                     });
 

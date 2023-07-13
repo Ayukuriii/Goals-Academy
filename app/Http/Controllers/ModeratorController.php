@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Tutor;
 use Illuminate\Http\Request;
 use App\Models\OngoingProgram;
+use App\Models\ProgramService;
 use App\Models\ProgramSession;
 
 class ModeratorController extends Controller
@@ -40,6 +41,15 @@ class ModeratorController extends Controller
         return view('dashboard.moderator.atur_jadwal.riwayat-jadwal', [
             'title' => 'Moderator',
             'datas' => OngoingProgram::where('is_tutor', 1)->Where('is_moderator', 1)->with('tutor.user')->get()
+        ]);
+    }
+    public function riwayat_jadwal_detail(string $id)
+    {
+        return view('dashboard.moderator.atur_jadwal.riwayat-jadwal-detail', [
+            'title' => 'Moderator',
+            'program_session' => ProgramSession::all(),
+            'tutor_data' => Tutor::all(),
+            'data' => OngoingProgram::find($id)
         ]);
     }
 
@@ -86,11 +96,9 @@ class ModeratorController extends Controller
     public function update(Request $request, string $id)
     {
         $data = OngoingProgram::findOrFail($id);
-        $data->fill($request->only([
-            'jadwal',
-            'program_session_id',
-            'location',
-            'links'
+        $data->fill($request->except([
+            '_method',
+            '_token',
         ]));
         // dd($data);
         if ($data->save()) {

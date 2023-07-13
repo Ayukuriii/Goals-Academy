@@ -9,7 +9,12 @@
             class="gap-4 pt-0 gap-md-4 d-flex flex-row-reverse flex-xl-column align-items-md-center justify-content-md-center p-3 p-md-4 p-xl-3">
             <div class="card-image d-flex flex-column align-items-md-center justify-content-md-center mx-auto">
                 <div class="px-2 pb-3 pt-0">
-                    <img width="128px" style="object-fit: cover" src="{{ asset('image/assets/images/login/profile-grey.png') }}" /><br>
+                    @if ($posts->image)
+                        <img width="128px" style="object-fit: cover" src="{{ $posts->image }}" /><br>
+                    @else
+                        <img width="128px" style="object-fit: cover"
+                            src="{{ asset('image/assets/images/login/profile-grey.png') }}" /><br>
+                    @endif
                 </div>
                 <a href="/user/edit/{{ $posts->id }}"
                     class="mx-auto fw-bold btn-orange py-2 w-100 text-center px-xl-5">Edit Profil</a>

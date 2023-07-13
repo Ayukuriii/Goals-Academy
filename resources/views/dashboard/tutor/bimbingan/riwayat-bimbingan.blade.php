@@ -10,7 +10,8 @@
             <div class="card col ml-3 p-4 side-program">
                 <div class="d-flex justify-content-between">
                     <h3 class="d-inline text-purple fw-bold">Riwayat Bimbingan</h3>
-                    <a class="d-inline btn-outline-orange py-2 px-4 small" onclick="history.back()" style="cursor: pointer">Back</a>
+                    <a class="d-inline btn-outline-orange py-2 px-4 small" onclick="history.back()"
+                        style="cursor: pointer">Back</a>
                 </div>
                 <div class="p-2 mt-2">
                     <table id="datatable" class="table">
@@ -22,7 +23,7 @@
                                 <th>Tutor</th>
                                 <th>Hari/Tanggal</th>
                                 <th>Sesi</th>
-                                <th>Keterangan</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -34,7 +35,14 @@
                                     <td>{{ $data->tutor->user->name }}</td>
                                     <td>{{ \Carbon\Carbon::parse($data->date)->isoFormat('dddd, D MMMM Y') }}</td>
                                     <td>{{ $data->program_session->sesi }}</td>
-                                    <td>SELESAI</td>
+                                    <td class="h4">
+                                        <div class="d-flex gap-2">
+                                            <a href="/tutor/riwayat_bimbingan_detail/{{ $data->id }}"
+                                                class="text-decoration-none">
+                                                <i class="bi bi-eye text-dark"></i>
+                                            </a>
+                                        </div>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>

@@ -49,16 +49,16 @@
                         </div>
                         <div class="form-group col-6 mb-2">
                             <label class="form-label" for="date">JADWAL</label>
-                            <input type="date" name="date" class="form-control" id="date" placeholder=""
-                                value="{{ $data->date }}" required />
+                            <input type="date" name="date" class="form-control" id="date"
+                                value="{{ $data->date }}" disabled />
                             <div class="invalid-feedback">
                                 Input tidak valid
                             </div>
                         </div>
                         <div class="form-group col-6 mb-2">
                             <label class="form-label" for="pelaksanaan">SESI</label>
-                            <select class="form-select border-orange" name="program_session_id"
-                                aria-label="Default select example">
+                            <select class="form-select" name="program_session_id" aria-label="Default select example"
+                                disabled>
                                 @foreach ($program_session as $item)
                                     <option value="{{ $item->id }}"
                                         {{ $item->id == $data->program_session_id ? 'selected' : '' }}>
@@ -72,7 +72,7 @@
                         </div>
                         <div class="form-group col-6 mb-2">
                             <label class="form-label" for="tutor_id">TUTOR</label>
-                            <select class="form-select border-orange" name="tutor_id" id="tutor_id">
+                            <select class="form-select" name="tutor_id" id="tutor_id" disabled>
                                 @foreach ($tutor_data as $tutor)
                                     <option value="{{ $tutor->id }}"
                                         {{ $tutor->id == $data->tutor_id ? 'selected' : '' }}>
@@ -88,7 +88,7 @@
                             <div class="form-group col-6 mb-2">
                                 <label class="form-label" for="tempat">LINK</label>
                                 <input type="text" name="links" class="form-control" id="links" placeholder=" "
-                                    value="{{ $data->links }}" />
+                                    value="{{ $data->links }}" disabled>
                                 <div class="invalid-feedback">
                                     Input tidak valid
                                 </div>
@@ -96,18 +96,13 @@
                         @else
                             <div class="form-group col-6 mb-2">
                                 <label class="form-label" for="tempat">TEMPAT</label>
-                                <select class="form-select border-orange" name="links" id="links">
+                                <select class="form-select" name="links" id="links" disabled>
                                     <option value="Nakoa">Nakoa</option>
                                     <option value="Kongca">Kongca</option>
                                     <option value="Pavo">Pavo</option>
                                 </select>
                             </div>
                         @endif
-                        <div class="form-button col-12 my-2 d-flex justify-content-end">
-                            <br><br>
-                            <button class="btn-orange-static my-1 px-4 d-inline text-end" id="button"
-                                type="submit">Simpan</button>
-                        </div>
                     </form>
                 </div>
             </div>

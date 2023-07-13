@@ -157,7 +157,7 @@ class AdminController extends Controller
             'password' => 'required',
             'user_level' => 'required'
         ]);
-        
+
 
         $validateData['password'] = Hash::make($validateData['password']);
 
@@ -199,6 +199,16 @@ class AdminController extends Controller
     /**
      * Update the specified resource in storage.
      */
+
+    public function upload(Request $request)
+    {
+        $userId = $request->input('user_id');
+        $data = User::find($userId);
+        $data->image = $request->image;
+        $data->save();
+        return response()->json(['success' => 'Foto profil sukses diupload!', 'image' => $request->image]);
+    }
+
     public function update(Request $request, string $id)
     {
         // Check if the role has changed from 'tutor' to 'user'
