@@ -6,6 +6,8 @@
     @endif
 
     <form action="">
+
+        {{-- Page 1 --}}
         <div class="{{ $currentStep != 1 ? 'd-none' : '' }}">
             <div class="purchase-steps w-75 mx-auto py-5">
                 <div class="progress mx-auto bg-gray" role="progressbar" aria-label="Example 1px high" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="height: 4px; width: 90%">
@@ -59,7 +61,7 @@
                         <div class="d-flex align-items-center justify-content-end">
                             {!!
                                 $program != 1 ?
-                                '<label class="btn-program fw-bold py-2 px-3" for="program-1">Pilih Paket</label>' :
+                                '<label class="btn-program fw-bold py-2 px-3 small" for="program-1">Pilih Paket</label>' :
                                 '<label class="btn-program-checked fw-bold py-1 px-3 bi bi-check-lg fs-3 lh-1" for="program-1"></label>'
                             !!}
                             <input class="form-check-input d-none" type="radio" id="program-1" wire:model="program" value="1">
@@ -96,7 +98,7 @@
                         <div class="d-flex align-items-center justify-content-end">
                             {!!
                                 $program != 2 ?
-                                '<label class="btn-program fw-bold py-2 px-3" for="program-2">Pilih Paket</label>' :
+                                '<label class="btn-program fw-bold py-2 px-3 small" for="program-2">Pilih Paket</label>' :
                                 '<label class="btn-program-checked fw-bold py-1 px-3 bi bi-check-lg fs-3 lh-1" for="program-2"></label>'
                             !!}
                             <input class="form-check-input d-none" type="radio" id="program-2" wire:model="program" value="2">
@@ -127,7 +129,7 @@
                         <div class="d-flex align-items-center justify-content-end">
                             {!!
                                 $program != 3 ?
-                                '<label class="btn-program fw-bold py-2 px-3" for="program-3">Pilih Paket</label>' :
+                                '<label class="btn-program fw-bold py-2 px-3 small" for="program-3">Pilih Paket</label>' :
                                 '<label class="btn-program-checked fw-bold py-1 px-3 bi bi-check-lg fs-3 lh-1" for="program-3"></label>'
                             !!}
                             <input class="form-check-input d-none" type="radio" id="program-3" wire:model="program" value="3">
@@ -139,6 +141,8 @@
                 </div>
             </div>
         </div>
+
+        {{-- Page 2 --}}
         <div class="{{ $currentStep != 2 ? 'd-none' : '' }}">
             <div class="purchase-steps w-75 mx-auto py-5">
                 <div class="progress mx-auto bg-gray" role="progressbar" aria-label="Example 1px high" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="height: 4px; width: 90%">
@@ -160,26 +164,55 @@
                 </div>
             </div>
             <div class="d-flex flex-column mb-4">
-                <h2 class="text-center text-purple fs-3">Pilih Jadwal dan Sesi</h2>
-                <p class="fw-bold">Pilih Jadwal Bimbinganmu</p>
-                <div class="row">
-                    <div class="col-6 form-group">
-                        <label for="user-level">User Level</label>
-                        <select class="form-select" wire:model="user_level" aria-label="Default select example" id="user-level">
-                            <option selected>Open this select menu</option>
-                            @foreach ($user_levels as $x)
-                                <option value="{{ Str::lower($x) }}" wire:click="updatedUserLevel({{ Str::lower($x) }})">{{ $x }}</option>
-                            @endforeach
-                        </select>
+                <h2 class="text-center text-purple fs-3">Pilih Jadwal</h2>
+                <div class="mb-5">
+                    <p class="fw-bold">Pilih Jadwal Bimbinganmu</p>
+                    <div class="row">
+                        <div class="col-6 form-group">
+                            <label class="form-label small" for="date">Jadwal</label>
+                            <select class="form-select" wire:model="date" id="date">
+                                <option selected>Open this select menu</option>
+                                @foreach ($dates as $x)
+                                    <option value="{{ $x }}" wire:click="updatedDate({{ $x }})">
+                                        {{ \Carbon\Carbon::parse($x)->isoFormat('dddd, D MMMM Y') }}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="col-6 form-group">
+                            <label class="form-label small" for="time">Sesi</label>
+                            <select class="form-select" wire:model="time" id="time">
+                                <option selected>Open this select menu</option>
+                                @foreach ($times as $y)
+                                    <option value="{{ $y }}">{{ $y }}</option>
+                                @endforeach
+                            </select>
+                        </div>
                     </div>
-                    <div class="col-6 form-group">
-                        <label for="user">User</label>
-                        <select class="form-select" wire:model="user" aria-label="Default select example" id="user">
-                            <option selected>Open this select menu</option>
-                            @foreach ($users as $u)
-                                <option value="{{ $u->id }}">{{ $u->name }}</option>
-                            @endforeach
-                        </select>
+                </div>
+                <div class="mb-5 {{ $program != 3 ? 'd-none' : '' }}">
+                    <p class="fw-bold">Pilih Lokasi Bimbinganmu</p>
+                    <div class="row">
+                        <div class="col-6 form-group">
+                            <label class="form-label small" for="city">Kota Domisili</label>
+                            <select class="form-select" wire:model="city" id="city">
+                                <option selected>Open this select menu</option>
+                                @foreach ($cities as $c)
+                                    <option value="{{ $c }}" wire:click="updatedCity({{ $c }})">
+                                        {{ $c }}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="col-6 form-group">
+                            <label class="form-label small" for="location">Lokasi Bimbingan</label>
+                            <select class="form-select" wire:model="location" id="location">
+                                <option selected>Open this select menu</option>
+                                @foreach ($locations as $l)
+                                    <option value="{{ $l }}">{{ $l }}</option>
+                                @endforeach
+                            </select>
+                        </div>
                     </div>
                 </div>
                 <div class="d-flex justify-content-between">
@@ -188,6 +221,8 @@
                 </div>
             </div>
         </div>
+
+        {{-- Page 3 --}}
         <div class="{{ $currentStep != 3 ? 'd-none' : '' }}">
             <div class="purchase-steps w-75 mx-auto py-5">
                 <div class="progress mx-auto bg-gray" role="progressbar" aria-label="Example 1px high" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="height: 4px; width: 90%">
@@ -209,15 +244,23 @@
                 </div>
             </div>
             <div class="d-flex flex-column mb-4">
-                <h2 class="text-center text-purple fs-3">Pilih Paket</h2>
-                <p class="fw-bold">Pilih paket sesuai kebutuhanmu</p>
-                test3
+                <h2 class="text-center text-purple fs-3">Informasi Bimbingan</h2>
+                <div class="form-group mb-5">
+                    <label class="form-label small" for="note">Catatan</label>
+                    <textarea class="form-control" name="note" wire:model="note" id="note" cols="30" rows="10"></textarea>
+                </div>
+                <div class="form-group mb-5">
+                    <label class="form-label small" for="document">File Skripsi (*Opsional)</label>
+                    <input class="form-control" type="file" accept="application/pdf" name="document" wire:model="document" id="document">
+                </div>
                 <div class="d-flex justify-content-between">
-                    <button type="button" wire:click="back(2)">Sebelumnya</button>
+                    <button class="btn btn-secondary" type="button" wire:click="back(2)">Sebelumnya</button>
                     <button class="btn-orange-static py-2 px-3 text-center" type="button" wire:click="thirdStepSubmit">Selanjutnya</button>
                 </div>
             </div>
         </div>
+
+        {{-- Page 4 --}}
         <div class="{{ $currentStep != 4 ? 'd-none' : '' }}">
             <div class="purchase-steps w-75 mx-auto py-5">
                 <div class="progress mx-auto bg-gray" role="progressbar" aria-label="Example 1px high" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="height: 4px; width: 90%">
@@ -239,98 +282,164 @@
                 </div>
             </div>
             <div class="d-flex flex-column mb-4">
-                <h2 class="text-center text-purple fs-3">Pilih Paket</h2>
-                <p class="fw-bold">Pilih paket sesuai kebutuhanmu</p>
-                test4
+                <h2 class="text-center text-purple fs-3">Pembayaran</h2>
+                <p class="fw-bold">Pilih Metode Pembayaran</p>
+                <div id="purchase-method">
+                    <div class="card rounded-4 py-3 px-4 mb-4">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <h5 class="m-0">Transfer Virtual Account</h5>
+                            <i class="fa-sharp fa-solid fa-chevron-down fs-4" data-bs-toggle="collapse" href="#transfer-1" role="button" aria-expanded="false" aria-controls="transfer-1"></i>
+                        </div>
+                        <div class="collapse {{ in_array($purchaseMethod, $purchaseMethods['virtual-account']) ? 'show' : '' }}" id="transfer-1">
+                            <div class="d-flex align-items-center gap-3 pt-3">
+                                <div>
+                                    <label for="bca" class="card {{ $purchaseMethod == 'bca' ? 'border-orange' : 'purchase-method' }} py-2 px-3" role="button">
+                                        <img src="{{ asset('image/assets/images/purchase/logo-bca.svg') }}" alt="Logo BCA">
+                                    </label>
+                                    <input wire:model="purchaseMethod" class="d-none" type="radio" id="bca" value="bca">
+                                </div>
+                                <div>
+                                    <label for="bni" class="card {{ $purchaseMethod == 'bni' ? 'border-orange' : 'purchase-method' }} py-2 px-3" role="button">
+                                        <img src="{{ asset('image/assets/images/purchase/logo-bni.svg') }}" alt="Logo BNI">
+                                    </label>
+                                    <input wire:model="purchaseMethod" class="d-none" type="radio" id="bni" value="bni">
+                                </div>
+                                <div>
+                                    <label for="mandiri" class="card {{ $purchaseMethod == 'mandiri' ? 'border-orange' : 'purchase-method' }} py-2 px-3" role="button">
+                                        <img src="{{ asset('image/assets/images/purchase/logo-mandiri.svg') }}" alt="Logo Mandiri">
+                                    </label>
+                                    <input wire:model="purchaseMethod" class="d-none" type="radio" id="mandiri" value="mandiri">
+                                </div>
+                                <div>
+                                    <label for="permata-bank" class="card {{ $purchaseMethod == 'permata-bank' ? 'border-orange' : 'purchase-method' }} py-2 px-3" role="button">
+                                        <img src="{{ asset('image/assets/images/purchase/logo-permata-bank.svg') }}" alt="Logo Permata Bank">
+                                    </label>
+                                    <input wire:model="purchaseMethod" class="d-none" type="radio" id="permata-bank" value="permata-bank">
+                                </div>
+                                <div>
+                                    <label for="cimb" class="card {{ $purchaseMethod == 'cimb' ? 'border-orange' : 'purchase-method' }} py-2 px-3" role="button">
+                                        <img src="{{ asset('image/assets/images/purchase/logo-cimb.svg') }}" alt="Logo CIMB">
+                                    </label>
+                                    <input wire:model="purchaseMethod" class="d-none" type="radio" id="cimb" value="cimb">
+                                </div>
+                                <div>
+                                    <label for="maybank" class="card {{ $purchaseMethod == 'maybank' ? 'border-orange' : 'purchase-method' }} py-2 px-3" role="button">
+                                        <img src="{{ asset('image/assets/images/purchase/logo-maybank.svg') }}" alt="Logo Maybank">
+                                    </label>
+                                    <input wire:model="purchaseMethod" class="d-none" type="radio" id="maybank" value="maybank">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card rounded-4 py-3 px-4 mb-4">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <h5 class="m-0">E-Money</h5>
+                            <i class="fa-sharp fa-solid fa-chevron-down fs-4" data-bs-toggle="collapse" href="#transfer-2" role="button" aria-expanded="false" aria-controls="transfer-2"></i>
+                        </div>
+                        <div class="collapse {{ in_array($purchaseMethod, $purchaseMethods['e-money']) ? 'show' : '' }}" id="transfer-2">
+                            <div class="d-flex align-items-center gap-3 pt-3">
+                                <div>
+                                    <label for="qris" class="card {{ $purchaseMethod == 'qris' ? 'border-orange' : 'purchase-method' }} py-2 px-3" role="button">
+                                        <img src="{{ asset('image/assets/images/purchase/logo-qris.svg') }}" alt="Logo QRIS">
+                                    </label>
+                                    <input wire:model="purchaseMethod" class="d-none" type="radio" id="qris" value="qris">
+                                </div>
+                                <div>
+                                    <label for="ovo" class="card {{ $purchaseMethod == 'ovo' ? 'border-orange' : 'purchase-method' }} py-2 px-3" role="button">
+                                        <img src="{{ asset('image/assets/images/purchase/logo-ovo.svg') }}" alt="Logo OVO">
+                                    </label>
+                                    <input wire:model="purchaseMethod" class="d-none" type="radio" id="ovo" value="ovo">
+                                </div>
+                                <div>
+                                    <label for="shopeepay" class="card {{ $purchaseMethod == 'shopeepay' ? 'border-orange' : 'purchase-method' }} py-2 px-3" role="button">
+                                        <img src="{{ asset('image/assets/images/purchase/logo-shopeepay.svg') }}" alt="Logo Shopeepay">
+                                    </label>
+                                    <input wire:model="purchaseMethod" class="d-none" type="radio" id="shopeepay" value="shopeepay">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card rounded-4 py-3 px-4 mb-4">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <h5 class="m-0">Cicilan</h5>
+                            <i class="fa-sharp fa-solid fa-chevron-down fs-4" data-bs-toggle="collapse" href="#transfer-3" role="button" aria-expanded="false" aria-controls="transfer-3"></i>
+                        </div>
+                        <div class="collapse {{ in_array($purchaseMethod, $purchaseMethods['cicilan']) ? 'show' : '' }}" id="transfer-3">
+                            <div class="d-flex align-items-center gap-3 pt-3">
+                                <div>
+                                    <label for="kredivo" class="card {{ $purchaseMethod == 'kredivo' ? 'border-orange' : 'purchase-method' }} py-2 px-3" role="button">
+                                        <img src="{{ asset('image/assets/images/purchase/logo-kredivo.svg') }}" alt="Logo Kredivo">
+                                    </label>
+                                    <input wire:model="purchaseMethod" class="d-none" type="radio" id="kredivo" value="kredivo">
+                                </div>
+                                <div>
+                                    <label for="cicil" class="card {{ $purchaseMethod == 'cicil' ? 'border-orange' : 'purchase-method' }} py-2 px-3" role="button">
+                                        <img src="{{ asset('image/assets/images/purchase/logo-cicil.svg') }}" alt="Logo Cicil">
+                                    </label>
+                                    <input wire:model="purchaseMethod" class="d-none" type="radio" id="cicil" value="cicil">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card rounded-4 py-3 px-4 mb-4">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <h5 class="m-0">Lainnya</h5>
+                            <i class="fa-sharp fa-solid fa-chevron-down fs-4" data-bs-toggle="collapse" href="#transfer-4" role="button" aria-expanded="false" aria-controls="transfer-4"></i>
+                        </div>
+                        <div class="collapse {{ in_array($purchaseMethod, $purchaseMethods['lainnya']) ? 'show' : '' }}" id="transfer-4">
+                            <div class="d-flex align-items-center gap-3 pt-3">
+                                <div>
+                                    <label for="alfamart" class="card {{ $purchaseMethod == 'alfamart' ? 'border-orange' : 'purchase-method' }} py-2 px-3" role="button">
+                                        <img src="{{ asset('image/assets/images/purchase/logo-alfamart.svg') }}" alt="Logo Alfamart">
+                                    </label>
+                                    <input wire:model="purchaseMethod" class="d-none" type="radio" id="alfamart" value="alfamart">
+                                </div>
+                                <div>
+                                    <label for="indomaret" class="card {{ $purchaseMethod == 'indomaret' ? 'border-orange' : 'purchase-method' }} py-2 px-3" role="button">
+                                        <img src="{{ asset('image/assets/images/purchase/logo-indomaret.svg') }}" alt="Logo Indomaret">
+                                    </label>
+                                    <input wire:model="purchaseMethod" class="d-none" type="radio" id="indomaret" value="indomaret">
+                                </div>
+                                <div>
+                                    <label for="pos-indonesia" class="card {{ $purchaseMethod == 'pos-indonesia' ? 'border-orange' : 'purchase-method' }} py-2 px-3" role="button">
+                                        <img src="{{ asset('image/assets/images/purchase/logo-pos-indonesia.svg') }}" alt="Logo Pos Indonesia">
+                                    </label>
+                                    <input wire:model="purchaseMethod" class="d-none" type="radio" id="pos-indonesia" value="pos-indonesia">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr class="m-0 mb-4">
+                <div class="card rounded-4 py-3 px-4 mb-4">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <h5 class="m-0">Voucher Goals Academy (Opsional)</h5>
+                        <a role="button" class="small fw-bold text-decoration-none text-orange">Lihat Voucher</a>
+                    </div>
+                </div>
+                <div class="card flex-column rounded-4 py-3 px-4 mb-4">
+                    <div class="d-flex justify-content-between mb-3">
+                        <div>
+                            <h5 class="m-0 mb-2">Paket Dibimbing Sekali</h5>
+                            <p class="small m-0">Selasa, 30 Februari 2023 | Pukul 14.00 WIB</p>
+                            <p class="small m-0">Tutor : Kak Yordhan</p>
+                        </div>
+                        <p class="fs-5">Rp 43.000</p>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <h5 class="m-0">Voucher</h5>
+                        <p class="d-inline-block fs-5 m-0">- Rp 10.000</p>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <h5 class="m-0">Total</h5>
+                        <p class="d-inline-block fs-4 fw-bold text-danger m-0">Rp 33.000</p>
+                    </div>
+                </div>
                 <div class="d-flex justify-content-between">
-                    <button type="button" wire:click="back(3)">Sebelumnya</button>
+                    <button class="btn btn-secondary" type="button" wire:click="back(3)">Sebelumnya</button>
                     <button class="btn-orange-static py-2 px-3 text-center" type="button" wire:click="submitForm">Submit</button>
                 </div>
             </div>
         </div>
     </form>
-    {{-- <div class="stepwizard">
-        <div class="stepwizard-row setup-panel">
-            <div class="multi-wizard-step">
-                <a href="#step-1" type="button"
-                    class="btn {{ $currentStep != 1 ? 'btn-default' : 'btn-primary' }}">1</a>
-                <p>Step 1</p>
-            </div>
-            <div class="multi-wizard-step">
-                <a href="#step-2" type="button"
-                    class="btn {{ $currentStep != 2 ? 'btn-default' : 'btn-primary' }}">2</a>
-                <p>Step 2</p>
-            </div>
-            <div class="multi-wizard-step">
-                <a href="#step-3" type="button"
-                    class="btn {{ $currentStep != 3 ? 'btn-default' : 'btn-primary' }}"
-                    disabled="disabled">3</a>
-                <p>Step 3</p>
-            </div>
-        </div>
-    </div>
-    <div class="row setup-content {{ $currentStep != 1 ? 'display-none' : '' }}" id="step-1">
-        <div class="col-md-12">
-            <h3> Step 1</h3>
-            <div class="form-group">
-                <label for="title">Team Name:</label>
-                <input type="text" wire:model="name" class="form-control" id="taskTitle">
-                @error('name') <span class="error">{{ $message }}</span> @enderror
-            </div>
-            <div class="form-group">
-                <label for="description">Team Price:</label>
-                <input type="text" wire:model="price" class="form-control" id="teamPrice" />
-                @error('price') <span class="error">{{ $message }}</span> @enderror
-            </div>
-            <div class="form-group">
-                <label for="detail">Team Details:</label>
-                <textarea type="text" wire:model="detail" class="form-control"
-                    id="taskDetail">{{{ $detail ?? '' }}}</textarea>
-                @error('detail') <span class="error">{{ $message }}</span> @enderror
-            </div>
-            <button class="btn btn-primary nextBtn btn-lg pull-right" wire:click="firstStepSubmit"
-                type="button">Next</button>
-        </div>
-    </div>
-    <div class="row setup-content {{ $currentStep != 2 ? 'display-none' : '' }}" id="step-2">
-        <div class="col-md-12">
-            <h3> Step 2</h3>
-            <div class="form-group">
-                <label for="description">Team Status</label><br />
-                <label class="radio-inline"><input type="radio" wire:model="status" value="1"
-                        {{{ $status == '1' ? "checked" : "" }}}> Active</label>
-                <label class="radio-inline"><input type="radio" wire:model="status" value="0"
-                        {{{ $status == '0' ? "checked" : "" }}}> DeActive</label>
-                @error('status') <span class="error">{{ $message }}</span> @enderror
-            </div>
-            <button class="btn btn-primary nextBtn btn-lg pull-right" type="button"
-                wire:click="secondStepSubmit">Next</button>
-            <button class="btn btn-danger nextBtn btn-lg pull-right" type="button" wire:click="back(1)">Back</button>
-        </div>
-    </div>
-    <div class="row setup-content {{ $currentStep != 3 ? 'display-none' : '' }}" id="step-3">
-        <div class="col-md-12">
-            <h3> Step 3</h3>
-            <table class="table">
-                <tr>
-                    <td>Team Name:</td>
-                    <td><strong>{{$name}}</strong></td>
-                </tr>
-                <tr>
-                    <td>Team Price:</td>
-                    <td><strong>{{$price}}</strong></td>
-                </tr>
-                <tr>
-                    <td>Team status:</td>
-                    <td><strong>{{$status ? 'Active' : 'DeActive'}}</strong></td>
-                </tr>
-                <tr>
-                    <td>Team Detail:</td>
-                    <td><strong>{{$detail}}</strong></td>
-                </tr>
-            </table>
-            <button class="btn btn-success btn-lg pull-right" wire:click="submitForm" type="button">Finish!</button>
-            <button class="btn btn-danger nextBtn btn-lg pull-right" type="button" wire:click="back(2)">Back</button>
-        </div>
-    </div> --}}
 </div>
