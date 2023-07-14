@@ -26,6 +26,7 @@ return array(
     'App\\Http\\Controllers\\VerificationController' => $baseDir . '/app/Http/Controllers/VerificationController.php',
     'App\\Http\\Controllers\\ViewController' => $baseDir . '/app/Http/Controllers/ViewController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
+    'App\\Http\\Livewire\\Purchase' => $baseDir . '/app/Http/Livewire/Purchase.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',
     'App\\Http\\Middleware\\CheckUserLevel' => $baseDir . '/app/Http/Middleware/CheckUserLevel.php',
     'App\\Http\\Middleware\\EncryptCookies' => $baseDir . '/app/Http/Middleware/EncryptCookies.php',

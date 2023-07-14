@@ -2,7 +2,9 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\OngoingProgram;
 use Carbon\Carbon;
+use GrahamCampbell\ResultType\Success;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -26,12 +28,28 @@ class Purchase extends Component
     public $purchaseMethod;
     public $successMsg = '';
 
-    public function mount() {
-        $day1 = Carbon::today();
-        $day2 = Carbon::tomorrow();
-        $day3 = Carbon::tomorrow()->addDay();
+    public function mount()
+    {
+        // $day1 = Carbon::today()->format('d-m-Y');
+        // $day2 = Carbon::tomorrow()->format('d-m-Y');
+        // $day3 = Carbon::tomorrow()->addDay()->format('d-m-Y');
 
-        $this->dates = collect([$day1, $day2, $day3]);
+        // $this->dates = collect([$day1, $day2, $day3]);
+        $day1 = Carbon::today();
+
+        // Check if day1 is a Saturday or Sunday
+        if ($day1->isWeekend()) {
+            // Add days until we reach a Monday
+            while ($day1->isWeekend()) {
+                $day1->addDay();
+            }
+        }
+
+        $day2 = $day1->copy()->addWeekday(); // Add one weekday to day1
+        $day3 = $day1->copy()->addWeekdays(2); // Add two weekdays to day1
+
+        $this->dates = collect([$day1->format('d-m-Y'), $day2->format('d-m-Y'), $day3->format('d-m-Y')]);
+
         $this->times = collect();
 
         $this->cities = collect(['Malang', 'Jakarta']);
@@ -62,8 +80,8 @@ class Purchase extends Component
     public function secondStepSubmit()
     {
         $validatedData = $this->validate([
-            'date' => 'required | after_or_equal:today',
-            'time' => 'required |date_format:H.i',
+            'date' => 'required',
+            'time' => 'required',
         ]);
 
         if ($this->program == 3) {
@@ -92,7 +110,24 @@ class Purchase extends Component
             'purchaseMethod' => 'required'
         ]);
 
-        dd($this);
+        $create = OngoingProgram::create([
+            'user_id' => auth()->user()->id,
+            'program_services_id' => $this->program,
+            // 'tutor_id' => someone
+            'payment_status' => 'pending',
+            'program_session_id' => 1,
+            'catatan' => $this->note,
+            'file' => $this->document,
+            'date' => $this->date,
+            'is_tutor' => 0,
+            'is_moderator' => 0,
+        ]);
+
+        if ($create) {
+            echo "success";
+        } else {
+            dd($create);
+        }
 
         $this->successMsg = 'Program successfully ordered!';
 
@@ -113,8 +148,31 @@ class Purchase extends Component
 
     public function updatedDate($value)
     {
-        $this->times = collect(['09.00', '12.00', '14.00', '16.00', '19.00']);
-        $this->time = $this->times->first() ?? null;
+        $d = Carbon::now();
+
+        // Set the desired times
+        $s1 = Carbon::parse($value)->setTime(9, 0, 0); // 09:00
+        $s2 = Carbon::parse($value)->setTime(11, 0, 0); // 11:00
+        $s3 = Carbon::parse($value)->setTime(13, 0, 0); // 13:00
+        $s4 = Carbon::parse($value)->setTime(15, 0, 0); // 15:00
+        $s5 = Carbon::parse($value)->setTime(17, 0, 0); // 17:00
+        $jamTersedia = [$s1, $s2, $s3, $s4, $s5];
+
+        $sesi = [];
+        foreach ($jamTersedia as $jam) {
+            if ($jam > $d) {
+                $selisih = $jam->diffInHours($d);
+                if ($selisih >= 3) {
+                    $sesi[] = $jam->toDateTimeString();
+                }
+            }
+        }
+
+        $this->times = $sesi;
+
+        if (!in_array($this->time, $this->times)) {
+            $this->time = null;
+        }
     }
 
     public function updatedCity($value)
