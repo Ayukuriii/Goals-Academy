@@ -9,7 +9,7 @@
 
         {{-- Page 1 --}}
         <div class="{{ $currentStep != 1 ? 'd-none' : '' }}">
-            <div class="purchase-steps w-75 mx-auto py-5">
+            <div class="purchase-steps col-12 col-xl-8 mx-auto py-5">
                 <div class="progress mx-auto bg-gray" role="progressbar" aria-label="Example 1px high" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="height: 4px; width: 90%">
                     <div class="progress-bar" style="width: 0%"></div>
                 </div>
@@ -18,20 +18,20 @@
                         <span class="text-orange fs-3">1</span>
                     </div>
                     <div class="d-flex align-items-center justify-content-center rounded-5 bg-gray" style="width: 55px; height: 55px;">
-                        <i class="bi bi-check-lg text-light fs-2"></i>
+                        <span class="text-light fs-3">2</span>
                     </div>
                     <div class="d-flex align-items-center justify-content-center rounded-5 bg-gray" style="width: 55px; height: 55px;">
-                        <i class="bi bi-check-lg text-light fs-2"></i>
+                        <span class="text-light fs-3">3</span>
                     </div>
                     <div class="d-flex align-items-center justify-content-center rounded-5 bg-gray" style="width: 55px; height: 55px;">
-                        <i class="bi bi-check-lg text-light fs-2"></i>
+                        <span class="text-light fs-3">4</span>
                     </div>
                 </div>
             </div>
             <div class="d-flex flex-column mb-4">
                 <h2 class="text-center text-purple fs-3">Pilih Paket</h2>
                 <p class="fw-bold">Pilih Paket Sesuai Kebutuhanmu</p>
-                <div class="card {{ $program != 1 ? 'border-gray' : 'border-orange' }} flex-row rounded-4 p-4 mb-4">
+                <div class="card {{ $program != 1 ? 'border-gray' : 'border-orange' }} flex-column flex-xl-row rounded-4 p-4 mb-4">
                     <div class="col">
                         <h3 class="fs-4 fw-bold">Dibimbing Online</h3>
                         <div class="d-flex gap-2 my-3">
@@ -56,19 +56,23 @@
                             <li>Komunitas di Telegram</li>
                         </ul>
                     </div>
-                    <div class="col">
-                        <p class="fw-bold text-danger fs-4 text-end">Rp. 47.000,-</p>
-                        <div class="d-flex align-items-center justify-content-end">
+                    <div class="col row p-0 mt-4 mt-xl-0">
+                        <div class="col-7 col-xl-12 d-flex align-items-center align-items-xl-start justify-content-xl-end">
+                            <p class="d-inline-block fw-bold text-danger fs-4 m-0">Rp. 47.000,-</p>
+                        </div>
+                        <div class="col-5 col-xl-12 d-flex align-items-center align-items-xl-end justify-content-end">
                             {!!
                                 $program != 1 ?
                                 '<label class="btn-program fw-bold py-2 px-3 small" for="program-1">Pilih Paket</label>' :
-                                '<label class="btn-program-checked fw-bold py-1 px-3 bi bi-check-lg fs-3 lh-1" for="program-1"></label>'
+                                '<label class="btn-program-checked fw-bold py-1 px-3 fs-3 lh-1 d-flex align-items-center justify-content-center" for="program-1">
+                                    <i class="bi bi-check-lg"></i>
+                                </label>'
                             !!}
                             <input class="form-check-input d-none" type="radio" id="program-1" wire:model="program" value="1">
                         </div>
                     </div>
                 </div>
-                <div class="card {{ $program != 2 ? 'border-gray' : 'border-orange' }} flex-row rounded-4 p-4 mb-4">
+                <div class="card {{ $program != 2 ? 'border-gray' : 'border-orange' }} flex-column flex-xl-row rounded-4 p-4 mb-4">
                     <div class="col">
                         <h3 class="fs-4 fw-bold">Dibimbing Online Premium</h3>
                         <div class="d-flex gap-2 my-3">
@@ -93,19 +97,23 @@
                             <li>Komunitas di Telegram</li>
                         </ul>
                     </div>
-                    <div class="col">
-                        <p class="fw-bold text-danger fs-4 text-end">Rp. 85.000,-</p>
-                        <div class="d-flex align-items-center justify-content-end">
+                    <div class="col row p-0 mt-4 mt-xl-0">
+                        <div class="col-7 col-xl-12 d-flex align-items-center align-items-xl-start justify-content-xl-end">
+                            <p class="d-inline-block fw-bold text-danger fs-4 m-0">Rp. 85.000,-</p>
+                        </div>
+                        <div class="col-5 col-xl-12 d-flex align-items-center align-items-xl-end justify-content-end">
                             {!!
                                 $program != 2 ?
-                                '<label class="btn-program fw-bold py-2 px-3 small" for="program-2">Pilih Paket</label>' :
-                                '<label class="btn-program-checked fw-bold py-1 px-3 bi bi-check-lg fs-3 lh-1" for="program-2"></label>'
+                                '<label class="btn-program fw-bold py-2 px-3 small d-flex align-items-center justify-content-center" for="program-2">Pilih Paket</label>' :
+                                '<label class="btn-program-checked fw-bold py-1 px-3 fs-3 lh-1 d-flex align-items-center justify-content-center" for="program-2">
+                                    <i class="bi bi-check-lg"></i>
+                                </label>'
                             !!}
                             <input class="form-check-input d-none" type="radio" id="program-2" wire:model="program" value="2">
                         </div>
                     </div>
                 </div>
-                <div class="card {{ $program != 3 ? 'border-gray' : 'border-orange' }} flex-row rounded-4 p-4 mb-4">
+                <div class="card {{ $program != 3 ? 'border-gray' : 'border-orange' }} flex-column flex-xl-row rounded-4 p-4 mb-4">
                     <div class="col">
                         <h3 class="fs-4 fw-bold">Dibimbing Offline</h3>
                         <div class="d-flex gap-2 my-3">
@@ -124,13 +132,17 @@
                             <li>Komunitas di Telegram</li>
                         </ul>
                     </div>
-                    <div class="col">
-                        <p class="fw-bold text-danger fs-4 text-end">Rp. 98.000,-</p>
-                        <div class="d-flex align-items-center justify-content-end">
+                    <div class="col row p-0 mt-4 mt-xl-0">
+                        <div class="col-7 col-xl-12 d-flex align-items-center align-items-xl-start justify-content-xl-end">
+                            <p class="d-inline-block fw-bold text-danger fs-4 m-0">Rp. 98.000,-</p>
+                        </div>
+                        <div class="col-5 col-xl-12 d-flex align-items-center align-items-xl-end justify-content-end">
                             {!!
                                 $program != 3 ?
-                                '<label class="btn-program fw-bold py-2 px-3 small" for="program-3">Pilih Paket</label>' :
-                                '<label class="btn-program-checked fw-bold py-1 px-3 bi bi-check-lg fs-3 lh-1" for="program-3"></label>'
+                                '<label class="btn-program fw-bold py-2 px-3 small d-flex align-items-center justify-content-center" for="program-3">Pilih Paket</label>' :
+                                '<label class="btn-program-checked fw-bold py-1 px-3 fs-3 lh-1 d-flex align-items-center justify-content-center" for="program-3">
+                                    <i class="bi bi-check-lg"></i>
+                                </label>'
                             !!}
                             <input class="form-check-input d-none" type="radio" id="program-3" wire:model="program" value="3">
                         </div>
@@ -144,7 +156,7 @@
 
         {{-- Page 2 --}}
         <div class="{{ $currentStep != 2 ? 'd-none' : '' }}">
-            <div class="purchase-steps w-75 mx-auto py-5">
+            <div class="purchase-steps col-12 col-xl-8 mx-auto py-5">
                 <div class="progress mx-auto bg-gray" role="progressbar" aria-label="Example 1px high" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="height: 4px; width: 90%">
                     <div class="progress-bar" style="width: 33%"></div>
                 </div>
@@ -156,10 +168,10 @@
                         <span class="text-orange fs-3">2</span>
                     </div>
                     <div class="d-flex align-items-center justify-content-center rounded-5 bg-gray" style="width: 55px; height: 55px;">
-                        <i class="bi bi-check-lg text-light fs-2"></i>
+                        <span class="text-light fs-3">3</span>
                     </div>
                     <div class="d-flex align-items-center justify-content-center rounded-5 bg-gray" style="width: 55px; height: 55px;">
-                        <i class="bi bi-check-lg text-light fs-2"></i>
+                        <span class="text-light fs-3">4</span>
                     </div>
                 </div>
             </div>
@@ -224,7 +236,7 @@
 
         {{-- Page 3 --}}
         <div class="{{ $currentStep != 3 ? 'd-none' : '' }}">
-            <div class="purchase-steps w-75 mx-auto py-5">
+            <div class="purchase-steps col-12 col-xl-8 mx-auto py-5">
                 <div class="progress mx-auto bg-gray" role="progressbar" aria-label="Example 1px high" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="height: 4px; width: 90%">
                     <div class="progress-bar" style="width: 66%"></div>
                 </div>
@@ -239,7 +251,7 @@
                         <span class="text-orange fs-3">3</span>
                     </div>
                     <div class="d-flex align-items-center justify-content-center rounded-5 bg-gray" style="width: 55px; height: 55px;">
-                        <i class="bi bi-check-lg text-light fs-2"></i>
+                        <span class="text-light fs-3">4</span>
                     </div>
                 </div>
             </div>
@@ -262,7 +274,7 @@
 
         {{-- Page 4 --}}
         <div class="{{ $currentStep != 4 ? 'd-none' : '' }}">
-            <div class="purchase-steps w-75 mx-auto py-5">
+            <div class="purchase-steps col-12 col-xl-8 mx-auto py-5">
                 <div class="progress mx-auto bg-gray" role="progressbar" aria-label="Example 1px high" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="height: 4px; width: 90%">
                     <div class="progress-bar" style="width: 100%"></div>
                 </div>

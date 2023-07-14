@@ -41,3 +41,13 @@
 .purchase-method:hover {
     border: 2px solid #ff8854;
 }
+
+@media (max-width: 480px) {
+    .btn-program {
+        height: 36px;
+    }
+
+    .btn-program-checked {
+        height: 36px;
+    }
+}
