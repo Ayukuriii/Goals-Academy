@@ -20,7 +20,6 @@
     <link href="{{ asset('css/style.css') }}" rel="stylesheet" /> <!-- // style main -->
     <link href="{{ asset('css/style-comingsoon.css') }}" rel="stylesheet" /> <!-- style coming soon -->
     <link href="{{ asset('css/style-password.css') }}" rel="stylesheet" /> <!-- style ganti password -->
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&amp;family=Work+Sans:wght@300;400;500;700&amp;display=swap"

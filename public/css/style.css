@@ -1195,6 +1195,10 @@
 }
 
 .btn-orange-static:disabled {
+    cursor: auto;
+}
+
+.btn-orange-static:disabled {
     background-color: #807d7d;
     border-color: #807d7d;
     color: white;
