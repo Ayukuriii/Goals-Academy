@@ -47,7 +47,6 @@ class ModeratorController extends Controller
     {
         return view('dashboard.moderator.atur_jadwal.riwayat-jadwal-detail', [
             'title' => 'Moderator',
-            'program_session' => ProgramSession::all(),
             'tutor_data' => Tutor::all(),
             'data' => OngoingProgram::find($id)
         ]);
@@ -84,7 +83,6 @@ class ModeratorController extends Controller
     {
         return view('dashboard.moderator.atur_jadwal.edit-jadwal', [
             'title' => 'Moderator',
-            'program_session' => ProgramSession::all(),
             'tutor_data' => Tutor::all(),
             'data' => OngoingProgram::find($id)
         ]);

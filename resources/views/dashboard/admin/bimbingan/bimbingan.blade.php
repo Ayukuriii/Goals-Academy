@@ -52,7 +52,7 @@
                                     <td>{{ $data->program->title }}</td>
                                     <td>{{ $data->tutor->user->name ?? 'Kosong' }}</td>
                                     <td>{{ \Carbon\Carbon::parse($data->date)->isoFormat('dddd, D MMMM Y') }}</td>
-                                    <td>{{ $data->program_session->sesi }}</td>
+                                    <td>{{ $data->program_session }}</td>
                                     <td>
                                         @if ($data->program->category == 'online' && $data->links !== null)
                                             <a

@@ -23,10 +23,6 @@ class OngoingProgram extends Model
     {
         return $this->belongsTo(Tutor::class);
     }
-    public function program_session()
-    {
-        return $this->belongsTo(ProgramSession::class);
-    }
     public function payment_status()
     {
         return $this->belongsTo(PaymentStatus::class);

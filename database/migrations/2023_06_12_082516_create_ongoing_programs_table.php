@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('program_services_id');
             $table->string('tutor_id')->nullable();
             $table->enum('payment_status', ['success', 'failed', 'pending']);
-            $table->string('program_session_id');
+            $table->string('program_session');
             $table->text('catatan');
             $table->string('file')->nullable();
             $table->string('links')->nullable();

@@ -114,10 +114,10 @@ class DatabaseSeeder extends Seeder
             'program_services_id' => 1,
             'tutor_id' => 1,
             'payment_status' => 'success',
-            'program_session_id' => 1,
+            'program_session' => '09:00',
             'catatan' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, odio.',
             'file' => 'F-12 Form Penyerahan.pdf',
-            'date' => now()->addDays(7),
+            'date' => now()->addDays(7)->format('Y-m-d'),
             'links' => 'www.google.com',
             'is_tutor' => false,
             'is_moderator' => false
@@ -127,10 +127,10 @@ class DatabaseSeeder extends Seeder
             'program_services_id' => 2,
             'tutor_id' => 2,
             'payment_status' => 'success',
-            'program_session_id' => 2,
+            'program_session' => '09:00',
             'catatan' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, odio.',
             'file' => '',
-            'date' => now()->addDays(20),
+            'date' => now()->addDays(20)->format('Y-m-d'),
             'is_tutor' => false,
             'is_moderator' => false
         ]);
@@ -139,10 +139,10 @@ class DatabaseSeeder extends Seeder
             'program_services_id' => 1,
             'tutor_id' => 1,
             'payment_status' => 'success',
-            'program_session_id' => 4,
+            'program_session' => '12:00',
             'catatan' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, odio.',
             'file' => '',
-            'date' => now()->addDays(20),
+            'date' => now()->addDays(20)->format('Y-m-d'),
             'links' => 'www.google.com',
             'is_tutor' => true,
             'is_moderator' => false
@@ -152,10 +152,10 @@ class DatabaseSeeder extends Seeder
             'program_services_id' => 3,
             'tutor_id' => 1,
             'payment_status' => 'success',
-            'program_session_id' => 4,
+            'program_session' => '12:00',
             'catatan' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, odio.',
             'file' => 'F-12 Form Penyerahan.pdf',
-            'date' => now()->addDays(10),
+            'date' => now()->addDays(10)->format('Y-m-d'),
             'links' => 'Nakoa',
             'is_tutor' => true,
             'is_moderator' => true
@@ -172,20 +172,6 @@ class DatabaseSeeder extends Seeder
         TutorNotes::create([
             'ongoing_program_id' => 4,
             'body' => 'sudah bagus program 2 nya'
-        ]);
-        
-
-        ProgramSession::create([
-            'sesi' => '09:00'
-        ]);
-        ProgramSession::create([
-            'sesi' => '10:10'
-        ]);
-        ProgramSession::create([
-            'sesi' => '11:20'
-        ]);
-        ProgramSession::create([
-            'sesi' => '12:30'
         ]);
     }
 }
