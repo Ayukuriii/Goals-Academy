@@ -316,52 +316,52 @@
             <div class="d-flex flex-column mb-4">
                 <h2 class="text-center text-purple fs-3 mt-3 mb-4 my-4 my-md-5 my-xl-4">Pembayaran</h2>
                 <p class="fw-bold">Pilih Metode Pembayaran</p>
-                <div id="purchase-method">
+                <div id="purchase-methods">
                     <div class="card rounded-4 py-3 px-4 mb-4">
-                        <div class="d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center justify-content-between" data-bs-toggle="collapse"
+                        href="#transfer-1" role="button" aria-expanded="false"
+                        aria-controls="transfer-1">
                             <h5 class="m-0">Transfer Virtual Account</h5>
-                            <i class="fa-sharp fa-solid fa-chevron-down fs-4" data-bs-toggle="collapse"
-                                href="#transfer-1" role="button" aria-expanded="false"
-                                aria-controls="transfer-1"></i>
+                            <i class="fa-sharp fa-solid fa-chevron-down fs-4"></i>
                         </div>
                         <div class="collapse {{ in_array($purchaseMethod, $purchaseMethods['virtual-account']) ? 'show' : '' }}" id="transfer-1">
                             <div class="row gap-3 pt-3">
-                                <div class="col-2 col-md-1 d-flex p-0">
+                                <div class="col-2 col-xl-1   d-flex p-0">
                                     <input wire:model="purchaseMethod" class="btn-check d-none" type="radio" id="bca"
                                         value="bca">
                                     <label for="bca" class="card purchase-method justify-content-center p-2 w-100" role="button">
                                         <img src="{{ asset('image/assets/images/purchase/logo-bca.svg') }}" alt="Logo BCA">
                                     </label>
                                 </div>
-                                <div class="col-2 col-md-1 d-flex p-0">
+                                <div class="col-2 col-xl-1   d-flex p-0">
                                     <input wire:model="purchaseMethod" class="btn-check d-none" type="radio" id="bni"
                                         value="bni">
                                     <label for="bni" class="card purchase-method justify-content-center p-2 w-100" role="button">
                                         <img src="{{ asset('image/assets/images/purchase/logo-bni.svg') }}" alt="Logo BNI">
                                     </label>
                                 </div>
-                                <div class="col-2 col-md-1 d-flex p-0">
+                                <div class="col-2 col-xl-1   d-flex p-0">
                                     <input wire:model="purchaseMethod" class="btn-check d-none" type="radio" id="mandiri"
                                         value="mandiri">
                                     <label for="mandiri" class="card purchase-method justify-content-center p-2 w-100" role="button">
                                         <img src="{{ asset('image/assets/images/purchase/logo-mandiri.svg') }}" alt="Logo Mandiri">
                                     </label>
                                 </div>
-                                <div class="col-2 col-md-1 d-flex p-0">
+                                <div class="col-2 col-xl-1   d-flex p-0">
                                     <input wire:model="purchaseMethod" class="btn-check d-none" type="radio"
                                         id="permata-bank" value="permata-bank">
                                     <label for="permata-bank" class="card purchase-method justify-content-center p-2 w-100" role="button">
                                         <img src="{{ asset('image/assets/images/purchase/logo-permata-bank.svg') }}" alt="Logo Permata Bank">
                                     </label>
                                 </div>
-                                <div class="col-2 col-md-1 d-flex p-0">
+                                <div class="col-2 col-xl-1   d-flex p-0">
                                     <input wire:model="purchaseMethod" class="btn-check d-none" type="radio" id="cimb"
                                         value="cimb">
                                     <label for="cimb" class="card purchase-method justify-content-center p-2 w-100" role="button">
                                         <img src="{{ asset('image/assets/images/purchase/logo-cimb.svg') }}" alt="Logo CIMB">
                                     </label>
                                 </div>
-                                <div class="col-2 col-md-1 d-flex p-0">
+                                <div class="col-2 col-xl-1   d-flex p-0">
                                     <input wire:model="purchaseMethod" class="btn-check d-none" type="radio" id="maybank"
                                         value="maybank">
                                     <label for="maybank" class="card purchase-method justify-content-center p-2 w-100" role="button">
@@ -372,29 +372,29 @@
                         </div>
                     </div>
                     {{-- <div class="card rounded-4 py-3 px-4 mb-4">
-                        <div class="d-flex align-items-center justify-content-between">
-                            <h5 class="m-0">E-Money</h5>
-                            <i class="fa-sharp fa-solid fa-chevron-down fs-4" data-bs-toggle="collapse"
+                        <div class="d-flex align-items-center justify-content-between" data-bs-toggle="collapse"
                                 href="#transfer-2" role="button" aria-expanded="false"
-                                aria-controls="transfer-2"></i>
+                                aria-controls="transfer-2">
+                            <h5 class="m-0">E-Money</h5>
+                            <i class="fa-sharp fa-solid fa-chevron-down fs-4"></i>
                         </div>
                         <div class="collapse {{ in_array($purchaseMethod, $purchaseMethods['e-money']) ? 'show' : '' }}" id="transfer-2">
                             <div class="row gap-3 pt-3">
-                                <div class="col-2 col-md-1 d-flex p-0">
+                                <div class="col-2 col-xl-1   d-flex p-0">
                                     <input wire:model="purchaseMethod" class="btn-check d-none" type="radio" id="qris"
                                         value="qris">
                                     <label for="qris" class="card purchase-method justify-content-center p-2 w-100" role="button">
                                         <img src="{{ asset('image/assets/images/purchase/logo-qris.svg') }}" alt="Logo QRIS">
                                     </label>
                                 </div>
-                                <div class="col-2 col-md-1 d-flex p-0">
+                                <div class="col-2 col-xl-1   d-flex p-0">
                                     <input wire:model="purchaseMethod" class="btn-check d-none" type="radio" id="ovo"
                                         value="ovo">
                                     <label for="ovo" class="card purchase-method justify-content-center p-2 w-100" role="button">
                                         <img src="{{ asset('image/assets/images/purchase/logo-ovo.svg') }}" alt="Logo OVO">
                                     </label>
                                 </div>
-                                <div class="col-2 col-md-1 d-flex p-0">
+                                <div class="col-2 col-xl-1   d-flex p-0">
                                     <input wire:model="purchaseMethod" class="btn-check d-none" type="radio" id="shopeepay"
                                         value="shopeepay">
                                     <label for="shopeepay" class="card purchase-method justify-content-center p-2 w-100" role="button">
@@ -405,22 +405,22 @@
                         </div>
                     </div>
                     <div class="card rounded-4 py-3 px-4 mb-4">
-                        <div class="d-flex align-items-center justify-content-between">
-                            <h5 class="m-0">Cicilan</h5>
-                            <i class="fa-sharp fa-solid fa-chevron-down fs-4" data-bs-toggle="collapse"
+                        <div class="d-flex align-items-center justify-content-between" data-bs-toggle="collapse"
                                 href="#transfer-3" role="button" aria-expanded="false"
-                                aria-controls="transfer-3"></i>
+                                aria-controls="transfer-3">
+                            <h5 class="m-0">Cicilan</h5>
+                            <i class="fa-sharp fa-solid fa-chevron-down fs-4"></i>
                         </div>
                         <div class="collapse {{ in_array($purchaseMethod, $purchaseMethods['cicilan']) ? 'show' : '' }}" id="transfer-3">
                             <div class="row gap-3 pt-3">
-                                <div class="col-2 col-md-1 d-flex p-0">
+                                <div class="col-2 col-xl-1   d-flex p-0">
                                     <input wire:model="purchaseMethod" class="btn-check d-none" type="radio" id="kredivo"
                                         value="kredivo">
                                     <label for="kredivo" class="card purchase-method justify-content-center p-2 w-100" role="button">
                                         <img src="{{ asset('image/assets/images/purchase/logo-kredivo.svg') }}" alt="Logo Kredivo">
                                     </label>
                                 </div>
-                                <div class="col-2 col-md-1 d-flex p-0">
+                                <div class="col-2 col-xl-1   d-flex p-0">
                                     <input wire:model="purchaseMethod" class="btn-check d-none" type="radio" id="cicil"
                                         value="cicil">
                                     <label for="cicil" class="card purchase-method justify-content-center p-2 w-100" role="button">
@@ -431,29 +431,29 @@
                         </div>
                     </div>
                     <div class="card rounded-4 py-3 px-4 mb-4">
-                        <div class="d-flex align-items-center justify-content-between">
-                            <h5 class="m-0">Lainnya</h5>
-                            <i class="fa-sharp fa-solid fa-chevron-down fs-4" data-bs-toggle="collapse"
+                        <div class="d-flex align-items-center justify-content-between" data-bs-toggle="collapse"
                                 href="#transfer-4" role="button" aria-expanded="false"
-                                aria-controls="transfer-4"></i>
+                                aria-controls="transfer-4">
+                            <h5 class="m-0">Lainnya</h5>
+                            <i class="fa-sharp fa-solid fa-chevron-down fs-4"></i>
                         </div>
                         <div class="collapse {{ in_array($purchaseMethod, $purchaseMethods['lainnya']) ? 'show' : '' }}" id="transfer-4">
                             <div class="row gap-3 pt-3">
-                                <div class="col-2 col-md-1 d-flex p-0">
+                                <div class="col-2 col-xl-1   d-flex p-0">
                                     <input wire:model="purchaseMethod" class="btn-check d-none" type="radio" id="alfamart"
                                         value="alfamart">
                                     <label for="alfamart" class="card purchase-method justify-content-center p-2 w-100" role="button">
                                         <img src="{{ asset('image/assets/images/purchase/logo-alfamart.svg') }}" alt="Logo Alfamart">
                                     </label>
                                 </div>
-                                <div class="col-2 col-md-1 d-flex p-0">
+                                <div class="col-2 col-xl-1   d-flex p-0">
                                     <input wire:model="purchaseMethod" class="btn-check d-none" type="radio" id="indomaret"
                                         value="indomaret">
                                     <label for="indomaret" class="card purchase-method justify-content-center p-2 w-100" role="button">
                                         <img src="{{ asset('image/assets/images/purchase/logo-indomaret.svg') }}" alt="Logo Indomaret">
                                     </label>
                                 </div>
-                                <div class="col-2 col-md-1 d-flex p-0">
+                                <div class="col-2 col-xl-1   d-flex p-0">
                                     <input wire:model="purchaseMethod" class="btn-check d-none" type="radio"
                                         id="pos-indonesia" value="pos-indonesia">
                                     <label for="pos-indonesia" class="card purchase-method justify-content-center p-2 w-100" role="button">
