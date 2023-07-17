@@ -29,7 +29,7 @@
                             <tr>
                                 <td>JADWAL</td>
                                 <td class="fw-bold small">
-                                    {{ \Carbon\Carbon::parse($data->date)->isoFormat('dddd, D MMMM Y') }}<br>{{ $data->program_session->sesi }}
+                                    {{ \Carbon\Carbon::parse($data->date)->isoFormat('dddd, D MMMM Y') }}<br>{{ $data->program_session }}
                                 </td>
                             </tr>
                             <tr>
