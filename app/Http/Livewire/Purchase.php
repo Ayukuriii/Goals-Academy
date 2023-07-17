@@ -12,9 +12,9 @@ class Purchase extends Component
 {
     use WithFileUploads;
 
-    public $currentStep = 4;
+    public $currentStep = 1;
     public $agreement;
-    public $program = 3;
+    public $program;
     public $dates;
     public $date;
     public $times;
