@@ -1,8 +1,8 @@
 <div class="container mt-5 pt-5">
-    @if(!empty($successMsg))
-    <div class="alert alert-success">
-        {{ $successMsg }}
-    </div>
+    @if (!empty($successMsg))
+        <div class="alert alert-success">
+            {{ $successMsg }}
+        </div>
     @endif
 
     <form action="">
@@ -36,15 +36,19 @@
                         <h3 class="fs-4 fw-bold">Dibimbing Online</h3>
                         <div class="d-flex gap-2 my-3">
                             <span class="d-flex align-items-center gap-2 text-purple fw-bold">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
-                                    <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
-                                    <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z" />
+                                    <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z" />
                                 </svg>
                                 30 Menit
                             </span>
                             <span class="d-flex align-items-center gap-2 text-purple fw-bold">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-camera-video-fill" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd" d="M0 5a2 2 0 0 1 2-2h7.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 4.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 13H2a2 2 0 0 1-2-2V5z"/>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    fill="currentColor" class="bi bi-camera-video-fill" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M0 5a2 2 0 0 1 2-2h7.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 4.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 13H2a2 2 0 0 1-2-2V5z" />
                                 </svg>
                                 Via Online Meeting
                             </span>
@@ -77,15 +81,19 @@
                         <h3 class="fs-4 fw-bold">Dibimbing Online Premium</h3>
                         <div class="d-flex gap-2 my-3">
                             <span class="d-flex align-items-center gap-2 text-purple fw-bold">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
-                                    <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
-                                    <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z" />
+                                    <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z" />
                                 </svg>
                                 45 Menit
                             </span>
                             <span class="d-flex align-items-center gap-2 text-purple fw-bold">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-camera-video-fill" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd" d="M0 5a2 2 0 0 1 2-2h7.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 4.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 13H2a2 2 0 0 1-2-2V5z"/>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    fill="currentColor" class="bi bi-camera-video-fill" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M0 5a2 2 0 0 1 2-2h7.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 4.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 13H2a2 2 0 0 1-2-2V5z" />
                                 </svg>
                                 Via Online Meeting
                             </span>
@@ -118,9 +126,11 @@
                         <h3 class="fs-4 fw-bold">Dibimbing Offline</h3>
                         <div class="d-flex gap-2 my-3">
                             <span class="d-flex align-items-center gap-2 text-purple fw-bold">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
-                                    <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
-                                    <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z" />
+                                    <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z" />
                                 </svg>
                                 60 Menit
                             </span>
@@ -183,7 +193,7 @@
                         <div class="col-12 col-xl-6 form-group mb-3">
                             <label class="form-label small" for="date">Jadwal</label>
                             <select class="form-select" wire:model="date" id="date">
-                                <option selected>Open this select menu</option>
+                                <option selected>Pilih Hari Kamu</option>
                                 @foreach ($dates as $x)
                                     <option value="{{ $x }}" wire:click="updatedDate({{ $x }})">
                                         {{ \Carbon\Carbon::parse($x)->isoFormat('dddd, D MMMM Y') }}
@@ -194,10 +204,15 @@
                         <div class="col-12 col-xl-6 form-group">
                             <label class="form-label small" for="time">Sesi</label>
                             <select class="form-select" wire:model="time" id="time">
-                                <option selected>Open this select menu</option>
-                                @foreach ($times as $y)
-                                    <option value="{{ $y }}">{{ $y }}</option>
-                                @endforeach
+                                <option selected>Pilih Jam Kamu</option>
+                                @if (count($times) > 0)
+                                    @foreach ($times as $y)
+                                        <option value="{{ $y }}">
+                                            {{ \Carbon\Carbon::parse($y)->format('H:i') }}</option>
+                                    @endforeach
+                                @else
+                                    <option>Kosong</option>
+                                @endif
                             </select>
                         </div>
                     </div>
@@ -210,7 +225,8 @@
                             <select class="form-select" wire:model="city" id="city">
                                 <option selected>Open this select menu</option>
                                 @foreach ($cities as $c)
-                                    <option value="{{ $c }}" wire:click="updatedCity({{ $c }})">
+                                    <option value="{{ $c }}"
+                                        wire:click="updatedCity({{ $c }})">
                                         {{ $c }}
                                     </option>
                                 @endforeach
@@ -263,7 +279,8 @@
                 </div>
                 <div class="form-group mb-5">
                     <label class="form-label small" for="document">File Skripsi (*Opsional)</label>
-                    <input class="form-control" type="file" accept="application/pdf" name="document" wire:model="document" id="document">
+                    <input class="form-control" type="file" accept="application/pdf" name="document"
+                        wire:model="document" id="document">
                 </div>
                 <div class="d-flex justify-content-between">
                     <button class="col-4 col-xl-3 btn btn-secondary fw-bold rounded-4" type="button" wire:click="back(2)">Sebelumnya</button>
@@ -300,7 +317,9 @@
                     <div class="card rounded-4 py-3 px-4 mb-4">
                         <div class="d-flex align-items-center justify-content-between">
                             <h5 class="m-0">Transfer Virtual Account</h5>
-                            <i class="fa-sharp fa-solid fa-chevron-down fs-4" data-bs-toggle="collapse" href="#transfer-1" role="button" aria-expanded="false" aria-controls="transfer-1"></i>
+                            <i class="fa-sharp fa-solid fa-chevron-down fs-4" data-bs-toggle="collapse"
+                                href="#transfer-1" role="button" aria-expanded="false"
+                                aria-controls="transfer-1"></i>
                         </div>
                         <div class="collapse {{ in_array($purchaseMethod, $purchaseMethods['virtual-account']) ? 'show' : '' }}" id="transfer-1">
                             <div class="row gap-3 pt-3">
@@ -308,45 +327,53 @@
                                     <label for="bca" class="card {{ $purchaseMethod == 'bca' ? 'purchase-method-active' : 'purchase-method' }} justify-content-center p-2 w-100" role="button">
                                         <img src="{{ asset('image/assets/images/purchase/logo-bca.svg') }}" alt="Logo BCA">
                                     </label>
-                                    <input wire:model="purchaseMethod" class="d-none" type="radio" id="bca" value="bca">
+                                    <input wire:model="purchaseMethod" class="d-none" type="radio" id="bca"
+                                        value="bca">
                                 </div>
                                 <div class="col-2 col-xl-1 d-flex p-0">
                                     <label for="bni" class="card {{ $purchaseMethod == 'bni' ? 'purchase-method-active' : 'purchase-method' }} justify-content-center p-2 w-100" role="button">
                                         <img src="{{ asset('image/assets/images/purchase/logo-bni.svg') }}" alt="Logo BNI">
                                     </label>
-                                    <input wire:model="purchaseMethod" class="d-none" type="radio" id="bni" value="bni">
+                                    <input wire:model="purchaseMethod" class="d-none" type="radio" id="bni"
+                                        value="bni">
                                 </div>
                                 <div class="col-2 col-xl-1 d-flex p-0">
                                     <label for="mandiri" class="card {{ $purchaseMethod == 'mandiri' ? 'purchase-method-active' : 'purchase-method' }} justify-content-center p-2 w-100" role="button">
                                         <img src="{{ asset('image/assets/images/purchase/logo-mandiri.svg') }}" alt="Logo Mandiri">
                                     </label>
-                                    <input wire:model="purchaseMethod" class="d-none" type="radio" id="mandiri" value="mandiri">
+                                    <input wire:model="purchaseMethod" class="d-none" type="radio" id="mandiri"
+                                        value="mandiri">
                                 </div>
                                 <div class="col-2 col-xl-1 d-flex p-0">
                                     <label for="permata-bank" class="card {{ $purchaseMethod == 'permata-bank' ? 'purchase-method-active' : 'purchase-method' }} justify-content-center p-2 w-100" role="button">
                                         <img src="{{ asset('image/assets/images/purchase/logo-permata-bank.svg') }}" alt="Logo Permata Bank">
                                     </label>
-                                    <input wire:model="purchaseMethod" class="d-none" type="radio" id="permata-bank" value="permata-bank">
+                                    <input wire:model="purchaseMethod" class="d-none" type="radio"
+                                        id="permata-bank" value="permata-bank">
                                 </div>
                                 <div class="col-2 col-xl-1 d-flex p-0">
                                     <label for="cimb" class="card {{ $purchaseMethod == 'cimb' ? 'purchase-method-active' : 'purchase-method' }} justify-content-center p-2 w-100" role="button">
                                         <img src="{{ asset('image/assets/images/purchase/logo-cimb.svg') }}" alt="Logo CIMB">
                                     </label>
-                                    <input wire:model="purchaseMethod" class="d-none" type="radio" id="cimb" value="cimb">
+                                    <input wire:model="purchaseMethod" class="d-none" type="radio" id="cimb"
+                                        value="cimb">
                                 </div>
                                 <div class="col-2 col-xl-1 d-flex p-0">
                                     <label for="maybank" class="card {{ $purchaseMethod == 'maybank' ? 'purchase-method-active' : 'purchase-method' }} justify-content-center p-2 w-100" role="button">
                                         <img src="{{ asset('image/assets/images/purchase/logo-maybank.svg') }}" alt="Logo Maybank">
                                     </label>
-                                    <input wire:model="purchaseMethod" class="d-none" type="radio" id="maybank" value="maybank">
+                                    <input wire:model="purchaseMethod" class="d-none" type="radio" id="maybank"
+                                        value="maybank">
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="card rounded-4 py-3 px-4 mb-4">
+                    {{-- <div class="card rounded-4 py-3 px-4 mb-4">
                         <div class="d-flex align-items-center justify-content-between">
                             <h5 class="m-0">E-Money</h5>
-                            <i class="fa-sharp fa-solid fa-chevron-down fs-4" data-bs-toggle="collapse" href="#transfer-2" role="button" aria-expanded="false" aria-controls="transfer-2"></i>
+                            <i class="fa-sharp fa-solid fa-chevron-down fs-4" data-bs-toggle="collapse"
+                                href="#transfer-2" role="button" aria-expanded="false"
+                                aria-controls="transfer-2"></i>
                         </div>
                         <div class="collapse {{ in_array($purchaseMethod, $purchaseMethods['e-money']) ? 'show' : '' }}" id="transfer-2">
                             <div class="row gap-3 pt-3">
@@ -354,19 +381,22 @@
                                     <label for="qris" class="card {{ $purchaseMethod == 'qris' ? 'purchase-method-active' : 'purchase-method' }} justify-content-center p-2 w-100" role="button">
                                         <img src="{{ asset('image/assets/images/purchase/logo-qris.svg') }}" alt="Logo QRIS">
                                     </label>
-                                    <input wire:model="purchaseMethod" class="d-none" type="radio" id="qris" value="qris">
+                                    <input wire:model="purchaseMethod" class="d-none" type="radio" id="qris"
+                                        value="qris">
                                 </div>
                                 <div class="col-2 col-xl-1 d-flex p-0">
                                     <label for="ovo" class="card {{ $purchaseMethod == 'ovo' ? 'purchase-method-active' : 'purchase-method' }} justify-content-center p-2 w-100" role="button">
                                         <img src="{{ asset('image/assets/images/purchase/logo-ovo.svg') }}" alt="Logo OVO">
                                     </label>
-                                    <input wire:model="purchaseMethod" class="d-none" type="radio" id="ovo" value="ovo">
+                                    <input wire:model="purchaseMethod" class="d-none" type="radio" id="ovo"
+                                        value="ovo">
                                 </div>
                                 <div class="col-2 col-xl-1 d-flex p-0">
                                     <label for="shopeepay" class="card {{ $purchaseMethod == 'shopeepay' ? 'purchase-method-active' : 'purchase-method' }} justify-content-center p-2 w-100" role="button">
                                         <img src="{{ asset('image/assets/images/purchase/logo-shopeepay.svg') }}" alt="Logo Shopeepay">
                                     </label>
-                                    <input wire:model="purchaseMethod" class="d-none" type="radio" id="shopeepay" value="shopeepay">
+                                    <input wire:model="purchaseMethod" class="d-none" type="radio" id="shopeepay"
+                                        value="shopeepay">
                                 </div>
                             </div>
                         </div>
@@ -374,7 +404,9 @@
                     <div class="card rounded-4 py-3 px-4 mb-4">
                         <div class="d-flex align-items-center justify-content-between">
                             <h5 class="m-0">Cicilan</h5>
-                            <i class="fa-sharp fa-solid fa-chevron-down fs-4" data-bs-toggle="collapse" href="#transfer-3" role="button" aria-expanded="false" aria-controls="transfer-3"></i>
+                            <i class="fa-sharp fa-solid fa-chevron-down fs-4" data-bs-toggle="collapse"
+                                href="#transfer-3" role="button" aria-expanded="false"
+                                aria-controls="transfer-3"></i>
                         </div>
                         <div class="collapse {{ in_array($purchaseMethod, $purchaseMethods['cicilan']) ? 'show' : '' }}" id="transfer-3">
                             <div class="row gap-3 pt-3">
@@ -382,13 +414,15 @@
                                     <label for="kredivo" class="card {{ $purchaseMethod == 'kredivo' ? 'purchase-method-active' : 'purchase-method' }} justify-content-center p-2 w-100" role="button">
                                         <img src="{{ asset('image/assets/images/purchase/logo-kredivo.svg') }}" alt="Logo Kredivo">
                                     </label>
-                                    <input wire:model="purchaseMethod" class="d-none" type="radio" id="kredivo" value="kredivo">
+                                    <input wire:model="purchaseMethod" class="d-none" type="radio" id="kredivo"
+                                        value="kredivo">
                                 </div>
                                 <div class="col-2 col-xl-1 d-flex p-0">
                                     <label for="cicil" class="card {{ $purchaseMethod == 'cicil' ? 'purchase-method-active' : 'purchase-method' }} justify-content-center p-2 w-100" role="button">
                                         <img src="{{ asset('image/assets/images/purchase/logo-cicil.svg') }}" alt="Logo Cicil">
                                     </label>
-                                    <input wire:model="purchaseMethod" class="d-none" type="radio" id="cicil" value="cicil">
+                                    <input wire:model="purchaseMethod" class="d-none" type="radio" id="cicil"
+                                        value="cicil">
                                 </div>
                             </div>
                         </div>
@@ -396,7 +430,9 @@
                     <div class="card rounded-4 py-3 px-4 mb-4">
                         <div class="d-flex align-items-center justify-content-between">
                             <h5 class="m-0">Lainnya</h5>
-                            <i class="fa-sharp fa-solid fa-chevron-down fs-4" data-bs-toggle="collapse" href="#transfer-4" role="button" aria-expanded="false" aria-controls="transfer-4"></i>
+                            <i class="fa-sharp fa-solid fa-chevron-down fs-4" data-bs-toggle="collapse"
+                                href="#transfer-4" role="button" aria-expanded="false"
+                                aria-controls="transfer-4"></i>
                         </div>
                         <div class="collapse {{ in_array($purchaseMethod, $purchaseMethods['lainnya']) ? 'show' : '' }}" id="transfer-4">
                             <div class="row gap-3 pt-3">
@@ -404,37 +440,40 @@
                                     <label for="alfamart" class="card {{ $purchaseMethod == 'alfamart' ? 'purchase-method-active' : 'purchase-method' }} justify-content-center p-2 w-100" role="button">
                                         <img src="{{ asset('image/assets/images/purchase/logo-alfamart.svg') }}" alt="Logo Alfamart">
                                     </label>
-                                    <input wire:model="purchaseMethod" class="d-none" type="radio" id="alfamart" value="alfamart">
+                                    <input wire:model="purchaseMethod" class="d-none" type="radio" id="alfamart"
+                                        value="alfamart">
                                 </div>
                                 <div class="col-2 col-xl-1 d-flex p-0">
                                     <label for="indomaret" class="card {{ $purchaseMethod == 'indomaret' ? 'purchase-method-active' : 'purchase-method' }} justify-content-center p-2 w-100" role="button">
                                         <img src="{{ asset('image/assets/images/purchase/logo-indomaret.svg') }}" alt="Logo Indomaret">
                                     </label>
-                                    <input wire:model="purchaseMethod" class="d-none" type="radio" id="indomaret" value="indomaret">
+                                    <input wire:model="purchaseMethod" class="d-none" type="radio" id="indomaret"
+                                        value="indomaret">
                                 </div>
                                 <div class="col-2 col-xl-1 d-flex p-0">
                                     <label for="pos-indonesia" class="card {{ $purchaseMethod == 'pos-indonesia' ? 'purchase-method-active' : 'purchase-method' }} justify-content-center p-2 w-100" role="button">
                                         <img src="{{ asset('image/assets/images/purchase/logo-pos-indonesia.svg') }}" alt="Logo Pos Indonesia">
                                     </label>
-                                    <input wire:model="purchaseMethod" class="d-none" type="radio" id="pos-indonesia" value="pos-indonesia">
+                                    <input wire:model="purchaseMethod" class="d-none" type="radio"
+                                        id="pos-indonesia" value="pos-indonesia">
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
                 <hr class="m-0 mb-4">
-                <div class="card rounded-4 py-3 px-4 mb-4">
+                {{-- <div class="card rounded-4 py-3 px-4 mb-4">
                     <div class="d-flex align-items-center justify-content-between">
                         <h5 class="m-0">Voucher Goals Academy (Opsional)</h5>
                         <a role="button" class="small fw-bold text-decoration-none text-orange">Lihat Voucher</a>
                     </div>
-                </div>
+                </div> --}}
                 <div class="card flex-column rounded-4 py-3 px-4 mb-4">
                     <div class="d-flex justify-content-between mb-3">
                         <div>
                             <h5 class="m-0 mb-2">Paket Dibimbing Sekali</h5>
-                            <p class="small m-0">Selasa, 30 Februari 2023 | Pukul 14.00 WIB</p>
-                            <p class="small m-0">Tutor : Kak Yordhan</p>
+                            <p class="small m-0">{{ \Carbon\Carbon::parse($date)->isoFormat('dddd, D MMMM Y') }} |
+                                {{ $time }} WIB</p>
                         </div>
                         <p class="fs-5">Rp 43.000</p>
                     </div>

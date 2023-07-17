@@ -15,13 +15,13 @@ return new class extends Migration
             $table->id();
             $table->string('user_id');
             $table->string('program_services_id');
-            $table->string('tutor_id');
+            $table->string('tutor_id')->nullable();
             $table->enum('payment_status', ['success', 'failed', 'pending']);
             $table->string('program_session_id');
             $table->text('catatan');
-            $table->string('file');
+            $table->string('file')->nullable();
             $table->string('links')->nullable();
-            $table->date('date');
+            $table->string('date');
             $table->boolean('is_tutor');
             $table->boolean('is_moderator');
             $table->timestamps();
