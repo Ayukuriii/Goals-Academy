@@ -56,14 +56,18 @@
                         </div>
                         <div class="form-group col-6 mb-2">
                             <label class="form-label" for="pelaksanaan">SESI</label>
-                            <select class="form-select border-orange" name="program_session_id"
+                            <select class="form-select border-orange" name="program_session"
                                 aria-label="Default select example">
-                                @foreach ($program_session as $item)
-                                    <option value="{{ $item->id }}"
-                                        {{ $item->id == $data->program_session_id ? 'selected' : '' }}>
-                                        {{ $item->sesi }}
-                                    </option>
-                                @endforeach
+                                <option value="09:00" {{ $data->program_session == '09:00' ? 'selected' : '' }}>09:00
+                                </option>
+                                <option value="11:00" {{ $data->program_session == '11:00' ? 'selected' : '' }}>11:00
+                                </option>
+                                <option value="13:00" {{ $data->program_session == '13:00' ? 'selected' : '' }}>13:00
+                                </option>
+                                <option value="15:00" {{ $data->program_session == '15:00' ? 'selected' : '' }}>15:00
+                                </option>
+                                <option value="17:00" {{ $data->program_session == '17:00' ? 'selected' : '' }}>17:00
+                                </option>
                             </select>
                             <div class="invalid-feedback">
                                 Input tidak valid
@@ -104,7 +108,8 @@
                         @endif
                         <div class="form-button col-12 my-2 d-flex justify-content-end">
                             <br><br>
-                            <button class="btn-orange-static my-1 px-4 d-inline text-end" id="button" type="submit">Simpan</button>
+                            <button class="btn-orange-static my-1 px-4 d-inline text-end" id="button"
+                                type="submit">Simpan</button>
                         </div>
                     </form>
                 </div>

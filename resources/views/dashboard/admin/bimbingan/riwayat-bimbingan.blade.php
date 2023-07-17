@@ -36,7 +36,7 @@
                                     <td>{{ $data->program->title }}</td>
                                     <td>{{ $data->tutor->user->name ?? 'Kosong' }}</td>
                                     <td>{{ \Carbon\Carbon::parse($data->date)->isoFormat('dddd, D MMMM Y') }}</td>
-                                    <td>{{ $data->program_session->sesi }}</td>
+                                    <td>{{ $data->program_session }}</td>
                                     <td>
                                         @if ($data->is_tutor == false)
                                             <i class="bi bi-dash fs-4 text-orange"></i>

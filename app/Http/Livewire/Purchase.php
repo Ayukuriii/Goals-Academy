@@ -110,24 +110,27 @@ class Purchase extends Component
             'purchaseMethod' => 'required'
         ]);
 
-        $create = OngoingProgram::create([
+        // dd($this);
+
+        $filepath = null;
+        if ($this->document) {
+            $path = $this->document->store('ongoing-files', 'public');
+            $filepath = str_replace('ongoing-files/', '', $path);
+        }
+
+
+        OngoingProgram::create([
             'user_id' => auth()->user()->id,
             'program_services_id' => $this->program,
             // 'tutor_id' => someone
             'payment_status' => 'pending',
-            'program_session_id' => 1,
+            'program_session' => $this->time,
             'catatan' => $this->note,
-            'file' => $this->document,
-            'date' => $this->date,
+            'file' => $filepath,
+            'date' => Carbon::parse($this->date)->format('Y-m-d'),
             'is_tutor' => 0,
             'is_moderator' => 0,
         ]);
-
-        if ($create) {
-            echo "success";
-        } else {
-            dd($create);
-        }
 
         $this->successMsg = 'Program successfully ordered!';
 
@@ -163,7 +166,7 @@ class Purchase extends Component
             if ($jam > $d) {
                 $selisih = $jam->diffInHours($d);
                 if ($selisih >= 3) {
-                    $sesi[] = $jam->toDateTimeString();
+                    $sesi[] = $jam->format('H:i');
                 }
             }
         }

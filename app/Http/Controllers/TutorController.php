@@ -39,7 +39,6 @@ class TutorController extends Controller
     {
         return view('dashboard.tutor.bimbingan.riwayat-bimbingan-detail', [
             'title' => 'Admin',
-            'program_session' => ProgramSession::all(),
             'tutor_data' => Tutor::all(),
             'program_services' => ProgramService::all(),
             'data' => OngoingProgram::find($id)

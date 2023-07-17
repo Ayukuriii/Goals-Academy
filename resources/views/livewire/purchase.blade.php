@@ -279,7 +279,7 @@
                     <label class="form-label small" for="note">Catatan</label>
                     <textarea class="form-control" name="note" wire:model="note" id="note" cols="30" rows="10"></textarea>
                 </div>
-                <div class="form-group mb-5">
+                <div class="form-group mb-5 col-6">
                     <label class="form-label small" for="document">File Skripsi (*Opsional)</label>
                     <input class="form-control" type="file" accept="application/pdf" name="document"
                         wire:model="document" id="document">

@@ -47,7 +47,6 @@ class AdminController extends Controller
     {
         return view('dashboard.admin.bimbingan.riwayat-bimbingan-detail', [
             'title' => 'Admin',
-            'program_session' => ProgramSession::all(),
             'tutor_data' => Tutor::all(),
             'program_services' => ProgramService::all(),
             'data' => OngoingProgram::find($id)
@@ -57,7 +56,6 @@ class AdminController extends Controller
     {
         return view('dashboard.admin.bimbingan.edit-jadwal', [
             'title' => 'Admin',
-            'program_session' => ProgramSession::all(),
             'tutor_data' => Tutor::all(),
             'program_services' => ProgramService::all(),
             'data' => OngoingProgram::find($id)
@@ -68,7 +66,7 @@ class AdminController extends Controller
         $data = OngoingProgram::findOrFail($id);
         $data->fill($request->only([
             'date',
-            'program_session_id',
+            'program_session',
             'program_services_id',
             'tutor_id',
             'location',
