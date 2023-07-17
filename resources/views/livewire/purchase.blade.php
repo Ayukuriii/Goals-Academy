@@ -498,7 +498,7 @@
                 </div>
                 <div class="d-flex justify-content-between mt-5">
                     <button class="col-4 col-xl-3 btn btn-secondary fw-bold rounded-4" type="button" wire:click="back(3)">Sebelumnya</button>
-                    <button class="col-4 col-xl-3 btn-orange-static rounded-4 py-2 px-3 text-center" type="button" wire:click="submitForm" {{ $agreement ? '' : 'disabled' }}>Bayar</button>
+                    <button class="col-4 col-xl-3 btn-orange-static rounded-4 py-2 px-3 text-center" type="button" wire:click="submitForm" {{ $agreement & $purchaseMethod != null ? '' : 'disabled' }}>Bayar</button>
                 </div>
             </div>
         </div>
