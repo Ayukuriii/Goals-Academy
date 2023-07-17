@@ -48,16 +48,21 @@
     border-color: #ff8854;
 }
 
-.btn-radio-orange {
+.radio-div .btn-radio-orange {
     width: 120px;
     height: 40px;
+    border-radius: 12px;
 }
 
-.btn-check:checked+.btn-inactive {
+.radio-div .btn-active {
     display: none;
 }
 
-.btn-check:checked+.btn-inactive+.btn-active {
+.radio-div .btn-check:checked+.btn-inactive {
+    display: none;
+}
+
+.radio-div .btn-check:checked+.btn-inactive+.btn-active {
     display: flex;
     background-color: #ff8854;
     color: white;
@@ -68,12 +73,12 @@
     outline: 1px solid lightgray;
 }
 
-.purchase-method-active {
-    border: 1px solid #ff8854;
-    outline: 1px solid #ff8854;
+.purchase-method:hover {
+    border-color: rgba(211, 211, 211, 0.25);
+    background-color: rgba(211, 211, 211, 0.25);
 }
 
-.purchase-method:hover {
+.btn-check:checked+.purchase-method {
     border-color: #ff8854;
     outline-color: #ff8854;
 }

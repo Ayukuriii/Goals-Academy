@@ -1306,14 +1306,9 @@
     align-items: center;
     justify-content: center;
     border: 2px solid #ff8854;
-    border-radius: 12px;
     background-color: white;
     color: #ff8854;
     cursor: pointer;
-}
-
-.btn-active {
-    display: none;
 }
 
 @media (max-width: 1080px) {
