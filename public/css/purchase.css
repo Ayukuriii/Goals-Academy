@@ -2,6 +2,19 @@
     background-color: #ff8854;
 }
 
+.purchase-steps .progress {
+    height: 4px;
+}
+
+.purchase-step-div {
+    margin-top: -30px;
+}
+
+.purchase-step {
+    height: 55px;
+    width: 55px;
+}
+
 .border-gray {
     border: 2px solid lightgray;
 }
@@ -35,19 +48,71 @@
 }
 
 .purchase-method {
-    border: 2px solid lightgray;
+    border: 1px solid white;
+    outline: 1px solid lightgray;
+}
+
+.purchase-method-active {
+    border: 1px solid #ff8854;
+    outline: 1px solid #ff8854;
 }
 
 .purchase-method:hover {
-    border: 2px solid #ff8854;
+    border-color: #ff8854;
+    outline-color: #ff8854;
+}
+
+.purchase-method img {
+    height: 24px;
 }
 
 @media (max-width: 480px) {
+    body {
+        font-size: small;
+    }
+
+    .fs-3 {
+        font-size: 1.25rem!important;
+    }
+
+    h4, .fs-4 {
+        font-size: 1rem!important;
+    }
+
+    h5, .fs-5 {
+        font-size: 1rem!important;
+    }
+
+    small, .small {
+        font-size: x-small;
+    }
+
+    .purchase-steps .progress {
+        height: 3px;
+    }
+
+    .purchase-step-div {
+        margin-top: -22px;
+    }
+
+    .purchase-step {
+        height: 40px;
+        width: 40px;
+    }
+
     .btn-program {
         height: 36px;
     }
 
     .btn-program-checked {
         height: 36px;
+    }
+
+    .btn, form button {
+        font-size: small;
+    }
+
+    .purchase-method img {
+        height: 16px;
     }
 }

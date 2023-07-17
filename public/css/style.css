@@ -1200,6 +1200,15 @@
     color: white;
 }
 
+.btn-secondary {
+    background-color: #959595;
+    border: none;
+}
+
+.btn-secondary:hover {
+    background-color: #807D7D;
+}
+
 .btn-nav {
     background-color: white;
     border-radius: 12px;
@@ -1781,6 +1790,23 @@
         display: block;
     }
 
+    .btn-check-orange {
+        height: 24px;
+        width: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid #ff8854;
+        border-radius: 25%;
+        background-color: white;
+        color: #ff8854;
+    }
+
+    .btn-check:checked+.btn-check-orange {
+        background-color: #ff8854;
+        color: white;
+    }
+
     .hero-image-mobile img {
         width: min(330px, 420px);
         height: min(280px, 360px);
@@ -1822,6 +1848,11 @@
     #cropper img {
         height: 222px;
         width: 270px;
+    }
+
+    .border-orange-bold {
+        border: 3px solid #ff8854;
+        background-color: white;
     }
 }
 

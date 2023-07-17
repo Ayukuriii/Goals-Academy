@@ -11,7 +11,8 @@ class Purchase extends Component
     use WithFileUploads;
 
     public $currentStep = 1;
-    public $program = 1;
+    public $isAgree = 0;
+    public $program = 3;
     public $dates;
     public $date;
     public $times;
