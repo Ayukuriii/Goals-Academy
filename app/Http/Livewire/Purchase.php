@@ -13,7 +13,8 @@ class Purchase extends Component
     use WithFileUploads;
 
     public $currentStep = 1;
-    public $program = 1;
+    public $agreement;
+    public $program;
     public $dates;
     public $date;
     public $times;
@@ -107,7 +108,8 @@ class Purchase extends Component
     public function submitForm()
     {
         $validatedData = $this->validate([
-            'purchaseMethod' => 'required'
+            'purchaseMethod' => 'required',
+            'agreement' => 'accepted'
         ]);
 
         // dd($this);

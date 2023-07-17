@@ -188,3 +188,14 @@ Route::get('/purchase', function () {
         'title' => 'Purchase'
     ]);
 })->name('purchase.index');
+
+Route::get('/payment_pending', function () {
+    return view('purchase.payment_pending', [
+        'title' => 'Purchase'
+    ]);
+})->name('payment_pending');
+Route::get('/payment_success', function () {
+    return view('purchase.payment_success', [
+        'title' => 'Purchase'
+    ]);
+})->name('payment_success');

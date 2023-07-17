@@ -1,43 +1,156 @@
+.fs-xl {
+    font-size: 4rem;
+}
+
 .progress-bar {
     background-color: #ff8854;
 }
 
-.border-gray {
-    border: 2px solid lightgray;
+.purchase-steps .progress {
+    height: 4px;
 }
 
-.btn-program {
-    background-color: white;
-    color: #ff8854;
-    border: 2px solid #ff8854;
-    text-decoration: none;
-    border-radius: 12px;
-    cursor: pointer;
-    width: 120px;
-    height: 40px;
+.purchase-step-div {
+    margin-top: -30px;
+}
+
+.purchase-step {
+    height: 55px;
+    width: 55px;
+}
+
+.step-1:after, .step-2:after, .step-3:after, .step-4:after {
+    position: absolute;
+    bottom: -30px;
+    font-size: smaller;
     text-align: center;
 }
 
-.btn-program:hover, .btn-program:active {
+.step-1:after {
+    content: "Pilih Paket";
+}
+
+.step-2:after {
+    content: "Pilih Jadwal";
+}
+
+.step-3:after {
+    content: "Informasi Bimbingan";
+}
+
+.step-4:after {
+    content: "Pembayaran";
+}
+
+.radio-div {
+    outline: 1px solid lightgray;
+    border: 1px solid lightgray;
+}
+
+.radio-div:has(.btn-check:checked) {
+    outline-color: #ff8854;
+    border-color: #ff8854;
+}
+
+.radio-div .btn-radio-orange {
+    width: 120px;
+    height: 40px;
+    border-radius: 12px;
+}
+
+.radio-div .btn-active {
+    display: none;
+}
+
+.radio-div .btn-check:checked+.btn-inactive {
+    display: none;
+}
+
+.radio-div .btn-check:checked+.btn-inactive+.btn-active {
+    display: flex;
     background-color: #ff8854;
     color: white;
 }
 
-.btn-program-checked {
-    background-color: #ff8854;
-    color: white;
-    border: 2px solid #ff8854;
-    text-decoration: none;
-    border-radius: 12px;
-    width: 120px;
-    height: 40px;
-    text-align: center;
+#purchase-methods .row {
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .purchase-method {
-    border: 2px solid lightgray;
+    border: 1px solid white;
+    outline: 1px solid lightgray;
 }
 
 .purchase-method:hover {
-    border: 2px solid #ff8854;
+    border-color: rgba(211, 211, 211, 0.25);
+    background-color: rgba(211, 211, 211, 0.25);
+}
+
+.btn-check:checked+.purchase-method {
+    border-color: #ff8854;
+    outline-color: #ff8854;
+}
+
+.purchase-method img, .purchase-method-active img {
+    height: 24px;
+}
+
+@media (max-width: 1024px) {
+    .step-1:after, .step-2:after, .step-3:after, .step-4:after {
+        bottom: -22px;
+        font-size: x-small;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: small;
+    }
+
+    .fs-3 {
+        font-size: 1.25rem!important;
+    }
+
+    h4, .fs-4 {
+        font-size: 1rem!important;
+    }
+
+    h5, .fs-5 {
+        font-size: 1rem!important;
+    }
+
+    small, .small {
+        font-size: x-small;
+    }
+
+    .purchase-steps .progress {
+        height: 3px;
+    }
+
+    .purchase-step-div {
+        margin-top: -22px;
+    }
+
+    .purchase-step {
+        height: 40px;
+        width: 40px;
+    }
+
+    .step-1:after, .step-2:after, .step-3:after, .step-4:after {
+        bottom: -18px;
+        font-size: xx-small;
+    }
+
+    .btn-radio-orange {
+        height: 36px;
+    }
+
+    .btn, form button {
+        font-size: small;
+    }
+
+    .purchase-method img, .purchase-method-active img {
+        height: 16px;
+    }
 }
