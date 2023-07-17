@@ -15,36 +15,52 @@
     width: 55px;
 }
 
-.border-gray {
-    border: 2px solid lightgray;
-}
-
-.btn-program {
-    background-color: white;
-    color: #ff8854;
-    border: 2px solid #ff8854;
-    text-decoration: none;
-    border-radius: 12px;
-    cursor: pointer;
-    width: 120px;
-    height: 40px;
+.step-1:after, .step-2:after, .step-3:after, .step-4:after {
+    position: absolute;
+    bottom: -30px;
+    font-size: smaller;
     text-align: center;
 }
 
-.btn-program:hover, .btn-program:active {
-    background-color: #ff8854;
-    color: white;
+.step-1:after {
+    content: "Pilih Paket";
 }
 
-.btn-program-checked {
-    background-color: #ff8854;
-    color: white;
-    border: 2px solid #ff8854;
-    text-decoration: none;
-    border-radius: 12px;
+.step-2:after {
+    content: "Pilih Jadwal";
+}
+
+.step-3:after {
+    content: "Informasi Bimbingan";
+}
+
+.step-4:after {
+    content: "Pembayaran";
+}
+
+.radio-div {
+    outline: 1px solid lightgray;
+    border: 1px solid lightgray;
+}
+
+.radio-div:has(.btn-check:checked) {
+    outline-color: #ff8854;
+    border-color: #ff8854;
+}
+
+.btn-radio-orange {
     width: 120px;
     height: 40px;
-    text-align: center;
+}
+
+.btn-check:checked+.btn-inactive {
+    display: none;
+}
+
+.btn-check:checked+.btn-inactive+.btn-active {
+    display: flex;
+    background-color: #ff8854;
+    color: white;
 }
 
 .purchase-method {
@@ -66,22 +82,11 @@
     height: 24px;
 }
 
-.btn-check-orange {
-    height: 24px;
-    width: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid #ff8854;
-    border-radius: 25%;
-    background-color: white;
-    color: #ff8854;
-    cursor: pointer;
-}
-
-.btn-check:checked+.btn-check-orange {
-    background-color: #ff8854;
-    color: white;
+@media (max-width: 1024px) {
+    .step-1:after, .step-2:after, .step-3:after, .step-4:after {
+        bottom: -22px;
+        font-size: x-small;
+    }
 }
 
 @media (max-width: 480px) {
@@ -118,11 +123,12 @@
         width: 40px;
     }
 
-    .btn-program {
-        height: 36px;
+    .step-1:after, .step-2:after, .step-3:after, .step-4:after {
+        bottom: -18px;
+        font-size: xx-small;
     }
 
-    .btn-program-checked {
+    .btn-radio-orange {
         height: 36px;
     }
 

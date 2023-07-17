@@ -1283,6 +1283,39 @@
     box-shadow: 0 0 0 1px #39f;
 }
 
+.btn-check-orange {
+    height: 24px;
+    width: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #ff8854;
+    border-radius: 25%;
+    background-color: white;
+    color: #ff8854;
+    cursor: pointer;
+}
+
+.btn-check:checked+.btn-check-orange {
+    background-color: #ff8854;
+    color: white;
+}
+
+.btn-radio-orange {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #ff8854;
+    border-radius: 12px;
+    background-color: white;
+    color: #ff8854;
+    cursor: pointer;
+}
+
+.btn-active {
+    display: none;
+}
+
 @media (max-width: 1080px) {
     .hero-image {
         right: 1%;
@@ -1792,23 +1825,6 @@
 
     .btn-mobile {
         display: block;
-    }
-
-    .btn-check-orange {
-        height: 24px;
-        width: 24px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: 2px solid #ff8854;
-        border-radius: 25%;
-        background-color: white;
-        color: #ff8854;
-    }
-
-    .btn-check:checked+.btn-check-orange {
-        background-color: #ff8854;
-        color: white;
     }
 
     .hero-image-mobile img {
