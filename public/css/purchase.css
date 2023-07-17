@@ -68,6 +68,11 @@
     color: white;
 }
 
+#purchase-methods .row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
 .purchase-method {
     border: 1px solid white;
     outline: 1px solid lightgray;
