@@ -12,7 +12,7 @@
             <li>
                 Masukkan Nomor Virtual Account
                 <p title="Copy to clipboard" id="payment-code" class="d-flex gap-2 align-items-center justify-content-center my-3" role="button">
-                    <span class="fs-4 fw-bold">092837254321</span>
+                    <span class="fs-4 fw-bold lh-1">092837254321</span>
                     <i class="d-inline-block fa-regular fa-clipboard fs-5"></i>
                 </p>
             </li>

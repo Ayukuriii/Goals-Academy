@@ -27,6 +27,7 @@
     <script src="https://kit.fontawesome.com/3f9eda8ca0.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{ asset('css/purchase.css') }}">
     @livewireStyles
+    @yield('css')
 </head>
 
 <body class="{{ Request::is('/') ? 'style-nav-footer-body' : 'comingsoon-body' }} h-100">
