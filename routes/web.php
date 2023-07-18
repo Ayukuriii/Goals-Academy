@@ -9,9 +9,11 @@ use App\Http\Controllers\ImageController;
 use App\Http\Controllers\TutorController;
 use App\Http\Controllers\DownloadController;
 use App\Http\Controllers\ModeratorController;
+use App\Http\Controllers\OrderDetailController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\VerificationController;
 use App\Http\Livewire\Purchase;
+use App\Models\OrderDetail;
 
 /*
 |--------------------------------------------------------------------------
@@ -189,13 +191,10 @@ Route::get('/purchase', function () {
     ]);
 })->name('purchase.index');
 
-Route::get('/payment_pending', function () {
-    return view('purchase.payment_pending', [
-        'title' => 'Purchase'
-    ]);
-})->name('payment_pending');
+Route::get('/payment_pending/{id}', [OrderDetailController::class, 'pending'])->name('payment.pending');
+
 Route::get('/payment_success', function () {
     return view('purchase.payment_success', [
         'title' => 'Purchase'
     ]);
-})->name('payment_success');
+})->name('payment.success');

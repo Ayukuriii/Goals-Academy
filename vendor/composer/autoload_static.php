@@ -112,6 +112,7 @@ class ComposerStaticInit1eda5e62bae7a9ca9b244652e2e1d3fb
         'M' => 
         array (
             'Monolog\\' => 8,
+            'Midtrans\\' => 9,
         ),
         'L' => 
         array (
@@ -382,6 +383,10 @@ class ComposerStaticInit1eda5e62bae7a9ca9b244652e2e1d3fb
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
         ),
+        'Midtrans\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/midtrans/midtrans-php/Midtrans',
+        ),
         'Livewire\\' => 
         array (
             0 => __DIR__ . '/..' . '/livewire/livewire/src',
@@ -548,7 +553,6 @@ class ComposerStaticInit1eda5e62bae7a9ca9b244652e2e1d3fb
         'App\\Http\\Controllers\\PaymentStatusController' => __DIR__ . '/../..' . '/app/Http/Controllers/PaymentStatusController.php',
         'App\\Http\\Controllers\\ProfileController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProfileController.php',
         'App\\Http\\Controllers\\ProgramServiceController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProgramServiceController.php',
-        'App\\Http\\Controllers\\ProgramSessionController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProgramSessionController.php',
         'App\\Http\\Controllers\\TestController' => __DIR__ . '/../..' . '/app/Http/Controllers/TestController.php',
         'App\\Http\\Controllers\\TutorController' => __DIR__ . '/../..' . '/app/Http/Controllers/TutorController.php',
         'App\\Http\\Controllers\\TutorNotesController' => __DIR__ . '/../..' . '/app/Http/Controllers/TutorNotesController.php',
@@ -570,7 +574,6 @@ class ComposerStaticInit1eda5e62bae7a9ca9b244652e2e1d3fb
         'App\\Models\\OngoingProgram' => __DIR__ . '/../..' . '/app/Models/OngoingProgram.php',
         'App\\Models\\PaymentStatus' => __DIR__ . '/../..' . '/app/Models/PaymentStatus.php',
         'App\\Models\\ProgramService' => __DIR__ . '/../..' . '/app/Models/ProgramService.php',
-        'App\\Models\\ProgramSession' => __DIR__ . '/../..' . '/app/Models/ProgramSession.php',
         'App\\Models\\Tutor' => __DIR__ . '/../..' . '/app/Models/Tutor.php',
         'App\\Models\\TutorNotes' => __DIR__ . '/../..' . '/app/Models/TutorNotes.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
@@ -3375,6 +3378,14 @@ class ComposerStaticInit1eda5e62bae7a9ca9b244652e2e1d3fb
         'Livewire\\Wireable' => __DIR__ . '/..' . '/livewire/livewire/src/Wireable.php',
         'Livewire\\WithFileUploads' => __DIR__ . '/..' . '/livewire/livewire/src/WithFileUploads.php',
         'Livewire\\WithPagination' => __DIR__ . '/..' . '/livewire/livewire/src/WithPagination.php',
+        'Midtrans\\ApiRequestor' => __DIR__ . '/..' . '/midtrans/midtrans-php/Midtrans/ApiRequestor.php',
+        'Midtrans\\Config' => __DIR__ . '/..' . '/midtrans/midtrans-php/Midtrans/Config.php',
+        'Midtrans\\CoreApi' => __DIR__ . '/..' . '/midtrans/midtrans-php/Midtrans/CoreApi.php',
+        'Midtrans\\Notification' => __DIR__ . '/..' . '/midtrans/midtrans-php/Midtrans/Notification.php',
+        'Midtrans\\Sanitizer' => __DIR__ . '/..' . '/midtrans/midtrans-php/Midtrans/Sanitizer.php',
+        'Midtrans\\Snap' => __DIR__ . '/..' . '/midtrans/midtrans-php/Midtrans/Snap.php',
+        'Midtrans\\SnapApiRequestor' => __DIR__ . '/..' . '/midtrans/midtrans-php/Midtrans/SnapApiRequestor.php',
+        'Midtrans\\Transaction' => __DIR__ . '/..' . '/midtrans/midtrans-php/Midtrans/Transaction.php',
         'Mockery' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery.php',
         'Mockery\\Adapter\\Phpunit\\MockeryPHPUnitIntegration' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegration.php',
         'Mockery\\Adapter\\Phpunit\\MockeryPHPUnitIntegrationAssertPostConditions' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegrationAssertPostConditions.php',
