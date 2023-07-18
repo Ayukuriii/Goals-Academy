@@ -2,11 +2,14 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\OngoingProgram;
 use Carbon\Carbon;
-use GrahamCampbell\ResultType\Success;
+use Midtrans\Snap;
+use Midtrans\Config;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use App\Models\OngoingProgram;
+use App\Models\OrderDetail;
+use GrahamCampbell\ResultType\Success;
 
 class Purchase extends Component
 {
@@ -15,6 +18,7 @@ class Purchase extends Component
     public $currentStep = 1;
     public $agreement;
     public $program;
+    public $price;
     public $dates;
     public $date;
     public $times;
@@ -102,6 +106,14 @@ class Purchase extends Component
             'document' => 'file | nullable',
         ]);
 
+        if ($this->program == 1) {
+            $this->price = 47000;
+        } else if ($this->program == 2) {
+            $this->price = 85000;
+        } else if ($this->program == 3) {
+            $this->price = 98000;
+        }
+
         $this->currentStep = 4;
     }
 
@@ -112,7 +124,7 @@ class Purchase extends Component
             'agreement' => 'accepted'
         ]);
 
-        // dd($this);
+        // dd();
 
         $filepath = null;
         if ($this->document) {
@@ -120,9 +132,10 @@ class Purchase extends Component
             $filepath = str_replace('ongoing-files/', '', $path);
         }
 
+        $user = auth()->user();
 
-        OngoingProgram::create([
-            'user_id' => auth()->user()->id,
+        $data = OngoingProgram::create([
+            'user_id' => $user->id,
             'program_services_id' => $this->program,
             // 'tutor_id' => someone
             'payment_status' => 'pending',
@@ -134,11 +147,45 @@ class Purchase extends Component
             'is_moderator' => 0,
         ]);
 
-        $this->successMsg = 'Program successfully ordered!';
+        // Set your Merchant Server Key
+        Config::$serverKey = config('midtrans.server_key');
+        // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
+        Config::$isProduction = false;
+        // Set sanitization on (default)
+        Config::$isSanitized = true;
+        // Set 3DS transaction for credit card to true
+        Config::$is3ds = true;
 
-        $this->clearForm();
+        $params = array(
+            'transaction_details' => array(
+                'order_id' => 'GA' . rand(),
+                'gross_amount' => $this->price,
+            ),
+            'customer_details' => array(
+                'first_name' => $user->name,
+                'last_name' => '',
+                'email' => $user->email,
+                'phone' => $user->phone_number,
+            ),
+            'payment_type' => 'qris',
+        );
 
-        $this->currentStep = 1;
+        $response = \Midtrans\CoreApi::charge($params);
+        $responseToJson = json_encode($response);
+
+        $order = OrderDetail::create([
+            'ongoing_program_id' => $data->id,
+            'jsonstring' => $responseToJson,
+        ]);
+        // dd($order);
+
+        return redirect()->route('payment.pending', $data->id);
+
+        // $this->successMsg = 'Program successfully ordered!';
+
+        // $this->clearForm();
+
+        // $this->currentStep = 1;
     }
 
     public function back($step)

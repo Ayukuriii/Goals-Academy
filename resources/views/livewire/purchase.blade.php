@@ -10,20 +10,25 @@
         {{-- Page 1 --}}
         <div class="{{ $currentStep != 1 ? 'd-none' : '' }}">
             <div class="purchase-steps col-12 col-md-10 col-xl-8 mx-auto py-4 px-3 py-xl-5">
-                <div class="progress mx-auto bg-gray" role="progressbar" aria-label="Example 1px high" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
+                <div class="progress mx-auto bg-gray" role="progressbar" aria-label="Example 1px high" aria-valuenow="25"
+                    aria-valuemin="0" aria-valuemax="100" style="width: 90%">
                     <div class="progress-bar" style="width: 0%"></div>
                 </div>
                 <div class="purchase-step-div px-1 px-md-3 d-flex justify-content-between position-relative">
-                    <div class="purchase-step step-1 d-flex align-items-center justify-content-center rounded-5 border-orange-bold">
+                    <div
+                        class="purchase-step step-1 d-flex align-items-center justify-content-center rounded-5 border-orange-bold">
                         <span class="text-orange fs-3">1</span>
                     </div>
-                    <div class="purchase-step step-2 d-flex align-items-center justify-content-center rounded-5 bg-gray">
+                    <div
+                        class="purchase-step step-2 d-flex align-items-center justify-content-center rounded-5 bg-gray">
                         <span class="text-light fs-3">2</span>
                     </div>
-                    <div class="purchase-step step-3 d-flex align-items-center justify-content-center rounded-5 bg-gray">
+                    <div
+                        class="purchase-step step-3 d-flex align-items-center justify-content-center rounded-5 bg-gray">
                         <span class="text-light fs-3">3</span>
                     </div>
-                    <div class="purchase-step step-4 d-flex align-items-center justify-content-center rounded-5 bg-gray">
+                    <div
+                        class="purchase-step step-4 d-flex align-items-center justify-content-center rounded-5 bg-gray">
                         <span class="text-light fs-3">4</span>
                     </div>
                 </div>
@@ -61,11 +66,13 @@
                         </ul>
                     </div>
                     <div class="col row p-0 mt-4 mt-xl-0">
-                        <div class="col-7 col-xl-12 d-flex align-items-center align-items-xl-start justify-content-xl-end">
+                        <div
+                            class="col-7 col-xl-12 d-flex align-items-center align-items-xl-start justify-content-xl-end">
                             <p class="d-inline-block fw-bold text-danger fs-4 m-0">Rp. 47.000,-</p>
                         </div>
                         <div class="col-5 col-xl-12 d-flex align-items-center align-items-xl-end justify-content-end">
-                            <input class="btn-check form-check-input d-none" type="radio" id="program-1" wire:model="program" value="1">
+                            <input class="btn-check form-check-input d-none" type="radio" id="program-1"
+                                wire:model="program" value="1">
                             <label class="btn-radio-orange btn-inactive fw-bold lh-1" for="program-1">
                                 <span class="small">
                                     Pilih Paket
@@ -107,11 +114,13 @@
                         </ul>
                     </div>
                     <div class="col row p-0 mt-4 mt-xl-0">
-                        <div class="col-7 col-xl-12 d-flex align-items-center align-items-xl-start justify-content-xl-end">
+                        <div
+                            class="col-7 col-xl-12 d-flex align-items-center align-items-xl-start justify-content-xl-end">
                             <p class="d-inline-block fw-bold text-danger fs-4 m-0">Rp. 85.000,-</p>
                         </div>
                         <div class="col-5 col-xl-12 d-flex align-items-center align-items-xl-end justify-content-end">
-                            <input class="btn-check form-check-input d-none" type="radio" id="program-2" wire:model="program" value="2">
+                            <input class="btn-check form-check-input d-none" type="radio" id="program-2"
+                                wire:model="program" value="2">
                             <label class="btn-radio-orange btn-inactive fw-bold lh-1" for="program-2">
                                 <span class="small">
                                     Pilih Paket
@@ -145,11 +154,13 @@
                         </ul>
                     </div>
                     <div class="col row p-0 mt-4 mt-xl-0">
-                        <div class="col-7 col-xl-12 d-flex align-items-center align-items-xl-start justify-content-xl-end">
+                        <div
+                            class="col-7 col-xl-12 d-flex align-items-center align-items-xl-start justify-content-xl-end">
                             <p class="d-inline-block fw-bold text-danger fs-4 m-0">Rp. 98.000,-</p>
                         </div>
                         <div class="col-5 col-xl-12 d-flex align-items-center align-items-xl-end justify-content-end">
-                            <input class="btn-check form-check-input d-none" type="radio" id="program-3" wire:model="program" value="3">
+                            <input class="btn-check form-check-input d-none" type="radio" id="program-3"
+                                wire:model="program" value="3">
                             <label class="btn-radio-orange btn-inactive fw-bold lh-1" for="program-3">
                                 <span class="small">
                                     Pilih Paket
@@ -162,7 +173,8 @@
                     </div>
                 </div>
                 <div class="d-flex justify-content-end">
-                    <button class="col-4 col-xl-3 btn-orange-static px-3 text-center" type="button" wire:click="firstStepSubmit">Selanjutnya</button>
+                    <button class="col-4 col-xl-3 btn-orange-static px-3 text-center" type="button"
+                        wire:click="firstStepSubmit">Selanjutnya</button>
                 </div>
             </div>
         </div>
@@ -170,20 +182,25 @@
         {{-- Page 2 --}}
         <div class="{{ $currentStep != 2 ? 'd-none' : '' }}">
             <div class="purchase-steps col-12 col-md-10 col-xl-8 mx-auto py-4 px-3 py-xl-5">
-                <div class="progress mx-auto bg-gray" role="progressbar" aria-label="Example 1px high" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
+                <div class="progress mx-auto bg-gray" role="progressbar" aria-label="Example 1px high"
+                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
                     <div class="progress-bar" style="width: 33%"></div>
                 </div>
                 <div class="purchase-step-div px-1 px-md-3 d-flex justify-content-between position-relative">
-                    <div class="purchase-step step-1 d-flex align-items-center justify-content-center rounded-5 bg-orange">
+                    <div
+                        class="purchase-step step-1 d-flex align-items-center justify-content-center rounded-5 bg-orange">
                         <i class="bi bi-check-lg text-light fs-2"></i>
                     </div>
-                    <div class="purchase-step step-2 d-flex align-items-center justify-content-center rounded-5 border-orange-bold">
+                    <div
+                        class="purchase-step step-2 d-flex align-items-center justify-content-center rounded-5 border-orange-bold">
                         <span class="text-orange fs-3">2</span>
                     </div>
-                    <div class="purchase-step step-3 d-flex align-items-center justify-content-center rounded-5 bg-gray">
+                    <div
+                        class="purchase-step step-3 d-flex align-items-center justify-content-center rounded-5 bg-gray">
                         <span class="text-light fs-3">3</span>
                     </div>
-                    <div class="purchase-step step-4 d-flex align-items-center justify-content-center rounded-5 bg-gray">
+                    <div
+                        class="purchase-step step-4 d-flex align-items-center justify-content-center rounded-5 bg-gray">
                         <span class="text-light fs-3">4</span>
                     </div>
                 </div>
@@ -247,8 +264,10 @@
                     </div>
                 </div>
                 <div class="d-flex justify-content-between">
-                    <button class="col-4 col-xl-3 btn btn-secondary fw-bold rounded-4" type="button" wire:click="back(1)">Sebelumnya</button>
-                    <button class="col-4 col-xl-3 btn-orange-static rounded-4 py-2 px-3 text-center" type="button" wire:click="secondStepSubmit">Selanjutnya</button>
+                    <button class="col-4 col-xl-3 btn btn-secondary fw-bold rounded-4" type="button"
+                        wire:click="back(1)">Sebelumnya</button>
+                    <button class="col-4 col-xl-3 btn-orange-static rounded-4 py-2 px-3 text-center" type="button"
+                        wire:click="secondStepSubmit">Selanjutnya</button>
                 </div>
             </div>
         </div>
@@ -256,20 +275,25 @@
         {{-- Page 3 --}}
         <div class="{{ $currentStep != 3 ? 'd-none' : '' }}">
             <div class="purchase-steps col-12 col-md-10 col-xl-8 mx-auto py-4 px-3 py-xl-5">
-                <div class="progress mx-auto bg-gray" role="progressbar" aria-label="Example 1px high" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
+                <div class="progress mx-auto bg-gray" role="progressbar" aria-label="Example 1px high"
+                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
                     <div class="progress-bar" style="width: 66%"></div>
                 </div>
                 <div class="purchase-step-div px-1 px-md-3 d-flex justify-content-between position-relative">
-                    <div class="purchase-step step-1 d-flex align-items-center justify-content-center rounded-5 bg-orange">
+                    <div
+                        class="purchase-step step-1 d-flex align-items-center justify-content-center rounded-5 bg-orange">
                         <i class="bi bi-check-lg text-light fs-2"></i>
                     </div>
-                    <div class="purchase-step step-2 d-flex align-items-center justify-content-center rounded-5 bg-orange">
+                    <div
+                        class="purchase-step step-2 d-flex align-items-center justify-content-center rounded-5 bg-orange">
                         <i class="bi bi-check-lg text-light fs-2"></i>
                     </div>
-                    <div class="purchase-step step-3 d-flex align-items-center justify-content-center rounded-5 border-orange-bold">
+                    <div
+                        class="purchase-step step-3 d-flex align-items-center justify-content-center rounded-5 border-orange-bold">
                         <span class="text-orange fs-3">3</span>
                     </div>
-                    <div class="purchase-step step-4 d-flex align-items-center justify-content-center rounded-5 bg-gray">
+                    <div
+                        class="purchase-step step-4 d-flex align-items-center justify-content-center rounded-5 bg-gray">
                         <span class="text-light fs-3">4</span>
                     </div>
                 </div>
@@ -278,7 +302,8 @@
                 <h2 class="text-center text-purple fs-3 mt-3 mb-4 my-4 my-md-5 my-xl-4">Informasi Bimbingan</h2>
                 <div class="form-group mb-4 mb-xl-5">
                     <label class="form-label small" for="note">Catatan untuk Tutor</label>
-                    <textarea class="form-control" name="note" wire:model="note" id="note" cols="30" rows="10" placeholder="Ceritakan kendala skripsi Anda disini ..."></textarea>
+                    <textarea class="form-control" name="note" wire:model="note" id="note" cols="30" rows="10"
+                        placeholder="Ceritakan kendala skripsi Anda disini ..."></textarea>
                 </div>
                 <div class="form-group mb-5 col-6">
                     <label class="form-label small" for="document">File Skripsi (*Opsional)</label>
@@ -286,8 +311,10 @@
                         wire:model="document" id="document">
                 </div>
                 <div class="d-flex justify-content-between">
-                    <button class="col-4 col-xl-3 btn btn-secondary fw-bold rounded-4" type="button" wire:click="back(2)">Sebelumnya</button>
-                    <button class="col-4 col-xl-3 btn-orange-static rounded-4 py-2 px-3 text-center" type="button" wire:click="thirdStepSubmit">Selanjutnya</button>
+                    <button class="col-4 col-xl-3 btn btn-secondary fw-bold rounded-4" type="button"
+                        wire:click="back(2)">Sebelumnya</button>
+                    <button class="col-4 col-xl-3 btn-orange-static rounded-4 py-2 px-3 text-center" type="button"
+                        wire:click="thirdStepSubmit">Selanjutnya</button>
                 </div>
             </div>
         </div>
@@ -295,20 +322,25 @@
         {{-- Page 4 --}}
         <div class="{{ $currentStep != 4 ? 'd-none' : '' }}">
             <div class="purchase-steps col-12 col-md-10 col-xl-8 mx-auto py-4 px-3 py-xl-5">
-                <div class="progress mx-auto bg-gray" role="progressbar" aria-label="Example 1px high" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
+                <div class="progress mx-auto bg-gray" role="progressbar" aria-label="Example 1px high"
+                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
                     <div class="progress-bar" style="width: 100%"></div>
                 </div>
                 <div class="purchase-step-div px-1 px-md-3 d-flex justify-content-between position-relative">
-                    <div class="purchase-step step-1 d-flex align-items-center justify-content-center rounded-5 bg-orange">
+                    <div
+                        class="purchase-step step-1 d-flex align-items-center justify-content-center rounded-5 bg-orange">
                         <i class="bi bi-check-lg text-light fs-2"></i>
                     </div>
-                    <div class="purchase-step step-2 d-flex align-items-center justify-content-center rounded-5 bg-orange">
+                    <div
+                        class="purchase-step step-2 d-flex align-items-center justify-content-center rounded-5 bg-orange">
                         <i class="bi bi-check-lg text-light fs-2"></i>
                     </div>
-                    <div class="purchase-step step-3 d-flex align-items-center justify-content-center rounded-5 bg-orange">
+                    <div
+                        class="purchase-step step-3 d-flex align-items-center justify-content-center rounded-5 bg-orange">
                         <i class="bi bi-check-lg text-light fs-2"></i>
                     </div>
-                    <div class="purchase-step step-4 d-flex align-items-center justify-content-center rounded-5 border-orange-bold">
+                    <div
+                        class="purchase-step step-4 d-flex align-items-center justify-content-center rounded-5 border-orange-bold">
                         <span class="text-orange fs-3">4</span>
                     </div>
                 </div>
@@ -317,7 +349,7 @@
                 <h2 class="text-center text-purple fs-3 mt-3 mb-4 my-4 my-md-5 my-xl-4">Pembayaran</h2>
                 <p class="fw-bold">Pilih Metode Pembayaran</p>
                 <div id="purchase-methods">
-                    <div class="card rounded-4 py-3 px-4 mb-4">
+                    {{-- <div class="card rounded-4 py-3 px-4 mb-4">
                         <div class="d-flex align-items-center justify-content-between" data-bs-toggle="collapse"
                         href="#transfer-1" role="button" aria-expanded="false"
                         aria-controls="transfer-1">
@@ -370,24 +402,26 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    {{-- <div class="card rounded-4 py-3 px-4 mb-4">
+                    </div> --}}
+                    <div class="card rounded-4 py-3 px-4 mb-4">
                         <div class="d-flex align-items-center justify-content-between" data-bs-toggle="collapse"
-                                href="#transfer-2" role="button" aria-expanded="false"
-                                aria-controls="transfer-2">
+                            href="#transfer-2" role="button" aria-expanded="false" aria-controls="transfer-2">
                             <h5 class="m-0">E-Money</h5>
                             <i class="fa-sharp fa-solid fa-chevron-down fs-4"></i>
                         </div>
-                        <div class="collapse {{ in_array($purchaseMethod, $purchaseMethods['e-money']) ? 'show' : '' }}" id="transfer-2">
+                        <div class="collapse {{ in_array($purchaseMethod, $purchaseMethods['e-money']) ? 'show' : '' }}"
+                            id="transfer-2">
                             <div class="row gap-3 pt-3">
                                 <div class="col-2 col-xl-1   d-flex p-0">
-                                    <input wire:model="purchaseMethod" class="btn-check d-none" type="radio" id="qris"
-                                        value="qris">
-                                    <label for="qris" class="card purchase-method justify-content-center p-2 w-100" role="button">
-                                        <img src="{{ asset('image/assets/images/purchase/logo-qris.svg') }}" alt="Logo QRIS">
+                                    <input wire:model="purchaseMethod" class="btn-check d-none" type="radio"
+                                        id="qris" value="qris">
+                                    <label for="qris"
+                                        class="card purchase-method justify-content-center p-2 w-100" role="button">
+                                        <img src="{{ asset('image/assets/images/purchase/logo-qris.svg') }}"
+                                            alt="Logo QRIS">
                                     </label>
                                 </div>
-                                <div class="col-2 col-xl-1   d-flex p-0">
+                                {{-- <div class="col-2 col-xl-1   d-flex p-0">
                                     <input wire:model="purchaseMethod" class="btn-check d-none" type="radio" id="ovo"
                                         value="ovo">
                                     <label for="ovo" class="card purchase-method justify-content-center p-2 w-100" role="button">
@@ -400,11 +434,11 @@
                                     <label for="shopeepay" class="card purchase-method justify-content-center p-2 w-100" role="button">
                                         <img src="{{ asset('image/assets/images/purchase/logo-shopeepay.svg') }}" alt="Logo Shopeepay">
                                     </label>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>
-                    <div class="card rounded-4 py-3 px-4 mb-4">
+                    {{-- <div class="card rounded-4 py-3 px-4 mb-4">
                         <div class="d-flex align-items-center justify-content-between" data-bs-toggle="collapse"
                                 href="#transfer-3" role="button" aria-expanded="false"
                                 aria-controls="transfer-3">
@@ -478,27 +512,32 @@
                             <p class="small m-0">{{ \Carbon\Carbon::parse($date)->isoFormat('dddd, D MMMM Y') }} |
                                 {{ $time }} WIB</p>
                         </div>
-                        <p class="fs-5">Rp 43.000</p>
+                        <p class="fs-5">Rp {{ $price }}</p>
                     </div>
                     <div class="d-flex align-items-center justify-content-between mb-3">
                         <h5 class="m-0">Voucher</h5>
-                        <p class="d-inline-block fs-5 m-0">- Rp 10.000</p>
+                        <p class="d-inline-block fs-5 m-0">- Rp 0</p>
                     </div>
                     <div class="d-flex align-items-center justify-content-between">
                         <h5 class="m-0">Total</h5>
-                        <p class="d-inline-block fs-4 fw-bold text-danger m-0">Rp 33.000</p>
+                        <p class="d-inline-block fs-4 fw-bold text-danger m-0">Rp. {{ $price }}</p>
                     </div>
                 </div>
                 <div class="d-flex justify-content-end">
-                    <span class="small me-2">Menyetujui <a class="text-decoration-none" href="">Syarat & Ketentuan</a> yang berlaku</span>
-                    <input wire:model="agreement" type="checkbox" class="btn-check" id="agreement" autocomplete="off">
+                    <span class="small me-2">Menyetujui <a class="text-decoration-none" href="">Syarat &
+                            Ketentuan</a> yang berlaku</span>
+                    <input wire:model="agreement" type="checkbox" class="btn-check" id="agreement"
+                        autocomplete="off">
                     <label class="btn-check-orange" for="agreement">
                         <i class="bi bi-check-lg"></i>
                     </label>
                 </div>
                 <div class="d-flex justify-content-between mt-5">
-                    <button class="col-4 col-xl-3 btn btn-secondary fw-bold rounded-4" type="button" wire:click="back(3)">Sebelumnya</button>
-                    <button class="col-4 col-xl-3 btn-orange-static rounded-4 py-2 px-3 text-center" type="button" wire:click="submitForm" {{ $agreement & $purchaseMethod != null ? '' : 'disabled' }}>Bayar</button>
+                    <button class="col-4 col-xl-3 btn btn-secondary fw-bold rounded-4" type="button"
+                        wire:click="back(3)">Sebelumnya</button>
+                    <button class="col-4 col-xl-3 btn-orange-static rounded-4 py-2 px-3 text-center" type="button"
+                        wire:click="submitForm"
+                        {{ $agreement & ($purchaseMethod != null) ? '' : 'disabled' }}>Bayar</button>
                 </div>
             </div>
         </div>
