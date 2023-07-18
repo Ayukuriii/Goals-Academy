@@ -37,24 +37,42 @@
                     </ul>
                 </li>
                 @auth
-                    <li class="nav-item dropdown ps-3" id="account">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    <li class="nav-item d-flex justify-content-center">
+                        <div class="dropdown me-3 me-xl-0" id="notification">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false" id="dropdown-notification">
+                                <i class="fa-solid fa-bell fa-lg" style="color: #363434;"></i>
+                                <i class="fa-solid fa-bell fa-lg" style="color: #ff8854; display:none;"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="/{{ auth()->user()->user_level }}">Profil</a></li>
+                                <!--Profil User-->
+                                <li>
+                                    <form action="/logout" method="POST">
+                                        @csrf
+                                        <button type="submit" class="dropdown-item" id="log-out"><i
+                                                class="bi bi-box-arrow-right"></i>Logout</button>
+                                    </form>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="dropdown" id="account">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false" id="dropdown-profile">
-                            <i class="fa-solid fa-bell fa-lg pe-2" style="color: #363434;"></i>
-                            <i class="fa-solid fa-bell fa-lg pe-2" style="color: #ff8854; display:none;"></i>
-                            <i class="fa-solid fa-circle-user fa-lg" style="color: #ff8854;"></i>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="/{{ auth()->user()->user_level }}">Profil</a></li>
-                            <!--Profil User-->
-                            <li>
-                                <form action="/logout" method="POST">
-                                    @csrf
-                                    <button type="submit" class="dropdown-item" id="log-out"><i
-                                            class="bi bi-box-arrow-right"></i>Logout</button>
-                                </form>
-                            </li>
-                        </ul>
+                                <i class="fa-solid fa-circle-user fa-lg" style="color: #ff8854;"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="/{{ auth()->user()->user_level }}">Profil</a></li>
+                                <!--Profil User-->
+                                <li>
+                                    <form action="/logout" method="POST">
+                                        @csrf
+                                        <button type="submit" class="dropdown-item" id="log-out"><i
+                                                class="bi bi-box-arrow-right"></i>Logout</button>
+                                    </form>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
                 @else
                     <a href="/login" class="btn-orange-static py-2 btn-login" id="step-login">Login</a>

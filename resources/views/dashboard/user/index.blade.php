@@ -8,7 +8,7 @@
 
         <div class="card col-xl p-3 p-md-4 side-program">
 
-            @if ($collections->count())
+            @if ($collections->count() != 0)
                 <h1 class="card-title">Program Yang Sedang Berlangsung</h1>
                 @foreach ($collections as $collection)
                     <div class="card mt-3 border-0">
@@ -20,7 +20,7 @@
                             <div class="text-bottom-product d-flex flex-row justify-content-between">
                                 <div class="waktu-product">
                                     <p class="date-product">{{ $datecarbon[$loop->index] }}</p>
-                                    <p class="time-product">{{ $collection->program_session->sesi }}</p>
+                                    <p class="time-product">{{ $collection->program_session }}</p>
                                 </div>
                                 <p class="detail-product"><a href="/user/{{ $collection->id }}">Lihat Detail</a></p>
                             </div>
@@ -36,14 +36,4 @@
         </div>
     </section>
     <!-- Last Page -->
-@endsection
-
-@section('script')
-    <script>
-        const collapseButton = document.querySelector('.card-header i')
-        const collapseCard = document.querySelector('#profile')
-        collapseButton.addEventListener('click', () => {
-            collapseCard.classList.toggle('d-none')
-        })
-    </script>
 @endsection
