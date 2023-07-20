@@ -2,10 +2,10 @@
 
 @section('container')
 <!-- Isi Page -->
-<section id="profil" class="pt-5">
+<section id="profil" class="py-5">
     <div class="profil-image container justify-content-center align-items-center mt-5">
-        <div class="row justify-content-center">
-            <img class="img-fluid logo-goals-photo col-5 col-md-3" alt="" src="image/assets/icons/LOGO PRIMARY_ORANGE.png"/>
+        <div class="row card shadow border justify-content-center align-items-center py-5 col-12 col-md-6 mx-auto">
+            <img class="img-fluid logo-goals-photo w-50" alt="" src="{{ asset("image/assets/icons/LOGO PRIMARY_ORANGE.png") }}"/>
         </div>
         <div class="text-profile mt-4">
             <div class="text-1">
