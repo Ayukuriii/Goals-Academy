@@ -50,13 +50,13 @@
                 <!-- <button class="btn hero-btn"><a href="https://wa.me/6282147638286">Daftar Sekarang</a></button> -->
 
                 <form action="/send-email" method="POST">
-                    <div class="input-group mb-3 hero-btn justify-content-between">
+                    <div class="row input-group mb-3 hero-btn justify-content-between">
                         @csrf
-                        <div class="input-group-prepend">
+                        <div class="col input-group-prepend">
                             <input type="email" class="form-control" placeholder="Masukkan Email" aria-label="Masukkan Email" aria-describedby="basic-addon2" name="email-code" id="email-diskon" required>
                             <!-- Input Email -->
                         </div>
-                        <div class="input-group-append">
+                        <div class="col input-group-append">
                             <button class="btn-orange-static py-2" style="margin-top: 0" id="dapatkan-diskon" type="submit">Dapatkan Diskon</button>
                             <!-- Button Dapatkan Diskon -->
                         </div>
@@ -664,8 +664,8 @@
             </h1>
         </div>
         <div class="testimoni-mobile">
-            <img class="img-fluid" src="image/assets/icons/petik.svg" alt="" />
-            <h1 style="text-align: left;color: #ff8854;font-weight: bold;font-size: 20px;padding-left: 10px;">Apa Kata
+            <img class="img-fluid" src="image/assets/icons/petik.svg" alt="" width="24px"/>
+            <h1 style="text-align: left;color: #ff8854;font-weight: bold;font-size: 1rem;padding-left: 10px;">Apa Kata
                 Mereka <br>Tentang Goals Academy</h1>
         </div>
         <div class="testimoni-content">

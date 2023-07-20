@@ -131,6 +131,7 @@
 #dapatkan-diskon {
     border-radius: 20px;
     font-weight: bold;
+    width: 100%;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     -ms-border-radius: 20px;
@@ -1646,6 +1647,7 @@
 
     .daftar-container {
         margin-top: 0px;
+        border-radius: 0;
     }
 
     .daftar-container,
@@ -1672,8 +1674,13 @@
         } */
 
     .lecturer-card {
-        max-width: 200px;
-        height: 300px;
+        width: 160px;
+        height: 270px;
+    }
+
+    .lecturer-card,
+    .lecturer-card .card-image img {
+        width: 160px;
     }
 
     .quotes-container h2 {
@@ -1686,6 +1693,7 @@
     }
 
     .testimoni-container {
+        padding: 20px 0;
         display: flex;
         flex-direction: column;
     }
@@ -1700,7 +1708,7 @@
 
     .testimoni-mobile {
         display: flex;
-        margin: auto;
+        margin-bottom: 20px;
         letter-spacing: 2px;
         text-align: left;
         align-items: center;
@@ -1840,7 +1848,7 @@
     }
 
     .daftar-container {
-        border-radius: 100px;
+        border-radius: 0;
     }
 
     .text-daftar h3 {

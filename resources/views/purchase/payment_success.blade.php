@@ -12,7 +12,7 @@
 
 @section('main')
     <div id="payment-success" class="d-flex flex-column align-items-center justify-content-center px-3 px-md-0 h-100">
-        <h1 class="text-success fst-italic m-0">Pembayaran Berhasil</h1>
+        <h1 class="text-success fst-italic m-0 mt-5">Pembayaran Berhasil</h1>
         <i class="fs-xl fa-sharp fa-solid fa-circle-check text-success my-4"></i>
         <div class="row col-12 col-md-7 d-none d-md-flex">
             <div class="col-8">

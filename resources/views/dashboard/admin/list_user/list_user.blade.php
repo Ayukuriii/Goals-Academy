@@ -4,9 +4,8 @@
     {{-- {{ dd($collections) }} --}}
     <!-- Isi Page -->
     <section class="container-fluid mb-5" id="user-profile">
-        <div class="row gap-2">
+        <div class="row mx-0 gap-2">
             @include('dashboard.layouts.sidebar')
-
 
             <div class="card col ml-3 p-4 side-program">
                 <div class="d-flex justify-content-between">

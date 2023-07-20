@@ -1,10 +1,11 @@
 <div class="col-xl-4 card side-profile h-100">
-    <div class="card-header p-3 p-md-4 p-xl-3 d-flex align-items-center justify-content-between d-xl-none">
+    <div class="p-3 p-md-4 p-xl-3 d-flex align-items-center justify-content-between d-xl-none" data-bs-toggle="collapse"
+    href="#profile" role="button" aria-expanded="false"
+    aria-controls="profile">
         <h3 class="card-title m-0">Profil</h3>
-        <i class="bi bi-chevron-down fs-4 fw-bold" data-bs-toggle="card-collapse" href="#profile" role="button"
-            aria-expanded="false" aria-controls="profile"></i>
+        <a class="bi bi-chevron-down fs-4 fw-bold"></a>
     </div>
-    <div class="card-collapse d-none d-xl-block" id="profile">
+    <div class="collapse d-xl-block" id="profile">
         <div
             class="gap-4 pt-0 gap-md-4 d-flex flex-row-reverse flex-xl-column align-items-md-center justify-content-md-center p-3 p-md-4 p-xl-3">
             <div class="card-image d-flex flex-column align-items-md-center justify-content-md-center mx-auto">
