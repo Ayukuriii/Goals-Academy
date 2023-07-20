@@ -9,7 +9,7 @@
             <img src="{{ asset('image/assets/images/PNG-horison-hitam 1.png') }}">
         </a>
         <div id="navbar" class="navbar-collapse collapse text-center justify-content-end">
-            <ul class="navbar-nav mx-auto">
+            <ul class="navbar-nav mx-auto align-items-center">
                 <li class="nav-item">
                     <!--Artikel Page -->
                     <a href="artikel" class="nav-link">Artikel</a>
@@ -75,8 +75,10 @@
                         </div>
                     </li>
                 @else
-                    <a href="/login" class="btn-orange-static py-2 btn-login" id="step-login">Login</a>
-                    <!--Button Login-->
+                    <li class="nav-item d-flex justify-content-center">
+                        <!--Button Login-->
+                        <a href="/login" class="btn-orange-static btn-login nav-link text-light py-2 my-2 ms-2" id="step-login">Login</a>
+                    </li>
                 @endauth
             </ul>
         </div>

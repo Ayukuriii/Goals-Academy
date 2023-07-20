@@ -25,13 +25,6 @@
     margin-left: -20px;
 }
 
-.nav-item a {
-    color: #363434;
-    letter-spacing: 1.5px;
-    font-weight: bold;
-    font-size: 17px;
-}
-
 .navbar-collapse {
     flex-grow: 0;
 }
@@ -201,11 +194,6 @@ footer {
         margin-left: auto;
         margin-right: auto;
         max-width: 985px;
-    }
-
-    .navbar-brand {
-        margin-left: auto;
-        margin-right: auto;
     }
 
     #segera-hadir {
