@@ -254,6 +254,10 @@ footer {
     .footer-right-bottom-content .contact {
         margin-top: 20px;
     }
+
+    .socmed-container {
+        margin-bottom: inherit;
+    }
 }
 
 @media (max-width: 475px) {
