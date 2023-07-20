@@ -18,8 +18,8 @@
             <img src="{{ $response->actions[0]->url }}" alt="{{ $response->actions[0]->name }}">
         </a> --}}
 
-        <a href="{{ asset('image/assets/icons/qr.png') }}" download="qr-code.png">
-            <img id="qr-code" class="my-3" width="160px" src="{{ asset('image/assets/icons/qr.png') }}" alt="QR Code">
+        <a href="{{ $response->actions[0]->url }}" download="qr-code.png">
+            <img id="qr-code" class="my-3" width="160px" src="{{ $response->actions[0]->url }}" alt="QR Code">
         </a>
 
         <p class="mt-2">Cara pembayaran menggunakan QRIS :</p>
