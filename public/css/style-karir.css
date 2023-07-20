@@ -2,7 +2,6 @@
 
 #karir {
   width: 100%;
-  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   padding-top: 45px;
@@ -75,7 +74,7 @@ hr {
   align-items: center;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 30px;
+  padding-bottom: 30px;
 }
 
 .karir-card {

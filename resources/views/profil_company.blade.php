@@ -2,7 +2,7 @@
 
 @section('container')
 <!-- Isi Page -->
-<section id="profil" class="py-5">
+<section id="profil_company" class="bg-2 py-5">
     <div class="profil-image container justify-content-center align-items-center mt-5">
         <div class="row card shadow border justify-content-center align-items-center py-5 col-12 col-md-6 mx-auto">
             <img class="img-fluid logo-goals-photo w-50" alt="" src="{{ asset("image/assets/icons/LOGO PRIMARY_ORANGE.png") }}"/>

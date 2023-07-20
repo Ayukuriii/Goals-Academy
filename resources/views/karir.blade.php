@@ -2,7 +2,7 @@
 
 @section('container')
 <!-- Isi Page -->
-    <section id="karir">
+    <section class="bg-2" id="karir">
       <div class="text-karir">
         <h1>Yuk, Jadi Bagian dari Goals Academy</h1>
         <p>Tahapan Seleksi</p>

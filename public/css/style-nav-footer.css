@@ -30,10 +30,6 @@
     box-shadow: unset;
 }
 
-.navbar-brand img {
-    margin-left: -20px;
-}
-
 .nav-item a {
     color: #363434;
     letter-spacing: 1.5px;

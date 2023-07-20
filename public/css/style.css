@@ -1,6 +1,10 @@
 /* Bootstrap Icons */
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
 
+body {
+    background-color: white;
+}
+
 /* Notification Panel */
 .notification-panel {
     display: flex;
@@ -60,6 +64,10 @@
 #home {
     margin-top: 64px;
     width: 100%;
+}
+
+.text-smaller {
+    font-size: smaller;
 }
 
 .bg-fixed {
@@ -1119,6 +1127,13 @@
     color: #ffce31;
 }
 
+.bg-2 {
+    background-image: url('../image/assets/images/background.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
 .text-gray {
     color: #959595;
 }
@@ -1293,13 +1308,12 @@
     border: 2px solid #ff8854;
     border-radius: 25%;
     background-color: white;
-    color: #ff8854;
+    color: white;
     cursor: pointer;
 }
 
 .btn-check:checked+.btn-check-orange {
     background-color: #ff8854;
-    color: white;
 }
 
 .btn-radio-orange {

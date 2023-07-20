@@ -21,10 +21,6 @@
     box-shadow: 0 2px 4px rgba(0, 4, 4, 0.5);
 }
 
-.navbar-brand img {
-    margin-left: -20px;
-}
-
 .navbar-collapse {
     flex-grow: 0;
 }
