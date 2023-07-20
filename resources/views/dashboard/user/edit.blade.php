@@ -7,11 +7,18 @@
 
         <div class="card col ml-3 p-3 p-md-4 side-program">
             <div>
-                <div class="d-flex justify-content-between">
+                <div class="d-flex justify-content-between mb-2">
                     <h3 class="d-inline text-purple fw-bold">Edit Profil</h3>
                     <a class="d-inline btn-outline-orange py-2 px-4 small" onclick="history.back()"
                         style="cursor: pointer">Back</a>
                 </div>
+
+                @if (session()->has('update-success'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{ session('update-success') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @endif
 
                 <div class="d-flex align-items-center form-group mb-2">
                     @if ($posts->image)
@@ -45,43 +52,53 @@
                         <label class="form-label small" for="name">NAMA</label>
                         <input type="text" name="name" class="form-control @error('name') is-invalid @enderror"
                             id="name" placeholder=" " value="{{ $posts->name }}" required />
-                        <div class="invalid-feedback">
-                            Input tidak valid
-                        </div>
+                        @error('name')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
                     <div class="form-group col-12 col-xl-6 mb-xl-2">
                         <label class="form-label small" for="name">USERNAME</label>
                         <input type="text" name="username" class="form-control @error('username') is-invalid @enderror"
                             id="username" placeholder=" " value="{{ $posts->username }}" required />
-                        <div class="invalid-feedback">
-                            Input tidak valid
-                        </div>
+                        @error('username')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
                     <div class="form-group col-12 col-xl-6 mb-xl-2">
                         <label class="form-label small" for="university">UNIVERSITAS</label>
                         <input type="text" name="university"
                             class="form-control @error('university') is-invalid @enderror" id="university" placeholder=" "
                             value="{{ $posts->university }}" required />
-                        <div class="invalid-feedback">
-                            Input tidak valid
-                        </div>
+                        @error('university')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
                     <div class="form-group col-12 col-xl-6 mb-xl-2">
                         <label class="form-label small" for="major">JURUSAN</label>
                         <input type="text" name="major" class="form-control @error('major') is-invalid @enderror"
                             id="major" placeholder=" " value="{{ $posts->major }}" required />
-                        <div class="invalid-feedback">
-                            Input tidak valid
-                        </div>
+                        @error('major')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
                     <div class="form-group col-12 col-xl-6 mb-xl-2">
                         <label class="form-label small" for="phone_number">NOMOR HP.</label>
                         <input type="text" name="phone_number"
                             class="form-control @error('phone_number') is-invalid @enderror" id="phone_number"
                             placeholder=" " value="{{ $posts->phone_number }}" required />
-                        <div class="invalid-feedback">
-                            Input tidak valid
-                        </div>
+                        @error('phone_number')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
                     <div class="form-button col-12 col-xl-6 mb-xl-3 d-flex justify-content-end pt-3 pt-xl-5">
                         <button class="btn-orange-static px-4 d-inline text-end" id="button"
@@ -102,18 +119,22 @@
                             <input type="email" name="email"
                                 class="form-control @error('email') is-invalid @enderror" id="email" placeholder=" "
                                 value="{{ $posts->email }}" required />
-                            <div class="invalid-feedback">
-                                Input tidak valid
-                            </div>
+                            @error('email')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
                         <div class="form-group col-12 col-xl-6 mb-xl-2">
                             <label class="form-label small" for="password">PASSWORD</label>
                             <input type="password" name="password"
                                 class="form-control @error('password') is-invalid @enderror" id="password"
                                 placeholder=" " required />
-                            <div class="invalid-feedback">
-                                Input tidak valid
-                            </div>
+                            @error('password')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
                         <div class="form-button col-12 mb-xl-3 d-flex justify-content-end pt-3 pt-xl-5">
                             <button class="btn-orange-static px-4 d-inline text-end" id="button"
@@ -136,18 +157,22 @@
                                 <input type="password" name="new_password"
                                     class="form-control @error('new_password') is-invalid @enderror" id="new_password"
                                     placeholder=" " required />
-                                <div class="invalid-feedback">
-                                    Input tidak valid
-                                </div>
+                                @error('new_password')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                             <div class="form-group col-12 mb-xl-2">
                                 <label class="form-label small" for="confirmation_password">ULANGI PASSWORD BARU</label>
                                 <input type="password" name="confirmation_password"
                                     class="form-control @error('confirmation_password') is-invalid @enderror"
                                     id="confirmation_password" placeholder=" " required />
-                                <div class="invalid-feedback">
-                                    Input tidak valid
-                                </div>
+                                @error('confirmation_password')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
                         <div class="col-12 col-xl-6">
@@ -156,9 +181,11 @@
                                 <input type="password" name="old_password"
                                     class="form-control @error('old_password') is-invalid @enderror" id="old_password"
                                     placeholder=" " required />
-                                <div class="invalid-feedback">
-                                    Input tidak valid
-                                </div>
+                                @error('old_password')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                             <div class="form-button col-12 mb-xl-3 d-flex justify-content-end pt-3 pt-xl-5">
                                 <button class="btn-orange-static px-4 d-inline text-end" id="button"

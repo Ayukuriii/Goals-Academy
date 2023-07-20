@@ -15,12 +15,18 @@
                         <div class="card product-item justify-content-between">
                             <div class="text-top-product d-flex flex-row justify-content-between">
                                 <h3 class="name-product">{{ $collection->program->title }}</h3>
-                                <p class="status-product fst-italic">{{ $collection->payment_status }}</p>
+                                @if ($collection->payment_status == 'success')
+                                    <p class="status-product fst-italic text-success">{{ $collection->payment_status }}</p>
+                                @elseif ($collection->payment_status == 'failed')
+                                    <p class="status-product fst-italic text-danger">{{ $collection->payment_status }}</p>
+                                @else
+                                    <p class="status-product fst-italic">{{ $collection->payment_status }}</p>
+                                @endif
                             </div>
                             <div class="text-bottom-product d-flex flex-row justify-content-between">
                                 <div class="waktu-product">
                                     <p class="date-product">{{ $datecarbon[$loop->index] }}</p>
-                                    <p class="time-product">{{ $collection->program_session->sesi }}</p>
+                                    <p class="time-product">{{ $collection->program_session }}</p>
                                 </div>
                                 <p class="detail-product"><a href="/user/{{ $collection->id }}">Lihat Detail</a></p>
                             </div>

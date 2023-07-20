@@ -93,7 +93,7 @@
                         <div class="form-button">
                             <button type="submit" class="btn-orange-static w-100" id="submit-login"
                                 disabled>Login</button>
-                            <p><a href="/auth/lupa-password">Lupa Password?</a></p>
+                            <p><a href="{{ route('lupa_password') }}">Lupa Password?</a></p>
                         </div>
                     </form>
                     <h5>atau gunakan</h5>

@@ -124,7 +124,7 @@ class Purchase extends Component
             'agreement' => 'accepted'
         ]);
 
-        // dd();
+        // dd($this);
 
         $filepath = null;
         if ($this->document) {
@@ -142,6 +142,7 @@ class Purchase extends Component
             'program_session' => $this->time,
             'catatan' => $this->note,
             'file' => $filepath,
+            'links' => $this->location,
             'date' => Carbon::parse($this->date)->format('Y-m-d'),
             'is_tutor' => 0,
             'is_moderator' => 0,

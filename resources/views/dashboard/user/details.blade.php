@@ -24,15 +24,21 @@
                     </tr>
                     <tr>
                         <td>STATUS</td>
-                        <td>{{ $data->payment_status }}</td>
+                        @if ($data->payment_status == 'success')
+                            <td class="text-success">{{ $data->payment_status }}</td>
+                        @elseif ($data->payment_status == 'failed')
+                            <td class="text-danger">{{ $data->payment_status }}</td>
+                        @else
+                            <td class="text-secondary">{{ $data->payment_status }}</td>
+                        @endif
                     </tr>
                     <tr>
                         <td>TUTOR</td>
-                        <td>{{ $data->tutor->user->name }}</td>
+                        <td>{{ $data->tutor->user->name ?? 'Kosong' }}</td>
                     </tr>
                     <tr>
                         <td>JADWAL</td>
-                        <td>{!! $datecarbon . '<br>' . $data->program_session->sesi !!}</td>
+                        <td>{!! $datecarbon . '<br>' . $data->program_session !!}</td>
                     </tr>
                     <tr>
                         <td>PELAKSANAAN</td>

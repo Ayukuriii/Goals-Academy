@@ -10,7 +10,7 @@
     <link href="image/site.webmanifest" rel="manifest" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="{{ asset('css/style-password.css') }}" rel="stylesheet"/> <!-- // style ubah password -->
+    <link href="{{ asset('css/style-password.css') }}" rel="stylesheet" /> <!-- // style ubah password -->
 
     <title>Goals Academy | {{ $title }}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -33,15 +33,21 @@
                 <h1 class="fw-bold">Lupa Password?</h1>
                 <p class="mt-1 mx-auto text-center text-masukkanpassword">Masukkan email kamu dan kami akan <br>
                     mengirim link untuk reset password</p>
-                <form>
+                <form action="/lupa-password" method="POST">
+                    @csrf
                     <div class="form-group">
                         <label for="exampleInputEmail1">EMAIL</label>
                         <div class="input-group">
-                            <input type="email" class="form-control" id="email" required />
+                            <input type="email" class="form-control" id="email" name="email" required
+                                autofocus />
                         </div>
                     </div>
-                    <input type="submit" href="reset-password.html" name="simpan" value="Kirim Email Reset" class="btn form-control mt-2 lupa-password-button fw-bold">
+                    <button type="submit" class="btn-orange-static w-100" id="submit-login">Kirim Email Reset</button>
                 </form>
+
+                @if (session()->has('status'))
+                    {{ session('status') }}
+                @endif
             </div>
             <div class="d-flex justify-content-center align-items-center">
                 <img src="image/assets/icons/company.png" width="15px" height="15px" />
