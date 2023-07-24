@@ -107,10 +107,10 @@
                 </form>
             </div>
             <hr class="w-100">
-            <div id="form2" data-bs-toggle="collapse"
-            href="#form-email" role="button" aria-expanded="false"
-            aria-controls="form-email">
-                <h3 class="d-inline text-purple fw-bold">Ubah Email</h3>
+            <div id="form2">
+                <h3 class="d-inline-block w-100 text-purple fw-bold" data-bs-toggle="collapse"
+                href="#form-email" role="button" aria-expanded="false"
+                aria-controls="form-email">Ubah Email</h3>
                 <form id="form-email" class="collapse" action="/user/update/email/{{ auth()->user()->id }}" method="POST"
                     class="from mt-3 px-2 d-none d-xl-block">
                     @method('put')
@@ -146,10 +146,10 @@
                 </form>
             </div>
             <hr class="w-100">
-            <div id="form3" data-bs-toggle="collapse"
-            href="#form-password" role="button" aria-expanded="false"
-            aria-controls="form-password">
-                <h3 class="d-inline text-purple fw-bold">Ubah Password</h3>
+            <div id="form3">
+                <h3 class="d-inline-block w-100 text-purple fw-bold" data-bs-toggle="collapse"
+                href="#form-password" role="button" aria-expanded="false"
+                aria-controls="form-password">Ubah Password</h3>
                 <form id="form-password" class="collapse" action="/user/update/password/{{ auth()->user()->id }}" method="POST"
                     class="from row mt-3 px-2 d-none d-xl-block">
                     @method('put')
