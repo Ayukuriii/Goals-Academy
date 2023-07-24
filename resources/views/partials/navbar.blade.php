@@ -12,6 +12,10 @@
             <ul class="navbar-nav mx-auto align-items-center">
                 <li class="nav-item">
                     <!--Artikel Page -->
+                    <a href="/program" class="nav-link">Program</a>
+                </li>
+                <li class="nav-item">
+                    <!--Artikel Page -->
                     <a href="/artikel" class="nav-link">Artikel</a>
                 </li>
                 <li class="nav-item">

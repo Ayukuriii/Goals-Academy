@@ -10,6 +10,7 @@ use App\Http\Controllers\TutorController;
 use App\Http\Controllers\DownloadController;
 use App\Http\Controllers\ModeratorController;
 use App\Http\Controllers\OrderDetailController;
+use App\Http\Controllers\SocialController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\VerificationController;
 use App\Http\Livewire\Purchase;
@@ -86,21 +87,21 @@ Route::get('/profile_tutor', function () {
     ]);
 });
 
-Route::get('/auth/lupa-password', function () {
-    return view('auth.lupa_password', [
-        'title' => 'Lupa Password'
-    ]);
+// Auth Controller
+Route::controller(AuthController::class)->group(function () {
+    Route::get('/login', 'get_login')->middleware('guest');
+    Route::get('/register', 'get_register')->middleware('guest');
+    Route::post('/register', 'post_register')->name('register');
+    Route::post('/login', 'post_login')->name('login');
+    Route::post('/logout', 'post_logout')->name('logout');
+    Route::get('/lupa-password', 'get_lupa_password')->name('lupa_password')->middleware('guest');
+    Route::post('/lupa-password', 'post_lupa_password');
+    Route::get('/password-reset', 'get_password_reset')->name('password.reset')->middleware('guest');
+    Route::post('/update-password', 'update_password')->name('update_password');
 });
 
-Route::get('/login', [AuthController::class, 'get_login'])->middleware('guest');
-Route::get('/register', [AuthController::class, 'get_register'])->middleware('guest');
-Route::post('/register', [AuthController::class, 'post_register'])->name('register');
-Route::post('/login', [AuthController::class, 'post_login'])->name('login');
-Route::post('/logout', [AuthController::class, 'post_logout'])->name('logout');
-Route::get('/lupa-password', [AuthController::class, 'get_lupa_password'])->name('lupa_password');
-Route::post('/lupa-password', [AuthController::class, 'post_lupa_password']);
-Route::get('/password-reset', [AuthController::class, 'get_password_reset'])->name('password.reset');
-Route::post('/update-password', [AuthController::class, 'update_password'])->name('update_password');
+Route::get('/auth/{provider}', [SocialController::class, 'redirectToProvider'])->name('socialite.redirect');
+Route::get('/auth/{provider}/callback', [SocialController::class, 'handleProviderCallback'])->name('socialite.callback');
 
 Route::get('/email/verify/email-verification', [VerificationController::class, 'notice'])->middleware('auth')->name('verification.notice');
 Route::get('/email/verify/{id}/{hash}', [VerificationController::class, 'verify'])->middleware('auth', 'signed')->name('verification.verify');
@@ -193,7 +194,7 @@ Route::get('/purchase', function () {
     return view('purchase.index', [
         'title' => 'Purchase'
     ]);
-})->name('purchase.index');
+})->name('purchase.index')->middleware('auth');
 
 Route::get('/payment_pending/{id}', [OrderDetailController::class, 'pending'])->name('payment.pending');
 
