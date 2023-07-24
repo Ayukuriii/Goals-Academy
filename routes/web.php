@@ -87,6 +87,12 @@ Route::get('/profile_tutor', function () {
     ]);
 });
 
+Route::get('/terms_and_conditions', function () {
+    return view('terms_and_conditions', [
+        'title' => 'Syarat dan Ketentuan'
+    ]);
+});
+
 // Auth Controller
 Route::controller(AuthController::class)->group(function () {
     Route::get('/login', 'get_login')->middleware('guest');

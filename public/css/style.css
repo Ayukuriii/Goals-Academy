@@ -1141,6 +1141,13 @@ body {
     background-size: cover;
 }
 
+.bg-3 {
+    background-image: url('../image/assets/images/background-white.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
 .text-gray {
     color: #959595;
 }
@@ -1353,6 +1360,11 @@ body {
     background-color: white;
     color: #ff8854;
     cursor: pointer;
+}
+
+#terms-and-conditions .parent-list > li::marker {
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 @media (max-width: 1080px) {

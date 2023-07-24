@@ -12,11 +12,11 @@
             <ul class="navbar-nav mx-auto align-items-center">
                 <li class="nav-item">
                     <!--Artikel Page -->
-                    <a href="/program" class="nav-link">Program</a>
+                    <a href="/program" class="nav-link custom-fs-1 btn-hover-orange">Program</a>
                 </li>
                 <li class="nav-item">
                     <!--Artikel Page -->
-                    <a href="/artikel" class="nav-link">Artikel</a>
+                    <a href="/artikel" class="nav-link custom-fs-1 btn-hover-orange">Artikel</a>
                 </li>
                 <li class="nav-item">
                     <!--Diskusi Page -->

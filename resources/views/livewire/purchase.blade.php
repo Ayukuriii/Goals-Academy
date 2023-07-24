@@ -524,7 +524,7 @@
                     </div>
                 </div>
                 <div class="d-flex justify-content-end">
-                    <span class="small me-2">Menyetujui <a class="text-decoration-none" href="">Syarat &
+                    <span class="small me-2">Menyetujui <a class="text-decoration-none" href="/terms_and_conditions" target="_blank">Syarat &
                             Ketentuan</a> yang berlaku</span>
                     <input wire:model="agreement" type="checkbox" class="btn-check" id="agreement"
                         autocomplete="off">
