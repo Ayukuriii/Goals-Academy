@@ -23,7 +23,8 @@ class AdminController extends Controller
         // dd($datas);
         return view('dashboard.admin.index', [
             'title' => 'Admin',
-            'datas' => OngoingProgram::all(),
+            'data' => OngoingProgram::all(),
+            'datas' => OngoingProgram::where('is_tutor', 0)->orWhere('is_moderator', 0),
             'emptylink' => OngoingProgram::where('links', '=', null)->count()
         ]);
     }

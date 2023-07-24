@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\OngoingProgram;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 
 
 class UserController extends Controller
@@ -40,7 +41,7 @@ class UserController extends Controller
     {
         $authuser = auth()->user();
         $userid = OngoingProgram::where('user_id', $authuser->id)->find($id);
-        $datepurchased = Carbon::parse($userid->created_at)->isoFormat('dddd, D MMMM Y | HH:mm');
+        $datepurchased = Carbon::parse($userid->created_at)->isoFormat('dddd, D MMMM Y - HH:mm');
         $datecarbon = Carbon::parse($userid->date)->isoFormat('dddd, D MMMM Y');
 
         return view('dashboard.user.details', [
@@ -100,7 +101,29 @@ class UserController extends Controller
      */
     public function update_profile(Request $request, string $id)
     {
-        dd($request);
+        $rules = [
+            'name' => 'required',
+            'username' => 'required|unique:users,username,' . $id,
+            'university' => 'required',
+            'major' => 'required',
+            'phone_number' => 'required'
+        ];
+        $validateData = $request->validate($rules);
+
+        $user = User::find($id);
+        if (
+            $user->name === $validateData['name'] &&
+            $user->username === $validateData['username'] &&
+            $user->university === $validateData['university'] &&
+            $user->major === $validateData['major'] &&
+            $user->phone_number === $validateData['phone_number']
+        ) {
+            // No changes, redirect back without updating
+            return back();
+        }
+
+        User::where('id', $id)->update($validateData);
+        return back()->with('update-success', 'Update Profile Berhasil!');
     }
     public function update_email(Request $request, string $id)
     {

@@ -97,6 +97,10 @@ Route::get('/register', [AuthController::class, 'get_register'])->middleware('gu
 Route::post('/register', [AuthController::class, 'post_register'])->name('register');
 Route::post('/login', [AuthController::class, 'post_login'])->name('login');
 Route::post('/logout', [AuthController::class, 'post_logout'])->name('logout');
+Route::get('/lupa-password', [AuthController::class, 'get_lupa_password'])->name('lupa_password');
+Route::post('/lupa-password', [AuthController::class, 'post_lupa_password']);
+Route::get('/password-reset', [AuthController::class, 'get_password_reset'])->name('password.reset');
+Route::post('/update-password', [AuthController::class, 'update_password'])->name('update_password');
 
 Route::get('/email/verify/email-verification', [VerificationController::class, 'notice'])->middleware('auth')->name('verification.notice');
 Route::get('/email/verify/{id}/{hash}', [VerificationController::class, 'verify'])->middleware('auth', 'signed')->name('verification.verify');
