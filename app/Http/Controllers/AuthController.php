@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Password;
 
 class AuthController extends Controller
 {
+    // laravel register
     public function get_register()
     {
         return view('auth.register');
@@ -84,7 +85,7 @@ class AuthController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        return redirect('/login');
     }
 
     public function get_lupa_password()

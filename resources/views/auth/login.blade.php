@@ -97,17 +97,22 @@
                         </div>
                     </form>
                     <h5>atau gunakan</h5>
-                    <div class="card-button">
-                        <button type="submit" id="google-login">
-                            <img alt="" src="image/assets/images/login/icons8-google-48.png" width="25px"
-                                height="25px" />
-                            <p>Google</p>
-                        </button>
-                        <button type="submit" id="facebook-login">
-                            <img alt="" src="image/assets/images/login/icons8-facebook-48.png" width="25px"
-                                height="25px" />
-                            <p>Facebook</p>
-                        </button>
+                    <div class="card-button gap-3">
+                        <form action="/auth/google" class="">
+                            <button type="submit" id="google-login" class="px-3">
+                                <img alt="" src="image/assets/images/login/icons8-google-48.png"
+                                    width="25px" height="25px" />
+                                <p>Google</p>
+                            </button>
+                        </form>
+
+                        <form action="/auth/facebook" class="">
+                            <button type="submit" class="btn" id="facebook-login" class="px-3">
+                                <img alt="" src="image/assets/images/login/icons8-facebook-48.png"
+                                    width="25px" height="25px" />
+                                <p>Facebook</p>
+                            </button>
+                        </form>
                     </div>
                 </div>
                 <p class="text-center" style="font-size: 12px; color: #363434;">

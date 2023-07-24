@@ -18,7 +18,7 @@
                     <p class="text-danger h5">Mulai dari <b>Rp 199.000/sesi</b></p>
                 </div>
                 <div class="col-6 text-end p-0">
-                    <a href="" class="d-inline-block btn-orange-static fw-bold p-3">Daftar Sekarang</a>
+                    <a href="/purchase" class="d-inline-block btn-orange-static fw-bold p-3">Daftar Sekarang</a>
                 </div>
             </div>
         </div>
