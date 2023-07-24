@@ -98,14 +98,18 @@
                     </form>
                     <h5>atau gunakan</h5>
                     <div class="d-flex gap-3 justify-content-center align-items-center my-2">
-                        <a href="" class="btn btn-custom-secondary text-decoration-none text-dark text-smaller" id="google-login" style="width: 160px;">
-                            <img alt="" src="{{ asset('image/assets/images/login/icons8-google-48.png') }}" width="25px"
-                                height="25px" />
+                        <a href="/auth/google"
+                            class="btn btn-custom-secondary text-decoration-none text-dark text-smaller"
+                            id="google-login" style="width: 160px;">
+                            <img alt="" src="{{ asset('image/assets/images/login/icons8-google-48.png') }}"
+                                width="25px" height="25px" />
                             <span>Google</span>
                         </a>
-                        <a href="" class="btn btn-custom-secondary text-decoration-none text-dark text-smaller" id="facebook-login" style="width: 160px;">
-                            <img alt="" src="{{ asset('image/assets/images/login/icons8-facebook-48.png') }}" width="25px"
-                                height="25px" />
+                        <a href="/auth/facebook"
+                            class="btn btn-custom-secondary text-decoration-none text-dark text-smaller"
+                            id="facebook-login" style="width: 160px;">
+                            <img alt="" src="{{ asset('image/assets/images/login/icons8-facebook-48.png') }}"
+                                width="25px" height="25px" />
                             <span>Facebook</span>
                         </a>
                     </div>
