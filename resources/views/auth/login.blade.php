@@ -97,17 +97,17 @@
                         </div>
                     </form>
                     <h5>atau gunakan</h5>
-                    <div class="card-button">
-                        <button type="submit" id="google-login">
-                            <img alt="" src="image/assets/images/login/icons8-google-48.png" width="25px"
+                    <div class="d-flex gap-3 justify-content-center align-items-center my-2">
+                        <a href="" class="btn btn-custom-secondary text-decoration-none text-dark text-smaller" id="google-login" style="width: 160px;">
+                            <img alt="" src="{{ asset('image/assets/images/login/icons8-google-48.png') }}" width="25px"
                                 height="25px" />
-                            <p>Google</p>
-                        </button>
-                        <button type="submit" id="facebook-login">
-                            <img alt="" src="image/assets/images/login/icons8-facebook-48.png" width="25px"
+                            <span>Google</span>
+                        </a>
+                        <a href="" class="btn btn-custom-secondary text-decoration-none text-dark text-smaller" id="facebook-login" style="width: 160px;">
+                            <img alt="" src="{{ asset('image/assets/images/login/icons8-facebook-48.png') }}" width="25px"
                                 height="25px" />
-                            <p>Facebook</p>
-                        </button>
+                            <span>Facebook</span>
+                        </a>
                     </div>
                 </div>
                 <p class="text-center" style="font-size: 12px; color: #363434;">

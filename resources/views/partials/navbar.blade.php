@@ -37,9 +37,9 @@
                     </ul>
                 </li>
                 @auth
-                    <li class="nav-item d-flex justify-content-center">
+                    <li class="nav-item d-flex justify-content-center ms-xl-3">
                         <div class="dropdown" id="notification">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false" id="dropdown-notification">
                                 <i class="fa-solid fa-bell fa-lg text-custom-black"></i>
                             </a>
@@ -90,7 +90,7 @@
                     </li>
                     <li class="nav-item d-flex justify-content-center">
                         <div class="dropdown" id="account">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false" id="dropdown-profile">
                                 <i class="fa-solid fa-circle-user fa-lg" style="color: #ff8854;"></i>
                             </a>
