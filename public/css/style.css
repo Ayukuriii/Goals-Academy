@@ -5,6 +5,13 @@ body {
     background-color: white;
 }
 
+.custom-fs-1 {
+    color: #363434;
+    letter-spacing: 1.5px;
+    font-size: 17px;
+    font-weight: 600;
+}
+
 /* Notification Panel */
 .notification-panel {
     display: flex;
@@ -1170,6 +1177,10 @@ body {
     background-color: #ff8854;
 }
 
+.text-custom-black {
+    color: #363434;
+}
+
 .text-orange {
     color: #ff8854;
 }
@@ -1227,6 +1238,15 @@ body {
 
 .btn-secondary:hover {
     background-color: #807D7D;
+}
+
+.btn-hover-orange:hover {
+    color: #ff8854;
+}
+
+.btn-hover-bg-orange:hover {
+    color: white;
+    background-color: #ff8854;
 }
 
 .btn-nav {
