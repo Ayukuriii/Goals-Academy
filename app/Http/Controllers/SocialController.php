@@ -38,7 +38,7 @@ class SocialController extends Controller
             ->first();
 
         if ($socialAccount) {
-            return $socialAccount->user;
+            return $socialAccount->user();
         } else {
             $user = User::where('email', $socialUser->getEmail())->first();
 
@@ -52,6 +52,7 @@ class SocialController extends Controller
                     'phone_number' => ' ',
                     'university' => ' ',
                     'major' => ' ',
+                    'email_verified_at' => now(),
                 ]);
             }
 

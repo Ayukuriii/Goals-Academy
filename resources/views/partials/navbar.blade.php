@@ -12,11 +12,11 @@
             <ul class="navbar-nav mx-auto align-items-center">
                 <li class="nav-item">
                     <!--Artikel Page -->
-                    <a href="/program" class="nav-link">Program</a>
+                    <a href="/program" class="nav-link custom-fs-1 btn-hover-orange">Program</a>
                 </li>
                 <li class="nav-item">
                     <!--Artikel Page -->
-                    <a href="/artikel" class="nav-link">Artikel</a>
+                    <a href="/artikel" class="nav-link custom-fs-1 btn-hover-orange">Artikel</a>
                 </li>
                 <li class="nav-item">
                     <!--Diskusi Page -->
@@ -27,16 +27,19 @@
                     <a href="/karir" class="nav-link custom-fs-1 btn-hover-orange">Karir</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link custom-fs-1 btn-hover-orange dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
+                    <a class="nav-link custom-fs-1 btn-hover-orange dropdown-toggle" href="#" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
                         Tentang Kami
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item btn-hover-orange custom-fs-1" href="profil_company">Profil Perusahaan</a></li>
+                        <li><a class="dropdown-item btn-hover-orange custom-fs-1" href="profil_company">Profil
+                                Perusahaan</a></li>
                         <!--Profil Perusahaan-->
-                        <li><a class="dropdown-item btn-hover-orange custom-fs-1" href="profil_tutor">Profil Tutor</a></li>
+                        <li><a class="dropdown-item btn-hover-orange custom-fs-1" href="profil_tutor">Profil Tutor</a>
+                        </li>
                         <!--Profil Tutor-->
-                        <li><a class="dropdown-item btn-hover-orange custom-fs-1" href="http://linktr.ee/goalsacademyid">Media Sosial</a></li>
+                        <li><a class="dropdown-item btn-hover-orange custom-fs-1"
+                                href="http://linktr.ee/goalsacademyid">Media Sosial</a></li>
                         <!--Media Sosial-->
                     </ul>
                 </li>
@@ -57,37 +60,44 @@
                                 </li> --}}
                                 <!-- template notifikasi -->
                                 <li>
-                                    <a class="dropdown-item fw-bold btn-hover-orange p-3 pb-0 p-0" href="">Notifikasi 1</a>
+                                    <a class="dropdown-item fw-bold btn-hover-orange p-3 pb-0 p-0" href="">Notifikasi
+                                        1</a>
                                     <span class="text-smaller p-3 pt-0">
                                         Lorem ipsum dolor sit amet
                                     </span>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item fw-bold btn-hover-orange p-3 pb-0 p-0" href="">Notifikasi 2</a>
+                                    <a class="dropdown-item fw-bold btn-hover-orange p-3 pb-0 p-0" href="">Notifikasi
+                                        2</a>
                                     <span class="text-smaller p-3 pt-0">
                                         Lorem ipsum dolor sit amet
                                     </span>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item fw-bold btn-hover-orange p-3 pb-0 p-0" href="">Notifikasi 3</a>
+                                    <a class="dropdown-item fw-bold btn-hover-orange p-3 pb-0 p-0" href="">Notifikasi
+                                        3</a>
                                     <span class="text-smaller p-3 pt-0">
                                         Lorem ipsum dolor sit amet
                                     </span>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item fw-bold btn-hover-orange p-3 pb-0 p-0" href="">Notifikasi 4</a>
+                                    <a class="dropdown-item fw-bold btn-hover-orange p-3 pb-0 p-0" href="">Notifikasi
+                                        4</a>
                                     <span class="text-smaller p-3 pt-0">
                                         Lorem ipsum dolor sit amet
                                     </span>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item fw-bold btn-hover-orange p-3 pb-0 p-0" href="">Notifikasi 5</a>
+                                    <a class="dropdown-item fw-bold btn-hover-orange p-3 pb-0 p-0" href="">Notifikasi
+                                        5</a>
                                     <span class="text-smaller p-3 pt-0">
                                         Lorem ipsum dolor sit amet
                                     </span>
                                 </li>
                                 <li class="list-footer text-center my-2">
-                                    <a href="" class="dropdown-item text-orange btn-hover-orange text-smaller">Notifikasi selengkapnya</a>
+                                    <a href=""
+                                        class="dropdown-item text-orange btn-hover-orange text-smaller">Notifikasi
+                                        selengkapnya</a>
                                 </li>
                             </ul>
                         </div>
@@ -99,12 +109,14 @@
                                 <i class="fa-solid fa-circle-user fa-lg" style="color: #ff8854;"></i>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end">
-                                <li><a class="dropdown-item btn-hover-orange custom-fs-1" href="/{{ auth()->user()->user_level }}">Profil</a></li>
+                                <li><a class="dropdown-item btn-hover-orange custom-fs-1"
+                                        href="/{{ auth()->user()->user_level }}">Profil</a></li>
                                 <!--Profil User-->
                                 <li>
                                     <form action="/logout" method="POST">
                                         @csrf
-                                        <button type="submit" class="dropdown-item btn-hover-orange custom-fs-1" id="log-out">Logout</button>
+                                        <button type="submit" class="dropdown-item btn-hover-orange custom-fs-1"
+                                            id="log-out">Logout</button>
                                     </form>
                                 </li>
                             </ul>
@@ -113,7 +125,8 @@
                 @else
                     <li class="nav-item d-flex justify-content-center">
                         <!--Button Login-->
-                        <a href="/login" class="btn-orange-static btn-login nav-link text-light py-2 my-2 ms-2" id="step-login">Login</a>
+                        <a href="/login" class="btn-orange-static btn-login nav-link text-light py-2 my-2 ms-2"
+                            id="step-login">Login</a>
                     </li>
                 @endauth
             </ul>
