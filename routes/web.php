@@ -64,7 +64,7 @@ Route::get('/profil_company', function () {
 });
 
 Route::get('/profil_tutor', function () {
-    return view('coming_soon.profil_tutor', [
+    return view('profil_tutor', [
         'title' => 'Profil Tutor'
     ]);
 });

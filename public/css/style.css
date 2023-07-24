@@ -1,6 +1,17 @@
 /* Bootstrap Icons */
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
 
+body {
+    background-color: white;
+}
+
+.custom-fs-1 {
+    color: #363434;
+    letter-spacing: 1.5px;
+    font-size: 17px;
+    font-weight: 600;
+}
+
 /* Notification Panel */
 .notification-panel {
     display: flex;
@@ -60,6 +71,10 @@
 #home {
     margin-top: 64px;
     width: 100%;
+}
+
+.text-smaller {
+    font-size: smaller;
 }
 
 .bg-fixed {
@@ -1119,6 +1134,13 @@
     color: #ffce31;
 }
 
+.bg-2 {
+    background-image: url('../image/assets/images/background.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
 .text-gray {
     color: #959595;
 }
@@ -1153,6 +1175,10 @@
 
 .bg-xl-orange {
     background-color: #ff8854;
+}
+
+.text-custom-black {
+    color: #363434;
 }
 
 .text-orange {
@@ -1212,6 +1238,15 @@
 
 .btn-secondary:hover {
     background-color: #807D7D;
+}
+
+.btn-hover-orange:hover {
+    color: #ff8854;
+}
+
+.btn-hover-bg-orange:hover {
+    color: white;
+    background-color: #ff8854;
 }
 
 .btn-nav {
@@ -1293,13 +1328,12 @@
     border: 2px solid #ff8854;
     border-radius: 25%;
     background-color: white;
-    color: #ff8854;
+    color: white;
     cursor: pointer;
 }
 
 .btn-check:checked+.btn-check-orange {
     background-color: #ff8854;
-    color: white;
 }
 
 .btn-radio-orange {

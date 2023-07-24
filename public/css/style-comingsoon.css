@@ -21,24 +21,8 @@
     box-shadow: 0 2px 4px rgba(0, 4, 4, 0.5);
 }
 
-.navbar-brand img {
-    margin-left: -20px;
-}
-
 .navbar-collapse {
     flex-grow: 0;
-}
-
-.dropdown:hover .dropdown-menu {
-    display: block;
-}
-
-.dropdown-menu {
-    background-color: #ffff;
-}
-
-.dropdown-item:hover {
-    background-color: #ff8854;
 }
 
 /* Segera Hadir*/
