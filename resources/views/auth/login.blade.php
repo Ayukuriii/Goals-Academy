@@ -97,22 +97,17 @@
                         </div>
                     </form>
                     <h5>atau gunakan</h5>
-                    <div class="card-button gap-3">
-                        <form action="/auth/google" class="">
-                            <button type="submit" id="google-login" class="px-3">
-                                <img alt="" src="image/assets/images/login/icons8-google-48.png"
-                                    width="25px" height="25px" />
-                                <p>Google</p>
-                            </button>
-                        </form>
-
-                        <form action="/auth/facebook" class="">
-                            <button type="submit" class="btn" id="facebook-login" class="px-3">
-                                <img alt="" src="image/assets/images/login/icons8-facebook-48.png"
-                                    width="25px" height="25px" />
-                                <p>Facebook</p>
-                            </button>
-                        </form>
+                    <div class="d-flex gap-3 justify-content-center align-items-center my-2">
+                        <a href="" class="btn btn-custom-secondary text-decoration-none text-dark text-smaller" id="google-login" style="width: 160px;">
+                            <img alt="" src="{{ asset('image/assets/images/login/icons8-google-48.png') }}" width="25px"
+                                height="25px" />
+                            <span>Google</span>
+                        </a>
+                        <a href="" class="btn btn-custom-secondary text-decoration-none text-dark text-smaller" id="facebook-login" style="width: 160px;">
+                            <img alt="" src="{{ asset('image/assets/images/login/icons8-facebook-48.png') }}" width="25px"
+                                height="25px" />
+                            <span>Facebook</span>
+                        </a>
                     </div>
                 </div>
                 <p class="text-center" style="font-size: 12px; color: #363434;">
