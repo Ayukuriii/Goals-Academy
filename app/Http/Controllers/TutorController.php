@@ -7,32 +7,45 @@ use App\Models\TutorNotes;
 use Illuminate\Http\Request;
 use App\Models\OngoingProgram;
 use App\Models\ProgramService;
-use App\Models\ProgramSession;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class TutorController extends Controller
 {
     public function index()
     {
+        $datas = OngoingProgram::whereHas('tutor.user', function ($query) {
+            $query->where('name', auth()->user()->name);
+        });
+
         return view('dashboard.tutor.index', [
             'title' => 'Tutor',
-            'datas' => OngoingProgram::all(),
-            'data' => OngoingProgram::where('is_tutor', '=', 0)->orWhere('is_moderator', '=', 0)->count()
+            'datas' => $datas->count(),
+            'data' => $datas->where('is_tutor', '=', 0)->count()
         ]);
     }
 
     public function bimbingan()
     {
+        $datas = OngoingProgram::whereHas('tutor.user', function ($query) {
+            $query->where('name', auth()->user()->name);
+        });
+
         return view('dashboard.tutor.bimbingan.bimbingan', [
             'title' => 'Tutor',
-            'datas' => OngoingProgram::where('is_tutor', 0)->orWhere('is_moderator', 0)->with('tutor.user')->get()
+            'datas' => $datas->where('is_tutor', '=', 0)->with('tutor.user')->get()
         ]);
     }
 
     public function riwayat()
     {
+        $datas = OngoingProgram::whereHas('tutor.user', function ($query) {
+            $query->where('name', auth()->user()->name);
+        });
+
         return view('dashboard.tutor.bimbingan.riwayat-bimbingan', [
             'title' => 'Tutor',
-            'datas' => OngoingProgram::where('is_tutor', 1)->Where('is_moderator', 1)->with('tutor.user')->get()
+            'datas' => $datas->where('is_tutor', '=', 1)->with('tutor.user')->get()
         ]);
     }
     public function riwayat_bimbingan_detail(string $id)
@@ -54,12 +67,32 @@ class TutorController extends Controller
     }
     public function edit(Request $request, string $id)
     {
-        $data = TutorNotes::find($id);
-        $data->fill($request->only([
-            'body',
-            'file'
-        ]));
-        $data->save();
+        $rules = [
+            'body' => 'required',
+            'file' => 'file|nullable'
+        ];
+        $validateData = $request->validate($rules);
+
+        // cek apakah ada request file, jika ada masukkan path ke variabel
+        if ($request->file('file')) {
+            if ($request->oldFile) {
+                Storage::delete('tutor_files/' . $request->oldFile);
+            }
+            $originalName = $request->file('file')->getClientOriginalName();
+            $filePath = $request->file('file')->store('tutor_files');
+            $filePath = str_replace('tutor_files/', '', $filePath);
+            $validateData['alias'] = $originalName;
+            $validateData['file'] = $filePath;
+        }
+
+        $tutorNotes = TutorNotes::where('ongoing_program_id', $id)->first();
+
+        if (!$tutorNotes) {
+            $validateData['ongoing_program_id'] = $id;
+            TutorNotes::create($validateData);
+        } else {
+            $tutorNotes->update($validateData);
+        }
         return redirect('/tutor/bimbingan')->with('edit-success', 'Data berhasil teredit!');
     }
     public function selesai(string $id)

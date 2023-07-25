@@ -84,7 +84,7 @@
                                                     {{ $data->email }}?</p>
                                             </div>
                                             <div class="modal-footer">
-                                                <form action="/admin/{{ $data->id }}/destroy" method="POST">
+                                                <form action="/admin/destroy/{{ $data->id }}" method="POST">
                                                     @csrf
                                                     <button type="button" style="font-size: small" class="col-2 btn btn-secondary"
                                                         data-bs-dismiss="modal">

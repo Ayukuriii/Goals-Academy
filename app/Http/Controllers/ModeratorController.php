@@ -93,6 +93,7 @@ class ModeratorController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        // dd($request);
         $data = OngoingProgram::findOrFail($id);
         $data->fill($request->except([
             '_method',

@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('ongoing_program_id');
             $table->text('body');
+            $table->string('alias')->nullable();
             $table->string('file')->nullable();
             $table->timestamps();
         });

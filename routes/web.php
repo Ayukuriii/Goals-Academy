@@ -116,7 +116,8 @@ Route::get('/email/verify/resend-verification', [VerificationController::class, 
 Route::post('/send-email', [EmailController::class, 'sendEmail']);
 
 //Route Download
-Route::get('/download/{filename}', [DownloadController::class, 'download_bimbingan'])->middleware('auth')->name('file-download');
+Route::get('/download/bimbingan/{filename}', [DownloadController::class, 'download_lampiran_bimbingan'])->middleware('auth')->name('file-download-bimbingan');
+Route::get('/download/tutor/{filename}', [DownloadController::class, 'download_lampiran_tutor'])->middleware('auth')->name('file-download-tutor');
 
 // Route Admin
 Route::middleware(['auth', 'check.level:admin'])->group(function () {
@@ -138,7 +139,7 @@ Route::middleware(['auth', 'check.level:admin'])->group(function () {
         Route::post('/admin/tambah_user/store', 'store')->name('admin.store');
         Route::get('/admin/tambah_user/edit/{id}', 'edit')->name('admin.edit');
         Route::put('/admin/tambah_user/update/{id}', 'update')->name('admin.update');
-        Route::post('/admin/{id}/destroy', 'destroy')->name('admin.destroy');
+        Route::post('/admin/destroy/{id}', 'destroy')->name('admin.destroy');
         Route::post('/admin/upload', 'upload')->name('image.upload');
     });
 });

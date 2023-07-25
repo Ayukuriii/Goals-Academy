@@ -21,7 +21,7 @@ class OngoingProgram extends Model
     }
     public function tutor()
     {
-        return $this->belongsTo(Tutor::class);
+        return $this->belongsTo(Tutor::class, 'tutor_id');
     }
     public function payment_status()
     {
