@@ -66,7 +66,6 @@
                         {{ $data->user->name }}</label>
                     <textarea class="form-control" name="body" id="body" rows="5" placeholder="Comments" disabled>{{ $data->catatan }}</textarea>
                 </div>
-                <hr class="m-0 w-100">
                 <form action="/tutor/edit/{{ $data->id }}" method="POST" class="form">
                     @csrf
                     @method('put')
@@ -74,12 +73,12 @@
                         <label class="form-label h4 fw-bold mb-4" for="catatan">Catatan dari Tutor</label>
                         <textarea class="form-control" name="body" id="body" rows="5" placeholder="Comments">{{ optional($data->tutor_notes->first())->body }}</textarea>
                     </div>
-                    <div class="row">
+                    <div class="d-flex">
                         <div class="col-6 form-group p-3 pb-0 mt-2">
                             <label class="form-label h4 fw-bold mb-4" for="dokumen">Lampiran Dokumen</label>
                             <input class="form-control" type="file" name="dokumen" id="dokumen" placeholder=" ">
                         </div>
-                        <div class="form-button col-6 mb-3 d-flex justify-content-end pt-5">
+                        <div class="form-button col-6 mt-3 mb-3 d-flex justify-content-end pt-5 pe-3">
                             <button class="btn-orange-static mt-4 px-4 d-inline text-end" id="button"
                                 type="submit">Simpan</button>
                         </div>

@@ -1199,13 +1199,17 @@ body {
     color: #4f3f85;
 }
 
-.btn-custom-secondary {
+.btn.btn-custom-secondary {
     border: none;
     background-color: #dedede;
-}
 
-.btn-custom-secondary:hover {
-    background-color: lightgray;
+    &:hover {
+        background-color: #cecece;
+    }
+
+    &:active {
+        background-color: #dedede;
+    }
 }
 
 .btn-orange {
