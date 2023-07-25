@@ -2,15 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Carbon\Carbon;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\OngoingProgram;
 use App\Models\ProgramService;
-use App\Models\ProgramSession;
 use App\Models\Tutor;
 use App\Models\TutorNotes;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
 {
@@ -65,6 +64,7 @@ class AdminController extends Controller
     public function update_bimbingan(Request $request, string $id)
     {
         $data = OngoingProgram::findOrFail($id);
+
         $data->fill($request->only([
             'date',
             'program_session',
@@ -88,12 +88,32 @@ class AdminController extends Controller
     }
     public function edit_bimbingan(Request $request, string $id)
     {
-        $data = TutorNotes::find($id);
-        $data->fill($request->only([
-            'body',
-            'file'
-        ]));
-        $data->save();
+        $rules = [
+            'body' => 'required',
+            'file' => 'file|nullable'
+        ];
+        $validateData = $request->validate($rules);
+
+        // cek apakah ada request file, jika ada masukkan path ke variabel
+        if ($request->file('file')) {
+            if ($request->oldFile) {
+                Storage::delete('tutor_files/' . $request->oldFile);
+            }
+            $originalName = $request->file('file')->getClientOriginalName();
+            $filePath = $request->file('file')->store('tutor_files');
+            $filePath = str_replace('tutor_files/', '', $filePath);
+            $validateData['alias'] = $originalName;
+            $validateData['file'] = $filePath;
+        }
+
+        $tutorNotes = TutorNotes::where('ongoing_program_id', $id)->first();
+
+        if (!$tutorNotes) {
+            $validateData['ongoing_program_id'] = $id;
+            TutorNotes::create($validateData);
+        } else {
+            $tutorNotes->update($validateData);
+        }
         return redirect('/admin/bimbingan');
     }
     public function selesai_bimbingan(string $id)
@@ -146,7 +166,7 @@ class AdminController extends Controller
     {
         // ddd($request);
         $validateData = $request->validate([
-            'name' => 'required|max:255|unique:users,name',
+            'name' => 'required|max:255|',
             'username' => 'required|unique:users,username',
             'email' => 'required|email|unique:users',
             'image' => 'image|file|max:5120',

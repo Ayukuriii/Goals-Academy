@@ -86,7 +86,7 @@
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary"
                                                     data-bs-dismiss="modal">Close</button>
-                                                <form action="/admin/{{ $data->id }}/destroy" method="POST">
+                                                <form action="/admin/destroy/{{ $data->id }}" method="POST">
                                                     @csrf
                                                     <button type="submit" class="btn btn-danger">
                                                         Delete

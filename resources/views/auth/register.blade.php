@@ -81,7 +81,7 @@
                                     <label for="name">Nama Lengkap</label>
                                     <input type="text" name="name"
                                         class="form-control @error('name') is-invalid @enderror" id="name"
-                                        placeholder=" " required />
+                                        placeholder=" " value="{{ old('name') }}" required />
                                     <div class="invalid-feedback">
                                         Input tidak valid
                                     </div>
@@ -90,7 +90,7 @@
                                     <label for="name">Username</label>
                                     <input type="text" name="username"
                                         class="form-control @error('username') is-invalid @enderror" id="username"
-                                        placeholder=" " required />
+                                        placeholder=" " value="{{ old('username') }}" required />
                                     @error('username')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -101,7 +101,7 @@
                                     <label for="university">Universitas</label>
                                     <input type="text" name="university"
                                         class="form-control @error('university') is-invalid @enderror" id="university"
-                                        placeholder=" " required />
+                                        placeholder=" " value="{{ old('university') }}" required />
                                     @error('university')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -112,7 +112,7 @@
                                     <label for="major">Jurusan</label>
                                     <input type="text" name="major"
                                         class="form-control @error('major') is-invalid @enderror" id="major"
-                                        placeholder=" " required>
+                                        placeholder=" " value="{{ old('major') }}" required>
                                     @error('major')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -123,7 +123,7 @@
                                     <label for="email">Email</label>
                                     <input type="email" name="email"
                                         class="form-control @error('email') is-invalid @enderror" id="email"
-                                        placeholder=" " required />
+                                        placeholder=" " value="{{ old('email') }}" required />
                                     @error('email')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -134,7 +134,8 @@
                                     <label for="phone_number">No. Telp</label>
                                     <input type="text" name="phone_number"
                                         class="form-control @error('phone_number') is-invalid @enderror"
-                                        id="phone_number" placeholder=" " required />
+                                        id="phone_number" placeholder=" " value="{{ old('phone_number') }}"
+                                        required />
                                     @error('phone_number')
                                         <div class="invalid-feedback">
                                             {{ $message }}

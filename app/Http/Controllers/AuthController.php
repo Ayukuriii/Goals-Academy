@@ -30,20 +30,20 @@ class AuthController extends Controller
             'password' => 'required'
         ]);
 
-        if ($request->password === $request->confirmation_password) {
-            $validateData['password'] = Hash::make($validateData['password']);
-            $validateData['user_level'] = 'user';
-
-            $user = User::create($validateData);
-
-            event(new Registered($user));
-
-            Auth::login($user);
-
-            return redirect()->route('verification.notice')->with('success', 'Registration successfull! Please check your email for verification');
-        } else {
-            return back()->with('create-failed', 'Akun gagal dibuat, periksa kembali data anda!');
+        if (!$request->password === $request->confirmation_password) {
+            return back();
         }
+
+        $validateData['password'] = Hash::make($validateData['password']);
+        $validateData['user_level'] = 'user';
+
+        $user = User::create($validateData);
+
+        event(new Registered($user));
+
+        Auth::login($user);
+
+        return redirect()->route('verification.notice')->with('success', 'Registration successfull! Please check your email for verification');
         // return redirect('/')->with('success', 'Registration successfull! Please login');
     }
 

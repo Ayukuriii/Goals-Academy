@@ -49,6 +49,19 @@
                         <td><a href="{{ strpos($data->links, 'http') === 0 ? $data->links : 'https://' . $data->links }}">Link
                                 Zoom</a></td>
                     </tr>
+                    <tr>
+                        <td>LAMPIRAN SKRIPSI</td>
+                        <td>
+                            <a href="/download/bimbingan/{{ $data->file }}">{{ $data->file }}</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>LAMPIRAN TUTOR</td>
+                        <td>
+                            <a
+                                href="/download/tutor/{{ optional($data->tutor_notes->first())->file }}">{{ optional($data->tutor_notes->first())->alias }}</a>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
 

@@ -57,7 +57,7 @@
                         </div>
                         <div class="form-group col-6 mb-2">
                             <label class="form-label" for="pelaksanaan">SESI</label>
-                            <select class="form-select border-orange" name="program_session_id"
+                            <select class="form-select border-orange" name="program_session"
                                 aria-label="Default select example">
                                 <option value="09:00" {{ $data->program_session == '09:00' ? 'selected' : '' }}>09:00
                                 </option>
