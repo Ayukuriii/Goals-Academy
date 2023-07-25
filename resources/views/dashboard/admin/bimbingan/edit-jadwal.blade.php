@@ -56,7 +56,7 @@
                         </div>
                         <div class="form-group col-6 mb-2">
                             <label class="form-label" for="pelaksanaan">SESI</label>
-                            <select class="form-select border-orange" name="program_session"
+                            <select class="form-select" name="program_session"
                                 aria-label="Default select example">
                                 <option value="09:00" {{ $data->program_session == '09:00' ? 'selected' : '' }}>09:00
                                 </option>
@@ -75,7 +75,7 @@
                         </div>
                         <div class="form-group col-6 mb-2">
                             <label class="form-label" for="tutor_id">TUTOR</label>
-                            <select class="form-select border-orange" name="tutor_id" id="tutor_id">
+                            <select class="form-select" name="tutor_id" id="tutor_id">
                                 @foreach ($tutor_data as $tutor)
                                     <option value="{{ $tutor->id }}"
                                         {{ $tutor->id == $data->tutor_id ? 'selected' : '' }}>
@@ -99,7 +99,7 @@
                         @else
                             <div class="form-group col-6 mb-2">
                                 <label class="form-label" for="tempat">TEMPAT</label>
-                                <select class="form-select border-orange" name="links" id="links">
+                                <select class="form-select" name="links" id="links">
                                     <option value="Nakoa">Nakoa</option>
                                     <option value="Nakoa">Kongca</option>
                                     <option value="Nakoa">Pavo</option>
