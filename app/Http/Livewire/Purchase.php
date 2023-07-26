@@ -119,6 +119,15 @@ class Purchase extends Component
 
     public function submitForm()
     {
+        // Set your Merchant Server Key
+        Config::$serverKey = config('midtrans.server_key');
+        // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
+        Config::$isProduction = false;
+        // Set sanitization on (default)
+        Config::$isSanitized = true;
+        // Set 3DS transaction for credit card to true
+        Config::$is3ds = true;
+
         $validatedData = $this->validate([
             'purchaseMethod' => 'required',
             'agreement' => 'accepted'
@@ -134,32 +143,12 @@ class Purchase extends Component
 
         $user = auth()->user();
 
-        $data = OngoingProgram::create([
-            'user_id' => $user->id,
-            'program_services_id' => $this->program,
-            // 'tutor_id' => someone
-            'payment_status' => 'pending',
-            'program_session' => $this->time,
-            'catatan' => $this->note,
-            'file' => $filepath,
-            'links' => $this->location,
-            'date' => Carbon::parse($this->date)->format('Y-m-d'),
-            'is_tutor' => 0,
-            'is_moderator' => 0,
-        ]);
-
-        // Set your Merchant Server Key
-        Config::$serverKey = config('midtrans.server_key');
-        // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
-        Config::$isProduction = false;
-        // Set sanitization on (default)
-        Config::$isSanitized = true;
-        // Set 3DS transaction for credit card to true
-        Config::$is3ds = true;
+        $randomNumber = rand(0, 9999);
+        $rand = str_pad($randomNumber, 4, '0', STR_PAD_LEFT);
 
         $params = array(
             'transaction_details' => array(
-                'order_id' => 'GA' . rand(),
+                'order_id' => 'GA' . $rand,
                 'gross_amount' => $this->price,
             ),
             'customer_details' => array(
@@ -175,18 +164,28 @@ class Purchase extends Component
         $responseToJson = json_encode($response);
 
         $order = OrderDetail::create([
-            'ongoing_program_id' => $data->id,
+            'ongoing_program_id' => null, // temporary set to null
             'jsonstring' => $responseToJson,
         ]);
-        // dd($order);
+
+        $data = OngoingProgram::create([
+            'order_detail_id' => $order->id,
+            'user_id' => $user->id,
+            'program_services_id' => $this->program,
+            'payment_status' => 'pending',
+            'program_session' => $this->time,
+            'catatan' => $this->note,
+            'file' => $filepath,
+            'links' => $this->location,
+            'date' => Carbon::parse($this->date)->format('Y-m-d'),
+            'is_tutor' => 0,
+            'is_moderator' => 0,
+        ]);
+
+        $order->ongoing_program_id = $data->id;
+        $order->save();
 
         return redirect()->route('payment.pending', $data->id);
-
-        // $this->successMsg = 'Program successfully ordered!';
-
-        // $this->clearForm();
-
-        // $this->currentStep = 1;
     }
 
     public function back($step)
