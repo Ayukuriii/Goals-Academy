@@ -1364,6 +1364,11 @@ body {
     background-color: white;
     color: #ff8854;
     cursor: pointer;
+
+    &:hover {
+        background-color: #ff8854;
+        color: white;
+    }
 }
 
 #terms-and-conditions .parent-list > li::marker {
