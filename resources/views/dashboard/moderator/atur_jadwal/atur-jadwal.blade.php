@@ -20,6 +20,12 @@
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                 @endif
+                @if (session()->has('selesai-success'))
+                    <div class="alert alert-info alert-dismissible fade mt-4 show" role="alert">
+                        {{ session('selesai-success') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @endif
 
                 <div class="p-2 mt-2">
                     <table id="datatable" class="table">
@@ -32,13 +38,23 @@
                                 <th>Hari/Tanggal</th>
                                 <th>Sesi</th>
                                 <th>Link/Tempat</th>
+                                <th>Terbuat</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($datas as $data)
                                 <tr>
-                                    <td>{{ $loop->iteration }}</td>
+                                    <td>
+                                        @if (!$data->orderDetail)
+                                            -
+                                        @else
+                                            @php
+                                                $response = json_decode($data->orderDetail->jsonstring);
+                                            @endphp
+                                            {{ $response->order_id }}
+                                        @endif
+                                    </td>
                                     <td>{{ $data->user->name }}</td>
                                     <td>{{ $data->program->title }}</td>
                                     <td>{{ $data->tutor->user->name ?? 'Kosong' }}</td>
@@ -55,6 +71,9 @@
                                         @else
                                             -
                                         @endif
+                                    </td>
+                                    <td>
+                                        {{ \Carbon\Carbon::parse($data->created_at) }}
                                     </td>
                                     <td class="h4">
                                         <div class="d-flex gap-2">
@@ -92,6 +111,9 @@
                 dom: 'Bfrtip',
                 buttons: [
                     'copy', 'csv', 'excel', 'pdf'
+                ],
+                order: [
+                    [7, 'desc']
                 ]
             })
         })

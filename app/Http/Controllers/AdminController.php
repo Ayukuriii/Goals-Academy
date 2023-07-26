@@ -38,7 +38,6 @@ class AdminController extends Controller
                 ->orWhere('is_moderator', 0)
                 ->with('tutor.user')
                 ->with('orderDetail')
-                ->orderBy('created_at', 'desc')
                 ->get()
         ]);
     }
@@ -126,13 +125,16 @@ class AdminController extends Controller
     }
     public function selesai_bimbingan(string $id)
     {
+        $x =  OrderDetail::where('ongoing_program_id', $id)->first();
+        $response = json_decode($x->jsonstring);
+
         $data = OngoingProgram::find($id);
         $data->fill([
             'is_tutor' => 1,
             'is_moderator' => 1
         ]);
         $data->save();
-        return redirect()->route('admin.bimbingan');
+        return back()->with('selesai-success', 'Data ' . $response->order_id . ' berhasil disetujui');;
     }
     public function restore_bimbingan(string $id)
     {

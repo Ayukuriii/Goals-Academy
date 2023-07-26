@@ -172,7 +172,7 @@ class Purchase extends Component
             'order_detail_id' => $order->id,
             'user_id' => $user->id,
             'program_services_id' => $this->program,
-            'payment_status' => 'pending',
+            'payment_status' => $response->transaction_status,
             'program_session' => $this->time,
             'catatan' => $this->note,
             'file' => $filepath,
@@ -238,7 +238,7 @@ class Purchase extends Component
     {
         if ($value) {
             if ($value == 'Malang') {
-                $this->locations = collect(['Nakoa', 'Sarijan', 'Kopi Studio Sigura-gura', 'Kopi Studio Blimbing', 'Kopi Tuwo']);
+                $this->locations = collect(['Nakoa', 'Kopi Studio Sigura-gura', 'Kopi Studio Blimbing', 'Kopi Tuwo']);
             } else if ($value == 'Jakarta') {
                 $this->locations = collect(['Djakarta Kafe', 'Blumchen Coffee', 'Cafe Batavia']);
             }

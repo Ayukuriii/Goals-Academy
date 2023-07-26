@@ -211,7 +211,7 @@
             });
         });
 
-        updateButton();
+        // updateButton();
     </script>
 </body>
 <!-- JavaScript links -->

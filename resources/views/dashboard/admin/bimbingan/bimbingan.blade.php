@@ -27,6 +27,12 @@
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                 @endif
+                @if (session()->has('selesai-success'))
+                    <div class="alert alert-info alert-dismissible fade mt-4 show" role="alert">
+                        {{ session('selesai-success') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @endif
 
                 <div class="p-2 mt-2">
                     <table id="datatable" class="table">
@@ -56,11 +62,6 @@
                                                 $response = json_decode($data->orderDetail->jsonstring);
                                             @endphp
                                             {{ $response->order_id }}
-                                            <!-- Now you can access the decoded data -->
-                                            {{-- Example: --}}
-                                            {{-- @if (isset($response->key))
-                                                {{ $response->key }}
-                                            @endif --}}
                                         @endif
                                     </td>
                                     <td>{{ $data->user->name }}</td>
@@ -94,7 +95,9 @@
                                             <i class="bi bi-check fs-4 text-orange"></i>
                                         @endif
                                     </td>
-                                    <td>{{ \Carbon\Carbon::parse($data->created_at)->diffForHumans() }}</td>
+                                    <td>
+                                        {{ \Carbon\Carbon::parse($data->created_at) }}
+                                    </td>
                                     <td class="h4">
                                         <div class="d-flex gap-2">
                                             <a href="/admin/bimbingan/show/{{ $data->id }}"
@@ -133,7 +136,7 @@
                     'copy', 'csv', 'excel', 'pdf'
                 ],
                 order: [
-                    [9, 'asc']
+                    [9, 'desc']
                 ]
             })
         })
