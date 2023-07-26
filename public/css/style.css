@@ -1211,7 +1211,8 @@ body {
 .btn-orange {
     background-color: #ff8854;
     border-radius: 12px;
-    border: 2px solid #ff8854;
+    border: 1px solid #ff8854;
+    outline: 1px solid #ff8854;
     color: white;
     text-decoration: none;
     cursor: pointer;
@@ -1267,16 +1268,19 @@ body {
 
 .btn-nav {
     background-color: white;
-    border-radius: 12px;
-    border: 1px solid #807D7D;
+    border-radius: 8px;
+    border: 1px solid white;
+    outline: 1px solid lightgray;
     color: #807D7D;
     text-decoration: none;
+    text-align: center;
     cursor: pointer;
 }
 
 .btn-orange:hover, .btn-nav:hover {
     background-color: white;
     border-color: #ff8854;
+    outline-color: #ff8854;
     color: #ff8854;
 }
 
@@ -1360,6 +1364,11 @@ body {
     background-color: white;
     color: #ff8854;
     cursor: pointer;
+
+    &:hover {
+        background-color: #ff8854;
+        color: white;
+    }
 }
 
 #terms-and-conditions .parent-list > li::marker {
