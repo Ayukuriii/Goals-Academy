@@ -9,7 +9,7 @@ const validate = (target) => {
     } else if (target.getAttribute("type") == "password") {
         if (target.value.length < 8) {
             target.classList.add("is-invalid");
-            target.setCustomValidity("Password min 8 karakter");
+            target.setCustomValidity("Input tidak valid");
             return false;
         } else {
             target.classList.remove("is-invalid");
