@@ -101,9 +101,8 @@
                                 <label class="form-label" for="tempat">TEMPAT</label>
                                 <select class="form-select border-orange" name="links" id="links">
                                     <option value="Nakoa">Nakoa</option>
-                                    <option value="Kopi Studio">Kopi Studio</option>
-                                    <option value="Kopi Studio Blimbing">Kopi Studio Blimbing</option>
-                                    <option value="Kopi Tuwo">Kopi Tuwo</option>
+                                    <option value="Nakoa">Kongca</option>
+                                    <option value="Nakoa">Pavo</option>
                                 </select>
                             </div>
                         @endif

@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('username')->unique()->nullable();
             $table->string('email')->unique();
+            $table->longText('image')->nullable();
             $table->string('phone_number');
             $table->string('university');
             $table->string('major'); // jurusan
