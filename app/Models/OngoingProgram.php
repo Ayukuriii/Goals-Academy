@@ -31,4 +31,8 @@ class OngoingProgram extends Model
     {
         return $this->hasMany(TutorNotes::class);
     }
+    public function orderDetail()
+    {
+        return $this->belongsTo(OrderDetail::class);
+    }
 }
