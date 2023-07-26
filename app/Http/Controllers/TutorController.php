@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Tutor;
 use App\Models\TutorNotes;
+use App\Models\OrderDetail;
 use Illuminate\Http\Request;
 use App\Models\OngoingProgram;
 use App\Models\ProgramService;
@@ -33,7 +34,10 @@ class TutorController extends Controller
 
         return view('dashboard.tutor.bimbingan.bimbingan', [
             'title' => 'Tutor',
-            'datas' => $datas->where('is_tutor', '=', 0)->with('tutor.user')->get()
+            'datas' => $datas->where('is_tutor', '=', 0)
+                ->with('tutor.user')
+                ->with('orderDetail')
+                ->get(),
         ]);
     }
 
@@ -45,7 +49,10 @@ class TutorController extends Controller
 
         return view('dashboard.tutor.bimbingan.riwayat-bimbingan', [
             'title' => 'Tutor',
-            'datas' => $datas->where('is_tutor', '=', 1)->with('tutor.user')->get()
+            'datas' => $datas->where('is_tutor', '=', 1)
+                ->with('tutor.user')
+                ->with('orderDetail')
+                ->get()
         ]);
     }
     public function riwayat_bimbingan_detail(string $id)
@@ -67,6 +74,8 @@ class TutorController extends Controller
     }
     public function edit(Request $request, string $id)
     {
+        $x =  OrderDetail::where('ongoing_program_id', $id)->first();
+        $response = json_decode($x->jsonstring);
         $rules = [
             'body' => 'required',
             'file' => 'file|nullable'
@@ -93,13 +102,16 @@ class TutorController extends Controller
         } else {
             $tutorNotes->update($validateData);
         }
-        return redirect('/tutor/bimbingan')->with('edit-success', 'Data berhasil teredit!');
+        return redirect('/tutor/bimbingan')->with('edit-success', 'Data ' . $response->order_id . ' berhasil teredit!');
     }
     public function selesai(string $id)
     {
+        $x =  OrderDetail::where('ongoing_program_id', $id)->first();
+        $response = json_decode($x->jsonstring);
+
         $data = OngoingProgram::findOrFail($id);
         $data['is_tutor'] = 1;
         $data->save();
-        return back()->with('selesai-success', 'Data berhasil disetujui');
+        return back()->with('selesai-success', 'Data ' . $response->order_id . ' berhasil disetujui');
     }
 }

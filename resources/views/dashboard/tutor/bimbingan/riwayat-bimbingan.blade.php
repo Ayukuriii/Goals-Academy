@@ -23,18 +23,31 @@
                                 <th>Tutor</th>
                                 <th>Hari/Tanggal</th>
                                 <th>Sesi</th>
+                                <th>Terbuat</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($datas as $data)
                                 <tr>
-                                    <td>{{ $loop->iteration }}</td>
+                                    <td>
+                                        @if (!$data->orderDetail)
+                                            -
+                                        @else
+                                            @php
+                                                $response = json_decode($data->orderDetail->jsonstring);
+                                            @endphp
+                                            {{ $response->order_id }}
+                                        @endif
+                                    </td>
                                     <td>{{ $data->user->name }}</td>
                                     <td>{{ $data->program->title }}</td>
                                     <td>{{ $data->tutor->user->name }}</td>
                                     <td>{{ \Carbon\Carbon::parse($data->date)->isoFormat('dddd, D MMMM Y') }}</td>
                                     <td>{{ $data->program_session }}</td>
+                                    <td>
+                                        {{ \Carbon\Carbon::parse($data->created_at) }}
+                                    </td>
                                     <td class="h4">
                                         <div class="d-flex gap-2">
                                             <a href="/tutor/riwayat_bimbingan_detail/{{ $data->id }}"
@@ -60,6 +73,9 @@
                 dom: 'Bfrtip',
                 buttons: [
                     'copy', 'csv', 'excel', 'pdf'
+                ],
+                order: [
+                    [6, 'desc']
                 ]
             })
         })

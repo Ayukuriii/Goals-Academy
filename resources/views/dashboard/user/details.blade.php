@@ -1,7 +1,11 @@
 @extends('dashboard.layouts.main')
 
 @section('container')
-    {{-- {{ dd($data->tutor_notes) }} --}}
+    <!-- convert json ke string -->
+    @php
+        $json = json_decode($data->orderDetail->jsonstring);
+    @endphp
+
     <!-- Isi Page -->
     <section class="d-flex flex-column flex-xl-row container-fluid container-xl gap-3 gap-xl-4" id="user-profile">
         @include('dashboard.user.partials.sidebar')
@@ -16,11 +20,13 @@
                     </tr>
                     <tr>
                         <td>METODE PEMBAYARAN</td>
-                        <td></td>
+                        <td>
+                            {{ strtoupper($json->payment_type) }}
+                        </td>
                     </tr>
                     <tr>
                         <td>KODE PEMESANAN</td>
-                        <td></td>
+                        <td>{{ $json->order_id }}</td>
                     </tr>
                     <tr>
                         <td>STATUS</td>

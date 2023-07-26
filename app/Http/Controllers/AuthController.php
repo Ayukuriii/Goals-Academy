@@ -32,7 +32,7 @@ class AuthController extends Controller
         ]);
 
         if ($request->password !== $request->confirmation_password) {
-            return back();
+            return back()->withInput();
         }
 
         $validateData['password'] = Hash::make($validateData['password']);

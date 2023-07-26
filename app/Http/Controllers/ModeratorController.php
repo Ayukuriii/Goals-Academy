@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Tutor;
+use App\Models\OrderDetail;
 use Illuminate\Http\Request;
 use App\Models\OngoingProgram;
 use App\Models\ProgramService;
@@ -25,22 +26,33 @@ class ModeratorController extends Controller
     {
         return view('dashboard.moderator.atur_jadwal.atur-jadwal', [
             'title' => 'Moderator',
-            'datas' => OngoingProgram::where('is_tutor', 0)->orWhere('is_moderator', 0)->with('tutor.user')->get()
+            'datas' => OngoingProgram::where('is_tutor', 0)
+                ->orWhere('is_moderator', 0)
+                ->with('tutor.user')
+                ->with('orderDetail')
+                ->get()
         ]);
     }
     public function selesai(string $id)
     {
+        $x =  OrderDetail::where('ongoing_program_id', $id)->first();
+        $response = json_decode($x->jsonstring);
+
         $data = OngoingProgram::findOrFail($id);
         $data['is_moderator'] = 1;
         $data->save();
 
-        return redirect('/moderator/atur_jadwal');
+        return back()->with('selesai-success', 'Data ' . $response->order_id . ' berhasil disetujui');
     }
     public function riwayat_jadwal()
     {
         return view('dashboard.moderator.atur_jadwal.riwayat-jadwal', [
             'title' => 'Moderator',
-            'datas' => OngoingProgram::where('is_tutor', 1)->Where('is_moderator', 1)->with('tutor.user')->get()
+            'datas' => OngoingProgram::where('is_tutor', 1)
+                ->Where('is_moderator', 1)
+                ->with('tutor.user')
+                ->with('orderDetail')
+                ->get()
         ]);
     }
     public function riwayat_jadwal_detail(string $id)
@@ -93,7 +105,9 @@ class ModeratorController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        // dd($request);
+        $x =  OrderDetail::where('ongoing_program_id', $id)->first();
+        $response = json_decode($x->jsonstring);
+
         $data = OngoingProgram::findOrFail($id);
         $data->fill($request->except([
             '_method',
@@ -101,7 +115,7 @@ class ModeratorController extends Controller
         ]));
         // dd($data);
         if ($data->save()) {
-            return redirect('/moderator/atur_jadwal')->with('update-success', 'Data ' . $data->user->name . ' berhasil di ubah');
+            return redirect('/moderator/atur_jadwal')->with('update-success', 'Data ' . $response->order_id . ' berhasil di ubah');
         } else {
             return back()->with('update-failed', 'Invalid Data');
         }

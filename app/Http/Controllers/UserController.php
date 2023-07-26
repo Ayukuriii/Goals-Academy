@@ -49,7 +49,8 @@ class UserController extends Controller
             'title' => 'Details',
             'datecarbon' => $datecarbon,
             'datepurchased' => $datepurchased,
-            'data' => OngoingProgram::find($id)
+            'data' => OngoingProgram::find($id),
+            'order' => OngoingProgram::with('orderDetail')->find($id)
         ]);
     }
 
