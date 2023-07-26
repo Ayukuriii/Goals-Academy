@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('order_details', function (Blueprint $table) {
             $table->id();
-            $table->string('ongoing_program_id')->nullable();
+            $table->string('ongoing_program_id');
             $table->longText('jsonstring');
             $table->timestamps();
         });

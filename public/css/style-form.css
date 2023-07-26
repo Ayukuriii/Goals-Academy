@@ -8,72 +8,8 @@ form #eye {
     -webkit-user-select: none;
 }
 
-.form-control {
-    border: 1px solid white;
-    outline: 1px solid lightgray;
-    font-size: small;
-
-    &:disabled {
-        border-color: #E9ECEF;
-        outline-color: #E9ECEF;
-    }
-
-    &:focus {
-        box-shadow: unset;
-        border: 1px solid black;
-        outline: 1px solid black;
-    }
-
-    &:valid {
-        border: 1px solid #ff8854;
-        outline: 1px solid #ff8854;
-    }
-
-    &.is-invalid {
-        border: 1px solid black;
-        outline: 1px solid black;
-    }
-}
-
-.form-control.except {
-    font-size: 0.9rem;
-    padding: 0;
-    margin: 0;
-    border: unset;
-    outline: unset;
-
-    &:focus, &:hover {
-        border: unset;
-        outline: unset;
-    }
-}
-
-input:not(:placeholder-shown) {
-    border: 1px solid black;
-    outline: 1px solid black;
-}
-
-/* textarea:not(:placeholder-shown) {
-    border: 1px solid #ff8854;
-    outline: 1px solid #ff8854;
-} */
-
-select.form-select {
-    font-size: small;
-    border: 1px solid #ff8854;
-    outline: 1px solid #ff8854;
-    cursor: pointer;
-
-    &:disabled {
-        border-color: #E9ECEF;
-        outline-color: #E9ECEF;
-    }
-
-    &:focus {
-        box-shadow: unset;
-        border: 1px solid #ff8854;
-        outline: 1px solid #ff8854;
-    }
+.form-control.is-invalid {
+    border: 2px solid black;
 }
 
 #register-body {
@@ -155,6 +91,14 @@ select.form-select {
     padding: 20px;
 }
 
+input:not(:placeholder-shown) {
+    border: 2px solid black;
+}
+
+textarea:not(:placeholder-shown) {
+    border: 2px solid #ff8854;
+}
+
 .input-group-append {
     height: 40px;
 }
@@ -182,6 +126,10 @@ select.form-select {
     font-size: 12px;
     font-weight: normal;
     margin-top: 15px;
+}
+
+.form-group input:valid {
+    border: 2px solid #ff8854;
 }
 
 .orange-border {

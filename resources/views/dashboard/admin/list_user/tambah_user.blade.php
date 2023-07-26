@@ -108,7 +108,7 @@
                             @enderror
                         </div>
 
-                        <div class="form-button col-12 mt-4 mb-2 d-flex justify-content-end">
+                        <div class="form-button col-6 mb-2 d-flex justify-content-end">
                             <button class="btn-orange-static px-4 d-inline text-end small" id="button" type="submit">
                                 Simpan
                             </button>
@@ -124,72 +124,72 @@
 
 @section('script')
     <script>
-        const inputImage = document.querySelector('#input-image');
-        const cropperDiv = document.querySelector('#cropper');
-        const tempImage = document.querySelector('#temp-image');
-        const saveImageButton = document.querySelector('#save-image');
-        const previewImage = document.querySelector('#preview-image');
-        const inputPhoto = document.querySelector('#photo')
-
-        inputImage.addEventListener('change', () => {
-            const reader = new FileReader()
-            reader.readAsDataURL(inputImage.files[0])
-            reader.onload = event => {
-                tempImage.src = event.target.result
-                cropperDiv.classList.remove('d-none')
-
-                const cropper = new Cropper(tempImage, {
-                    aspectRatio: 1,
-                    viewMode: 3,
-                    dragMode: 'move',
-                    scalable: true,
-                    center: true,
-                    ready: function() {
-                        croppable = true;
-                    },
-                })
-
-                saveImageButton.onclick = event => {
-                    if (!croppable) {
-                        return;
-                    }
-
-                    // Crop
-                    const croppedCanvas = cropper.getCroppedCanvas({
-                        width: 512,
-                        height: 512
-                    });
-                    // Round
-                    const roundedCanvas = getRoundedCanvas(croppedCanvas);
-                    // Show
-                    // previewImage.src = roundedCanvas.toDataURL();
-
-                    $.ajax({
-                        type: 'post',
-                        url: '/upload',
-                        data: {
-                            '_token': $('meta[name="_token"]').attr('content'),
-                            'image': roundedCanvas.toDataURL()
-                        },
-                        dataType: 'json',
-                        success: function(response) {
-                            alert(response.success);
-                            previewImage.src = response.image;
-                        }
-                    });
-
-                    // console.log(data.x, data.y, data.width, data.height)
-
-                    cropperDiv.classList.add('d-none')
-                    cropper.destroy();
-                };
-            }
-        })
-
         formInput.forEach((element) => {
             element.addEventListener("change", (e) => {
                 validate(e.target);
             });
         });
+
+        // const inputImage = document.querySelector('#input-image');
+        // const cropperDiv = document.querySelector('#cropper');
+        // const tempImage = document.querySelector('#temp-image');
+        // const saveImageButton = document.querySelector('#save-image');
+        // const previewImage = document.querySelector('#preview-image');
+        // const inputPhoto = document.querySelector('#photo')
+
+        // inputImage.addEventListener('change', () => {
+        //     const reader = new FileReader()
+        //     reader.readAsDataURL(inputImage.files[0])
+        //     reader.onload = event => {
+        //         tempImage.src = event.target.result
+        //         cropperDiv.classList.remove('d-none')
+
+        //         const cropper = new Cropper(tempImage, {
+        //             aspectRatio: 1,
+        //             viewMode: 3,
+        //             dragMode: 'move',
+        //             scalable: true,
+        //             center: true,
+        //             ready: function() {
+        //                 croppable = true;
+        //             },
+        //         })
+
+        //         saveImageButton.onclick = event => {
+        //             if (!croppable) {
+        //                 return;
+        //             }
+
+        //             // Crop
+        //             const croppedCanvas = cropper.getCroppedCanvas({
+        //                 width: 512,
+        //                 height: 512
+        //             });
+        //             // Round
+        //             const roundedCanvas = getRoundedCanvas(croppedCanvas);
+        //             // Show
+        //             // previewImage.src = roundedCanvas.toDataURL();
+
+        //             $.ajax({
+        //                 type: 'post',
+        //                 url: '/upload',
+        //                 data: {
+        //                     '_token': $('meta[name="_token"]').attr('content'),
+        //                     'image': roundedCanvas.toDataURL()
+        //                 },
+        //                 dataType: 'json',
+        //                 success: function(response) {
+        //                     alert(response.success);
+        //                     previewImage.src = response.image;
+        //                 }
+        //             });
+
+        //             // console.log(data.x, data.y, data.width, data.height)
+
+        //             cropperDiv.classList.add('d-none')
+        //             cropper.destroy();
+        //         };
+        //     }
+        // })
     </script>
 @endsection

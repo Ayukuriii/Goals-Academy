@@ -90,10 +90,10 @@
                             <input type="password" name="password" class="form-control" id="password" placeholder=" "
                                 required />
                         </div>
-                        <div class="form-button mt-2">
+                        <div class="form-button">
                             <button type="submit" class="btn-orange-static w-100" id="submit-login"
                                 disabled>Login</button>
-                            <p class="mt-3"><a href="{{ route('lupa_password') }}">Lupa Password?</a></p>
+                            <p><a href="{{ route('lupa_password') }}">Lupa Password?</a></p>
                         </div>
                     </form>
                     <h5>atau gunakan</h5>
