@@ -21,10 +21,6 @@
     box-shadow: 0 2px 4px rgba(0, 4, 4, 0.5);
 }
 
-.navbar-collapse {
-    flex-grow: 0;
-}
-
 /* Segera Hadir*/
 
 #segera-hadir {
@@ -174,12 +170,6 @@ footer {
 }
 
 @media (max-width: 985px) {
-    #navbar-full {
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 985px;
-    }
-
     #segera-hadir {
         display: flex;
         flex-direction: column;
@@ -214,10 +204,6 @@ footer {
 }
 
 @media (max-width: 768px) {
-    #navbar-full {
-        margin-left: auto;
-    }
-
     .footer-container {
         display: block;
     }
@@ -245,11 +231,6 @@ footer {
 }
 
 @media (max-width: 475px) {
-    .navbar-brand img {
-        width: 196px;
-        height: 34px;
-    }
-
     .image-comingsoon img {
         width: 700px;
         margin-top: -700px;

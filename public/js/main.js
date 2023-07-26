@@ -5,9 +5,9 @@ function test() {
 $(".navbar-toggler").click(function () {
     $(this).toggleClass("collapsed");
     if ($(this).hasClass("collapsed")) {
-        $(this).html('<i class="fas fa-times fs-1"></i>');
+        $(this).html('<i class="fas fa-times fs-1 d-flex justify-content-start"></i>');
     } else {
-        $(this).html('<i class="fas fa-bars fs-1"></i>');
+        $(this).html('<i class="fas fa-bars fs-1 d-flex justify-content-start"></i>');
     }
 });
 
