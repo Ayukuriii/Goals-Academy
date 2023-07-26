@@ -201,50 +201,40 @@ class Purchase extends Component
 
     public function updatedDate($value)
     {
-        if ($value) {
-            $d = Carbon::now();
+        $d = Carbon::now();
 
-            // Set the desired times
-            $s1 = Carbon::parse($value)->setTime(9, 0, 0); // 09:00
-            $s2 = Carbon::parse($value)->setTime(11, 0, 0); // 11:00
-            $s3 = Carbon::parse($value)->setTime(13, 0, 0); // 13:00
-            $s4 = Carbon::parse($value)->setTime(15, 0, 0); // 15:00
-            $s5 = Carbon::parse($value)->setTime(17, 0, 0); // 17:00
-            $jamTersedia = [$s1, $s2, $s3, $s4, $s5];
+        // Set the desired times
+        $s1 = Carbon::parse($value)->setTime(9, 0, 0); // 09:00
+        $s2 = Carbon::parse($value)->setTime(11, 0, 0); // 11:00
+        $s3 = Carbon::parse($value)->setTime(13, 0, 0); // 13:00
+        $s4 = Carbon::parse($value)->setTime(15, 0, 0); // 15:00
+        $s5 = Carbon::parse($value)->setTime(17, 0, 0); // 17:00
+        $jamTersedia = [$s1, $s2, $s3, $s4, $s5];
 
-            $sesi = [];
-            foreach ($jamTersedia as $jam) {
-                if ($jam > $d) {
-                    $selisih = $jam->diffInHours($d);
-                    if ($selisih >= 3) {
-                        $sesi[] = $jam->format('H:i');
-                    }
+        $sesi = [];
+        foreach ($jamTersedia as $jam) {
+            if ($jam > $d) {
+                $selisih = $jam->diffInHours($d);
+                if ($selisih >= 3) {
+                    $sesi[] = $jam->format('H:i');
                 }
             }
+        }
 
-            $this->times = collect($sesi);
-            $this->time = $this->times->first() ?? null;
+        $this->times = $sesi;
 
-            // if (!in_array($this->time, $this->times)) {
-            //     $this->time = null;
-            // }
-        } else {
-            $this->times = [];
+        if (!in_array($this->time, $this->times)) {
+            $this->time = null;
         }
     }
 
     public function updatedCity($value)
     {
-        if ($value) {
-            if ($value == 'Malang') {
-                $this->locations = collect(['Nakoa', 'Sarijan', 'Kopi Studio Sigura-gura', 'Kopi Studio Blimbing', 'Kopi Tuwo']);
-            } else if ($value == 'Jakarta') {
-                $this->locations = collect(['Djakarta Kafe', 'Blumchen Coffee', 'Cafe Batavia']);
-            }
-            $this->location = $this->locations->first() ?? null;
-        } else {
-            $this->locations = [];
+        if ($value == 'Malang') {
+            $this->locations = collect(['Nakoa', 'Sarijan', 'Kopi Studio Sigura-gura', 'Kopi Studio Blimbing', 'Kopi Tuwo']);
+        } else if ($value == 'Jakarta') {
+            $this->locations = collect(['Djakarta Kafe', 'Blumchen Coffee', 'Cafe Batavia']);
         }
+        $this->location = $this->locations->first() ?? null;
     }
-
 }

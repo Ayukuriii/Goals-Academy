@@ -173,7 +173,7 @@ class AdminController extends Controller
             'phone_number' => 'required',
             'university' => 'required',
             'major' => 'required',
-            'password' => 'required|min:8   ',
+            'password' => 'required',
             'user_level' => 'required'
         ]);
 
