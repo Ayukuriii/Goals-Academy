@@ -213,7 +213,7 @@
                         <div class="col-12 col-md-6 form-group mb-3">
                             <label class="form-label small" for="date">Jadwal</label>
                             <select class="form-select" wire:model="date" id="date">
-                                <option selected>Pilih Hari Kamu</option>
+                                <option value="" selected>Pilih Hari Kamu</option>
                                 @foreach ($dates as $x)
                                     <option value="{{ $x }}" wire:click="updatedDate({{ $x }})">
                                         {{ \Carbon\Carbon::parse($x)->isoFormat('dddd, D MMMM Y') }}
@@ -224,14 +224,12 @@
                         <div class="col-12 col-md-6 form-group">
                             <label class="form-label small" for="time">Sesi</label>
                             <select class="form-select" wire:model="time" id="time">
-                                <option selected>Pilih Jam Kamu</option>
+                                <option value="" selected>Pilih Jam Kamu</option>
                                 @if (count($times) > 0)
                                     @foreach ($times as $y)
                                         <option value="{{ $y }}">
                                             {{ \Carbon\Carbon::parse($y)->format('H:i') }}</option>
                                     @endforeach
-                                @else
-                                    <option>Kosong</option>
                                 @endif
                             </select>
                         </div>
@@ -243,7 +241,7 @@
                         <div class="col-12 col-md-6 form-group mb-3">
                             <label class="form-label small" for="city">Kota Domisili</label>
                             <select class="form-select" wire:model="city" id="city">
-                                <option selected>Open this select menu</option>
+                                <option value="" selected>Pilih Domisili Kamu</option>
                                 @foreach ($cities as $c)
                                     <option value="{{ $c }}"
                                         wire:click="updatedCity({{ $c }})">
@@ -255,7 +253,7 @@
                         <div class="col-12 col-md-6 form-group">
                             <label class="form-label small" for="location">Lokasi Bimbingan</label>
                             <select class="form-select" wire:model="location" id="location">
-                                <option selected>Open this select menu</option>
+                                <option value="" selected>Pilih Lokasi Bimbinganmu</option>
                                 @foreach ($locations as $l)
                                     <option value="{{ $l }}">{{ $l }}</option>
                                 @endforeach
