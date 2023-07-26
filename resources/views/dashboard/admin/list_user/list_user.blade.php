@@ -80,17 +80,15 @@
                                                     aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
-                                                <p style="font-size: small">Apakah Anda yakin ingin menghapus data dengan email :
+                                                <p>Apakah Anda yakin ingin menghapus data dengan email :
                                                     {{ $data->email }}?</p>
                                             </div>
                                             <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">Close</button>
                                                 <form action="/admin/destroy/{{ $data->id }}" method="POST">
                                                     @csrf
-                                                    <button type="button" style="font-size: small" class="col-2 btn btn-secondary"
-                                                        data-bs-dismiss="modal">
-                                                        Close
-                                                    </button>
-                                                    <button type="submit" style="font-size: small" class="col-2 btn btn-danger">
+                                                    <button type="submit" class="btn btn-danger">
                                                         Delete
                                                     </button>
                                                 </form>

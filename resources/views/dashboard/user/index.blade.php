@@ -36,7 +36,7 @@
             @else
                 <div class="card-body d-flex flex-column justify-content-center align-items-center">
                     <p>Kamu belum bergabung di program apapun</p>
-                    <a href="/program" class="btn">Cari Program</a>
+                    <a href="#" class="btn">Cari Program</a>
                 </div>
             @endif
         </div>

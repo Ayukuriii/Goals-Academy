@@ -39,30 +39,15 @@
                                 <th>Hari/Tanggal</th>
                                 <th>Sesi</th>
                                 <th>Link/Tempat</th>
-                                <th>T</th>
-                                <th>M</th>
-                                <th>Terbuat</th>
+                                <th>Tutor</th>
+                                <th>Moderator</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($datas as $data)
                                 <tr>
-                                    <td>
-                                        @if (!$data->orderDetail)
-                                            -
-                                        @else
-                                            @php
-                                                $response = json_decode($data->orderDetail->jsonstring);
-                                            @endphp
-                                            {{ $response->order_id }}
-                                            <!-- Now you can access the decoded data -->
-                                            {{-- Example: --}}
-                                            {{-- @if (isset($response->key))
-                                                {{ $response->key }}
-                                            @endif --}}
-                                        @endif
-                                    </td>
+                                    <td>{{ $loop->iteration }}</td>
                                     <td>{{ $data->user->name }}</td>
                                     <td>{{ $data->program->title }}</td>
                                     <td>{{ $data->tutor->user->name ?? 'Kosong' }}</td>
@@ -94,7 +79,6 @@
                                             <i class="bi bi-check fs-4 text-orange"></i>
                                         @endif
                                     </td>
-                                    <td>{{ \Carbon\Carbon::parse($data->created_at)->diffForHumans() }}</td>
                                     <td class="h4">
                                         <div class="d-flex gap-2">
                                             <a href="/admin/bimbingan/show/{{ $data->id }}"
@@ -131,9 +115,6 @@
                 dom: 'Bfrtip',
                 buttons: [
                     'copy', 'csv', 'excel', 'pdf'
-                ],
-                order: [
-                    [9, 'asc']
                 ]
             })
         })
