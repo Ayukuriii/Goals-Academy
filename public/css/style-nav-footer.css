@@ -24,10 +24,20 @@
 
 .navbar-toggler {
     border: none;
+    width: 100px;
 }
 
 .navbar-toggler:focus {
     box-shadow: unset;
+}
+
+.navbar-button {
+    width: 100px;
+}
+
+.navbar-button .fa-lg {
+    font-size: 1.5em;
+    line-height: unset;
 }
 
 .navbar-collapse {
@@ -54,8 +64,7 @@
 
 .btn-login {
     font-weight: bold;
-    width: 90px;
-    font-size: 17px;
+    font-size: 1rem;
     letter-spacing: 1.5px;
 }
 
@@ -190,9 +199,8 @@ footer {
         max-width: 985px;
     }
 
-    .navbar-brand {
-        margin-left: auto;
-        margin-right: auto;
+    .navbar-button .fa-lg {
+        font-size: 1.8em;
     }
 
     .footer-right-content > p:nth-last-of-type(1) {
@@ -203,10 +211,6 @@ footer {
 @media (max-width: 768px) {
     #navbar-full {
         margin-left: auto;
-    }
-
-    .btn-login {
-        display: block;
     }
 
     .footer-container {
@@ -249,9 +253,20 @@ footer {
     }
 }
 
-@media (max-width: 475px) {
+@media (max-width: 480px) {
+    .navbar-toggler, .navbar-button {
+        width: 60px;
+    }
+
     .navbar-brand img {
-        width: 180px;
-        height: 32px;
+        width: 150px;
+    }
+
+    .navbar-button .fa-lg {
+        font-size: 1.5em;
+    }
+
+    .btn-login {
+        font-size: x-small;
     }
 }
