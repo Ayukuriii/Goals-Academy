@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Tutor;
+use App\Models\TutorNotes;
+use App\Models\OrderDetail;
 use Illuminate\Http\Request;
 use App\Models\OngoingProgram;
 use App\Models\ProgramService;
-use App\Models\Tutor;
-use App\Models\TutorNotes;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 
@@ -30,10 +31,15 @@ class AdminController extends Controller
 
     public function bimbingan()
     {
-        // $tutors = Tutor::with('user')->get();
+
         return view('dashboard.admin.bimbingan.bimbingan', [
             'title' => 'Admin',
-            'datas' => OngoingProgram::where('is_tutor', 0)->orWhere('is_moderator', 0)->with('tutor.user')->get()
+            'datas' => OngoingProgram::where('is_tutor', 0)
+                ->orWhere('is_moderator', 0)
+                ->with('tutor.user')
+                ->with('orderDetail')
+                ->orderBy('created_at', 'desc')
+                ->get()
         ]);
     }
     public function riwayat_bimbingan()
@@ -65,6 +71,8 @@ class AdminController extends Controller
     {
         $data = OngoingProgram::findOrFail($id);
 
+        $x =  OrderDetail::where('ongoing_program_id', $id)->first();
+        $response = json_decode($x->jsonstring);
         $data->fill($request->only([
             'date',
             'program_session',
@@ -74,7 +82,7 @@ class AdminController extends Controller
             'links'
         ]));
         if ($data->save()) {
-            return redirect('/admin/bimbingan')->with('update-success', 'Data ' . $data->user->name . ' berhasil di update');
+            return redirect('/admin/bimbingan')->with('update-success', 'Data ' . $response->order_id . ' berhasil di update');
         } else {
             return back()->with('update-error', 'Data gagal di update');
         }
@@ -83,7 +91,7 @@ class AdminController extends Controller
     {
         return view('dashboard.admin.bimbingan.detail-bimbingan', [
             'title' => 'Admin',
-            'data' => OngoingProgram::find($id)
+            'data' => OngoingProgram::find($id),
         ]);
     }
     public function edit_bimbingan(Request $request, string $id)

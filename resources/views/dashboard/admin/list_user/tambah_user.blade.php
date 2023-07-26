@@ -108,7 +108,7 @@
                             @enderror
                         </div>
 
-                        <div class="form-button col-6 mb-2 d-flex justify-content-end">
+                        <div class="form-button col-12 mt-4 mb-2 d-flex justify-content-end">
                             <button class="btn-orange-static px-4 d-inline text-end small" id="button" type="submit">
                                 Simpan
                             </button>

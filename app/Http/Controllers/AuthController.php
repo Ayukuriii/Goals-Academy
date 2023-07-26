@@ -19,7 +19,7 @@ class AuthController extends Controller
     // memproses request register
     public function post_register(Request $request)
     {
-        // dd($request);
+
         $validateData = $request->validate([
             'name' => 'required|max:255',
             'username' => 'required|min:5|unique:users,username',
@@ -27,10 +27,11 @@ class AuthController extends Controller
             'phone_number' => 'required',
             'university' => 'required',
             'major' => 'required',
-            'password' => 'required'
+            'password' => 'required',
+            'confirmation_password' => 'required',
         ]);
-
-        if (!$request->password === $request->confirmation_password) {
+        
+        if ($request->password !== $request->confirmation_password) {
             return back();
         }
 
@@ -44,7 +45,6 @@ class AuthController extends Controller
         Auth::login($user);
 
         return redirect()->route('verification.notice')->with('success', 'Registration successfull! Please check your email for verification');
-        // return redirect('/')->with('success', 'Registration successfull! Please login');
     }
 
     public function get_login()
