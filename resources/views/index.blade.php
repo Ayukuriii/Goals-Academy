@@ -50,10 +50,10 @@
                 <!-- <button class="btn hero-btn"><a href="https://wa.me/6282147638286">Daftar Sekarang</a></button> -->
 
                 <form action="/send-email" method="POST">
-                    <div class="row input-group mb-3 hero-btn justify-content-between">
+                    <div class="row input-group mb-3 hero-btn align-items-center justify-content-between">
                         @csrf
                         <div class="col input-group-prepend">
-                            <input type="email" class="form-control" placeholder="Masukkan Email" aria-label="Masukkan Email" aria-describedby="basic-addon2" name="email-code" id="email-diskon" required>
+                            <input type="email" class="form-control except" placeholder="Masukkan Email" aria-label="Masukkan Email" aria-describedby="basic-addon2" name="email-code" id="email-diskon" required>
                             <!-- Input Email -->
                         </div>
                         <div class="col input-group-append">
