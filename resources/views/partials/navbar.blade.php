@@ -123,7 +123,7 @@
                         </div>
                     </li>
                 @else
-                    <li class="nav-item d-flex justify-content-center">
+                    <li class="nav-item d-flex justify-content-center ms-xl-3">
                         <!--Button Login-->
                         <a href="/login" class="btn-orange-static btn-login nav-link text-light py-2 my-2 ms-2"
                             id="step-login">Login</a>

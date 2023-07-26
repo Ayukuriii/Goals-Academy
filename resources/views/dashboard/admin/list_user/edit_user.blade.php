@@ -158,8 +158,8 @@
                                 </div>
                             @enderror
                         </div> --}}
-                        <div class="form-button col-12 mb-3 d-flex justify-content-end pt-3 pt-xl-5">
-                            <button class="btn-orange-static px-4 mt-2 d-inline text-end small" id="button"
+                        <div class="form-button col-6 mb-3 d-flex justify-content-end pt-3 pt-xl-5">
+                            <button class="btn-orange-static px-4 mt-4 mt-xl-0 d-inline text-end small" id="button"
                                 type="submit">Simpan</button>
                         </div>
                     </form>
