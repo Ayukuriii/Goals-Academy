@@ -3,6 +3,7 @@
 
 body {
     background-color: white;
+    height: fit-content;
 }
 
 .custom-fs-1 {
@@ -898,7 +899,7 @@ body {
 .accordion-item-body {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.2s ease-out;
+    transition: max-height 100ms ease-out;
 }
 
 .accordion-item-body-content {
@@ -1794,6 +1795,16 @@ body {
 }
 
 @media (max-width: 500px) {
+    .accordion-item-header {
+        min-height: 4rem;
+        font-size: small;
+    }
+
+    .accordion-item-body {
+        font-size: small;
+        transition: max-height 400ms ease-out;
+    }
+
     #email-diskon,
     #dapatkan-diskon {
         font-size: 12px;

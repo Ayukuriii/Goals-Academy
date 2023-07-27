@@ -250,11 +250,20 @@ const accordionItemHeaders = document.querySelectorAll(
 
 accordionItemHeaders.forEach((accordionItemHeader) => {
     accordionItemHeader.addEventListener("click", (event) => {
+        accordionItemHeaders.forEach(element => {
+            if (element.getAttribute("data-toggle") != accordionItemHeader.getAttribute("data-toggle")) {
+                const accordionItemBody = document.querySelector("#" + element.getAttribute("data-toggle"));
+                if (element.classList.contains("active")) {
+                    element.classList.remove("active");
+                }
+                accordionItemBody.style.maxHeight = 0;
+            }
+        });
+
         accordionItemHeader.classList.toggle("active");
         const accordionItemBody = accordionItemHeader.nextElementSibling;
         if (accordionItemHeader.classList.contains("active")) {
-            accordionItemBody.style.maxHeight =
-                accordionItemBody.scrollHeight + "px";
+            accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + "px";
         } else {
             accordionItemBody.style.maxHeight = 0;
         }

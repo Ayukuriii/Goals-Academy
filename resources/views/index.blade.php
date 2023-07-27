@@ -514,8 +514,8 @@
 
         <div class="accordion">
             <div class="accordion-item">
-                <div class="accordion-item-header">Kak ini programnya online atau offline ya?</div>
-                <div class="accordion-item-body">
+                <div class="accordion-item-header" data-toggle="accordion-1">Kak ini programnya online atau offline ya?</div>
+                <div class="accordion-item-body" id="accordion-1">
                     <div class="accordion-item-body-content">
                         Kami menyediakan 2 program yaitu offline dan online. Program offline ini diadakan bagi mahasiswa
                         yang bertempatan di Malang dan ingin melakukan bimbingan skripsi secara tatap muka dengan Tutor
@@ -525,8 +525,8 @@
                 </div>
             </div>
             <div class="accordion-item">
-                <div class="accordion-item-header">Sebulan ada berapa kali bimbingan?</div>
-                <div class="accordion-item-body">
+                <div class="accordion-item-header" data-toggle="accordion-2">Sebulan ada berapa kali bimbingan?</div>
+                <div class="accordion-item-body" id="accordion-2">
                     <div class="accordion-item-body-content">
                         Untuk program dibimbing berkelompok dan privat, mahasiswa akan dibimbing 2 hingga 4 kali dalam
                         sebulan sesuai dengan schedule yang telah ditentukan pada saat pengumuman pembagian kelompok dan
@@ -535,32 +535,30 @@
                 </div>
             </div>
             <div class="accordion-item">
-                <div class="accordion-item-header">
+                <div class="accordion-item-header" data-toggle="accordion-3">
                     Bimbingannya via apa?
                 </div>
-                <div class="accordion-item-body">
+                <div class="accordion-item-body" id="accordion-3">
                     <div class="accordion-item-body-content">
-                        <ul style="padding-left: 1rem">
-                            Ketika bimbingan kami menggunakan aplikasi virtual meeting.
-                            Aplikasi virtual meeting adalah aplikasi komunikasi yang menggunakan video.
-                            Aplikasi ini bisa digunakan di semua perangkat seperti hp dan laptop.
-                            Pastikan juga perangkatmu sudah terkoneksi dengan internet yang stabil agar proses
-                            bimbinganmu berjalan dengan lancar.
-                        </ul>
+                        Ketika bimbingan kami menggunakan aplikasi virtual meeting.
+                        Aplikasi virtual meeting adalah aplikasi komunikasi yang menggunakan video.
+                        Aplikasi ini bisa digunakan di semua perangkat seperti hp dan laptop.
+                        Pastikan juga perangkatmu sudah terkoneksi dengan internet yang stabil agar proses
+                        bimbinganmu berjalan dengan lancar.
                     </div>
                 </div>
             </div>
             <div class="accordion-item">
-                <div class="accordion-item-header">Pembayarannya lewat apa kak?</div>
-                <div class="accordion-item-body">
+                <div class="accordion-item-header" data-toggle="accordion-4">Pembayarannya lewat apa kak?</div>
+                <div class="accordion-item-body" id="accordion-4">
                     <div class="accordion-item-body-content">
                         Kami menyediakan pembayaran melalui BCA, BNI, Shopeepay, Dana, dsb
                     </div>
                 </div>
             </div>
             <div class="accordion-item">
-                <div class="accordion-item-header">Jurusan yang tersedia untuk apa saja kak?</div>
-                <div class="accordion-item-body">
+                <div class="accordion-item-header" data-toggle="accordion-5">Jurusan yang tersedia untuk apa saja kak?</div>
+                <div class="accordion-item-body" id="accordion-5">
                     <div class="accordion-item-body-content">
                         Ilmu Hukum, Pendidikan, Ekonomi dan Bisnis (manajemen, bisnis, akuntansi, ekonomi,
                         administrasi),
