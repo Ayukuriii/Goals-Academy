@@ -12,7 +12,7 @@
 
         {{-- <i class="fs-xl fa-regular fa-hourglass-half fa-spin text-purple my-4"></i> --}}
 
-        <p class="fs-5 mt-2">Lakukan Pembayaran dalam <span class="text-danger">00:59:59</span></p>
+        <p class="fs-5 mt-2">Lakukan Pembayaran dalam <span class="d-inline-block text-danger text-center" style="width: 80px" id="expiry-time"></span></p>
 
         {{-- <a href="{{ $response->actions[0]->url }}" download="qr-code.png">
             <img src="{{ $response->actions[0]->url }}" alt="{{ $response->actions[0]->name }}">
@@ -51,15 +51,50 @@
 @section('script')
     <script>
         // Function copy to clipboard
-        const copyToClipboard = (value, callback = null) => {
-            // Copy the text inside the text field
-            navigator.clipboard.writeText(value);
-        }
+        // const copyToClipboard = (value, callback = null) => {
+        //     // Copy the text inside the text field
+        //     navigator.clipboard.writeText(value);
+        // }
 
-        const paymentCode = document.querySelector("#payment-code");
+        const expiryTimeElement = document.querySelector("#expiry-time");
+        const expiryTime = moment("{{ $response->expiry_time }}")
 
-        paymentCode.addEventListener('click', e => {
-            copyToClipboard(e.target.innerText, alert("Payment code copied!\n"));
-        })
+        const options = {
+            year: "2-digit",
+            month: "2-digit",
+            day: "2-digit",
+            hour: "2-digit",
+            minute: "2-digit",
+            timeZoneName: "short",
+        };
+
+        const dateTime = new Intl.DateTimeFormat("en-US", options).format;
+
+        const updateExpiryTime = setInterval(() => {
+            const difference = expiryTime.diff(moment());
+            if (difference <= 1) {
+                clearInterval(updateExpiryTime);
+                expiryTimeElement.innerText = "00:00:00";
+            } else {
+                const hours = Math.floor(difference  / (1000*60*60));
+                const minutes = Math.floor(difference % (1000*60*60) / (1000*60));
+                const seconds = Math.floor(difference % (1000*60*60) % (1000*60) / (1000));
+
+                const countdown = moment();
+                countdown.hours(hours);
+                countdown.minutes(minutes);
+                countdown.seconds(seconds);
+
+                expiryTimeElement.innerText = countdown.format("HH:mm:ss");
+            }
+        }, 1000);
+
+        updateExpiryTime();
+
+        // const paymentCode = document.querySelector("#payment-code");
+
+        // paymentCode.addEventListener("click", e => {
+        //     copyToClipboard(e.target.innerText, alert("Payment code copied!\n"));
+        // })
     </script>
 @endsection
