@@ -109,69 +109,69 @@ class DatabaseSeeder extends Seeder
             'user_id'  => '5'
         ]);
 
-        OngoingProgram::create([
-            'user_id' => 4,
-            'program_services_id' => 1,
-            'tutor_id' => 1,
-            'payment_status' => 'success',
-            'program_session' => '09:00',
-            'catatan' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, odio.',
-            'file' => 'F-12 Form Penyerahan.pdf',
-            'date' => now()->addDays(7)->format('Y-m-d'),
-            'links' => 'www.google.com',
-            'is_tutor' => false,
-            'is_moderator' => false
-        ]);
-        OngoingProgram::create([
-            'user_id' => 4,
-            'program_services_id' => 2,
-            'tutor_id' => 2,
-            'payment_status' => 'success',
-            'program_session' => '09:00',
-            'catatan' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, odio.',
-            'file' => '',
-            'date' => now()->addDays(20)->format('Y-m-d'),
-            'is_tutor' => false,
-            'is_moderator' => false
-        ]);
-        OngoingProgram::create([
-            'user_id' => 4,
-            'program_services_id' => 1,
-            'tutor_id' => 1,
-            'payment_status' => 'success',
-            'program_session' => '12:00',
-            'catatan' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, odio.',
-            'file' => '',
-            'date' => now()->addDays(20)->format('Y-m-d'),
-            'links' => 'www.google.com',
-            'is_tutor' => true,
-            'is_moderator' => false
-        ]);
-        OngoingProgram::create([
-            'user_id' => 4,
-            'program_services_id' => 3,
-            'tutor_id' => 1,
-            'payment_status' => 'success',
-            'program_session' => '12:00',
-            'catatan' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, odio.',
-            'file' => 'F-12 Form Penyerahan.pdf',
-            'date' => now()->addDays(10)->format('Y-m-d'),
-            'links' => 'Nakoa',
-            'is_tutor' => true,
-            'is_moderator' => true
-        ]);
+        // OngoingProgram::create([
+        //     'user_id' => 4,
+        //     'program_services_id' => 1,
+        //     'tutor_id' => 1,
+        //     'payment_status' => 'success',
+        //     'program_session' => '09:00',
+        //     'catatan' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, odio.',
+        //     'file' => 'F-12 Form Penyerahan.pdf',
+        //     'date' => now()->addDays(7)->format('Y-m-d'),
+        //     'links' => 'www.google.com',
+        //     'is_tutor' => false,
+        //     'is_moderator' => false
+        // ]);
+        // OngoingProgram::create([
+        //     'user_id' => 4,
+        //     'program_services_id' => 2,
+        //     'tutor_id' => 2,
+        //     'payment_status' => 'success',
+        //     'program_session' => '09:00',
+        //     'catatan' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, odio.',
+        //     'file' => '',
+        //     'date' => now()->addDays(20)->format('Y-m-d'),
+        //     'is_tutor' => false,
+        //     'is_moderator' => false
+        // ]);
+        // OngoingProgram::create([
+        //     'user_id' => 4,
+        //     'program_services_id' => 1,
+        //     'tutor_id' => 1,
+        //     'payment_status' => 'success',
+        //     'program_session' => '12:00',
+        //     'catatan' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, odio.',
+        //     'file' => '',
+        //     'date' => now()->addDays(20)->format('Y-m-d'),
+        //     'links' => 'www.google.com',
+        //     'is_tutor' => true,
+        //     'is_moderator' => false
+        // ]);
+        // OngoingProgram::create([
+        //     'user_id' => 4,
+        //     'program_services_id' => 3,
+        //     'tutor_id' => 1,
+        //     'payment_status' => 'success',
+        //     'program_session' => '12:00',
+        //     'catatan' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, odio.',
+        //     'file' => 'F-12 Form Penyerahan.pdf',
+        //     'date' => now()->addDays(10)->format('Y-m-d'),
+        //     'links' => 'Nakoa',
+        //     'is_tutor' => true,
+        //     'is_moderator' => true
+        // ]);
 
-        TutorNotes::create([
-            'ongoing_program_id' => 1,
-            'body' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor rem incidunt nostrum reiciendis soluta alias labore nemo dignissimos itaque atque quibusdam id, animi sit quidem iste est molestiae libero perferendis blanditiis distinctio expedita veniam hic. Corrupti ipsam nam nesciunt veniam, doloremque totam quasi reiciendis, sunt ad officiis, dolor libero? Voluptas, est quisquam officiis incidunt facere, neque beatae, illum sed cupiditate adipisci iusto iure ipsum. Dolore natus deleniti asperiores adipisci! Deleniti saepe doloremque suscipit molestiae quas magnam repudiandae cumque eos laborum distinctio sunt modi, nam natus quae? Accusantium, optio tenetur, error reiciendis inventore eos sapiente ipsum quidem necessitatibus expedita molestiae earum!'
-        ]);
-        TutorNotes::create([
-            'ongoing_program_id' => 2,
-            'body' => 'sudah bagus program 2 nya'
-        ]);
-        TutorNotes::create([
-            'ongoing_program_id' => 4,
-            'body' => 'sudah bagus program 2 nya'
-        ]);
+        // TutorNotes::create([
+        //     'ongoing_program_id' => 1,
+        //     'body' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor rem incidunt nostrum reiciendis soluta alias labore nemo dignissimos itaque atque quibusdam id, animi sit quidem iste est molestiae libero perferendis blanditiis distinctio expedita veniam hic. Corrupti ipsam nam nesciunt veniam, doloremque totam quasi reiciendis, sunt ad officiis, dolor libero? Voluptas, est quisquam officiis incidunt facere, neque beatae, illum sed cupiditate adipisci iusto iure ipsum. Dolore natus deleniti asperiores adipisci! Deleniti saepe doloremque suscipit molestiae quas magnam repudiandae cumque eos laborum distinctio sunt modi, nam natus quae? Accusantium, optio tenetur, error reiciendis inventore eos sapiente ipsum quidem necessitatibus expedita molestiae earum!'
+        // ]);
+        // TutorNotes::create([
+        //     'ongoing_program_id' => 2,
+        //     'body' => 'sudah bagus program 2 nya'
+        // ]);
+        // TutorNotes::create([
+        //     'ongoing_program_id' => 4,
+        //     'body' => 'sudah bagus program 2 nya'
+        // ]);
     }
 }

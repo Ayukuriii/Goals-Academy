@@ -72,6 +72,10 @@
             </table>
 
             <div class="">
+                <h5>Pesanmu</h5>
+                <p class="fs-6">{{ $data->catatan }}</p>
+            </div>
+            <div class="">
                 <h5>Catatan dari tutor</h5>
                 <p class="fs-6">{{ optional($data->tutor_notes->first())->body }}</p>
             </div>
