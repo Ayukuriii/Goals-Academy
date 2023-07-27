@@ -107,11 +107,11 @@ class Purchase extends Component
         ]);
 
         if ($this->program == 1) {
-            $this->price = 47000;
+            $this->price = 11;
         } else if ($this->program == 2) {
-            $this->price = 85000;
+            $this->price = 12;
         } else if ($this->program == 3) {
-            $this->price = 98000;
+            $this->price = 13;
         }
 
         $this->currentStep = 4;
@@ -150,6 +150,11 @@ class Purchase extends Component
             'transaction_details' => array(
                 'order_id' => 'GA' . $rand,
                 'gross_amount' => $this->price,
+                // 'expiry' => array(
+                //     'start_time' => date('Y-m-d H:i:s'), // The start time of the expiry duration (usually the current time)
+                //     'unit' => 'minutes', // The unit of the expiry duration (can be 'minutes' or 'hours')
+                //     'duration' => 60
+                // )
             ),
             'customer_details' => array(
                 'first_name' => $user->name,
@@ -161,6 +166,7 @@ class Purchase extends Component
         );
 
         $response = \Midtrans\CoreApi::charge($params);
+        // dd($response);
         $responseToJson = json_encode($response);
 
         $order = OrderDetail::create([
