@@ -2,9 +2,9 @@
 
 @section('container')
 <!-- Isi Page -->
-<section id="program" class="my-5 pt-5 px-3 px-xl-0">
+<section id="program" class="bg-2 mt-5 py-5 px-3 px-xl-0">
     <div class="container-xl justify-content-center align-items-center">
-        <h1 class="text-purple fw-bold text-center mb-5">Program Goals Academy</h1>
+        <h1 class="text-center text-purple fw-bold fs-3 mb-3 pt-3 pb-4">Program Goals Academy</h1>
         <div id="program-list">
             <div class="row flex-row card align-items-center rounded-4 p-3">
                 <div class="col-6 col-md-5 col-xl-4 p-0 mb-3">

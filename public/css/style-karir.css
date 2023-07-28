@@ -1,12 +1,5 @@
 /* Karir */
 
-#karir {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 45px;
-}
-
 hr {
   width: 280px;
   color: rgba(0, 4, 4, 1);
@@ -53,7 +46,6 @@ hr {
   font-weight: bold;
   font-size: clamp(20px, 25px, 38px);
   letter-spacing: 1.5px;
-  margin-top: 50px;
   margin-bottom: 15px;
 }
 
@@ -62,7 +54,6 @@ hr {
   font-weight: bold;
   font-size: 22px;
   letter-spacing: 1.5px;
-  margin-bottom: 30px;
 }
 
 .karir-card-wrapper {
@@ -79,7 +70,6 @@ hr {
 
 .karir-card {
   width: 100%;
-  max-width: 350px;
   height: 396px;
   background-color: #fff;
   justify-content: center;
@@ -118,7 +108,7 @@ hr {
   padding: 6px;
 }
 
-@media (max-width: 475px) {
+@media (max-width: 512px) {
   .text-karir p {
     display: none;
   }
@@ -145,4 +135,10 @@ hr {
     margin-right: auto;
     width: 350px;
   }
+}
+
+/* New Karir CSS */
+
+#karir-list .card.col-11 {
+    width: 95%;
 }
