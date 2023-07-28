@@ -25,9 +25,9 @@ class AdminController extends Controller
             'title' => 'Admin',
             'data' => OngoingProgram::all(),
             'datas' => OngoingProgram::where('is_tutor', 0)->orWhere('is_moderator', 0),
-            'emptylink' => OngoingProgram::where('links', '=', null)->count()
+            'emptylink' => OngoingProgram::where('links', '=', null)->where('is_tutor', 0)->orWhere('is_moderator', 0)->count()
         ]);
-    }
+    }   
 
     public function bimbingan()
     {

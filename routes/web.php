@@ -195,6 +195,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/midtrans', 'index_midtrans')->name('midtrans.index');
         Route::get('/midtrans/order/{id}', 'order')->name('midtrans.order');
         Route::post('/midtrans/payment/{id}', 'payment')->name('midtrans.payment');
+        Route::get('/exptime/{id}', 'expiryTime');
     });
 });
 Route::get('/purchase', function () {
