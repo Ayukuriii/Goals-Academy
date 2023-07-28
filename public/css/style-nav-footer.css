@@ -7,11 +7,11 @@
     font-family: "Poppins", sans-serif;
 }
 
-.style-nav-footer-body {
+.landing-page-background {
     background-image: url("../image/assets/images/background-blue-white.svg");
     background-position: 50%;
     background-size: cover;
-    background-color: #fff;
+    background-repeat: no-repeat;
 }
 
 /* Navbar */
@@ -193,6 +193,11 @@ footer {
 }
 
 @media (max-width: 985px) {
+    .landing-page-background {
+        background-size: cover;
+        height: 540vw;
+    }
+
     #navbar-full {
         margin-left: auto;
         margin-right: auto;
@@ -209,6 +214,10 @@ footer {
 }
 
 @media (max-width: 768px) {
+    .landing-page-background {
+        height: 700vw;
+    }
+
     #navbar-full {
         margin-left: auto;
     }
@@ -254,6 +263,12 @@ footer {
 }
 
 @media (max-width: 480px) {
+    .landing-page-background {
+        background-image: url('../image/assets/images/background-mobile.svg');
+        background-size: cover;
+        height: 900vw;
+    }
+
     .navbar-toggler, .navbar-button {
         width: 60px;
     }
@@ -268,5 +283,11 @@ footer {
 
     .btn-login {
         font-size: x-small;
+    }
+}
+
+@media (max-width: 360px) {
+    .landing-page-background {
+        height: 1150vw;
     }
 }

@@ -31,7 +31,7 @@
 	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
-<body class="{{ Request::is('/') ? 'style-nav-footer-body' : 'comingsoon-body' }}">
+<body class="{{ Request::is('/') ? 'landing-page-background' : '' }}">
     @include('partials.navbar')
 
     @yield('container')
