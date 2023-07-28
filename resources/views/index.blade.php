@@ -29,7 +29,7 @@
     @if (session()->has('loginError'))
         <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="toast-header">
-                <img src="..." class="rounded me-2" alt="...">
+                <img rel="prerender" src="..." class="rounded me-2" alt="...">
                 <strong class="me-auto">Login Error</strong>
                 <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
             </div>
@@ -63,10 +63,10 @@
                     </div>
                 </form>
 
-                <div class="hero-image"><img class="img-fluid" alt=""
+                <div class="hero-image"><img rel="prerender" class="img-fluid" alt=""
                         src="image/assets/images/header/hero-img.png" /></div>
                 <!-- Screen > 1000px -->
-                <div class="hero-image-mobile"><img class="img-fluid" alt=""
+                <div class="hero-image-mobile"><img rel="prerender" class="img-fluid" alt=""
                         src="image/assets/images/header/hero-img.png" /></div> <!-- Screen < 768px -->
             </div>
     </section>
@@ -77,26 +77,26 @@
         <h1><span style="color:#4F3F85;">Terbaru dari Goals Academy</span></h1>
         <div class="swipper-container swiper">
             <div class="swipe-left">
-                <img src="image/assets\images\promo\left-arrow.png" id="button-promo-left" onclick="swipeLeft">
+                <img rel="prerender" src="image/assets\images\promo\left-arrow.png" id="button-promo-left" onclick="swipeLeft">
                 <!--button klik kiri-->
             </div>
             <div class="swipe-right">
-                <img src="image/assets\images\promo\left-arrow.png" id="button-promo-right" onclick="swipeRight">
+                <img rel="prerender" src="image/assets\images\promo\left-arrow.png" id="button-promo-right" onclick="swipeRight">
                 <!--button klik kanan-->
             </div>
             <div class="slide-content">
                 <div class="card-wrapper swiper-wrapper">
                     <div class="card swiper-slide">
-                        <div class="card-image"><img alt="" src="image/assets/images/banner/banner_1.png" /></div>
+                        <div class="card-image"><img rel="prerender" alt="" src="image/assets/images/banner/banner_1.png" /></div>
                     </div>
 
                     <div class="card swiper-slide">
-                        <div class="card-image"><img alt="" src="image/assets/images/banner/banner_2.png" />
+                        <div class="card-image"><img rel="prerender" alt="" src="image/assets/images/banner/banner_2.png" />
                         </div>
                     </div>
 
                     <div class="card swiper-slide">
-                        <div class="card-image"><img alt="" src="image/assets/images/banner/banner_3.png" />
+                        <div class="card-image"><img rel="prerender" alt="" src="image/assets/images/banner/banner_3.png" />
                         </div>
                     </div>
                 </div>
@@ -121,7 +121,7 @@
                         bulan.</p>
                 </div>
 
-                <div class="image-content image1"><img alt="" src="image/assets/images/reason/image1.png" />
+                <div class="image-content image1"><img rel="prerender" alt="" src="image/assets/images/reason/image1.png" />
                 </div>
             </div>
 
@@ -133,7 +133,7 @@
                     <p>Pembimbing kalian berasal dari <br>kampus terkemuka di Indonesia.</p>
                 </div>
 
-                <div class="image-content image2"><img alt="" src="image/assets/images/reason/image2.png" />
+                <div class="image-content image2"><img rel="prerender" alt="" src="image/assets/images/reason/image2.png" />
                 </div>
             </div>
 
@@ -144,7 +144,7 @@
                         fleksibel 24/7.</p>
                 </div>
 
-                <div class="image-content image3"><img alt="" src="image/assets/images/reason/image3.png" />
+                <div class="image-content image3"><img rel="prerender" alt="" src="image/assets/images/reason/image3.png" />
                 </div>
             </div>
 
@@ -155,7 +155,7 @@
                     <p>Mahasiswa dapat menyusun skripsi <br> lebih cepat dan mudah dengan<br> program webinar live.</p>
                 </div>
 
-                <div class="image-content image4"><img alt="" src="image/assets/images/reason/image4.png" />
+                <div class="image-content image4"><img rel="prerender" alt="" src="image/assets/images/reason/image4.png" />
                 </div>
             </div>
         </div>
@@ -174,16 +174,16 @@
                                                  </div> -->
         <div class="swipper-container swiper">
             <!-- <div class="swipe-left">
-                                                  <img src="image\assets\images\promo\left-arrow.png" id="button-product-left" onclick="swipeLeft">
+                                                  <img rel="prerender" src="image\assets\images\promo\left-arrow.png" id="button-product-left" onclick="swipeLeft">
                                                  </div>
                                                  <div class="swipe-right">
-                                                  <img src="image\assets\images\promo\left-arrow.png" id="button-product-right" onclick="swipeRight">
+                                                  <img rel="prerender" src="image\assets\images\promo\left-arrow.png" id="button-product-right" onclick="swipeRight">
                                                  </div> -->
             <div class="slider">
                 <!-- <div class="card-wrapper swiper-wrapper"> -->
                 <div class="product-card card-1 swiper-slide">
                     <!-- Product Card 1-->
-                    <div class="product-image"><img class="img-fluid" alt=""
+                    <div class="product-image"><img rel="prerender" class="img-fluid" alt=""
                             src="image/assets/images/banner/program_2.png" /></div>
                     <div class="card-content">
                         <h3>Dibimbing Sekali</h3>
@@ -200,7 +200,7 @@
                 </div>
 
                 <!-- <div class="product-card card-2 swiper-slide" id="dibimbingberkelompok">
-                                                   <div class="product-image"><img class="img-fluid" alt="" src="image/assets/images/banner/program_3.png"/></div>
+                                                   <div class="product-image"><img rel="prerender" class="img-fluid" alt="" src="image/assets/images/banner/program_3.png"/></div>
                                                    <div class="card-content">
                                                     <h3>Dibimbing Berkelompok</h3>
                                                     <p>Lulus cepet bareng bestie itu idaman gak sih? Coba bimbingan rame-rame, cuma 3 bulan bisa kelar skripsi bareng Tutor idaman kalian!</p>
@@ -210,7 +210,7 @@
                                                     </div>
                                                   </div>
                                                   <div class="product-card card-3 swiper-slide" id="webinarskripsi">
-                                                   <div class="product-image"><img class="img-fluid" alt="" src="image/assets/images/banner/program_1.png"/></div>
+                                                   <div class="product-image"><img rel="prerender" class="img-fluid" alt="" src="image/assets/images/banner/program_1.png"/></div>
                                                    <div class="card-content">
                                                     <h3>Webinar Skripsi</h3>
                                                     <p>Skripsi kelar hanya gara-gara dengerin Tutor bahas materi lewat layar kalian loh, yuk ikut sekarang!</p>
@@ -220,7 +220,7 @@
                                                     </div>
                                                   </div>
                                                   <div class="product-card card-4 swiper-slide" id="dibimbinggratis">
-                                                   <div class="product-image"><img class="img-fluid" alt="" src="image/assets/images/banner/program_1.png"/></div>
+                                                   <div class="product-image"><img rel="prerender" class="img-fluid" alt="" src="image/assets/images/banner/program_1.png"/></div>
                                                    <div class="card-content">
                                                     <h3>Dibimbing Gratis</h3>
                                                     <p>Eh apanih? Coba bimbingan yuk, siapa tau kamu tercerahkan sama yang gratis-gratis. Eits, tapi kuotanya terbatas ya</p>
@@ -230,7 +230,7 @@
                                                     </div>
                                                   </div>
                                                   <div class="product-card card-5 swiper-slide" id="ebookskripsi">
-                                                   <div class="product-image"><img class="img-fluid" alt="" src="image/assets/images/banner/program_1.png"/></div>
+                                                   <div class="product-image"><img rel="prerender" class="img-fluid" alt="" src="image/assets/images/banner/program_1.png"/></div>
                                                    <div class="card-content">
                                                     <h3>E-book Skripsi</h3>
                                                     <p>Baca e-booknya biar skripsimu cepet kelar. Sssttt, banyak tipsnya loh!</p>
@@ -251,7 +251,7 @@
     <div class="modal-container" id="modal1">
         <div class="modal-content">
             <div class="top-modal">
-                <div class="modal-image"><img class="img-fluid" src="image/assets/images/banner/program_2.png"
+                <div class="modal-image"><img rel="prerender" class="img-fluid" src="image/assets/images/banner/program_2.png"
                         alt="" />
                 </div>
 
@@ -424,16 +424,16 @@
                 <tr>
                     <td>
                         <div class="video-1"><a href="https://youtube.com/shorts/jTsIRfBy-Qs?feature=share">
-                                <img alt="" src="image/assets/icons/video-goals.svg" width="805px"
+                                <img rel="prerender" alt="" src="image/assets/icons/video-goals.svg" width="805px"
                                     height="474px" /></a>
                         </div>
                     </td>
                     <!-- <div class="video-2">
                                                    <td>
                                                     <li style="list-style: none;" id="list-video">
-                                                    <ul id="items-video"><img alt="" src="assets/icons/video-logo.jpeg" width="250px" height="140px"/></ul>
-                                                    <ul id="items-video"><img alt="" src="assets/icons/video-logo.jpeg" width="250px" height="140px"/></ul>
-                                                    <ul id="items-video"><img alt="" src="assets/icons/video-logo.jpeg" width="250px" height="140px"/></ul>
+                                                    <ul id="items-video"><img rel="prerender" alt="" src="assets/icons/video-logo.jpeg" width="250px" height="140px"/></ul>
+                                                    <ul id="items-video"><img rel="prerender" alt="" src="assets/icons/video-logo.jpeg" width="250px" height="140px"/></ul>
+                                                    <ul id="items-video"><img rel="prerender" alt="" src="assets/icons/video-logo.jpeg" width="250px" height="140px"/></ul>
                                                    </li>
                                                    </td> -->
                     <!-- </div> -->
@@ -462,7 +462,7 @@
         <div class="lecturer-card-wrapper">
             <div class="lecturer-card">
                 <div class="card-image" id="yor1">
-                    <img src="image\assets\images\lecturer\Rectangle 113.png" alt="" />
+                    <img rel="prerender" src="image\assets\images\lecturer\Rectangle 113.png" alt="" />
                 </div>
 
                 <div class="card-text">
@@ -473,7 +473,7 @@
 
             <div class="lecturer-card">
                 <div class="card-image" id="rian1">
-                    <img src="image\assets\images\lecturer\Rectangle 113.png" alt="" />
+                    <img rel="prerender" src="image\assets\images\lecturer\Rectangle 113.png" alt="" />
                 </div>
 
                 <div class="card-text">
@@ -484,7 +484,7 @@
 
             <div class="lecturer-card">
                 <div class="card-image" id="pica1">
-                    <img src="image\assets\images\lecturer\Rectangle 113.png" alt="" />
+                    <img rel="prerender" src="image\assets\images\lecturer\Rectangle 113.png" alt="" />
                 </div>
 
                 <div class="card-text">
@@ -496,7 +496,7 @@
 
             <div class="lecturer-card">
                 <div class="card-image" id="timo1">
-                    <img src="image\assets\images\lecturer\Rectangle 113.png" alt="" />
+                    <img rel="prerender" src="image\assets\images\lecturer\Rectangle 113.png" alt="" />
                 </div>
 
                 <div class="card-text">
@@ -604,7 +604,7 @@
             <!-- Instagram -->
             <div class="socmed socmed-3" style="padding: 5px;">
                 <a href="instagram.com/goalsacademy_id">
-                    <img src="image/assets/icons/logo-ig.png" alt="" width="48" height="48">
+                    <img rel="prerender" src="image/assets/icons/logo-ig.png" alt="" width="48" height="48">
                 </a>
             </div>
             <!-- Linkedin -->
@@ -662,7 +662,7 @@
             </h1>
         </div>
         <div class="testimoni-mobile">
-            <img class="img-fluid" src="image/assets/icons/petik.svg" alt="" width="24px"/>
+            <img rel="prerender" class="img-fluid" src="image/assets/icons/petik.svg" alt="" width="24px"/>
             <h1 style="text-align: left;color: #ff8854;font-weight: bold;font-size: 1rem;padding-left: 10px;">Apa Kata
                 Mereka <br>Tentang Goals Academy</h1>
         </div>
@@ -680,7 +680,7 @@
                                 <hr />
                                 <div class="card-content">
                                     <div class="user-profile">
-                                        <div class="user-img"><img alt="" class="card-img"
+                                        <div class="user-img"><img rel="prerender" alt="" class="card-img"
                                                 src="image/assets/images/testimoni/rinda.jpg" /></div>
 
                                         <div class="user-identity">
@@ -712,7 +712,7 @@
                                 <hr />
                                 <div class="card-content">
                                     <div class="user-profile">
-                                        <div class="user-img"><img alt="" class="card-img"
+                                        <div class="user-img"><img rel="prerender" alt="" class="card-img"
                                                 src="image/assets/images/testimoni/hilda.jpeg" /></div>
 
                                         <div class="user-identity">
@@ -745,7 +745,7 @@
                                 <hr />
                                 <div class="card-content">
                                     <div class="user-profile">
-                                        <div class="user-img"><img alt="" class="card-img"
+                                        <div class="user-img"><img rel="prerender" alt="" class="card-img"
                                                 src="image/assets/images/testimoni/haris.jpeg" /></div>
 
                                         <div class="user-identity">
@@ -776,7 +776,7 @@
                                 <hr />
                                 <div class="card-content">
                                     <div class="user-profile">
-                                        <div class="user-img"><img alt="" class="card-img"
+                                        <div class="user-img"><img rel="prerender" alt="" class="card-img"
                                                 src="image/assets/images/testimoni/ravly.jpeg" /></div>
 
                                         <div class="user-identity">
@@ -808,7 +808,7 @@
                                 <hr />
                                 <div class="card-content">
                                     <div class="user-profile">
-                                        <div class="user-img"><img alt="" class="card-img"
+                                        <div class="user-img"><img rel="prerender" alt="" class="card-img"
                                                 src="image/assets/images/testimoni/wendi.jpeg" /></div>
 
                                         <div class="user-identity">
@@ -848,7 +848,7 @@
                                 <hr />
                                 <div class="card-content">
                                     <div class="user-profile">
-                                        <div class="user-img"><img alt="" class="card-img"
+                                        <div class="user-img"><img rel="prerender" alt="" class="card-img"
                                                 src="image/assets/images/testimoni/ferry.jpeg" /></div>
 
                                         <div class="user-identity">
@@ -880,7 +880,7 @@
                                 <hr />
                                 <div class="card-content">
                                     <div class="user-profile">
-                                        <div class="user-img"><img alt="" class="card-img"
+                                        <div class="user-img"><img rel="prerender" alt="" class="card-img"
                                                 src="image/assets/images/testimoni/kafhid.jpeg" /></div>
 
                                         <div class="user-identity">
@@ -912,7 +912,7 @@
                                 <hr />
                                 <div class="card-content">
                                     <div class="user-profile">
-                                        <div class="user-img"><img alt="" class="card-img"
+                                        <div class="user-img"><img rel="prerender" alt="" class="card-img"
                                                 src="image/assets/images/testimoni/maudy.png" /></div>
 
                                         <div class="user-identity">
@@ -945,7 +945,7 @@
                                 <hr />
                                 <div class="card-content">
                                     <div class="user-profile">
-                                        <div class="user-img"><img alt="" class="card-img"
+                                        <div class="user-img"><img rel="prerender" alt="" class="card-img"
                                                 src="image/assets/images/testimoni/maudy.png" /></div>
 
                                         <div class="user-identity">
@@ -977,7 +977,7 @@
                                 <hr />
                                 <div class="card-content">
                                     <div class="user-profile">
-                                        <div class="user-img"><img alt="" class="card-img"
+                                        <div class="user-img"><img rel="prerender" alt="" class="card-img"
                                                 src="image/assets/images/testimoni/maudy.png" /></div>
 
                                         <div class="user-identity">
@@ -1009,7 +1009,7 @@
                                 <hr />
                                 <div class="card-content">
                                     <div class="user-profile">
-                                        <div class="user-img"><img alt="" class="card-img"
+                                        <div class="user-img"><img rel="prerender" alt="" class="card-img"
                                                 src="image/assets/images/testimoni/maudy.png" /></div>
 
                                         <div class="user-identity">
