@@ -75,7 +75,15 @@ body {
 }
 
 .text-smaller {
-    font-size: smaller;
+    font-size: .8rem;
+}
+
+.text-x-small {
+    font-size: .7rem;
+}
+
+.text-xx-small {
+    font-size: .5rem;
 }
 
 .bg-fixed {

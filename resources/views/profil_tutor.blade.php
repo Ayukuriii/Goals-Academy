@@ -3,8 +3,8 @@
 @section('container')
 
 <section id="profil_tutor" class="bg-2 mt-5 py-5">
-    <div class="container py-3">
-        <h1 class="text-center text-purple fw-bold fs-3 mb-3 py-4">Profil Tutor Goals Academy</h1>
+    <div class="container-xl py-3">
+        <h1 class="text-center text-purple fw-bold fs-3 mb-3 pt-3 pb-4">Profil Tutor Goals Academy</h1>
         <div class="row">
             <div class="col-12 col-md-4 col-xl-3 p-2">
                 <div class="card" style="border-radius: 24px; box-shadow: 0 2px 4px 0 rgba(0,0,0,.25)">
