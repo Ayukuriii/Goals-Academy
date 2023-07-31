@@ -48,12 +48,25 @@
                     </tr>
                     <tr>
                         <td>PELAKSANAAN</td>
-                        <td>Online</td>
+                        <td>{{ $data->program->category }}</td>
                     </tr>
                     <tr>
-                        <td>TEMPAT</td>
-                        <td><a href="{{ strpos($data->links, 'http') === 0 ? $data->links : 'https://' . $data->links }}">Link
-                                Zoom</a></td>
+
+                        @if ($data->program->category == 'offline')
+                            <td>TEMPAT</td>
+                            <td>{{ $data->links }}</td>
+                        @else
+                            <td>LINK</td>
+                            <td>
+                                @if ($data->links == null)
+                                    Link belum di atur.
+                                @else
+                                    <a
+                                        href="{{ strpos($data->links, 'http') === 0 ? $data->links : 'https://' . $data->links }}">Link
+                                        Zoom</a>
+                                @endif
+                            </td>
+                        @endif
                     </tr>
                     <tr>
                         <td>LAMPIRAN SKRIPSI</td>
@@ -72,7 +85,7 @@
             </table>
 
             <div class="">
-                <h5>Pesanmu</h5>
+                <h5>Pesan dari kamu</h5>
                 <p class="fs-6">{{ $data->catatan }}</p>
             </div>
             <div class="">
