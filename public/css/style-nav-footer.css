@@ -192,6 +192,20 @@ footer {
     display: none;
 }
 
+@media (min-width: 990px) {
+    nav .d-xl-none {
+        display: none!important;
+    }
+
+    nav .d-xl-flex {
+        display: flex!important;
+    }
+
+    nav .d-xl-block {
+        display: block!important;
+    }
+}
+
 @media (max-width: 985px) {
     .landing-page-background {
         background-size: cover;
