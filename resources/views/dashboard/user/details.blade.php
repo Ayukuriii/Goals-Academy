@@ -58,7 +58,7 @@
                     <tr>
                         <td>LAMPIRAN SKRIPSI</td>
                         <td>
-                            <a href="/download/bimbingan/{{ $data->file }}">{{ $data->file }}</a>
+                            <a href="/download/bimbingan/{{ $data->file }}">{{ $data->alias }}</a>
                         </td>
                     </tr>
                     <tr>

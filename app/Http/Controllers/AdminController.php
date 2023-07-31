@@ -27,7 +27,7 @@ class AdminController extends Controller
             'datas' => OngoingProgram::where('is_tutor', 0)->orWhere('is_moderator', 0),
             'emptylink' => OngoingProgram::where('links', '=', null)->where('is_tutor', 0)->orWhere('is_moderator', 0)->count()
         ]);
-    }   
+    }
 
     public function bimbingan()
     {
@@ -96,8 +96,8 @@ class AdminController extends Controller
     public function edit_bimbingan(Request $request, string $id)
     {
         $rules = [
-            'body' => 'required',
-            'file' => 'file|nullable'
+            'body' => 'nullable',
+            'file' => 'file | mimes:pdf,doc,docx | nullable',
         ];
         $validateData = $request->validate($rules);
 

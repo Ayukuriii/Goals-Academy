@@ -77,8 +77,8 @@ class TutorController extends Controller
         $x =  OrderDetail::where('ongoing_program_id', $id)->first();
         $response = json_decode($x->jsonstring);
         $rules = [
-            'body' => 'required',
-            'file' => 'file|nullable'
+            'body' => 'nullable',
+            'file' => 'file| mimes:pdf,doc,docx |nullable'
         ];
         $validateData = $request->validate($rules);
 

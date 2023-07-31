@@ -103,7 +103,7 @@ class Purchase extends Component
     {
         $validatedData = $this->validate([
             'note' => 'required',
-            'document' => 'file | nullable',
+            'document' => 'file | mimes:pdf,doc,docx | nullable',
         ]);
 
         if ($this->program == 1) {
@@ -136,7 +136,9 @@ class Purchase extends Component
         // dd($this);
 
         $filepath = null;
+        $origin = null;
         if ($this->document) {
+            $origin = $this->document->getClientOriginalName();
             $path = $this->document->store('ongoing-files', 'public');
             $filepath = str_replace('ongoing-files/', '', $path);
         }
@@ -181,6 +183,7 @@ class Purchase extends Component
             'payment_status' => $response->transaction_status,
             'program_session' => $this->time,
             'catatan' => $this->note,
+            'alias' => $origin,
             'file' => $filepath,
             'links' => $this->location,
             'date' => Carbon::parse($this->date)->format('Y-m-d'),

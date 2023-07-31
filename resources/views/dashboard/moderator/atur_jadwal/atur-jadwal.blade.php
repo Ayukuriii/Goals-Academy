@@ -80,7 +80,7 @@
                                             <a href="/moderator/edit/{{ $data->id }}" class="text-decoration-none">
                                                 <i class="bi bi-pencil-square text-success"></i>
                                             </a>
-                                            @if ($data->is_moderator === 0)
+                                            @if ($data->is_moderator == 0)
                                                 <form action="/moderator/selesai/{{ $data->id }}" method="POST">
                                                     @csrf
                                                     @method('put')

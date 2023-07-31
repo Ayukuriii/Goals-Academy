@@ -305,7 +305,7 @@
                 </div>
                 <div class="form-group mb-5 col-6">
                     <label class="form-label small" for="document">File Skripsi (*Opsional)</label>
-                    <input class="form-control" type="file" accept="application/pdf" name="document"
+                    <input class="form-control" type="file" accept=".pdf,.doc,.docx" name="document"
                         wire:model="document" id="document">
                 </div>
                 <div class="d-flex justify-content-between">
@@ -522,7 +522,8 @@
                     </div>
                 </div>
                 <div class="d-flex justify-content-end">
-                    <span class="small me-2">Menyetujui <a class="text-decoration-none" href="/terms_and_conditions" target="_blank">Syarat &
+                    <span class="small me-2">Menyetujui <a class="text-decoration-none" href="/terms_and_conditions"
+                            target="_blank">Syarat &
                             Ketentuan</a> yang berlaku</span>
                     <input wire:model="agreement" type="checkbox" class="btn-check" id="agreement"
                         autocomplete="off">

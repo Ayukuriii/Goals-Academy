@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('tutor_notes', function (Blueprint $table) {
             $table->id();
             $table->string('ongoing_program_id');
-            $table->text('body');
+            $table->text('body')->nullable();
             $table->string('alias')->nullable();
             $table->string('file')->nullable();
             $table->timestamps();

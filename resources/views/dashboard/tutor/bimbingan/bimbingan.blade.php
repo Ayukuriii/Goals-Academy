@@ -77,7 +77,7 @@
                                             <a href="/tutor/detail/{{ $data->id }}" class="text-decoration-none">
                                                 <i class="bi bi-eye text-dark"></i>
                                             </a>
-                                            @if ($data->is_tutor === 0)
+                                            @if ($data->is_tutor == 0)
                                                 <form action="/tutor/selesai/{{ $data->id }}" method="POST">
                                                     @csrf
                                                     @method('put')

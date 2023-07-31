@@ -59,7 +59,7 @@
 
                                 @if ($data->file)
                                     <td class="fw-bold small">
-                                        <a href="/download/bimbingan/{{ $data->file }}">{{ $data->file }}</a>
+                                        <a href="/download/bimbingan/{{ $data->file }}">{{ $data->alias }}</a>
                                     </td>
                                 @else
                                     <td class="fw-bold small">-</td>
@@ -85,7 +85,8 @@
                         {{ $data->user->name }}</label>
                     <textarea class="form-control" name="body" id="body" rows="5" placeholder="Comments" disabled>{{ $data->catatan }}</textarea>
                 </div>
-                <form action="/admin/bimbingan/edit/{{ $data->id }}" method="POST" class="form"enctype="multipart/form-data">
+                <form action="/admin/bimbingan/edit/{{ $data->id }}" method="POST"
+                    class="form"enctype="multipart/form-data">
                     @csrf
                     @method('put')
                     <div class="form-group p-3 pb-0 mt-2">

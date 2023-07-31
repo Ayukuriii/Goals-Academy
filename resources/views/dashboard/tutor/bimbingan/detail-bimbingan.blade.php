@@ -55,7 +55,7 @@
 
                                 @if ($data->file)
                                     <td class="fw-bold small">
-                                        <a href="/download/bimbingan/{{ $data->file }}">{{ $data->file }}</a>
+                                        <a href="/download/bimbingan/{{ $data->file }}">{{ $data->alias }}</a>
                                     </td>
                                 @else
                                     <td class="fw-bold small">-</td>

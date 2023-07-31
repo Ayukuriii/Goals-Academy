@@ -20,6 +20,7 @@ return new class extends Migration
             $table->enum('payment_status', ['success', 'failed', 'pending']);
             $table->string('program_session');
             $table->text('catatan');
+            $table->string('alias')->nullable();
             $table->string('file')->nullable();
             $table->string('links')->nullable();
             $table->string('date');
