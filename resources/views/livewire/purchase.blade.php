@@ -212,7 +212,8 @@
                     <div class="row">
                         <div class="col-12 col-md-6 form-group mb-3">
                             <label class="form-label small" for="date">Jadwal</label>
-                            <select class="form-select" wire:model="date" id="date">
+                            <select class="form-select @error('date') is-invalid @enderror" wire:model="date"
+                                id="date">
                                 <option value="" selected>Pilih Hari Kamu</option>
                                 @foreach ($dates as $x)
                                     <option value="{{ $x }}" wire:click="updatedDate({{ $x }})">
@@ -220,10 +221,14 @@
                                     </option>
                                 @endforeach
                             </select>
+                            @error('date')
+                                {{ $message }}
+                            @enderror
                         </div>
                         <div class="col-12 col-md-6 form-group">
                             <label class="form-label small" for="time">Sesi</label>
-                            <select class="form-select" wire:model="time" id="time">
+                            <select class="form-select @error('time') is-invalid @enderror" wire:model="time"
+                                id="time">
                                 <option value="" selected>Pilih Jam Kamu</option>
                                 @if (count($times) > 0)
                                     @foreach ($times as $y)
@@ -232,6 +237,9 @@
                                     @endforeach
                                 @endif
                             </select>
+                            @error('time')
+                                {{ $message }}
+                            @enderror
                         </div>
                     </div>
                 </div>
@@ -240,7 +248,8 @@
                     <div class="row">
                         <div class="col-12 col-md-6 form-group mb-3">
                             <label class="form-label small" for="city">Kota Domisili</label>
-                            <select class="form-select" wire:model="city" id="city">
+                            <select class="form-select @error('city') is-invalid @enderror" wire:model="city"
+                                id="city">
                                 <option value="" selected>Pilih Domisili Kamu</option>
                                 @foreach ($cities as $c)
                                     <option value="{{ $c }}"
@@ -249,15 +258,21 @@
                                     </option>
                                 @endforeach
                             </select>
+                            @error('city')
+                                {{ $message }}
+                            @enderror
                         </div>
                         <div class="col-12 col-md-6 form-group">
                             <label class="form-label small" for="location">Lokasi Bimbingan</label>
-                            <select class="form-select" wire:model="location" id="location">
+                            <select class="form-select @error('location') is-invalid @enderror" wire:model="location" id="location">
                                 <option value="" selected>Pilih Lokasi Bimbinganmu</option>
                                 @foreach ($locations as $l)
                                     <option value="{{ $l }}">{{ $l }}</option>
                                 @endforeach
                             </select>
+                            @error('location')
+                                {{ $message }}
+                            @enderror
                         </div>
                     </div>
                 </div>
@@ -300,8 +315,11 @@
                 <h2 class="text-center text-purple fs-3 mt-3 mb-4 my-4 my-md-5 my-xl-4">Informasi Bimbingan</h2>
                 <div class="form-group mb-4 mb-xl-5">
                     <label class="form-label small" for="note">Catatan untuk Tutor</label>
-                    <textarea class="form-control" name="note" wire:model="note" id="note" cols="30" rows="10"
+                    <textarea class="form-control @error('note') is-invalid @enderror" name="note" wire:model="note" id="note" cols="30" rows="10"
                         placeholder="Ceritakan kendala skripsi Anda disini ..."></textarea>
+                        @error('note')
+                            {{ $message }}
+                        @enderror
                 </div>
                 <div class="form-group mb-5 col-6">
                     <label class="form-label small" for="document">File Skripsi (*Opsional)</label>
