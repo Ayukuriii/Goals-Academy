@@ -110,7 +110,7 @@ class DatabaseSeeder extends Seeder
             'user_id'  => '3'
         ]);
         Tutor::create([
-            'user_id'  => '5'
+            'user_id'  => '4'
         ]);
 
         // OngoingProgram::create([

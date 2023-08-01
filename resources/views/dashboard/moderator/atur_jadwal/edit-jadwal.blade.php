@@ -101,10 +101,13 @@
                             <div class="form-group col-6 mb-2">
                                 <label class="form-label" for="tempat">TEMPAT</label>
                                 <select class="form-select" name="links" id="links">
-                                    <option value="Nakoa">Nakoa</option>
-                                    <option value="Kopi Studio">Kopi Studio</option>
-                                    <option value="Kopi Studio Blimbing">Kopi Studio Blimbing</option>
-                                    <option value="Kopi Tuwo">Kopi Tuwo</option>
+                                    <option {{ $data->links == 'Nakoa' ? 'selected' : '' }} value="Nakoa">Nakoa</option>
+                                    <option {{ $data->links == 'Kopi Studio' ? 'selected' : '' }} value="Kopi Studio">Kopi
+                                        Studio</option>
+                                    <option {{ $data->links == 'Kopi Studio Blimbing' ? 'selected' : '' }}
+                                        value="Kopi Studio Blimbing">Kopi Studio Blimbing</option>
+                                    <option {{ $data->links == 'Kopi Tuwo' ? 'selected' : '' }} value="Kopi Tuwo">Kopi
+                                        Tuwo</option>
                                 </select>
                             </div>
                         @endif

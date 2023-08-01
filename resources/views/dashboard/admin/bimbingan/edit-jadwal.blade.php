@@ -56,8 +56,7 @@
                         </div>
                         <div class="form-group col-6 mb-2">
                             <label class="form-label" for="pelaksanaan">SESI</label>
-                            <select class="form-select" name="program_session"
-                                aria-label="Default select example">
+                            <select class="form-select" name="program_session" aria-label="Default select example">
                                 <option value="09:00" {{ $data->program_session == '09:00' ? 'selected' : '' }}>09:00
                                 </option>
                                 <option value="11:00" {{ $data->program_session == '11:00' ? 'selected' : '' }}>11:00
@@ -100,10 +99,13 @@
                             <div class="form-group col-6 mb-2">
                                 <label class="form-label" for="tempat">TEMPAT</label>
                                 <select class="form-select" name="links" id="links">
-                                    <option value="Nakoa">Nakoa</option>
-                                    <option value="Kopi Studio">Kopi Studio</option>
-                                    <option value="Kopi Studio Blimbing">Kopi Studio Blimbing</option>
-                                    <option value="Kopi Tuwo">Kopi Tuwo</option>
+                                    <option {{ $data->links == 'Nakoa' ? 'selected' : '' }} value="Nakoa">Nakoa</option>
+                                    <option {{ $data->links == 'Kopi Studio' ? 'selected' : '' }} value="Kopi Studio">Kopi
+                                        Studio</option>
+                                    <option {{ $data->links == 'Kopi Studio Blimbing' ? 'selected' : '' }}
+                                        value="Kopi Studio Blimbing">Kopi Studio Blimbing</option>
+                                    <option {{ $data->links == 'Kopi Tuwo' ? 'selected' : '' }} value="Kopi Tuwo">Kopi
+                                        Tuwo</option>
                                 </select>
                             </div>
                         @endif

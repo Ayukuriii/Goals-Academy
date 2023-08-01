@@ -28,7 +28,14 @@
                                     <p class="date-product">{{ $datecarbon[$loop->index] }}</p>
                                     <p class="time-product">{{ $collection->program_session }}</p>
                                 </div>
-                                <p class="detail-product"><a href="/user/{{ $collection->id }}">Lihat Detail</a></p>
+                                @if ($collection->payment_status == 'success')
+                                    <p class="detail-product"><a href="/user/{{ $collection->id }}">Lihat Detail</a></p>
+                                @elseif ($collection->payment_status == 'pending')
+                                    <p class="detail-product"><a href="/payment_pending/{{ $collection->id }}">Lihat
+                                            Detail</a></p>
+                                @else
+                                    <p class="detail-product"><a href="/user/{{ $collection->id }}">Lihat Detail</a></p>
+                                @endif
                             </div>
                         </div>
                     </div>
