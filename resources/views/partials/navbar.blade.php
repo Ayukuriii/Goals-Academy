@@ -9,10 +9,11 @@
             <img src="{{ asset('image/assets/images/PNG-horison-hitam 1.png') }}">
         </a>
         @auth
-            <div class="navbar-button d-flex justify-content-end align-items-center gap-2 gap-md-3 m-0 text-center d-xl-none p-0" style="list-style: none">
+            <div class="navbar-button d-flex justify-content-end align-items-center gap-2 gap-md-3 m-0 text-center d-xl-none p-0"
+                style="list-style: none">
                 <div class="dropdown" id="notification">
-                    <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown"
-                    aria-expanded="false" id="dropdown-notification">
+                    <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+                        id="dropdown-notification">
                         <i class="fa-solid fa-bell fa-lg text-custom-black"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end p-0 pb-5">
@@ -60,15 +61,14 @@
                             </span>
                         </li>
                         <li class="list-footer text-center my-2">
-                            <a href=""
-                                class="dropdown-item text-orange btn-hover-orange text-smaller">Notifikasi
+                            <a href="" class="dropdown-item text-orange btn-hover-orange text-smaller">Notifikasi
                                 selengkapnya</a>
                         </li>
                     </ul>
                 </div>
                 <div class="dropdown" id="account">
-                    <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown"
-                    aria-expanded="false" id="dropdown-profile">
+                    <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+                        id="dropdown-profile">
                         <i class="fa-solid fa-circle-user fa-lg" style="color: #ff8854;"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">
@@ -98,7 +98,20 @@
             <ul class="navbar-nav mx-auto align-items-center">
                 <li class="nav-item">
                     <!--Artikel Page -->
-                    <a href="/program" class="nav-link custom-fs-1 btn-hover-orange">Program</a>
+                    @if (auth()->user())
+                        @php
+                            $user = auth()->user();
+                        @endphp
+                        @if ($user->is_completed === 0)
+                            <a href="/lengkapi-profile/{{ $user->id }}"
+                                class="nav-link custom-fs-1 btn-hover-orange">Program</a>
+                        @else
+                            <a href="/program" class="nav-link custom-fs-1 btn-hover-orange">Program</a>
+                        @endif
+                    @else
+                        <a href="/program" class="nav-link custom-fs-1 btn-hover-orange">Program</a>
+                    @endif
+
                 </li>
                 <li class="nav-item">
                     <!--Artikel Page -->
@@ -132,10 +145,11 @@
             </ul>
         </div>
         @auth
-            <div class="navbar-button flex-row justify-content-end align-items-center gap-2 gap-md-3 m-0 text-center d-none d-xl-flex p-0" style="list-style: none">
+            <div class="navbar-button flex-row justify-content-end align-items-center gap-2 gap-md-3 m-0 text-center d-none d-xl-flex p-0"
+                style="list-style: none">
                 <div class="dropdown" id="notification">
-                    <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown"
-                    aria-expanded="false" id="dropdown-notification">
+                    <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+                        id="dropdown-notification">
                         <i class="fa-solid fa-bell fa-lg text-custom-black"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end p-0 pb-5">
@@ -183,15 +197,14 @@
                             </span>
                         </li>
                         <li class="list-footer text-center my-2">
-                            <a href=""
-                                class="dropdown-item text-orange btn-hover-orange text-smaller">Notifikasi
+                            <a href="" class="dropdown-item text-orange btn-hover-orange text-smaller">Notifikasi
                                 selengkapnya</a>
                         </li>
                     </ul>
                 </div>
                 <div class="dropdown" id="account">
-                    <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown"
-                    aria-expanded="false" id="dropdown-profile">
+                    <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+                        id="dropdown-profile">
                         <i class="fa-solid fa-circle-user fa-lg" style="color: #ff8854;"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">

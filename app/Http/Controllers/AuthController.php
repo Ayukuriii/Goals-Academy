@@ -141,4 +141,41 @@ class AuthController extends Controller
         $user->save();
         return redirect('/login');
     }
+
+    public function get_lengkapi_profile(string $id)
+    {
+        $user = User::find($id);
+        if ($user->is_completed === 1) {
+            return redirect('/user');
+        }
+        return view('auth.lengkapi_profile', [
+            'data' => $user,
+        ]);
+    }
+    public function post_lengkapi_profile(Request $request, string $id)
+    {
+        $user = User::find($id);
+
+
+
+        $rules = [
+            'username' => 'required',
+            'phone_number' => 'required',
+            'university' => 'required',
+            'major' => 'required',
+            'password' => 'required',
+            'confirmation_password' => 'required',
+        ];
+
+        $validateData = $request->validate($rules);
+
+        if ($validateData['password'] != $validateData['confirmation_password']) {
+            return back()->with('update-failed', 'Password anda tidak sama. Mohon cek dengan teliti')->withInput();
+        }
+        $validateData['phone_number'] = str_replace('+62', '0', $validateData['phone_number']);
+        $validateData['password'] = Hash::make($validateData['password']);
+        $validateData['is_completed'] = 1;
+        $user->update($validateData);
+        return redirect('/user');
+    }
 }
