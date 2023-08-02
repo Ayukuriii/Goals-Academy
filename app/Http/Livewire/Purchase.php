@@ -84,15 +84,18 @@ class Purchase extends Component
 
     public function secondStepSubmit()
     {
-        $validatedData = $this->validate([
-            'date' => 'required',
-            'time' => 'required',
-        ]);
 
         if ($this->program == 3) {
             $validatedData = $this->validate([
+                'date' => 'required',
+                'time' => 'required',
                 'city' => 'required',
                 'location' => 'required',
+            ]);
+        } else {
+            $validatedData = $this->validate([
+                'date' => 'required',
+                'time' => 'required',
             ]);
         }
 

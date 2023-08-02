@@ -56,7 +56,6 @@ class AuthController extends Controller
     // memproses akses login
     public function post_login(Request $request)
     {
-        // dd($request);
         $credentials = $request->validate([
             'email' => 'required|email:dns',
             'password' => 'required'

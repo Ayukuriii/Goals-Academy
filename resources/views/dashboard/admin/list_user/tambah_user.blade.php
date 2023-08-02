@@ -126,23 +126,22 @@
     <script>
         const formInput = document.querySelectorAll(".form-group input");
 
-        formInput.forEach((element) => {
-            element.addEventListener("input", (e) => {
-                document.querySelector("#create-button").setAttribute("disabled", true);
-            })
-        })
+        let timer = "";
 
         formInput.forEach((element) => {
             element.addEventListener("input", (e) => {
-                validate("tambah_user", [
-                    "name",
-                    "username",
-                    "university",
-                    "major",
-                    "email",
-                    "phone_number",
-                    "password"
-                ], "create-button");
+                document.querySelector("#create-button").setAttribute("disabled", true);
+                setTimeout(() => {
+                    validate("tambah_user", [
+                        "name",
+                        "username",
+                        "university",
+                        "major",
+                        "email",
+                        "phone_number",
+                        "password"
+                    ], "create-button");
+                }, 500);
             });
         });
     </script>

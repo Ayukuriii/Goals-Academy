@@ -66,7 +66,7 @@
                         style="margin: auto;">
                 </div>
             </div>
-            <div class="card-login w-100">
+            <div class="card-login w-100 mb-5 mb-xl-0">
                 <h3>Login</h3>
 
                 <!-- Alert -->
@@ -145,20 +145,18 @@
     <script>
         const formInput = document.querySelectorAll(".form-group input");
 
-        formInput.forEach((element) => {
-            element.addEventListener("input", (e) => {
-                document.querySelector("#login-button").setAttribute("disabled", true);
-            })
-        })
+        let timer = "";
 
         formInput.forEach((element) => {
             element.addEventListener("input", (e) => {
-                element.addEventListener("change", (e) => {
+                document.querySelector("#login-button").setAttribute("disabled", true);
+                clearTimeout(timer);
+                setTimeout(() => {
                     validate("login", [
                         "email",
                         "password"
                     ], "login-button");
-                });
+                }, 500);
             });
         });
     </script>

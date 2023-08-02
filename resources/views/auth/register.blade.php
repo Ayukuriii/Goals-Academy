@@ -211,24 +211,24 @@
     <script>
         const formInput = document.querySelectorAll(".form-group input");
 
-        formInput.forEach((element) => {
-            element.addEventListener("input", (e) => {
-                document.querySelector("#register-button").setAttribute("disabled", true);
-            })
-        })
+        let timer = "";
 
         formInput.forEach((element) => {
             element.addEventListener("input", (e) => {
-                validate("register", [
-                    "name",
-                    "username",
-                    "university",
-                    "major",
-                    "email",
-                    "phone_number",
-                    "password",
-                    "confirmation_password"
-                ], "register-button");
+                document.querySelector("#register-button").setAttribute("disabled", true);
+                clearTimeout(timer);
+                timer = setTimeout(() => {
+                    validate("register", [
+                        "name",
+                        "username",
+                        "university",
+                        "major",
+                        "email",
+                        "phone_number",
+                        "password",
+                        "confirmation_password"
+                    ], "register-button");
+                }, 500);
             });
         });
 

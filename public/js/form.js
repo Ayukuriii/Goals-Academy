@@ -13,9 +13,11 @@ const validate = (role, fields, buttonId, id) => {
     } else if (role=="login") {
         url = "/validate_login";
     } else if (role=="tambah_user") {
-        url = '/validate_tambah_user'
+        url = '/validate_tambah_user';
     } else if (role=="edit_user") {
         url = `/validate_edit_user/${id}`;
+    } else if (role=="lengkapi_profil") {
+        url = `/validate_lengkapi_profil/${id}`;
     }
 
     fields.forEach(field => {
@@ -51,7 +53,8 @@ const validate = (role, fields, buttonId, id) => {
                     element.parentElement.querySelector(".invalid-feedback").innerText = "";
                 }
             });
-
+        },
+        complete: function () {
             updateButton(inputElements, button);
         }
     });
