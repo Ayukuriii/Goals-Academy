@@ -27,7 +27,7 @@ class TestController extends Controller
             echo '<br>';
             echo $order->ongoing_program->program->title;
             echo '<br>';
-            echo $stringToJson->transaction_status  ;
+            echo $stringToJson->transaction_status;
             echo '<br>';
             // echo $stringToJson->status_message;
         }

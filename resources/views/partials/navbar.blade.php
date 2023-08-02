@@ -125,20 +125,30 @@
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end p-0 pb-5">
                         <!-- #notification-empty hanya tampil jika tidak ada notifikasi -->
-                        {{-- <li id="notification-empty" class="text-center text-secondary">
-                            <i class="fa-solid fa-bell fs-1 mb-3"></i>
-                            <a class="dropdown-item text-smaller">
-                                Belum ada notifikasi
-                            </a>
-                        </li> --}}
+                        @if ($notifications->isEmpty())
+                            <li id="notification-empty" class="text-center text-secondary">
+                                <i class="fa-solid fa-bell fs-1 mb-3"></i>
+                                <a class="dropdown-item text-smaller">
+                                    Belum ada notifikasi
+                                </a>
+                            </li>
+                        @else
+                            @foreach ($notifications as $notification)
+                                @php
+                                    $order = App\Models\OrderDetail::find($notification->data['order_detail_id']);
+                                    $stringToJson = json_decode($order->jsonstring);
+                                @endphp
+                                <li>
+                                    <a class="dropdown-item fw-bold btn-hover-orange p-3 pb-0 p-0"
+                                        href="/user/{{ $notification->data['order_detail_id'] }}">{{ $stringToJson->order_id }}</a>
+
+                                    <span class="text-smaller p-3 pt-0">
+                                        {{ $order->ongoing_program->program->title }}
+                                    </span>
+                                </li>
+                            @endforeach
+                        @endif
                         <!-- template notifikasi -->
-                        <li>
-                            <a class="dropdown-item fw-bold btn-hover-orange p-3 pb-0 p-0" href="">Notifikasi
-                                1</a>
-                            <span class="text-smaller p-3 pt-0">
-                                Lorem ipsum dolor sit amet
-                            </span>
-                        </li>
 
                         <li class="list-footer text-center my-2">
                             <a href="" class="dropdown-item text-orange btn-hover-orange text-smaller">Notifikasi
