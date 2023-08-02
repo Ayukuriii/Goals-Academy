@@ -155,6 +155,11 @@ select.form-select {
     padding: 20px;
 }
 
+.input-group:not(.has-validation)>:not(:last-child):not(.dropdown-toggle):not(.dropdown-menu):not(.form-floating) {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
 .input-group-append {
     height: 40px;
 }

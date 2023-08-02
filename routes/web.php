@@ -8,6 +8,7 @@ use App\Http\Controllers\EmailController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\TutorController;
 use App\Http\Controllers\DownloadController;
+use App\Http\Controllers\FormValidationController;
 use App\Http\Controllers\ModeratorController;
 use App\Http\Controllers\OrderDetailController;
 use App\Http\Controllers\SocialController;
@@ -214,3 +215,10 @@ Route::get('/payment_success', function () {
         'title' => 'Purchase'
     ]);
 })->name('payment.success');
+
+Route::controller(FormValidationController::class)->group(function () {
+    Route::post('/validate_register', 'validate_register');
+    Route::post('/validate_login', 'validate_login');
+    Route::post('/validate_tambah_user', 'validate_tambah_user');
+    Route::post('/validate_edit_user/{id}', 'validate_edit_user');
+});

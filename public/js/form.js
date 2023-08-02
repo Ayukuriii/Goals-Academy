@@ -1,39 +1,69 @@
-// Mengambil seluruh elemen yang diperlukan
-const formInput = document.querySelectorAll(".form-group input");
-const formButton = document.querySelector(".form-button button");
+// Mengambil token
+const token = document.querySelector("input[name='_token']");
 
 // Function tampilan tombol submit
-const validate = (target) => {
-    if (target.value == "") {
-        return false
-    } else if (target.getAttribute("type") == "password") {
-        if (target.value.length < 8) {
-            target.classList.add("is-invalid");
-            target.setCustomValidity("Input tidak valid");
-            return false;
-        } else {
-            target.classList.remove("is-invalid");
-            target.setCustomValidity("");
-            return true;
-        }
-    } else {
-        if (target.checkValidity() == false) {
-            target.classList.add("is-invalid");
-            return false;
-        } else {
-            target.classList.remove("is-invalid");
-            return true;
-        }
+const validate = (role, fields, buttonId, id) => {
+    const inputElements = [];
+    const button = document.getElementById(buttonId);
+    const data = {"_token": token.value};
+    let url = "";
+
+    if (role=="register") {
+        url = "/validate_register";
+    } else if (role=="login") {
+        url = "/validate_login";
+    } else if (role=="tambah_user") {
+        url = '/validate_tambah_user'
+    } else if (role=="edit_user") {
+        url = `/validate_edit_user/${id}`;
     }
+
+    fields.forEach(field => {
+        inputElements.push(document.querySelector(`input[name="${field}"]`));
+        data[field] = document.querySelector(`input[name="${field}"]`).value;
+    });
+
+    $.ajax({
+        type: "post",
+        url: url,
+        data: data,
+        success: function (response) {
+            fields.forEach(field => {
+                const element = document.querySelector(`input[name="${field}"]`);
+                if (response.success) {
+                    element.classList.remove("is-invalid");
+                    element.setCustomValidity("");
+                    element.parentElement.querySelector(".invalid-feedback").innerText = "";
+                } else if (response.error[field]) {
+                    const message = response.error[field][0];
+                    if (message.split(" ").slice(-1) != 'required.') {
+                        element.classList.add("is-invalid");
+                        element.setCustomValidity(message);
+                        element.parentElement.querySelector(".invalid-feedback").innerText = message;
+                    } else {
+                        element.classList.remove("is-invalid");
+                        element.setCustomValidity(message);
+                        element.parentElement.querySelector(".invalid-feedback").innerText = "";
+                    }
+                } else {
+                    element.classList.remove("is-invalid");
+                    element.setCustomValidity("");
+                    element.parentElement.querySelector(".invalid-feedback").innerText = "";
+                }
+            });
+
+            updateButton(inputElements, button);
+        }
+    });
 };
 
-const updateButton = () => {
+const updateButton = (inputElements, button) => {
     result = true;
-    formInput.forEach((element) => {
-        result *= validate(element);
+    inputElements.forEach((element) => {
+        result *= element.checkValidity();
     });
 
     result
-        ? formButton.removeAttribute("disabled")
-        : formButton.setAttribute("disabled", true);
-};
+        ? button.removeAttribute("disabled")
+        : button.setAttribute("disabled", true);
+}

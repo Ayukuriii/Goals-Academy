@@ -276,6 +276,7 @@ var testimoniSwiper = new Swiper("#slide-top", {
     autoplaySpeed: 2500,
     slidesPerView: 2,
     spaceBetween: 0,
+    allowTouchMove: false,
     fade: true,
     loop: true,
     breakpoints: {
@@ -295,6 +296,7 @@ var testimoniSwiper2 = new Swiper("#slide-bottom", {
     autoplaySpeed: 5000,
     slidesPerView: 3,
     spaceBetween: 0,
+    allowTouchMove: false,
     fade: true,
     loop: true,
     breakpoints: {

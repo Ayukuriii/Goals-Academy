@@ -122,13 +122,3 @@
     </section>
     <!-- Last Page -->
 @endsection
-
-@section('script')
-    <script>
-        formInput.forEach((element) => {
-            element.addEventListener("change", (e) => {
-                validate(e.target);
-            });
-        });
-    </script>
-@endsection

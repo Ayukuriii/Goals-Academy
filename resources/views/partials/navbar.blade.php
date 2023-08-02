@@ -50,8 +50,7 @@
                         <li>
                             <form action="/logout" method="POST">
                                 @csrf
-                                <button type="submit" class="dropdown-item btn-hover-orange custom-fs-1"
-                                    id="log-out">Logout</button>
+                                <button type="submit" class="dropdown-item btn-hover-orange custom-fs-1">Logout</button>
                             </form>
                         </li>
                     </ul>
@@ -158,8 +157,7 @@
                         <li>
                             <form action="/logout" method="POST">
                                 @csrf
-                                <button type="submit" class="dropdown-item btn-hover-orange custom-fs-1"
-                                    id="log-out">Logout</button>
+                                <button type="submit" class="dropdown-item btn-hover-orange custom-fs-1">Logout</button>
                             </form>
                         </li>
                     </ul>
