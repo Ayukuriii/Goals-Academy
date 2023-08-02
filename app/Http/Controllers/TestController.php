@@ -9,9 +9,19 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\ProgramService;
 use App\Models\ProgramSession;
+use Illuminate\Support\Facades\Auth;
 
 class TestController extends Controller
 {
+    public function notif()
+    {
+        $user = Auth::user();
+        $notifications = $user->notifications;
+        // dd($notifications);
+        foreach ($notifications as $notif) {
+            echo $notif;
+        }
+    }
     public function index_midtrans()
     {
         return view('test.midtrans.midtrans', [
