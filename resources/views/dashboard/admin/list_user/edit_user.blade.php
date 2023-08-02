@@ -56,11 +56,11 @@
                             <label class="form-label small" for="name">NAMA</label>
                             <input type="text" name="name" class="form-control @error('name') is-invalid @enderror"
                                 id="name" value="{{ $data->name }}" placeholder=" " required />
-                            @error('')
-                                <div class="invalid-feedback">
+                            <div class="invalid-feedback">
+                                @error('name')
                                     {{ $message }}
-                                </div>
-                            @enderror
+                                @enderror
+                            </div>
                         </div>
                         <div class="form-group
                                 col-6 mb-3">
@@ -68,11 +68,11 @@
                             <input type="text" name="username"
                                 class="form-control @error('username') is-invalid @enderror" id="username"
                                 value="{{ $data->username }}" placeholder=" " required />
-                            @error('')
-                                <div class="invalid-feedback">
+                            <div class="invalid-feedback">
+                                @error('username')
                                     {{ $message }}
-                                </div>
-                            @enderror
+                                @enderror
+                            </div>
                         </div>
                         <div class="form-group
                                 col-6 mb-3">
@@ -80,33 +80,33 @@
                             <input type="text" name="university"
                                 class="form-control @error('university') is-invalid @enderror" id="university"
                                 value="{{ $data->university }}" placeholder=" " required />
-                            @error('')
-                                <div class="invalid-feedback">
+                            <div class="invalid-feedback">
+                                @error('university')
                                     {{ $message }}
-                                </div>
-                            @enderror
+                                @enderror
+                            </div>
                         </div>
                         <div class="form-group
                                 col-6 mb-3">
                             <label class="form-label small" for="major">JURUSAN</label>
                             <input type="text" name="major" class="form-control @error('major') is-invalid @enderror"
                                 id="major" value="{{ $data->major }}" placeholder=" " required />
-                            @error('')
-                                <div class="invalid-feedback">
+                            <div class="invalid-feedback">
+                                @error('major')
                                     {{ $message }}
-                                </div>
-                            @enderror
+                                @enderror
+                            </div>
                         </div>
                         <div class="form-group
                                 col-6 mb-3">
                             <label class="form-label small" for="email">EMAIL</label>
                             <input type="email" name="email" class="form-control @error('email') is-invalid @enderror"
                                 id="email" value="{{ $data->email }}" placeholder=" " required />
-                            @error('')
-                                <div class="invalid-feedback">
+                            <div class="invalid-feedback">
+                                @error('email')
                                     {{ $message }}
-                                </div>
-                            @enderror
+                                @enderror
+                            </div>
                         </div>
                         <div class="form-group
                                 col-6 mb-3">
@@ -114,11 +114,11 @@
                             <input type="text" name="phone_number"
                                 class="form-control @error('phone_number') is-invalid @enderror" id="phone_number"
                                 value="{{ $data->phone_number }}" placeholder=" " required />
-                            @error('')
-                                <div class="invalid-feedback">
+                            <div class="invalid-feedback">
+                                @error('phone_number')
                                     {{ $message }}
-                                </div>
-                            @enderror
+                                @enderror
+                            </div>
                         </div>
                         @if ($data->user_level !== 'admin')
                             <div class="form-group
@@ -159,7 +159,7 @@
                             @enderror
                         </div> --}}
                         <div class="form-button col-6 mb-3 d-flex justify-content-end pt-3 pt-xl-5">
-                            <button class="btn-orange-static px-4 mt-4 mt-xl-0 d-inline text-end small" id="button"
+                            <button class="btn-orange-static px-4 mt-4 mt-xl-0 d-inline text-end small" id="edit-button"
                                 type="submit">Simpan</button>
                         </div>
                     </form>
@@ -236,9 +236,24 @@
             }
         })
 
+        const formInput = document.querySelectorAll(".form-group input");
+
+        formInput.forEach((element) => {
+            element.addEventListener("input", (e) => {
+                document.querySelector("#edit-button").setAttribute("disabled", true);
+            })
+        })
+
         formInput.forEach((element) => {
             element.addEventListener("change", (e) => {
-                validate(e.target);
+                validate("edit_user", [
+                    "name",
+                    "username",
+                    "email",
+                    "phone_number",
+                    "university",
+                    "major"
+                ], "edit-button", {{ $data->id }});
             });
         });
     </script>

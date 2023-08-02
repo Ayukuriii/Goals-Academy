@@ -82,8 +82,10 @@
                                     <input type="text" name="name"
                                         class="form-control @error('name') is-invalid @enderror" id="name"
                                         placeholder=" " value="{{ old('name') }}" required />
-                                    <div class="invalid-feedback">
-                                        Input tidak valid
+                                    <div class="invalid-feedback text-smaller">
+                                        @error('name')
+                                            {{ $message }}
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="col-12 col-md-6 form-group">
@@ -91,44 +93,47 @@
                                     <input type="text" name="username"
                                         class="form-control @error('username') is-invalid @enderror" id="username"
                                         placeholder=" " value="{{ old('username') }}" required />
-                                    @error('username')
-                                        <div class="invalid-feedback">
+                                    <div class="invalid-feedback text-smaller">
+                                        @error('username')
                                             {{ $message }}
-                                        </div>
-                                    @enderror
+                                        @enderror
+                                    </div>
                                 </div>
                                 <div class="col-12 col-md-6 form-group">
                                     <label for="university">Universitas</label>
                                     <input type="text" name="university"
                                         class="form-control @error('university') is-invalid @enderror" id="university"
                                         placeholder=" " value="{{ old('university') }}" required />
-                                    @error('university')
-                                        <div class="invalid-feedback">
+                                    <div class="invalid-feedback text-smaller">
+                                        @error('university')
                                             {{ $message }}
-                                        </div>
-                                    @enderror
+                                        @enderror
+                                    </div>
                                 </div>
                                 <div class="col-12 col-md-6 form-group">
                                     <label for="major">Jurusan</label>
                                     <input type="text" name="major"
                                         class="form-control @error('major') is-invalid @enderror" id="major"
                                         placeholder=" " value="{{ old('major') }}" required>
-                                    @error('major')
-                                        <div class="invalid-feedback">
+                                    <div class="invalid-feedback text-smaller">
+                                        @error('major')
                                             {{ $message }}
-                                        </div>
-                                    @enderror
+                                        @enderror
+                                    </div>
                                 </div>
                                 <div class="col-12 col-md-6 form-group">
                                     <label for="email">Email</label>
                                     <input type="email" name="email"
                                         class="form-control @error('email') is-invalid @enderror" id="email"
                                         placeholder=" " value="{{ old('email') }}" required />
-                                    @error('email')
-                                        <div class="invalid-feedback">
+                                    {{-- <div class="input-group-text p-2 d-none" style="background-color: unset; position: absolute; right: 0; border: none;">
+                                        <span class="spinner-border text-x-small text-orange" style="width: 16px; height: 16px;" role="status"></span>
+                                    </div> --}}
+                                    <div class="invalid-feedback text-smaller">
+                                        @error('email')
                                             {{ $message }}
-                                        </div>
-                                    @enderror
+                                        @enderror
+                                    </div>
                                 </div>
                                 <div class="col-12 col-md-6 form-group">
                                     <label for="phone_number">No. Telp</label>
@@ -136,33 +141,33 @@
                                         class="form-control @error('phone_number') is-invalid @enderror"
                                         id="phone_number" placeholder=" " value="{{ old('phone_number') }}"
                                         required />
-                                    @error('phone_number')
-                                        <div class="invalid-feedback">
+                                    <div class="invalid-feedback text-smaller">
+                                        @error('phone_number')
                                             {{ $message }}
-                                        </div>
-                                    @enderror
+                                        @enderror
+                                    </div>
                                 </div>
                                 <div class="col-12 col-md-6 form-group">
                                     <label for="password">PASSWORD* (Minimal 8 Karakter)</label>
                                     <input type="password" name="password"
                                         class="form-control @error('password') is-invalid @enderror" id="password"
                                         placeholder=" " required />
-                                    @error('password')
-                                        <div class="invalid-feedback">
+                                    <div class="invalid-feedback text-smaller">
+                                        @error('password')
                                             {{ $message }}
-                                        </div>
-                                    @enderror
+                                        @enderror
+                                    </div>
                                 </div>
                                 <div class="col-12 col-md-6 form-group">
                                     <label for="confirmation_password">Ulangi Password</label>
                                     <input type="password" name="confirmation_password"
                                         class="form-control @error('confirmation_password') is-invalid @enderror"
                                         id="confirmation_password" placeholder=" " required />
-                                    @error('confirmation_password')
-                                        <div class="invalid-feedback">
+                                    <div class="invalid-feedback text-smaller">
+                                        @error('confirmation_password')
                                             {{ $message }}
-                                        </div>
-                                    @enderror
+                                        @enderror
+                                    </div>
                                 </div>
                                 <div class="col-12 mt-3">
                                     <div class="row">
@@ -174,7 +179,7 @@
                                         </div>
                                         <div class="form-button col-6">
                                             <button type="submit" class="btn-orange-static w-100"
-                                                id="submit-register" disabled>Register</button>
+                                                id="register-button" disabled>Register</button>
                                         </div>
                                     </div>
                                 </div>
@@ -204,14 +209,30 @@
     <script src="{{ asset('js/form.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/main.js') }}"></script>
     <script>
+        const formInput = document.querySelectorAll(".form-group input");
+
         formInput.forEach((element) => {
-            element.addEventListener("change", (e) => {
-                validate(e.target);
-                updateButton();
+            element.addEventListener("input", (e) => {
+                document.querySelector("#register-button").setAttribute("disabled", true);
+            })
+        })
+
+        formInput.forEach((element) => {
+            element.addEventListener("input", (e) => {
+                validate("register", [
+                    "name",
+                    "username",
+                    "university",
+                    "major",
+                    "email",
+                    "phone_number",
+                    "password",
+                    "confirmation_password"
+                ], "register-button");
             });
         });
 
-        // updateButton();
+
     </script>
 </body>
 <!-- JavaScript links -->

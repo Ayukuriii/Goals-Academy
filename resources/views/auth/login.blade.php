@@ -84,14 +84,16 @@
                             <label for="email">Email</label>
                             <input type="email" name="email" class="form-control" id="email" placeholder=" "
                                 required autofocus value="{{ old('email') }}" />
+                            <div class="invalid-feedback text-smaller"></div>
                         </div>
                         <div class="form-group w-100">
                             <label for="password">Password</label>
                             <input type="password" name="password" class="form-control" id="password" placeholder=" "
                                 required />
+                            <div class="invalid-feedback text-smaller"></div>
                         </div>
                         <div class="form-button mt-2">
-                            <button type="submit" class="btn-orange-static w-100" id="submit-login"
+                            <button type="submit" class="btn-orange-static w-100" id="login-button"
                                 disabled>Login</button>
                             <p class="mt-3"><a href="{{ route('lupa_password') }}">Lupa Password?</a></p>
                         </div>
@@ -141,14 +143,24 @@
     <script src="{{ asset('js/main.js') }}"></script>
     <script src="{{ asset('js/form.js') }}"></script>
     <script>
+        const formInput = document.querySelectorAll(".form-group input");
+
         formInput.forEach((element) => {
-            element.addEventListener("change", (e) => {
-                validate(e.target);
-                updateButton();
+            element.addEventListener("input", (e) => {
+                document.querySelector("#login-button").setAttribute("disabled", true);
+            })
+        })
+
+        formInput.forEach((element) => {
+            element.addEventListener("input", (e) => {
+                element.addEventListener("change", (e) => {
+                    validate("login", [
+                        "email",
+                        "password"
+                    ], "login-button");
+                });
             });
         });
-
-        updateButton();
     </script>
 </body>
 
