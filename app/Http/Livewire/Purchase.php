@@ -9,7 +9,9 @@ use Livewire\Component;
 use Livewire\WithFileUploads;
 use App\Models\OngoingProgram;
 use App\Models\OrderDetail;
+use App\Notifications\NewOrderNotification;
 use GrahamCampbell\ResultType\Success;
+use Illuminate\Support\Facades\Notification;
 
 class Purchase extends Component
 {
@@ -206,6 +208,8 @@ class Purchase extends Component
 
         $order->ongoing_program_id = $data->id;
         $order->save();
+
+        Notification::send(auth()->user(), new NewOrderNotification($order->id));
 
         return redirect()->route('payment.pending', $data->id);
     }

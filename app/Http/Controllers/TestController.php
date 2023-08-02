@@ -9,9 +9,29 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\ProgramService;
 use App\Models\ProgramSession;
+use Illuminate\Support\Facades\Auth;
 
 class TestController extends Controller
 {
+    public function notif()
+    {
+        $user = Auth::user();
+        $notifications = $user->notifications;
+        // dd($notifications);
+        foreach ($notifications as $notif) {
+            $order = OrderDetail::find($notif->data['order_detail_id']);
+            $stringToJson = json_decode($order->jsonstring);
+            dd($stringToJson);
+            // dd($stringToJson);
+            echo $stringToJson->order_id;
+            echo '<br>';
+            echo $order->ongoing_program->program->title;
+            echo '<br>';
+            echo $stringToJson->transaction_status;
+            echo '<br>';
+            // echo $stringToJson->status_message;
+        }
+    }
     public function index_midtrans()
     {
         return view('test.midtrans.midtrans', [
