@@ -414,6 +414,8 @@ window.onresize = function () {
 // }
 
 // Toast show function
-const myToast = document.getElementById("myToast");
-const toastBootstrap = bootstrap.Toast.getOrCreateInstance(myToast);
-toastBootstrap.show();
+if (document.getElementById("myToast")) {
+    const myToast = document.getElementById("myToast");
+    const toastBootstrap = bootstrap.Toast.getOrCreateInstance(myToast);
+    toastBootstrap.show();
+}
