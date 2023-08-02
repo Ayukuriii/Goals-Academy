@@ -19,7 +19,17 @@ class TestController extends Controller
         $notifications = $user->notifications;
         // dd($notifications);
         foreach ($notifications as $notif) {
-            echo $notif;
+            $order = OrderDetail::find($notif->data['order_detail_id']);
+            $stringToJson = json_decode($order->jsonstring);
+            // dd($order);
+            // dd($stringToJson);
+            echo $stringToJson->order_id;
+            echo '<br>';
+            echo $order->ongoing_program->program->title;
+            echo '<br>';
+            echo $stringToJson->transaction_status  ;
+            echo '<br>';
+            // echo $stringToJson->status_message;
         }
     }
     public function index_midtrans()

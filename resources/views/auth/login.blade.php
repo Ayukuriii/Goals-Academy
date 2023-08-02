@@ -152,13 +152,11 @@
         })
 
         formInput.forEach((element) => {
-            element.addEventListener("input", (e) => {
-                element.addEventListener("change", (e) => {
-                    validate("login", [
-                        "email",
-                        "password"
-                    ], "login-button");
-                });
+            element.addEventListener("change", (e) => {
+                validate("login", [
+                    "email",
+                    "password"
+                ], "login-button");
             });
         });
     </script>

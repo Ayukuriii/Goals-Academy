@@ -134,11 +134,12 @@
                         <!-- template notifikasi -->
                         <li>
                             <a class="dropdown-item fw-bold btn-hover-orange p-3 pb-0 p-0" href="">Notifikasi
-                                1</a>;aller p-3 pt-0">
+                                1</a>
+                            <span class="text-smaller p-3 pt-0">
                                 Lorem ipsum dolor sit amet
                             </span>
                         </li>
-                        
+
                         <li class="list-footer text-center my-2">
                             <a href="" class="dropdown-item text-orange btn-hover-orange text-smaller">Notifikasi
                                 selengkapnya</a>
