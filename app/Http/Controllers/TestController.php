@@ -21,7 +21,7 @@ class TestController extends Controller
         foreach ($notifications as $notif) {
             $order = OrderDetail::find($notif->data['order_detail_id']);
             $stringToJson = json_decode($order->jsonstring);
-            // dd($order);
+            dd($stringToJson);
             // dd($stringToJson);
             echo $stringToJson->order_id;
             echo '<br>';

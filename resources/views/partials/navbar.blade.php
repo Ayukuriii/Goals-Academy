@@ -123,6 +123,12 @@
                         id="dropdown-notification">
                         <i class="fa-solid fa-bell fa-lg text-custom-black"></i>
                     </a>
+                    @if (!$notifications->isEmpty())
+                        <span
+                            class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
+                            <span class="visually-hidden">New alerts</span>
+                        </span>
+                    @endif
                     <ul class="dropdown-menu dropdown-menu-end p-0 pb-5">
                         <!-- #notification-empty hanya tampil jika tidak ada notifikasi -->
                         @if ($notifications->isEmpty())
@@ -137,10 +143,16 @@
                                 @php
                                     $order = App\Models\OrderDetail::find($notification->data['order_detail_id']);
                                     $stringToJson = json_decode($order->jsonstring);
+                                    // dd($stringToJson->transaction_status);
                                 @endphp
                                 <li>
-                                    <a class="dropdown-item fw-bold btn-hover-orange p-3 pb-0 p-0"
-                                        href="/user/{{ $notification->data['order_detail_id'] }}">{{ $stringToJson->order_id }}</a>
+                                    @if ($stringToJson->transaction_status != 'pending')
+                                        <a class="dropdown-item fw-bold btn-hover-orange p-3 pb-0 p-0"
+                                            href="/user/{{ $notification->data['order_detail_id'] }}">{{ $stringToJson->order_id }}</a>
+                                    @else
+                                        <a class="dropdown-item fw-bold btn-hover-orange p-3 pb-0 p-0"
+                                            href="/payment_pending/{{ $notification->data['order_detail_id'] }}">{{ $stringToJson->order_id }}</a>
+                                    @endif
 
                                     <span class="text-smaller p-3 pt-0">
                                         {{ $order->ongoing_program->program->title }}
