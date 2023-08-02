@@ -56,7 +56,7 @@
                             <label class="form-label small" for="name">NAMA</label>
                             <input type="text" name="name" class="form-control @error('name') is-invalid @enderror"
                                 id="name" value="{{ $data->name }}" placeholder=" " required />
-                            <div class="invalid-feedback">
+                            <div class="invalid-feedback text-smaller">
                                 @error('name')
                                     {{ $message }}
                                 @enderror
@@ -68,7 +68,7 @@
                             <input type="text" name="username"
                                 class="form-control @error('username') is-invalid @enderror" id="username"
                                 value="{{ $data->username }}" placeholder=" " required />
-                            <div class="invalid-feedback">
+                            <div class="invalid-feedback text-smaller">
                                 @error('username')
                                     {{ $message }}
                                 @enderror
@@ -80,7 +80,7 @@
                             <input type="text" name="university"
                                 class="form-control @error('university') is-invalid @enderror" id="university"
                                 value="{{ $data->university }}" placeholder=" " required />
-                            <div class="invalid-feedback">
+                            <div class="invalid-feedback text-smaller">
                                 @error('university')
                                     {{ $message }}
                                 @enderror
@@ -91,7 +91,7 @@
                             <label class="form-label small" for="major">JURUSAN</label>
                             <input type="text" name="major" class="form-control @error('major') is-invalid @enderror"
                                 id="major" value="{{ $data->major }}" placeholder=" " required />
-                            <div class="invalid-feedback">
+                            <div class="invalid-feedback text-smaller">
                                 @error('major')
                                     {{ $message }}
                                 @enderror
@@ -102,7 +102,7 @@
                             <label class="form-label small" for="email">EMAIL</label>
                             <input type="email" name="email" class="form-control @error('email') is-invalid @enderror"
                                 id="email" value="{{ $data->email }}" placeholder=" " required />
-                            <div class="invalid-feedback">
+                            <div class="invalid-feedback text-smaller">
                                 @error('email')
                                     {{ $message }}
                                 @enderror
@@ -114,7 +114,7 @@
                             <input type="text" name="phone_number"
                                 class="form-control @error('phone_number') is-invalid @enderror" id="phone_number"
                                 value="{{ $data->phone_number }}" placeholder=" " required />
-                            <div class="invalid-feedback">
+                            <div class="invalid-feedback text-smaller">
                                 @error('phone_number')
                                     {{ $message }}
                                 @enderror
@@ -153,7 +153,7 @@
                             <input class="form-control @error('image') is-invalid @enderror" type="file"
                                 name="image" id="image">
                             @error('image')
-                                <div class="invalid-feedback">
+                                <div class="invalid-feedback text-smaller">
                                     {{ $message }}
                                 </div>
                             @enderror

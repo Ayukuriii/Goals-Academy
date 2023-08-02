@@ -36,7 +36,8 @@ class DatabaseSeeder extends Seeder
             'major' => 'Software Engineering',
             'user_level' => 'admin',
             'password'      => bcrypt('admin123'),
-            'email_verified_at' => now()
+            'email_verified_at' => now(),
+            'is_completed' => true,
         ]);
         User::create([
             'name'  => 'Moderator',
@@ -47,7 +48,8 @@ class DatabaseSeeder extends Seeder
             'major' => 'Software Engineering',
             'user_level' => 'moderator',
             'password'      => bcrypt('moderator123'),
-            'email_verified_at' => now()
+            'email_verified_at' => now(),
+            'is_completed' => true,
         ]);
         User::create([
             'name'  => 'Yordhan',
@@ -58,18 +60,8 @@ class DatabaseSeeder extends Seeder
             'major' => 'Software Engineering',
             'user_level' => 'tutor',
             'password'      => bcrypt('tutor123'),
-            'email_verified_at' => now()
-        ]);
-        User::create([
-            'name'  => 'Ekadian Haris',
-            'username' => 'ayukuriii',
-            'email' => 'ekadianharis@gmail.com',
-            'phone_number'  => '087763420873',
-            'university'    => 'Politeknik Negeri Malang',
-            'major' => 'Teknik Elektronika',
-            'user_level' => 'user',
-            'password'      => bcrypt('qwe12334'),
-            'email_verified_at' => now()
+            'email_verified_at' => now(),
+            'is_completed' => true,
         ]);
         User::create([
             'name'  => 'Vicky Bellarina',
@@ -79,6 +71,18 @@ class DatabaseSeeder extends Seeder
             'university'    => 'Universitas Brawijaya',
             'major' => 'FIB',
             'user_level' => 'tutor',
+            'password'      => bcrypt('qwe12334'),
+            'email_verified_at' => now(),
+            'is_completed' => true,
+        ]);
+        User::create([
+            'name'  => 'Ekadian Haris',
+            'username' => 'ayukuriii',
+            'email' => 'ekadianharis@gmail.com',
+            'phone_number'  => '087763420873',
+            'university'    => 'Politeknik Negeri Malang',
+            'major' => 'Teknik Elektronika',
+            'user_level' => 'user',
             'password'      => bcrypt('qwe12334'),
             'email_verified_at' => now()
         ]);
@@ -106,7 +110,7 @@ class DatabaseSeeder extends Seeder
             'user_id'  => '3'
         ]);
         Tutor::create([
-            'user_id'  => '5'
+            'user_id'  => '4'
         ]);
 
         // OngoingProgram::create([

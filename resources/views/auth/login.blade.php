@@ -71,7 +71,7 @@
 
                 <!-- Alert -->
                 @if (session()->has('login-failed'))
-                    <div class="alert alert-info alert-dismissible fade mt-4 show" role="alert">
+                    <div class="alert alert-danger alert-dismissible fade mt-4 show" role="alert">
                         {{ session('login-failed') }}
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>

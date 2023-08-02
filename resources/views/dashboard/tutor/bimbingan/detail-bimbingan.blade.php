@@ -17,6 +17,18 @@
                     <table class="table table-borderless w-70">
                         <tbody>
                             <tr>
+                                <td>UNIVERSITAS</td>
+                                <td class="fw-bold small">
+                                    {{ $data->user->university }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>JURUSAN</td>
+                                <td class="fw-bold small">
+                                    {{ $data->user->major }}
+                                </td>
+                            </tr>
+                            <tr>
                                 <td>PEMBELIAN</td>
                                 <td class="fw-bold small">
                                     {{ \Carbon\Carbon::parse($data->created_at)->isoFormat('dddd, D MMMM Y') }}<br>12:50
@@ -70,6 +82,15 @@
                                     @else
                                         -
                                     @endif
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>NOMOR WA/HP</td>
+                                <td>
+                                    <a href="https://wa.me/+62{{ ltrim($data->user->phone_number, '0') }}" target="_blank"
+                                        class="text-decoration-none">
+                                        {{ $data->user->phone_number }}
+                                    </a>
                                 </td>
                             </tr>
                         </tbody>

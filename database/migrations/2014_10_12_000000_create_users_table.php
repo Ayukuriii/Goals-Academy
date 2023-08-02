@@ -17,12 +17,13 @@ return new class extends Migration
             $table->string('username')->unique()->nullable();
             $table->longText('image')->nullable();
             $table->string('email')->unique();
-            $table->string('phone_number');
-            $table->string('university');
-            $table->string('major'); // jurusan
+            $table->string('phone_number')->default(null);
+            $table->string('university')->default(null);
+            $table->string('major')->default(null);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('user_level');
             $table->string('password')->nullable();
+            $table->boolean('is_completed')->default(false);
             $table->rememberToken();
             $table->timestamps();
         });

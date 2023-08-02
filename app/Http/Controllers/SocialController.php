@@ -28,7 +28,9 @@ class SocialController extends Controller
 
         Auth::login($authUser, true);
 
-        return redirect('/');
+        $userId = $authUser->id;
+
+        return redirect('/lengkapi-profile/' . $userId);
     }
 
     public function findOrCreateUser($socialUser, $provider)
@@ -49,9 +51,9 @@ class SocialController extends Controller
                     'password' => bcrypt('password'),
                     'username' => rand(),
                     'user_level' => 'user',
-                    'phone_number' => ' ',
-                    'university' => ' ',
-                    'major' => ' ',
+                    'phone_number' => '',
+                    'university' => '',
+                    'major' => '',
                     'email_verified_at' => now(),
                 ]);
             }

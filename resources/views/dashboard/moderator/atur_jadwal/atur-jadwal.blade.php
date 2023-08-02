@@ -77,6 +77,10 @@
                                     </td>
                                     <td class="h4">
                                         <div class="d-flex gap-2">
+                                            <a href="https://wa.me/+62{{ ltrim($data->user->phone_number, '0') }}"
+                                                target="_blank" class="text-decoration-none">
+                                                <i class="bi bi-whatsapp text-success"></i>
+                                            </a>
                                             <a href="/moderator/edit/{{ $data->id }}" class="text-decoration-none">
                                                 <i class="bi bi-pencil-square text-success"></i>
                                             </a>
