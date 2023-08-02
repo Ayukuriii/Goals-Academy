@@ -231,12 +231,14 @@
                             <label class="form-label small" for="time">Sesi</label>
                             <select class="form-select @error('time') is-invalid @enderror" wire:model="time"
                                 id="time">
-                                <option value="" selected>-</option>
+                                <option value="" selected>Pilih Jam Kamu</option>
                                 @if (count($times) > 0)
                                     @foreach ($times as $y)
                                         <option value="{{ $y }}">
                                             {{ \Carbon\Carbon::parse($y)->format('H:i') }}</option>
                                     @endforeach
+                                @else
+                                    <option value="">Kosong</option>
                                 @endif
                             </select>
                             <div class="invalid-feedback">

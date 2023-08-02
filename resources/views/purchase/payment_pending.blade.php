@@ -14,13 +14,7 @@
 
         <p class="fs-5 mt-2">Lakukan Pembayaran dalam <span class="d-inline-block text-danger text-center" style="width: 80px" id="expiry-time"></span></p>
 
-        {{-- <a href="{{ $response->actions[0]->url }}" download="qr-code.png">
-            <img src="{{ $response->actions[0]->url }}" alt="{{ $response->actions[0]->name }}">
-        </a> --}}
-
-        <a href="{{ $response->actions[0]->url }}" download="qr-code.png">
-            <img id="qr-code" class="my-3" width="160px" src="{{ $response->actions[0]->url }}" alt="QR Code">
-        </a>
+        <img title="Download QR Code" id="qr-code" class="my-3" style="cursor: pointer;" width="160px" src="{{ $response->actions[0]->url }}" alt="QR Code" onclick="saveFile(`{{ $response->actions[0]->url }}`)">
 
         <p class="mt-2">Cara pembayaran menggunakan QRIS :</p>
 
@@ -56,40 +50,11 @@
         //     navigator.clipboard.writeText(value);
         // }
 
+        // Generate Expiry Time Countdown
         const expiryTimeElement = document.querySelector("#expiry-time");
         const expiryTime = moment("{{ $response->expiry_time }}")
 
-        const options = {
-            year: "2-digit",
-            month: "2-digit",
-            day: "2-digit",
-            hour: "2-digit",
-            minute: "2-digit",
-            timeZoneName: "short",
-        };
-
-        const dateTime = new Intl.DateTimeFormat("en-US", options).format;
-
-        const updateExpiryTime = setInterval(() => {
-            const difference = expiryTime.diff(moment());
-            if (difference <= 1) {
-                clearInterval(updateExpiryTime);
-                expiryTimeElement.innerText = "00:00:00";
-            } else {
-                const hours = Math.floor(difference  / (1000*60*60));
-                const minutes = Math.floor(difference % (1000*60*60) / (1000*60));
-                const seconds = Math.floor(difference % (1000*60*60) % (1000*60) / (1000));
-
-                const countdown = moment();
-                countdown.hours(hours);
-                countdown.minutes(minutes);
-                countdown.seconds(seconds);
-
-                expiryTimeElement.innerText = countdown.format("HH:mm:ss");
-            }
-        }, 1000);
-
-        updateExpiryTime();
+        countdown(expiryTimeElement, expiryTime);
 
         // const paymentCode = document.querySelector("#payment-code");
 

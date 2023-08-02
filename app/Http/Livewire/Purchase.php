@@ -91,11 +91,19 @@ class Purchase extends Component
                 'time' => 'required',
                 'city' => 'required',
                 'location' => 'required',
+            ], [
+                'date' => 'Pilih jadwal bimbinganmu.',
+                'time' => 'Pilih sesi bimbinganmu.',
+                'city' => 'Pilih kota domisilimu.',
+                'location' => 'Pilih lokasi bimbinganmu.'
             ]);
         } else {
             $validatedData = $this->validate([
                 'date' => 'required',
                 'time' => 'required',
+            ], [
+                'date' => 'Pilih jadwal bimbinganmu.',
+                'time' => 'Pilih sesi bimbinganmu.'
             ]);
         }
 
@@ -107,6 +115,8 @@ class Purchase extends Component
         $validatedData = $this->validate([
             'note' => 'required',
             'document' => 'file | mimes:pdf,doc,docx | nullable',
+        ], [
+            'note' => 'Isi catatan untuk Tutor Anda'
         ]);
 
         if ($this->program == 1) {

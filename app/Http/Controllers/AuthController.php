@@ -15,7 +15,7 @@ class AuthController extends Controller
     // laravel register
     public function get_register()
     {
-        return view('auth.register');
+        return view('auth.register', ['title' => 'Register']);
     }
 
     // memproses request register
@@ -51,7 +51,7 @@ class AuthController extends Controller
 
     public function get_login()
     {
-        return view('auth.login');
+        return view('auth.login', ['title' => 'Login']);
     }
     // memproses akses login
     public function post_login(Request $request)
