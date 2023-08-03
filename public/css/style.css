@@ -17,7 +17,7 @@ body {
     width: 100%;
     background-color: rgba(11, 13, 11, 0.25);
     height: 68px;
-    top: 64px;
+    top: 72px;
     box-shadow: 4px 0 4px 0 white(0, 4, 0, 0.5);
     padding: 0 10px;
     transition: all 0.5s ease-in;
@@ -196,7 +196,7 @@ body {
 }
 
 .promo .swipper-container {
-    max-width: 1200px;
+    padding: 0 60px;
     width: 100%;
 }
 
@@ -257,7 +257,6 @@ body {
     margin-top: 80px;
     margin-bottom: 50px;
     margin-left: 5px;
-    transform: scaleX(-1);
 }
 
 /* Reason */
@@ -660,6 +659,7 @@ body {
 }
 
 .video-1 img {
+    width: 805px;
     border-radius: 80px;
     max-width: 100%;
     max-height: 100%;
@@ -728,18 +728,31 @@ body {
 
 /* Daftar Sekarang */
 .daftar-container {
-    max-width: 1008px;
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 126.5px;
-    height: 180px;
+    padding: 60px 70px;
     margin-top: 80px;
     display: flex;
     background-size: cover;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     margin-left: auto;
     margin-right: auto;
+}
+
+.daftar-container button {
+    margin-top: 10px;
+    width: 243px;
+    height: 55px;
+    letter-spacing: 1px;
+}
+
+.daftar-container button a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    color: #fff;
 }
 
 .text-daftar {
@@ -758,20 +771,6 @@ body {
     font-weight: bold;
 }
 
-.daftar-container button {
-    margin-left: 90px;
-    margin-top: 10px;
-    width: 243px;
-    height: 55px;
-    letter-spacing: 1px;
-}
-
-.daftar-container button a {
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 16px;
-    color: #fff;
-}
 /* Lecturer */
 .lecturer-container {
     display: flex;
@@ -1044,8 +1043,6 @@ body {
 
 .testimoni-content {
     padding: 31px 0;
-    display: grid;
-    justify-content: flex-end;
     padding-right: 40px;
 }
 
@@ -1064,7 +1061,6 @@ body {
 }
 
 .testimoni-cards .test-card {
-    max-width: 350px;
     width: 100%;
     border-radius: 9px;
     padding: 26px 29px;
@@ -1432,9 +1428,48 @@ body {
     }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1199px) {
     .bg-xl-orange {
         background-color: white;
+    }
+
+    .swipe-left,
+    .swipe-right {
+        display: none;
+    }
+
+    .quotes-container h2 {
+        font-size: 1.5rem;
+    }
+
+    .testimoni-container {
+        padding: 20px 0;
+        display: flex;
+    }
+
+    .title-testimoni {
+        display: none;
+    }
+
+    .testimoni-content {
+        padding: 0;
+    }
+
+    .testimoni-cards .swiper-container {
+        max-width: fit-content;
+    }
+
+    .testimoni-mobile {
+        display: flex;
+        margin: 20px 0;
+        letter-spacing: 2px;
+        text-align: left;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .test-card {
+        width: 100%;
     }
 }
 @media (max-width: 1024px) {
@@ -1532,20 +1567,8 @@ body {
         overflow: auto;
     }
 
-    .title-testimoni {
-        display: flex;
-    }
-
-    .title-testimoni h1 {
-        font-size: 29px;
-    }
-
     .testimoni-cards {
-        width: 550px;
-    }
-
-    .testimoni-cards .test-card {
-        max-width: 250px;
+        width: 100%;
     }
 
     .testimoni-cards .test-card .bold,
@@ -1670,11 +1693,6 @@ body {
         word-break: break-word;
     }
 
-    .swipe-left,
-    .swipe-right {
-        display: none;
-    }
-
     .reason-container {
         padding: 0 0px;
     }
@@ -1770,40 +1788,14 @@ body {
         width: 80%;
     }
 
-    .testimoni-container {
-        padding: 20px 0;
-        display: flex;
-        flex-direction: column;
-    }
-
     .testimoni-container h1 {
         margin-bottom: 5px;
         margin-top: 20px;
-    }
-    .title-testimoni {
-        display: none;
-    }
-
-    .testimoni-mobile {
-        display: flex;
-        margin-bottom: 20px;
-        letter-spacing: 2px;
-        text-align: left;
-        align-items: center;
-        justify-content: center;
     }
 
     .testimoni-content {
         padding: 0;
         display: flex;
-    }
-
-    .testimoni-cards {
-        width: auto;
-    }
-
-    .testimoni-cards-2 {
-        display: none;
     }
 }
 
@@ -1924,8 +1916,7 @@ body {
     }
 
     .hero-image-mobile img {
-        width: min(330px, 420px);
-        height: min(280px, 360px);
+        width: 100%;
     }
 
     .video-content {
@@ -1933,8 +1924,7 @@ body {
     }
 
     .video-content .video-1 img {
-        max-width: 360px;
-        max-height: 210px;
+        max-width: 320px;
         border-radius: 40px;
         margin-top: 0px;
         margin-bottom: 30px;
@@ -2025,7 +2015,8 @@ body {
     }
 
     .quotes-container h2 {
-        font-size: 13.5px;
+        font-size: .75rem;
+        line-height: 1.5rem;
     }
 }
 

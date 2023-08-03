@@ -13,59 +13,6 @@ $(".panel-icon").click(function () {
     $(".notification-panel").hide();
 });
 
-// Promo
-
-var promoSwiper = new Swiper(".slide-content", {
-    autoplay: true,
-    autoplaySpeed: 5000,
-    slidesPerView: 2,
-    spaceBetween: 2,
-    dots: true,
-    grabCursor: true,
-    fade: true,
-    loop: true,
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-        dynamicBullets: true,
-    },
-    breakpoints: {
-        0: {
-            slidesPerView: 2,
-            centeredSlides: true,
-        },
-        950: {
-            slidesPerView: 2,
-            centeredSlides: true,
-        },
-    },
-    navigation: {
-        nextEl: "#button-promo-right",
-        prevEl: "#button-promo-left",
-    },
-});
-
-// Program
-// var productsSwiper = new Swiper(".slider", {
-//   slidesPerView: 1,
-//   spaceBetween: 1,
-//   loop: true,
-//   breakpoints: {
-//     0: {
-//       slidesPerView: 1,
-//       centeredSlides: true,
-//     },
-//     950: {
-//       slidesPerView: 1,
-//       centeredSlides: true,
-//     },
-//   },
-//   navigation: {
-//     nextEl: "#button-product-right",
-//     prevEl: "#button-product-left",
-//   },
-// });
-
 var buttons = document.querySelectorAll(".button-product");
 for (var i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener("click", function () {
@@ -257,12 +204,64 @@ accordionItemHeaders.forEach((accordionItemHeader) => {
     });
 });
 
+// Promo
+var promoSwiper1 = new Swiper("#swiper-1 .slide-content", {
+    autoplay: true,
+    autoplaySpeed: 5000,
+    slidesPerView: 2,
+    spaceBetween: 2,
+    dots: true,
+    grabCursor: true,
+    fade: true,
+    loop: true,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        dynamicBullets: true,
+    },
+    breakpoints: {
+        0: {
+            slidesPerView: 2,
+            centeredSlides: true,
+        },
+        950: {
+            slidesPerView: 2,
+            centeredSlides: true,
+        },
+    },
+    navigation: {
+        nextEl: "#button-promo-right",
+        prevEl: "#button-promo-left",
+    },
+});
+
+var promoSwiper2 = new Swiper("#swiper-2 .slide-content", {
+    autoplay: true,
+    autoplaySpeed: 5000,
+    slidesPerView: 1,
+    spaceBetween: 1,
+    dots: true,
+    grabCursor: true,
+    allowTouchMove: false,
+    loop: true,
+    breakpoints: {
+        0: {
+            slidesPerView: 1,
+            centeredSlides: true,
+        },
+        950: {
+            slidesPerView: 1,
+            centeredSlides: true,
+        },
+    }
+});
+
 // Testimoni
 var testimoniSwiper = new Swiper("#slide-top", {
     autoplay: true,
     autoplaySpeed: 2500,
     slidesPerView: 2,
-    spaceBetween: 0,
+    spaceBetween: 1,
     allowTouchMove: false,
     fade: true,
     loop: true,
@@ -281,8 +280,8 @@ var testimoniSwiper = new Swiper("#slide-top", {
 var testimoniSwiper2 = new Swiper("#slide-bottom", {
     autoplay: true,
     autoplaySpeed: 5000,
-    slidesPerView: 3,
-    spaceBetween: 0,
+    slidesPerView: 2,
+    spaceBetween: 1,
     allowTouchMove: false,
     fade: true,
     loop: true,
@@ -298,120 +297,26 @@ var testimoniSwiper2 = new Swiper("#slide-bottom", {
     },
 });
 
-// Javascript for Responsive Mobile
-function mobileDisplay() {
-    var productsSwiper = new Swiper(".slide-content", {
-        slidesPerView: 1,
-        spaceBetween: 1,
-        loop: true,
-        autoplay: true,
-        breakpoints: {
-            0: {
-                slidesPerView: 1,
-                centeredSlides: true,
-                spaceBetween: 10,
-            },
-            950: {
-                slidesPerView: 1,
-                centeredSlides: true,
-            },
+var testimoniSwiper3 = new Swiper("#slide-mobile", {
+    autoplay: true,
+    autoplaySpeed: 5000,
+    slidesPerView: 1,
+    spaceBetween: 1,
+    dots: true,
+    grabCursor: true,
+    allowTouchMove: false,
+    loop: true,
+    breakpoints: {
+        0: {
+            slidesPerView: 1,
+            centeredSlides: true,
         },
-        navigation: {
-            nextEl: "#button-product-right",
-            prevEl: "#button-product-left",
+        640: {
+            slidesPerView: 2,
+            centeredSlides: true,
         },
-    });
-
-    // var productsSwiper = new Swiper(".slider", {
-    //   breakpoints: {
-    //     950: {
-    //       slidesPerView: 1,
-    //       centeredSlides: true,
-    //     },
-    //     475: {
-    //       slidesPerView: 2,
-    //       centeredSlides: false,
-    //     },
-    //   },
-    // });
-}
-
-function mobileTestimoni() {
-    var testimoniSwiper = new Swiper("#slide-top", {
-        autoplay: true,
-        autoplaySpeed: 2500,
-        slidesPerView: 1,
-        spaceBetween: 0,
-        fade: true,
-        loop: true,
-        direction: "vertical", // menambahkan opsi direction
-        breakpoints: {
-            0: {
-                slidesPerView: 1, // mengubah slidesPerView untuk orientasi vertikal
-                centeredSlides: true,
-            },
-            640: {
-                slidesPerView: 2,
-                centeredSlides: true,
-            },
-        },
-    });
-
-    var testimoniSwiper2 = new Swiper("#slide-bottom", {
-        autoplay: true,
-        autoplaySpeed: 5000,
-        slidesPerView: 1,
-        spaceBetween: 0,
-        fade: true,
-        loop: true,
-        direction: "vertical", // menambahkan opsi direction
-        breakpoints: {
-            0: {
-                slidesPerView: 1, // mengubah slidesPerView untuk orientasi vertikal
-                centeredSlides: true,
-            },
-            640: {
-                slidesPerView: 2,
-                centeredSlides: true,
-            },
-        },
-    });
-}
-window.onload = function () {
-    if (window.innerWidth <= 475) {
-        mobileDisplay();
-        // mobileTestimoni();
     }
-};
-
-window.onresize = function () {
-    if (window.innerWidth <= 475) {
-        mobileDisplay();
-        // mobileTestimoni();
-    }
-};
-
-// function sendEmail() {
-//   let emailDiskon = document.getElementById("email-diskon").value;
-//   if (!emailDiskon == "") {
-//     Email.send({
-//       Host: "smtp.elasticemail.com",
-//       Username: "harisu1234@gmail.com",
-//       Password: "0610D20DC730BC4249A2310209524E536767",
-//       To: "harisu1234@gmail.com",
-//       From: "ekadianharis@gmail.com",
-//       Subject: "Goals Academy Promo Code",
-//       Body: "test goals academy complete",
-//     }).then((message) => alert("mail sent successfully"));
-//     console.log(emailDiskon);
-//   } else {
-//     alert("Silahkan isi email dahulu!");
-//   }
-// }
-
-// function test() {
-//   alert("mail sent");
-// }
+});
 
 // Toast show function
 if (document.getElementById("myToast")) {

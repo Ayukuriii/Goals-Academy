@@ -1,6 +1,6 @@
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg fixed-top">
-    <div class="container" id="navbar-full">
+    <div class="container-xl">
         <button class="navbar-toggler collapsed p-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
             aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
             <i class="d-inline fas fa-bars fs-1 d-flex justify-content-start"></i>
