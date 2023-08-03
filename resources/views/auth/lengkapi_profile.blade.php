@@ -56,7 +56,7 @@
 
                 </div>
                 <div class="card-register">
-                    <form action="/lengkapi-profile/{{ $data->id }}" method="POST">
+                    <form action="/lengkapi-profile" method="POST">
                         @method('put')
                         @csrf
                         <div class="form-register pt-4 m-auto">
@@ -65,9 +65,11 @@
                                     <label for="name">Nama Lengkap</label>
                                     <input type="text" name="name"
                                         class="form-control @error('name') is-invalid @enderror" id="name"
-                                        placeholder=" " value="{{ $data->name, old('name') }}" disabled />
+                                        placeholder=" " value="{{ $data->name, old('name') }}" />
                                     <div class="invalid-feedback">
-                                        Input tidak valid
+                                        @error('name')
+                                            {{ $message }}
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="col-12 col-md-6 form-group">
@@ -151,8 +153,8 @@
                                 <div class="col-12 mt-3">
                                     <div class="row justify-content-end">
                                         <div class="form-button col-6">
-                                            <button type="submit" class="btn-orange-static w-100"
-                                                id="submit-button" disabled>Submit</button>
+                                            <button type="submit" class="btn-orange-static w-100" id="submit-button"
+                                                disabled>Submit</button>
                                         </div>
                                     </div>
                                 </div>
@@ -182,6 +184,7 @@
                 clearTimeout(timer);
                 timer = setTimeout(() => {
                     validate("lengkapi_profil", [
+                        "name",
                         "username",
                         "phone_number",
                         "university",

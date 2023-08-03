@@ -24,7 +24,7 @@ class NewOrderNotification extends Notification
     {
         return [
             'order_detail_id' => $this->orderId,
-            'message' => 'New Order Placed'
+            'message' => 'Menunggu Pembayaran'
         ];
     }
     public function via($notifiable)

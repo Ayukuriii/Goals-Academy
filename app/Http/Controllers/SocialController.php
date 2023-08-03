@@ -30,7 +30,7 @@ class SocialController extends Controller
 
         $userId = $authUser->id;
 
-        return redirect('/lengkapi-profile/' . $userId);
+        return redirect('/lengkapi-profile');
     }
 
     public function findOrCreateUser($socialUser, $provider)

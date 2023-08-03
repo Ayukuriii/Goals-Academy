@@ -39,6 +39,7 @@ class AuthController extends Controller
 
         $validateData['password'] = Hash::make($validateData['password']);
         $validateData['user_level'] = 'user';
+        $validateData['is_completed;'] = 1;
 
         $user = User::create($validateData);
 
@@ -143,9 +144,9 @@ class AuthController extends Controller
         return redirect('/login');
     }
 
-    public function get_lengkapi_profile(string $id)
+    public function get_lengkapi_profile()
     {
-        $user = User::find($id);
+        $user = User::find(auth()->user()->id);
         if ($user->is_completed === 1) {
             return redirect('/user');
         }
@@ -154,13 +155,12 @@ class AuthController extends Controller
             'data' => $user,
         ]);
     }
-    public function post_lengkapi_profile(Request $request, string $id)
+    public function post_lengkapi_profile(Request $request)
     {
-        $user = User::find($id);
-
-
+        $user = User::find(auth()->user()->id);
 
         $rules = [
+            'name' => 'required',
             'username' => 'required',
             'phone_number' => 'required',
             'university' => 'required',

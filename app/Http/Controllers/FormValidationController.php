@@ -91,6 +91,7 @@ class FormValidationController extends Controller
         $data = User::findOrFail($id);
 
         $validator = Validator::make($request->all(), [
+            'name' => 'required',
             'username' => 'required|unique:users,username,' . $data->id,
             'phone_number' => 'required|numeric',
             'university' => 'required',

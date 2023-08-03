@@ -69,20 +69,7 @@
             <ul class="navbar-nav mx-auto align-items-center">
                 <li class="nav-item">
                     <!--Artikel Page -->
-                    @if (auth()->user())
-                        @php
-                            $user = auth()->user();
-                        @endphp
-                        @if ($user->is_completed === 0)
-                            <a href="/lengkapi-profile/{{ $user->id }}"
-                                class="nav-link custom-fs-1 btn-hover-orange">Program</a>
-                        @else
-                            <a href="/program" class="nav-link custom-fs-1 btn-hover-orange">Program</a>
-                        @endif
-                    @else
-                        <a href="/program" class="nav-link custom-fs-1 btn-hover-orange">Program</a>
-                    @endif
-
+                    <a href="/program" class="nav-link custom-fs-1 btn-hover-orange">Program</a>
                 </li>
                 <li class="nav-item">
                     <!--Artikel Page -->
@@ -154,9 +141,16 @@
                                             href="/payment_pending/{{ $notification->data['order_detail_id'] }}">{{ $stringToJson->order_id }}</a>
                                     @endif
 
+                                <li>
+                                    <span class="text-smaller p-3 pt-0 fst-italic">
+                                        {{ $notification->data['message'] }}
+                                    </span>
+                                </li>
+                                <li>
                                     <span class="text-smaller p-3 pt-0">
                                         {{ $order->ongoing_program->program->title }}
                                     </span>
+                                </li>
                                 </li>
                             @endforeach
                         @endif
