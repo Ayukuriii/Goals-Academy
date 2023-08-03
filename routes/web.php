@@ -105,8 +105,8 @@ Route::controller(AuthController::class)->group(function () {
     Route::post('/lupa-password', 'post_lupa_password');
     Route::get('/password-reset', 'get_password_reset')->name('password.reset')->middleware('guest');
     Route::post('/update-password', 'update_password')->name('update_password');
-    Route::get('/lengkapi-profile/{id}', 'get_lengkapi_profile')->name('get_lengkapi_profile');
-    Route::put('/lengkapi-profile/{id}', 'post_lengkapi_profile')->name('post_lengkapi_profile');
+    Route::get('/lengkapi-profile', 'get_lengkapi_profile')->name('get_lengkapi_profile');
+    Route::put('/lengkapi-profile', 'post_lengkapi_profile')->name('post_lengkapi_profile');
 });
 
 Route::get('/auth/{provider}', [SocialController::class, 'redirectToProvider'])->name('socialite.redirect');
@@ -206,7 +206,7 @@ Route::get('/purchase', function () {
     return view('purchase.index', [
         'title' => 'Purchase'
     ]);
-})->name('purchase.index')->middleware('auth');
+})->name('purchase.index')->middleware('auth', 'check.profile');
 
 Route::get('/payment_pending/{id}', [OrderDetailController::class, 'pending'])->name('payment.pending');
 

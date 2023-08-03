@@ -143,9 +143,9 @@ class AuthController extends Controller
         return redirect('/login');
     }
 
-    public function get_lengkapi_profile(string $id)
+    public function get_lengkapi_profile()
     {
-        $user = User::find($id);
+        $user = User::find(auth()->user()->id);
         if ($user->is_completed === 1) {
             return redirect('/user');
         }
