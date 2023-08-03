@@ -153,13 +153,12 @@ class AuthController extends Controller
             'data' => $user,
         ]);
     }
-    public function post_lengkapi_profile(Request $request, string $id)
+    public function post_lengkapi_profile(Request $request)
     {
-        $user = User::find($id);
-
-
+        $user = User::find(auth()->user()->id);
 
         $rules = [
+            'name' => 'required',
             'username' => 'required',
             'phone_number' => 'required',
             'university' => 'required',
