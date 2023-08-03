@@ -85,4 +85,24 @@ class FormValidationController extends Controller
 
         return response()->json(['error'=>$validator->errors()]);
     }
+
+    public function validate_lengkapi_profil(Request $request, string $id)
+    {
+        $data = User::findOrFail($id);
+
+        $validator = Validator::make($request->all(), [
+            'username' => 'required|unique:users,username,' . $data->id,
+            'phone_number' => 'required|numeric',
+            'university' => 'required',
+            'major' => 'required',
+            'password' => 'required|min:8',
+            'confirmation_password' => 'required|same:password',
+        ]);
+
+        if ($validator->passes()) {
+            return response()->json(['success'=>'Input is valid']);
+        }
+
+        return response()->json(['error'=>$validator->errors()]);
+    }
 }

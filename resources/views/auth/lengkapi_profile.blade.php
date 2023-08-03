@@ -95,22 +95,22 @@
                                     <input type="text" name="username"
                                         class="form-control @error('username') is-invalid @enderror" id="username"
                                         placeholder=" " value="{{ $data->username, old('username') }}" required />
-                                    @error('username')
-                                        <div class="invalid-feedback">
+                                    <div class="invalid-feedback">
+                                        @error('username')
                                             {{ $message }}
-                                        </div>
-                                    @enderror
+                                        @enderror
+                                    </div>
                                 </div>
                                 <div class="col-12 col-md-6 form-group">
                                     <label for="email">Email</label>
                                     <input type="email" name="email"
                                         class="form-control @error('email') is-invalid @enderror" id="email"
                                         placeholder=" " value="{{ $data->email, old('email') }}" disabled />
-                                    @error('email')
-                                        <div class="invalid-feedback">
+                                    <div class="invalid-feedback">
+                                        @error('email')
                                             {{ $message }}
-                                        </div>
-                                    @enderror
+                                        @enderror
+                                    </div>
                                 </div>
                                 <div class="col-12 col-md-6 form-group">
                                     <label for="phone_number">No. Telp</label>
@@ -118,61 +118,61 @@
                                         class="form-control @error('phone_number') is-invalid @enderror"
                                         id="phone_number" placeholder=" " value="{{ old('phone_number') }}"
                                         required />
-                                    @error('phone_number')
-                                        <div class="invalid-feedback">
+                                    <div class="invalid-feedback">
+                                        @error('phone_number')
                                             {{ $message }}
-                                        </div>
-                                    @enderror
+                                        @enderror
+                                    </div>
                                 </div>
                                 <div class="col-12 col-md-6 form-group">
                                     <label for="university">Universitas</label>
                                     <input type="text" name="university"
                                         class="form-control @error('university') is-invalid @enderror" id="university"
                                         placeholder=" " value="{{ old('university') }}" required />
-                                    @error('university')
-                                        <div class="invalid-feedback">
+                                    <div class="invalid-feedback">
+                                        @error('university')
                                             {{ $message }}
-                                        </div>
-                                    @enderror
+                                        @enderror
+                                    </div>
                                 </div>
                                 <div class="col-12 col-md-6 form-group">
                                     <label for="major">Jurusan</label>
                                     <input type="text" name="major"
                                         class="form-control @error('major') is-invalid @enderror" id="major"
                                         placeholder=" " value="{{ old('major') }}" required>
-                                    @error('major')
-                                        <div class="invalid-feedback">
+                                    <div class="invalid-feedback">
+                                        @error('major')
                                             {{ $message }}
-                                        </div>
-                                    @enderror
+                                        @enderror
+                                    </div>
                                 </div>
                                 <div class="col-12 col-md-6 form-group">
                                     <label for="password">PASSWORD* (Minimal 8 Karakter)</label>
                                     <input type="password" name="password"
                                         class="form-control @error('password') is-invalid @enderror" id="password"
                                         placeholder=" " required />
-                                    @error('password')
-                                        <div class="invalid-feedback">
+                                    <div class="invalid-feedback">
+                                        @error('password')
                                             {{ $message }}
-                                        </div>
-                                    @enderror
+                                        @enderror
+                                    </div>
                                 </div>
                                 <div class="col-12 col-md-6 form-group">
                                     <label for="confirmation_password">Ulangi Password</label>
                                     <input type="password" name="confirmation_password"
                                         class="form-control @error('confirmation_password') is-invalid @enderror"
                                         id="confirmation_password" placeholder=" " required />
-                                    @error('confirmation_password')
-                                        <div class="invalid-feedback">
+                                    <div class="invalid-feedback">
+                                        @error('confirmation_password')
                                             {{ $message }}
-                                        </div>
-                                    @enderror
+                                        @enderror
+                                    </div>
                                 </div>
                                 <div class="col-12 mt-3">
                                     <div class="row justify-content-end">
                                         <div class="form-button col-6">
                                             <button type="submit" class="btn-orange-static w-100"
-                                                id="submit-register" disabled>Lengkapi Profile</button>
+                                                id="submit-button" disabled>Submit</button>
                                         </div>
                                     </div>
                                 </div>
@@ -202,14 +202,26 @@
     <script src="{{ asset('js/form.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/main.js') }}"></script>
     <script>
+        const formInput = document.querySelectorAll(".form-group input");
+
+        let timer = "";
+
         formInput.forEach((element) => {
-            element.addEventListener("change", (e) => {
-                validate(e.target);
-                updateButton();
+            element.addEventListener("input", (e) => {
+                document.querySelector("#submit-button").setAttribute("disabled", true);
+                clearTimeout(timer);
+                timer = setTimeout(() => {
+                    validate("lengkapi_profil", [
+                        "username",
+                        "phone_number",
+                        "university",
+                        "major",
+                        "password",
+                        "confirmation_password"
+                    ], "submit-button", {{ $data->id }});
+                }, 500);
             });
         });
-
-        // updateButton();
     </script>
 </body>
 <!-- JavaScript links -->

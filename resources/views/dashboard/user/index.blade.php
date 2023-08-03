@@ -31,8 +31,7 @@
                                 @if ($collection->payment_status == 'success')
                                     <p class="detail-product"><a href="/user/{{ $collection->id }}">Lihat Detail</a></p>
                                 @elseif ($collection->payment_status == 'pending')
-                                    <p class="detail-product"><a href="/payment_pending/{{ $collection->id }}">Lihat
-                                            Detail</a></p>
+                                    <p class="detail-product"><a href="/payment_pending/{{ $collection->id }}">Lihat Detail</a></p>
                                 @else
                                     <p class="detail-product"><a href="/user/{{ $collection->id }}">Lihat Detail</a></p>
                                 @endif
@@ -42,8 +41,8 @@
                 @endforeach
             @else
                 <div class="card-body d-flex flex-column justify-content-center align-items-center">
-                    <p>Kamu belum bergabung di program apapun</p>
-                    <a href="/program" class="btn">Cari Program</a>
+                    <p class="fs-6">Kamu belum bergabung di program apapun</p>
+                    <a href="/program" class="btn-orange-static py-2 px-4">Cari Program</a>
                 </div>
             @endif
         </div>

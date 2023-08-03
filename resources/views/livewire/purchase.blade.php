@@ -221,9 +221,11 @@
                                     </option>
                                 @endforeach
                             </select>
-                            @error('date')
-                                {{ $message }}
-                            @enderror
+                            <div class="invalid-feedback">
+                                @error('date')
+                                    {{ $message }}
+                                @enderror
+                            </div>
                         </div>
                         <div class="col-12 col-md-6 form-group">
                             <label class="form-label small" for="time">Sesi</label>
@@ -235,11 +237,15 @@
                                         <option value="{{ $y }}">
                                             {{ \Carbon\Carbon::parse($y)->format('H:i') }}</option>
                                     @endforeach
+                                @else
+                                    <option value="">Kosong</option>
                                 @endif
                             </select>
-                            @error('time')
-                                {{ $message }}
-                            @enderror
+                            <div class="invalid-feedback">
+                                @error('time')
+                                    {{ $message }}
+                                @enderror
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -258,9 +264,11 @@
                                     </option>
                                 @endforeach
                             </select>
-                            @error('city')
-                                {{ $message }}
-                            @enderror
+                            <div class="invalid-feedback">
+                                @error('city')
+                                    {{ $message }}
+                                @enderror
+                            </div>
                         </div>
                         <div class="col-12 col-md-6 form-group">
                             <label class="form-label small" for="location">Lokasi Bimbingan</label>
@@ -270,9 +278,11 @@
                                     <option value="{{ $l }}">{{ $l }}</option>
                                 @endforeach
                             </select>
-                            @error('location')
-                                {{ $message }}
-                            @enderror
+                            <div class="invalid-feedback">
+                                @error('location')
+                                    {{ $message }}
+                                @enderror
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -317,9 +327,11 @@
                     <label class="form-label small" for="note">Catatan untuk Tutor</label>
                     <textarea class="form-control @error('note') is-invalid @enderror" name="note" wire:model="note" id="note" cols="30" rows="10"
                         placeholder="Ceritakan kendala skripsi Anda disini ..."></textarea>
-                        @error('note')
-                            {{ $message }}
-                        @enderror
+                        <div class="invalid-feedback">
+                            @error('note')
+                                {{ $message }}
+                            @enderror
+                        </div>
                 </div>
                 <div class="form-group mb-5 col-6">
                     <label class="form-label small" for="document">File Skripsi (*Opsional)</label>

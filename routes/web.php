@@ -221,4 +221,5 @@ Route::controller(FormValidationController::class)->group(function () {
     Route::post('/validate_login', 'validate_login');
     Route::post('/validate_tambah_user', 'validate_tambah_user');
     Route::post('/validate_edit_user/{id}', 'validate_edit_user');
+    Route::post('/validate_lengkapi_profil/{id}', 'validate_lengkapi_profil');
 });

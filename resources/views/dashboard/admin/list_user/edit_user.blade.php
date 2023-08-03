@@ -238,22 +238,22 @@
 
         const formInput = document.querySelectorAll(".form-group input");
 
+        let timer = "";
+
         formInput.forEach((element) => {
             element.addEventListener("input", (e) => {
                 document.querySelector("#edit-button").setAttribute("disabled", true);
-            })
-        })
-
-        formInput.forEach((element) => {
-            element.addEventListener("change", (e) => {
-                validate("edit_user", [
-                    "name",
-                    "username",
-                    "email",
-                    "phone_number",
-                    "university",
-                    "major"
-                ], "edit-button", {{ $data->id }});
+                clearTimeout(timer);
+                setTimeout(() => {
+                    validate("edit_user", [
+                        "name",
+                        "username",
+                        "email",
+                        "phone_number",
+                        "university",
+                        "major"
+                    ], "edit-button", {{ $data->id }});
+                }, 500);
             });
         });
     </script>
