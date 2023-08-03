@@ -141,9 +141,16 @@
                                             href="/payment_pending/{{ $notification->data['order_detail_id'] }}">{{ $stringToJson->order_id }}</a>
                                     @endif
 
+                                <li>
+                                    <span class="text-smaller p-3 pt-0 fst-italic">
+                                        {{ $notification->data['message'] }}
+                                    </span>
+                                </li>
+                                <li>
                                     <span class="text-smaller p-3 pt-0">
                                         {{ $order->ongoing_program->program->title }}
                                     </span>
+                                </li>
                                 </li>
                             @endforeach
                         @endif
