@@ -75,13 +75,13 @@
     <!-- Promo -->
     <div class="promo" id="promo">
         <h1><span style="color:#4F3F85;">Terbaru dari Goals Academy</span></h1>
-        <div class="swipper-container swiper">
+        <div id="swiper-1" class="swipper-container swiper d-none d-md-block">
             <div class="swipe-left">
-                <img rel="prerender" src="image/assets\images\promo\left-arrow.png" id="button-promo-left" onclick="swipeLeft">
+                <i style="text-shadow: 0 4px 4px rgba(0,0,0,.25)" class="display-5 text-light fa-solid fa-chevron-left" id="button-promo-left" onclick="swipeLeft"></i>
                 <!--button klik kiri-->
             </div>
             <div class="swipe-right">
-                <img rel="prerender" src="image/assets\images\promo\left-arrow.png" id="button-promo-right" onclick="swipeRight">
+                <i style="text-shadow: 0 4px 4px rgba(0,0,0,.25)" class="display-5 text-light fa-solid fa-chevron-right" id="button-promo-right" onclick="swipeRight"></i>
                 <!--button klik kanan-->
             </div>
             <div class="slide-content">
@@ -103,6 +103,25 @@
             </div>
 
             <div class="swiper-pagination">
+            </div>
+        </div>
+        <div id="swiper-2" class="swipper-container swiper d-md-none">
+            <div class="slide-content">
+                <div class="card-wrapper swiper-wrapper">
+                    <div class="card swiper-slide">
+                        <div class="card-image"><img rel="prerender" alt="" src="image/assets/images/banner/banner_1.png" /></div>
+                    </div>
+
+                    <div class="card swiper-slide">
+                        <div class="card-image"><img rel="prerender" alt="" src="image/assets/images/banner/banner_2.png" />
+                        </div>
+                    </div>
+
+                    <div class="card swiper-slide">
+                        <div class="card-image"><img rel="prerender" alt="" src="image/assets/images/banner/banner_3.png" />
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -424,19 +443,9 @@
                 <tr>
                     <td>
                         <div class="video-1"><a href="https://youtube.com/shorts/jTsIRfBy-Qs?feature=share">
-                                <img rel="prerender" alt="" src="image/assets/icons/video-goals.svg" width="805px"
-                                    height="474px" /></a>
+                                <img rel="prerender" alt="" src="image/assets/icons/video-goals.svg"/></a>
                         </div>
                     </td>
-                    <!-- <div class="video-2">
-                                                   <td>
-                                                    <li style="list-style: none;" id="list-video">
-                                                    <ul id="items-video"><img rel="prerender" alt="" src="assets/icons/video-logo.jpeg" width="250px" height="140px"/></ul>
-                                                    <ul id="items-video"><img rel="prerender" alt="" src="assets/icons/video-logo.jpeg" width="250px" height="140px"/></ul>
-                                                    <ul id="items-video"><img rel="prerender" alt="" src="assets/icons/video-logo.jpeg" width="250px" height="140px"/></ul>
-                                                   </li>
-                                                   </td> -->
-                    <!-- </div> -->
                 </tr>
             </table>
         </div>
@@ -445,13 +454,15 @@
 
 
     <!-- Daftar Sekarang -->
-    <div class="daftar-container">
-        <div class="text-daftar">
-            <h3>Klik <span>Tanya Sekarang</span> untuk <span>konsultasi</span> ke kami <br>
-                mengenai rekomendasi program<br> yang cocok buat kamu.</h3>
+    <div class="container-fluid container-xl">
+        <div class="daftar-container">
+            <div class="text-daftar">
+                <h3>Klik <span>Tanya Sekarang</span> untuk <span>konsultasi</span> ke kami <br>
+                    mengenai rekomendasi program<br> yang cocok buat kamu.</h3>
+            </div>
+            <button type="submit" class="btn-orange-static py-2"><a href="https://wa.me/6282147638286" alt="">Tanya
+                    Sekarang</a></button>
         </div>
-        <button type="submit" class="btn-orange-static py-2"><a href="https://wa.me/6282147638286" alt="">Tanya
-                Sekarang</a></button>
     </div>
     <!-- End Daftar Sekarang -->
 
@@ -575,16 +586,6 @@
     <div class="socmed-container">
         <h1>Ikuti Kami</h1>
         <div class="list-socmed">
-            <!-- Twitter -->
-            <div class="socmed socmed-1">
-                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="60" height="60"
-                    viewBox="0 0 48 48">
-                    <path fill="#03a9f4" d="M24 4A20 20 0 1 0 24 44A20 20 0 1 0 24 4Z"></path>
-                    <path fill="#fff"
-                        d="M36,17.12c-0.882,0.391-1.999,0.758-3,0.88c1.018-0.604,2.633-1.862,3-3 c-0.951,0.559-2.671,1.156-3.793,1.372C31.311,15.422,30.033,15,28.617,15C25.897,15,24,17.305,24,20v2c-4,0-7.9-3.047-10.327-6 c-0.427,0.721-0.667,1.565-0.667,2.457c0,1.819,1.671,3.665,2.994,4.543c-0.807-0.025-2.335-0.641-3-1c0,0.016,0,0.036,0,0.057 c0,2.367,1.661,3.974,3.912,4.422C16.501,26.592,16,27,14.072,27c0.626,1.935,3.773,2.958,5.928,3c-1.686,1.307-4.692,2-7,2 c-0.399,0-0.615,0.022-1-0.023C14.178,33.357,17.22,34,20,34c9.057,0,14-6.918,14-13.37c0-0.212-0.007-0.922-0.018-1.13 C34.95,18.818,35.342,18.104,36,17.12">
-                    </path>
-                </svg>
-            </div>
             <!-- Facebook -->
             <div class="socmed socmed-2">
                 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="60" height="60"
@@ -654,7 +655,7 @@
     <!-- End Quotes -->
 
     <!-- Testimoni -->
-    <div class="testimoni-container" id="testimoni">
+    <div class="testimoni-container flex-column flex-xl-row" id="testimoni">
         <div class="title-testimoni">
             <h1 style="color: #ff8854; text-align: left; font-weight: bold;">
                 <i class="fa-solid fa-quote-left fa-2xl" style="color: #ff8854;"></i><br>Apa kata
@@ -667,7 +668,7 @@
                 Mereka <br>Tentang Goals Academy</h1>
         </div>
         <div class="testimoni-content">
-            <div class="testimoni-cards testimoni-cards-1">
+            <div class="testimoni-cards testimoni-cards-1 d-none d-xl-block">
                 <div class="swiper-container swiper" id="swiper-top">
                     <div class="testimoni-slide" id="slide-top">
                         <div class="card-wrapper swiper-wrapper">
@@ -833,8 +834,7 @@
                     </div>
                 </div>
             </div>
-
-            <div class="testimoni-cards testimoni-cards-2">
+            <div class="testimoni-cards testimoni-cards-2 d-none d-xl-block">
                 <div class="swiper-container swiper" id="swiper-bottom">
                     <div class="testimoni-slide" id="slide-bottom">
                         <div class="card-wrapper swiper-wrapper">
@@ -998,24 +998,158 @@
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="test-card swiper-slide">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimoni-cards testimoni-cards-3 d-xl-none">
+                <div class="swiper-container swiper" id="swiper-mobile">
+                    <div class="testimoni-slide" id="slide-mobile">
+                        <div class="card-wrapper swiper-wrapper">
+                            <div class="test-card card-1 swiper-slide">
                                 <div class="card-header">
-                                    <p class="bold">&quot;Goals academy ngebantu banget dari yang tadinya masih gelap
-                                        mikirin judul, setelah ikut bimbingan dengan tutor di goals academy buat pikiran
-                                        jadi terang untuk nentuin judul&quot;</p>
+                                    <p class="bold">&quot;Diluar ekspektasi proposal skripsi aku dapat nilai A walaupun
+                                        ada beberapa catatan revisi yang harus diperbaiki&quot;</p>
                                 </div>
 
                                 <hr />
                                 <div class="card-content">
                                     <div class="user-profile">
                                         <div class="user-img"><img rel="prerender" alt="" class="card-img"
-                                                src="image/assets/images/testimoni/maudy.png" /></div>
+                                                src="image/assets/images/testimoni/rinda.jpg" /></div>
 
                                         <div class="user-identity">
-                                            <p class="bold">Maudy Ayunda</p>
+                                            <p class="bold">Herinda</p>
+
+                                            <p class="major">Informatika</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="rating">
+                                        <ul>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="test-card swiper-slide">
+                                <div class="card-header">
+                                    <p class="bold">&quot;Bimbingan sama dospem disuruh ganti judul dan bahkan sering
+                                        ganti judul, setelah bimbingan di goals academy jadi paham judul skripsi yang
+                                        menarik dan sesuai dengan penelitianku&quot;</p>
+                                </div>
+
+                                <hr />
+                                <div class="card-content">
+                                    <div class="user-profile">
+                                        <div class="user-img"><img rel="prerender" alt="" class="card-img"
+                                                src="image/assets/images/testimoni/hilda.jpeg" /></div>
+
+                                        <div class="user-identity">
+                                            <p class="bold">Hilda</p>
+
+                                            <p class="major">Matematika</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="rating">
+                                        <ul>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="test-card swiper-slide">
+                                <div class="card-header">
+                                    <p class="bold">&quot;Sebelum bimbingan di goals academy bingung dan ngga paham sama
+                                        sekali terkait penggunaan SPSS, setelah daftar bimbingan dan tutornya simple
+                                        banget aku jadi paham terkait SPSS dan aku bisa mulai bimbingan lagi dengan
+                                        dospem&quot;</p>
+                                </div>
+
+                                <hr />
+                                <div class="card-content">
+                                    <div class="user-profile">
+                                        <div class="user-img"><img rel="prerender" alt="" class="card-img"
+                                                src="image/assets/images/testimoni/haris.jpeg" /></div>
+
+                                        <div class="user-identity">
+                                            <p class="bold">Haris</p>
 
                                             <p class="major">Hukum</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="rating">
+                                        <ul>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="test-card swiper-slide">
+                                <div class="card-header">
+                                    <p class="bold">&quot;Penyampaian waktu bimbingan mudah dicerna, progress skripsiku
+                                        jadi lebih cepat&quot;</p>
+                                </div>
+
+                                <hr />
+                                <div class="card-content">
+                                    <div class="user-profile">
+                                        <div class="user-img"><img rel="prerender" alt="" class="card-img"
+                                                src="image/assets/images/testimoni/ravly.jpeg" /></div>
+
+                                        <div class="user-identity">
+                                            <p class="bold">Ravly</p>
+
+                                            <p class="major">Administrasi Bisnis</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="rating">
+                                        <ul>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="test-card swiper-slide">
+                                <div class="card-header">
+                                    <p class="bold">&quot;Alhamdulillah setelah ikut bimbingan di goals academy dapat
+                                        inspirasi tentang topik apa yang mau saya bahas untuk dijadikan judul
+                                        skripsi&quot;</p>
+                                </div>
+
+                                <hr />
+                                <div class="card-content">
+                                    <div class="user-profile">
+                                        <div class="user-img"><img rel="prerender" alt="" class="card-img"
+                                                src="image/assets/images/testimoni/wendi.jpeg" /></div>
+
+                                        <div class="user-identity">
+                                            <p class="bold">Wendy</p>
+
+                                            <p class="major">Ilmu Kelautan</p>
                                         </div>
                                     </div>
 
