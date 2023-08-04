@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\OngoingProgram;
+use App\Models\OrderDetail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
@@ -18,9 +19,6 @@ class UserController extends Controller
      */
     public function index()
     {
-        //mendapatkan data dengan cara find auth
-        // $x       = OngoingProgram::latest()->where('user_id', $authuser->id)->find(auth()->user()->id);
-
         $authuser = auth()->user();
         $ongoing = OngoingProgram::latest()->where('user_id', $authuser->id)->get();
         $datecarbon = [];
@@ -33,7 +31,7 @@ class UserController extends Controller
             'posts' => $authuser,
             'title' => 'Profile',
             'datecarbon' => $datecarbon,
-            'collections'  => $ongoing
+            'collections'  => $ongoing,
         ]);
     }
 

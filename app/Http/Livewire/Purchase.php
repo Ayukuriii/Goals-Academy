@@ -134,6 +134,11 @@ class Purchase extends Component
 
     public function submitForm()
     {
+        $validatedData = $this->validate([
+            'purchaseMethod' => 'required',
+            'agreement' => 'accepted'
+        ]);
+        
         // Set your Merchant Server Key
         Config::$serverKey = config('midtrans.server_key');
         // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
@@ -142,13 +147,6 @@ class Purchase extends Component
         Config::$isSanitized = true;
         // Set 3DS transaction for credit card to true
         Config::$is3ds = true;
-
-        $validatedData = $this->validate([
-            'purchaseMethod' => 'required',
-            'agreement' => 'accepted'
-        ]);
-
-        // dd($this);
 
         $filepath = null;
         $origin = null;

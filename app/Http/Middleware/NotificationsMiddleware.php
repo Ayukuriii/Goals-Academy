@@ -21,7 +21,6 @@ class NotificationsMiddleware
         if (Auth::check()) {
             $user = Auth::user();
 
-            // Ganti 'App\Notifications\NewOrderNotification' dengan namespace notifikasi Anda
             $notifications = $user->notifications->where('notifiable_id', '=', $user->id)
                 ->sortByDesc('created_at')
                 ->take(5);
