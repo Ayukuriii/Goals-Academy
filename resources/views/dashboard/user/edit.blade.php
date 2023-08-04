@@ -270,11 +270,5 @@
                 };
             }
         })
-
-        formInput.forEach((element) => {
-            element.addEventListener("change", (e) => {
-                validate(e.target);
-            });
-        });
     </script>
 @endsection

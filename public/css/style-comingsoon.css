@@ -1,12 +1,3 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    font-family: "Poppins";
-}
-
 /* Navbar */
 .navbar {
     background-color: #f0f8ff;
@@ -50,10 +41,6 @@
     flex-direction: row;
 }
 
-.socmed-container {
-    margin-bottom: 150px;
-    margin-left: -5px;
-}
 #segera-hadir .socmed {
     padding: 5px;
     cursor: pointer;
@@ -70,18 +57,6 @@ footer {
     padding: 57px 40px;
 }
 
-.footer-container {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    color: #fff;
-    justify-content: space-between;
-}
-
-.footer-container .footer-logo {
-    margin-bottom: 24px;
-}
-
 .footer-left-content {
     flex: 0.25;
 }
@@ -94,24 +69,6 @@ footer {
 
 .footer-left-content p:nth-of-type(1) {
     margin-bottom: 20px;
-}
-
-.footer-right-content {
-    flex: 0.7;
-    max-width: 100%;
-}
-
-.footer-right-top-content,
-.footer-right-bottom-content {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 50px 0;
-    justify-content: space-between;
-}
-
-.footer-right-top-content .product {
-    padding-top: 20px;
 }
 
 .footer-right-content .title {
@@ -202,25 +159,12 @@ footer {
         display: block;
     }
 
-    .footer-left-content {
-        text-align: center;
-        align-items: center;
-    }
-
-    .footer-container .footer-logo {
-        width: 250px;
-        height: auto;
-    }
     .footer-right-bottom-content {
         padding-left: 0;
     }
 
     .footer-right-bottom-content .contact {
         margin-top: 20px;
-    }
-
-    .socmed-container {
-        margin-bottom: inherit;
     }
 }
 

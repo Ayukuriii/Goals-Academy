@@ -151,6 +151,7 @@ class AuthController extends Controller
             return redirect('/user');
         }
         return view('auth.lengkapi_profile', [
+            'title' => 'Lengkapi Profil',
             'data' => $user,
         ]);
     }

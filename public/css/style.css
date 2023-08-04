@@ -1,6 +1,22 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
 body {
     background-color: white;
     height: fit-content;
+}
+
+.landing-page-background {
+    background-image: url("../image/assets/images/background-blue-white.svg");
+    background-position: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .custom-fs-1 {
@@ -17,7 +33,7 @@ body {
     width: 100%;
     background-color: rgba(11, 13, 11, 0.25);
     height: 68px;
-    top: 64px;
+    top: 72px;
     box-shadow: 4px 0 4px 0 white(0, 4, 0, 0.5);
     padding: 0 10px;
     transition: all 0.5s ease-in;
@@ -196,7 +212,7 @@ body {
 }
 
 .promo .swipper-container {
-    max-width: 1200px;
+    padding: 0 60px;
     width: 100%;
 }
 
@@ -257,7 +273,6 @@ body {
     margin-top: 80px;
     margin-bottom: 50px;
     margin-left: 5px;
-    transform: scaleX(-1);
 }
 
 /* Reason */
@@ -267,13 +282,13 @@ body {
     width: 100%;
 }
 
-.promo h1,
-.reason-container h1,
-.product-container h1,
-.video-container h1,
-.faq-container h1,
-.socmed-container h1,
-.lecturer-container h1 {
+.promo h2,
+.reason-container h2,
+.product-container h2,
+.video-container h2,
+.faq-container h2,
+.socmed-container h2,
+.lecturer-container h2 {
     text-align: center;
     margin-bottom: 20px;
     font-size: 40px;
@@ -322,7 +337,6 @@ body {
 
 .reason-card p {
     font-size: 13.5px;
-    text-align: justify;
     margin-bottom: 10px;
 }
 
@@ -410,7 +424,7 @@ body {
 }
 
 .list-product button {
-    font-size: 16px;
+    font-size: 1rem;
     background: none;
     color: #363434;
     border: none;
@@ -446,35 +460,10 @@ body {
     opacity: 1;
 }
 
-.product-card {
-    max-width: 1120px;
-    max-height: 310px;
-    display: flex;
-    flex-direction: wrap;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(255, 255, 255);
-    border-radius: 30px;
-    transition: opacity 0.5s ease-in-out;
-    padding: 50px;
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-}
-
 .product-container .swipper-container .slider {
     display: flex;
     /* overflow: hidden; */
     z-index: 2;
-}
-
-.product-card .product-image {
-    display: flex;
-    margin-right: 30px;
-}
-
-.product-card .product-image img {
-    border-radius: 15px;
-    max-width: 385px;
-    max-height: 240px;
 }
 
 .card-content {
@@ -488,14 +477,11 @@ body {
 
 .card-content p {
     margin-top: 10px;
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 .bottom button {
-    margin-top: 20px;
-    font-size: 16px;
-    width: 180px;
-    height: 40px;
+    font-size: 1rem;
     z-index: 1;
     font-weight: bold;
 }
@@ -575,7 +561,7 @@ body {
 }
 .top-modal li {
     margin-bottom: 5px;
-    font-size: 16px;
+    font-size: 1rem;
     align-items: center;
 }
 
@@ -644,102 +630,31 @@ body {
 /* Video */
 .video-container {
     width: 100%;
+    margin-bottom: 50px;
     /* margin: 20px auto; */
 }
 
-.video-content {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    margin-top: 40px;
-}
-
-.video-1 img {
-    border-radius: 80px;
-    max-width: 100%;
-    max-height: 100%;
-    align-items: flex-start;
-    cursor: pointer;
-}
-
-#list-video {
-    padding: 40px;
-}
-
-#items-video {
-    padding: 10px;
-}
-
-#items-video img {
-    border-radius: 12px;
-}
-
-.video-2 li {
-    margin-left: auto;
-    list-style: none;
-    margin-right: auto;
-    max-width: 100%;
-    max-height: 100%;
-    align-items: flex-end;
-}
-
-/* .video-wrapper {
-        display: flex;
-        border-radius: 90px;
-        max-width: 1200px;
-        height: 800px;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        position: relative;
-    }
-
-
-    .video-content .btn-play i{
-        font-size: 60px;
-    }
-
-    .btn-play:hover {
-        color: #fff;
-        background: transparent;
-        border: 3px solid #fff;
-    }
-
-    .mfp-hide {
-        position: relative;
-        display: none !important;
-        max-width: 75%;
-        margin: 0 auto;
-    }
-
-    iframe {
-        width: 900px;
-        height: 500px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    } */
-
 /* Daftar Sekarang */
 .daftar-container {
-    max-width: 1008px;
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 126.5px;
-    height: 180px;
-    margin-top: 80px;
-    display: flex;
+    padding: 60px 10%;
     background-size: cover;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
     align-items: center;
-    justify-content: center;
     margin-left: auto;
     margin-right: auto;
+}
+
+.daftar-container button {
+    letter-spacing: 1px;
+}
+
+.daftar-container button a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #fff;
 }
 
 .text-daftar {
@@ -749,7 +664,6 @@ body {
 .text-daftar h3 {
     font-size: 18px;
     font-weight: 500;
-    text-align: justify;
     letter-spacing: 1px;
     color: rgba(79, 63, 133, 1);
 }
@@ -758,20 +672,6 @@ body {
     font-weight: bold;
 }
 
-.daftar-container button {
-    margin-left: 90px;
-    margin-top: 10px;
-    width: 243px;
-    height: 55px;
-    letter-spacing: 1px;
-}
-
-.daftar-container button a {
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 16px;
-    color: #fff;
-}
 /* Lecturer */
 .lecturer-container {
     display: flex;
@@ -837,12 +737,12 @@ body {
 
 .lecturer-card .card-text {
     text-align: center;
-    padding: 16px;
+    padding: 1rem;
     margin-bottom: 20px;
 }
 
 .lecturer-card .lecturer-name {
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: bold;
     margin-bottom: -2px;
 }
@@ -922,22 +822,20 @@ body {
     border-bottom-left-radius: 12px;
 }
 
-@media (max-width: 768px) {
-    html {
-        font-size: 14px;
+/* Social Media */
+.list-socmed {
+    margin-bottom: 50px;
+
+    & a {
+        width: 5%;
+    }
+
+    & img {
+        width: 100%;
     }
 }
 
-/* Social Media */
-.list-socmed {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 50px;
-}
-
-.socmed-container h1 {
+.socmed-container h2 {
     margin-top: 40px;
 }
 /* Quotes */
@@ -989,63 +887,13 @@ body {
 .testimoni-mobile {
     display: none;
 }
-.testimoni-container .testimoni-header {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 60px 65px 29px 72px;
-    justify-content: space-between;
-}
-
-.testimoni-header .title {
-    display: block;
-    width: 250px;
-    margin: auto 0;
-}
-
-.testimoni-header .title .title-icon {
-    height: 73px;
-    margin-bottom: 70px;
-}
-
-.testimoni-header h1 {
-    font-size: 35px;
-}
-
-.testimoni-header img {
-    margin: 0 10px;
-}
-
-.testimoni-header .image-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-}
 
 .image-wrapper > img:nth-child(1) {
     border-radius: 15px 25px 25px 20px;
 }
 
-.testimoni-header .image-stack {
-    display: flex;
-    flex-direction: column;
-}
-
-.testimoni-header .image-stack > img:nth-child(1) {
-    border-radius: 20px 25px 25px 25px;
-    margin-bottom: 10px;
-}
-
-.testimoni-header .image-stack > img:nth-child(2) {
-    border-radius: 15px 25px 15px 10px;
-}
-
-.testimoni-header .image-wrapper > img:nth-of-type(2) {
-    border-radius: 15px 10px 10px 25px;
-}
-
 .testimoni-content {
     padding: 31px 0;
-    display: grid;
-    justify-content: flex-end;
     padding-right: 40px;
 }
 
@@ -1064,7 +912,6 @@ body {
 }
 
 .testimoni-cards .test-card {
-    max-width: 350px;
     width: 100%;
     border-radius: 9px;
     padding: 26px 29px;
@@ -1413,17 +1260,8 @@ body {
         max-width: 830px;
     }
 
-    .product-card .product-image img {
-        width: 290px;
-        margin-left: 30px;
-    }
-
     .menu-icon {
         display: none;
-    }
-
-    .video-content {
-        width: 100%;
     }
 
     .lecturer-card,
@@ -1432,11 +1270,80 @@ body {
     }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1199px) {
+    .landing-page-background {
+        background-size: cover;
+    }
+
     .bg-xl-orange {
         background-color: white;
     }
+
+    .swipe-left,
+    .swipe-right {
+        display: none;
+    }
+
+    .promo h2,
+    .reason-container h2,
+    .product-container h2,
+    .video-container h2,
+    .faq-container h2,
+    .socmed-container h2,
+    .lecturer-container h2 {
+        font-size: clamp(15px, 24px, 28px);
+        letter-spacing: 2px;
+        overflow-wrap: break-word;
+        word-break: break-word;
+    }
+
+    .quotes-container h2 {
+        font-size: 1.5rem;
+    }
+
+    .testimoni-container {
+        padding: 20px 0;
+        display: flex;
+    }
+
+    .title-testimoni {
+        display: none;
+    }
+
+    .testimoni-content {
+        padding: 0;
+    }
+
+    .testimoni-cards .swiper-container {
+        max-width: fit-content;
+    }
+
+    .testimoni-mobile {
+        display: flex;
+        color: #ff8854;
+        margin: 20px 0;
+        letter-spacing: 2px;
+        text-align: left;
+        align-items: center;
+        justify-content: center;
+
+        & img {
+            width: 48px;
+            margin-right: 4px;
+        }
+
+        & h2 {
+            font-weight: bold;
+            font-size: 2rem;
+            padding-left: 10px;
+        }
+    }
+
+    .test-card {
+        width: 100%;
+    }
 }
+
 @media (max-width: 1024px) {
     .notification-panel {
         height: fit-content;
@@ -1449,7 +1356,7 @@ body {
 
     .panel-container {
         height: 100%;
-        padding: 16px 0;
+        padding: 1rem 0;
         align-items: flex-start;
 
         & a {
@@ -1467,10 +1374,6 @@ body {
 
     .hero-container h1 {
         font-size: 30px;
-    }
-
-    .hero-video-link a {
-        font-size: 14px;
     }
 
     .hero-image {
@@ -1509,7 +1412,6 @@ body {
     }
 
     .daftar-container button {
-        margin-left: 50px;
         width: 203px;
     }
 
@@ -1532,44 +1434,13 @@ body {
         overflow: auto;
     }
 
-    .title-testimoni {
-        display: flex;
-    }
-
-    .title-testimoni h1 {
-        font-size: 29px;
-    }
-
     .testimoni-cards {
-        width: 550px;
-    }
-
-    .testimoni-cards .test-card {
-        max-width: 250px;
+        width: 100%;
     }
 
     .testimoni-cards .test-card .bold,
     .testimoni-cards .test-card .major {
         font-size: 9px;
-    }
-
-    .testimoni-container .testimoni-header {
-        padding: 20px;
-    }
-
-    .testimoni-header .title {
-        width: 100%;
-        margin: 20px auto;
-        display: flex;
-    }
-
-    .testimoni-header .title .title-icon {
-        height: 30px;
-        margin: 0 20px;
-    }
-
-    .testimoni-header .image-wrapper {
-        width: 100%;
     }
 
     .image-wrapper > img:nth-child(1) {
@@ -1579,20 +1450,13 @@ body {
     .image-wrapper > img:nth-of-type(2) {
         display: none;
     }
-
-    .testimoni-header .image-stack {
-        width: 100%;
-        flex-direction: row;
-        flex-wrap: wrap;
-        margin: 10px auto;
-    }
-
-    .testimoni-header .image-stack img {
-        width: 40%;
-    }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
+    html {
+        font-size: 14px;
+    }
+
     .btn-login {
         display: block;
     }
@@ -1657,24 +1521,6 @@ body {
         margin-top: -15px;
     }
 
-    .promo h1,
-    .reason-container h1,
-    .product-container h1,
-    .video-container h1,
-    .faq-container h1,
-    .socmed-container h1,
-    .lecturer-container h1 {
-        font-size: clamp(15px, 24px, 28px);
-        letter-spacing: 2px;
-        overflow-wrap: break-word;
-        word-break: break-word;
-    }
-
-    .swipe-left,
-    .swipe-right {
-        display: none;
-    }
-
     .reason-container {
         padding: 0 0px;
     }
@@ -1697,6 +1543,10 @@ body {
         margin-bottom: 12px;
     }
 
+    .reason-card .text-content {
+        padding-right: 10px;
+    }
+
     .reason-card p {
         font-size: 19px;
     }
@@ -1706,9 +1556,10 @@ body {
         max-height: 100px;
     }
 
-    .product-container .swipper-container .slider {
-        height: 370px;
+    .promo .swipper-container {
+        padding: 0 10%;
     }
+
     .list-product {
         display: none;
     }
@@ -1717,14 +1568,8 @@ body {
         padding: 0 20px;
     }
 
-    .video-content .video-1 img {
-        max-width: 480px;
-        max-height: 360px;
-        margin-top: -40px;
-    }
-
     .daftar-container {
-        margin-top: 0px;
+        padding: 30px 10%;
         border-radius: 0;
     }
 
@@ -1744,12 +1589,9 @@ body {
         margin: auto;
     }
 
-    .daftar-container button {
-        margin-left: 0;
+    .lecturer-container {
+        margin: 0;
     }
-    /* .lecturer-container {
-            padding: 0 40px;
-        } */
 
     .lecturer-card {
         width: 160px;
@@ -1761,36 +1603,23 @@ body {
         width: 160px;
     }
 
+    .list-socmed a {
+        width: 8%;
+    }
+
     .quotes-container h2 {
         text-align: center;
-        font-size: 17px;
+        font-size: 1.2rem;
+        line-height: 2rem;
     }
 
     .slide-content .card .content img {
         width: 80%;
     }
 
-    .testimoni-container {
-        padding: 20px 0;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .testimoni-container h1 {
+    .testimoni-container h2 {
         margin-bottom: 5px;
         margin-top: 20px;
-    }
-    .title-testimoni {
-        display: none;
-    }
-
-    .testimoni-mobile {
-        display: flex;
-        margin-bottom: 20px;
-        letter-spacing: 2px;
-        text-align: left;
-        align-items: center;
-        justify-content: center;
     }
 
     .testimoni-content {
@@ -1798,23 +1627,22 @@ body {
         display: flex;
     }
 
-    .testimoni-cards {
-        width: auto;
-    }
-
-    .testimoni-cards-2 {
-        display: none;
+    .testimoni-mobile {
+        & h2 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
     }
 }
 
 @media (max-width: 500px) {
     .accordion-item-header {
         min-height: 4rem;
-        font-size: small;
+        font-size: smaller;
     }
 
     .accordion-item-body {
-        font-size: small;
+        font-size: smaller;
         transition: max-height 400ms ease-out;
     }
 
@@ -1833,13 +1661,13 @@ body {
         height: 480px;
     }
 
-    .promo h1,
-    .reason-container h1,
-    .product-container h1,
-    .video-container h1,
-    .faq-container h1,
-    .socmed-container h1,
-    .lecturer-container h1 {
+    .promo h2,
+    .reason-container h2,
+    .product-container h2,
+    .video-container h2,
+    .faq-container h2,
+    .socmed-container h2,
+    .lecturer-container h2 {
         font-size: 18px;
         padding-left: 5px;
         padding-right: 5px;
@@ -1871,48 +1699,8 @@ body {
         height: 150px;
     }
 
-    .product-card {
-        width: 100%;
-        max-width: 340px;
-        height: 100%;
-        max-height: 350px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        border-radius: 20px;
-        box-shadow: 0 2px 4px rgba(0, 4, 4, 0.5);
-        padding: 10px;
-    }
-
-    .product-card .product-image img {
-        max-width: 250px;
-        max-height: 155px;
-        margin-bottom: 10px;
-    }
-
-    .product-card .card-content h3 {
-        font-size: 16px;
-        text-align: center;
-    }
-
-    .product-card .card-content p {
-        font-size: 11px;
-        text-align: center;
-    }
-
-    .product-card .bottom {
-        text-align: center;
-    }
-
-    .product-card button {
-        font-size: 14px;
-        font-weight: normal;
-        width: 150px;
-        height: 30px;
-        text-align: center;
-        margin-left: auto;
-        margin-right: auto;
+    .promo .swipper-container .slide-content {
+        margin: 0;
     }
 
     .btn-pc {
@@ -1924,20 +1712,7 @@ body {
     }
 
     .hero-image-mobile img {
-        width: min(330px, 420px);
-        height: min(280px, 360px);
-    }
-
-    .video-content {
-        margin-top: 0px;
-    }
-
-    .video-content .video-1 img {
-        max-width: 360px;
-        max-height: 210px;
-        border-radius: 40px;
-        margin-top: 0px;
-        margin-bottom: 30px;
+        width: 100%;
     }
 
     .daftar-container {
@@ -1948,17 +1723,16 @@ body {
         font-size: 13px;
     }
 
-    .daftar-container button {
-        width: 160px;
-        height: 45px;
-    }
-
     .daftar-container button a {
         font-size: 14px;
     }
 
     .quotes-container {
         min-height: 130px;
+
+        & h2 {
+            font-size: 1rem;
+        }
     }
 
     #cropper img {
@@ -1969,6 +1743,16 @@ body {
     .border-orange-bold {
         border: 3px solid #ff8854;
         background-color: white;
+    }
+
+    .testimoni-mobile {
+        & img {
+            width: 36px;
+        }
+
+        & h2 {
+            font-size: 1.25rem;
+        }
     }
 }
 
@@ -1988,6 +1772,7 @@ body {
         width: 100%;
         max-width: 345px;
         height: 170px;
+        margin: 20px 0;
     }
 
     .reason-card .text-content {
@@ -2020,16 +1805,35 @@ body {
         font-size: 13px;
     }
 
-    .quotes-container {
-        min-height: 90px;
+    .list-socmed a {
+        width: 10%;
     }
 
-    .quotes-container h2 {
-        font-size: 13.5px;
+    .quotes-container {
+        min-height: 90px;
+
+        & h2 {
+            font-size: .8rem;
+            line-height: 1.5rem;
+        }
+    }
+
+    .testimoni-mobile {
+        & img {
+            width: 24px;
+        }
+
+        & h2 {
+            font-size: 1rem;
+        }
     }
 }
 
 @media (max-width: 370px) {
+    #dapatkan-diskon {
+        font-size: x-small;
+    }
+
     .reason-container {
         margin: 0px 0 50px 0;
     }
