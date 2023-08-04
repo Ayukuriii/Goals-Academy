@@ -13,41 +13,27 @@
     <div class="text-left socmed-text-content mt-5">
       <p>Ikuti kami untuk <br> update informasinya</p>
     </div>
+    <!-- Social Media -->
     <div class="socmed-container">
-      <div class="list-socmed">
-        <!-- Twitter -->
-        <div class="socmed socmed-1" style="padding-top: 10px;">
-          <img src="image/assets/images/socmed/twitter.svg" />
+        <div class="list-socmed d-flex gap-2 gap-sm-3">
+            {{-- <a class="d-block" href="" target="_blank">
+                <img src="{{ asset('image/assets/images/socmed/facebook.png') }}" alt="">
+            </a> --}}
+            <a class="d-block" href="https://www.instagram.com/goalsacademy_id/" target="_blank">
+                <img src="{{ asset('image/assets/images/socmed/instagram.png') }}" alt="">
+            </a>
+            <a class="d-block" href="https://www.linkedin.com/company/goals-academy-id/" target="_blank">
+                <img src="{{ asset('image/assets/images/socmed/linkedin.png') }}" alt="">
+            </a>
+            <a class="d-block" href="https://www.tiktok.com/@goalsacademy_id" target="_blank">
+                <img src="{{ asset('image/assets/images/socmed/tik-tok.png') }}" alt="">
+            </a>
+            {{-- <a class="d-block" href="" target="_blank">
+                <img src="{{ asset('image/assets/images/socmed/youtube.png') }}" alt="">
+            </a> --}}
         </div>
-        <!-- Instagram -->
-        <div class="socmed socmed-2" style="margin-left:-5px;">
-          <a href="instagram.com/goalsacademy_id">
-            <img src="image/assets/images/socmed/instagram.svg" />
-          </a>
-        </div>
-        <!-- Tiktok -->
-        <div class="socmed socmed-3" style="margin-left: -10px;">
-          <a href="https://www.tiktok.com/@goalsacademy_id">
-            <img src="image/assets/images/socmed/tiktok.svg" />
-          </a>
-        </div>
-        <!-- Linkedin -->
-        <div class="socmed socmed-4" style="padding-top: 13px; margin-left: -5px;">
-          <a href="https://www.linkedin.com/company/goals-academy-id/">
-            <img src="image/assets/images/socmed/linkedin.svg" />
-          </a>
-        </div>
-        <!-- Youtube -->
-        <div class="socmed socmed-5" style="padding-top: 12px;">
-          <img src="image/assets/images/socmed/youtube.svg" />
-        </div>
-        <!-- Facebook -->
-        <div class="socmed socmed-6" style="margin-left: -5px;">
-          <img src="image/assets/images/socmed/facebook.svg" />
-
-        </div>
-      </div>
     </div>
+    <!-- End Social Media -->
     </div>
   </section>
   <!-- Last Page -->
