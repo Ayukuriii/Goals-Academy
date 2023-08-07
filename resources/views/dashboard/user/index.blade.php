@@ -11,10 +11,21 @@
             @if ($collections->count() != 0)
                 <h1 class="card-title">Program Yang Sedang Berlangsung</h1>
                 @foreach ($collections as $collection)
-                    @php
-                        $orderDetails = App\Models\OrderDetail::find($collection->order_detail_id);
-                        $json = json_decode($orderDetails->jsonstring);
-                    @endphp
+                    @if ($collection)
+                        @php
+                            $orderDetails = App\Models\OrderDetail::find($collection->order_detail_id);
+                            if ($orderDetails) {
+                                $json = json_decode($orderDetails->jsonstring);
+                                if (isset($json->expiry_time)) {
+                                    $jsonTime = $json->expiry_time;
+                                } else {
+                                    $jsonTime = null; // or provide a default value
+                                }
+                            } else {
+                                $jsonTime = null; // or provide a default value
+                            }
+                        @endphp
+                    @endif
 
                     <div class="card mt-3 border-0">
                         <div class="card product-item justify-content-between">
@@ -30,8 +41,9 @@
                                     </p>
                                 @else
                                     <p class="status-product fst-italic">
-                                        {{ $json->expiry_time }}
-                                        <span class="d-inline-block text-danger text-center" id="expiry-time"> </span>
+                                        {{-- {{ $json->expiry_time }} --}}
+                                        <span class="d-inline-block text-danger text-center"
+                                            id="expiry-time-{{ $collection->id }}"> </span>
                                         {{ $collection->payment_status }}
                                     </p>
                                 @endif
@@ -65,11 +77,25 @@
 @endsection
 
 @section('script')
-    <script>
-        // Generate Expiry Time Countdown
-        const expiryTimeElement = document.querySelector("#expiry-time");
-        const expiryTime = moment("{{ $json->expiry_time }}")
+    @foreach ($collections as $collection)
+        @php
+            $orderDetails = App\Models\OrderDetail::find($collection->order_detail_id);
+            $jsonTime = null; // Inisialisasi jsonTime di setiap iterasi
+            if ($orderDetails) {
+                $json = json_decode($orderDetails->jsonstring);
+                if (isset($json->expiry_time)) {
+                    $jsonTime = $json->expiry_time;
+                }
+            }
+        @endphp
+        @if ($jsonTime)
+            <script>
+                // Generate Expiry Time Countdown for this specific iteration
+                const expiryTimeElement{{ $collection->id }} = document.querySelector("#expiry-time-{{ $collection->id }}");
+                const expiryTime{{ $collection->id }} = moment("{{ $jsonTime }}");
 
-        countdown(expiryTimeElement, expiryTime);
-    </script>
+                countdown(expiryTimeElement{{ $collection->id }}, expiryTime{{ $collection->id }});
+            </script>
+        @endif
+    @endforeach
 @endsection

@@ -84,7 +84,8 @@ class DatabaseSeeder extends Seeder
             'major' => 'Teknik Elektronika',
             'user_level' => 'user',
             'password'      => bcrypt('qwe12334'),
-            'email_verified_at' => now()
+            'email_verified_at' => now(),
+            'is_completed' => true,
         ]);
 
         ProgramService::create([
