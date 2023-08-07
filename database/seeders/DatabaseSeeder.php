@@ -4,13 +4,10 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-use App\Models\OngoingProgram;
-use App\Models\PaymentStatus;
-use App\Models\ProgramService;
-use App\Models\ProgramSession;
-use App\Models\Tutor;
-use App\Models\TutorNotes;
 use App\Models\User;
+use App\Models\Tutor;
+use App\Models\Article;
+use App\Models\ProgramService;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -26,6 +23,7 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+        Article::factory(5)->create();
 
         User::create([
             'name'  => 'admin',

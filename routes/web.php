@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\EmailController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\TutorController;
@@ -139,6 +140,7 @@ Route::middleware(['auth', 'check.level:admin'])->group(function () {
 
         Route::get('/admin/list_user', 'list_user')->name('admin.list_user');
         Route::get('/admin/tambah_user/create', 'create')->name('admin.create');
+        Route::get('/moderator/riwayat_jadwal_detail/{id}', 'riwayat_jadwal_detail')->name('moderator.riwayat_jadwal');
         Route::post('/admin/tambah_user/store', 'store')->name('admin.store');
         Route::get('/admin/tambah_user/edit/{id}', 'edit')->name('admin.edit');
         Route::put('/admin/tambah_user/update/{id}', 'update')->name('admin.update');
@@ -156,7 +158,6 @@ Route::middleware(['auth', 'check.level:moderator'])->group(function () {
         Route::get('/moderator/edit/{id}', 'edit')->name('moderator.edit-jadwal.edit');
         Route::put('/moderator/update/{id}', 'update')->name('moderator.edit-jadwal.update');
         Route::put('/moderator/selesai/{id}', 'selesai')->name('moderator.edit-jadwal.selesai');
-        Route::get('/moderator/riwayat_jadwal_detail/{id}', 'riwayat_jadwal_detail')->name('moderator.riwayat_jadwal');
     });
 });
 
@@ -202,6 +203,13 @@ Route::middleware('auth')->group(function () {
         Route::get('/notif', 'notif');
     });
 });
+
+Route::middleware(['auth', 'check.level:admin'])->group(function () {
+    Route::controller(ArticleController::class)->group(function () {
+        Route::get('/admin/artikel', 'index')->name('artikel');
+    });
+});
+
 Route::get('/purchase', function () {
     return view('purchase.index', [
         'title' => 'Purchase'

@@ -12,6 +12,7 @@
             <a href="/admin" class="mx-auto fw-bold btn-nav p-2 w-100">Dashboard</a>
             <a href="/admin/bimbingan" class="mx-auto fw-bold btn-nav p-2 w-100">Bimbingan</a>
             <a href="/admin/list_user" class="mx-auto fw-bold btn-nav p-2 w-100">List User</a>
+            <a href="/admin/artikel" class="mx-auto fw-bold btn-nav p-2 w-100">Artikel</a>
         </div>
     </div>
 @elseif (auth()->user()->user_level === 'moderator')
