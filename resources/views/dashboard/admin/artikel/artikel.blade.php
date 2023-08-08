@@ -10,7 +10,8 @@
             <div class="card col ml-3 p-4 side-program">
                 <div class="d-flex justify-content-between">
                     <h3 class="d-inline text-purple fw-bold">Artikel</h3>
-                    <a href="#" class="d-inline btn-outline-orange py-2 px-4 small">Riwayat</a>
+                    <a href="{{ route('artikel.create') }}" class="d-inline btn-outline-orange py-2 px-4 small">Tambah
+                        Artikel</a>
                 </div>
 
                 <!-- Alert -->
