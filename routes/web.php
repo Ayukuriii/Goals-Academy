@@ -208,6 +208,7 @@ Route::middleware(['auth', 'check.level:admin'])->group(function () {
     Route::controller(ArticleController::class)->group(function () {
         Route::get('/admin/artikel', 'index')->name('artikel');
         Route::get('/admin/artikel/tambah', 'create')->name('artikel.create');
+        Route::post('/admin/artikel/store', 'store')->name('artikel.store');
         Route::get('/admin/artikel/checkSlug', 'checkSlug');
     });
 });

@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
-use App\Http\Requests\StoreArticleRequest;
-use App\Http\Requests\UpdateArticleRequest;
 use Illuminate\Http\Request;
 use Cviebrock\EloquentSluggable\Services\SlugService;
 
@@ -34,9 +32,9 @@ class ArticleController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreArticleRequest $request)
+    public function store(Request $request)
     {
-        //
+        dd($request);
     }
 
     /**
@@ -58,7 +56,7 @@ class ArticleController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateArticleRequest $request, Article $article)
+    public function update(Request $request, Article $article)
     {
         //
     }

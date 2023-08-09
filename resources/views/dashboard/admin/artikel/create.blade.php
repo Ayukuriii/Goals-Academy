@@ -1,5 +1,10 @@
 @extends('dashboard.layouts.main')
 
+@section('trix')
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.0/dist/trix.css">
+    <script type="text/javascript" src="https://unpkg.com/trix@2.0.0/dist/trix.umd.min.js"></script>
+@endsection
+
 @section('container')
     {{-- {{ dd($collections) }} --}}
     <!-- Isi Page -->
@@ -12,7 +17,7 @@
                     <h3 class="d-inline text-purple fw-bold">Tambah Artikel Baru</h3>
                 </div>
 
-                <form action="#" method="POST">
+                <form action="{{ route('artikel.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="p-2 mt-2">
                         <div class="form-group col-6 mb-2">
@@ -39,10 +44,10 @@
                         </div>
                     </div>
                     <div class="p-2 mt-2">
-                        <div class="form-group col-6 mb-2">
+                        <div class="form-group mb-2">
                             <label class="form-label small" for="body">Body</label>
-                            <input type="text" name="body" class="form-control @error('body') is-invalid @enderror"
-                                id="body" placeholder=" " value="{{ old('body') }}" required />
+                            <input id="body" type="hidden" name="content">
+                            <trix-editor input="body"></trix-editor>
                             <div class="invalid-feedback text-smaller">
                                 @error('body')
                                     {{ $message }}
@@ -50,6 +55,7 @@
                             </div>
                         </div>
                     </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
         </div>
