@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Cviebrock\EloquentSluggable\Services\SlugService;
 
@@ -25,7 +26,8 @@ class ArticleController extends Controller
     public function create()
     {
         return view('dashboard.admin.artikel.create', [
-            'title' => 'Artikel'
+            'title' => 'Artikel',
+            'categories' => Category::all(),
         ]);
     }
 
@@ -34,7 +36,17 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
+        
         dd($request);
+        $rule = [
+            'category_id' => 'required|max:255',
+            'title' => 'required',
+            'slug' => 'required|unique:articles,slug',
+            'body' => 'required',
+            'image'         => 'image|file|max:2048',
+        ];
+
+        $validateData = $request->validate($rule);
     }
 
     /**

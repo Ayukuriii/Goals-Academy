@@ -6,7 +6,6 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\EmailController;
-use App\Http\Controllers\ImageController;
 use App\Http\Controllers\TutorController;
 use App\Http\Controllers\DownloadController;
 use App\Http\Controllers\FormValidationController;
@@ -15,8 +14,6 @@ use App\Http\Controllers\OrderDetailController;
 use App\Http\Controllers\SocialController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\VerificationController;
-use App\Http\Livewire\Purchase;
-use App\Models\OrderDetail;
 
 /*
 |--------------------------------------------------------------------------

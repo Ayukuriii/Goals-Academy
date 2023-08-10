@@ -7,6 +7,7 @@ namespace Database\Seeders;
 use App\Models\User;
 use App\Models\Tutor;
 use App\Models\Article;
+use App\Models\Category;
 use App\Models\ProgramService;
 use Illuminate\Database\Seeder;
 
@@ -24,6 +25,23 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
         Article::factory(5)->create();
+
+        Category::create([
+            'name' => 'Tips Skripsi',
+            'slug' => 'tips-skripsi'
+        ]);
+        Category::create([
+            'name' => 'Kegiatan Goals',
+            'slug' => 'kegiatan-goals'
+        ]);
+        Category::create([
+            'name' => 'Cerita Kampus',
+            'slug' => 'cerita-kampus'
+        ]);
+        Category::create([
+            'name' => 'Diskusi',
+            'slug' => 'diskusi'
+        ]);
 
         User::create([
             'name'  => 'admin',
