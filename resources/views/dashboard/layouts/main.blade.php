@@ -42,6 +42,7 @@
     <link href="{{ asset('css/style-user.css') }}" rel="stylesheet" /> <!-- style profile -->
     <link href="{{ asset('css/cropper.min.css') }}" rel="stylesheet" /> <!-- style profile -->
     {{-- <link href="{{ asset('css/style-profil.css') }}" rel="stylesheet" /> <!-- // style profil --> --}}
+    @yield('trix')
 </head>
 
 <body>

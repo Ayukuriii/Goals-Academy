@@ -3,7 +3,7 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '85479db658f701f6d424afee8bbfb1314757afa3',
+        'reference' => 'a5190d43f504279a7d334a7bcfeed757a465fa40',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -19,11 +19,29 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'cocur/slugify' => array(
+            'pretty_version' => 'v4.4.0',
+            'version' => '4.4.0.0',
+            'reference' => '4c6ed14a087ca061b220ffda640c07644946e2a0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../cocur/slugify',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'cordoval/hamcrest-php' => array(
             'dev_requirement' => true,
             'replaced' => array(
                 0 => '*',
             ),
+        ),
+        'cviebrock/eloquent-sluggable' => array(
+            'pretty_version' => '10.0.0',
+            'version' => '10.0.0.0',
+            'reference' => '92f456b10337ca97c1cccfcc853a1cf51d2cedd0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../cviebrock/eloquent-sluggable',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
         'davedevelopment/hamcrest-php' => array(
             'dev_requirement' => true,
@@ -382,7 +400,7 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '85479db658f701f6d424afee8bbfb1314757afa3',
+            'reference' => 'a5190d43f504279a7d334a7bcfeed757a465fa40',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -778,8 +796,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0|2.0|3.0',
-                1 => '3.0.0',
+                0 => '3.0.0',
+                1 => '1.0|2.0|3.0',
             ),
         ),
         'psr/simple-cache' => array(
