@@ -35,9 +35,25 @@
                         <div class="form-group col-6 mb-2">
                             <label class="form-label small" for="slug">Slug</label>
                             <input type="text" name="slug" class="form-control @error('slug') is-invalid @enderror"
-                                id="slug" placeholder=" " value="{{ old('slug') }}" disabled readonly />
-                            <div class="invalid-feedback text-smaller">
+                                id="slug" value="{{ old('slug') }}" required disabled />
+                            <div class="invalid-feedback
+                                text-smaller">
                                 @error('slug')
+                                    {{ $message }}
+                                @enderror
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-2 mt-2">
+                        <div class="form-group col-6 mb-2">
+                            <label class="form-label small" for="category_id">Kategori</label>
+                            <select class="form-select" id="category_id" name="category_id">
+                                @foreach ($categories as $category)
+                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                @endforeach
+                            </select>
+                            <div class="invalid-feedback text-smaller">
+                                @error('category_id')
                                     {{ $message }}
                                 @enderror
                             </div>

@@ -20,7 +20,7 @@ return new class extends Migration
             $table->text('slug');
             $table->text('body');
             $table->string('image')->nullable();
-            $table->timestamp('created_at');
+            $table->timestamp('published_at');
             $table->timestamps();
         });
     }
