@@ -8,6 +8,7 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Password;
 
 class AuthController extends Controller
@@ -64,7 +65,9 @@ class AuthController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            $auth = auth()->user()->user_level;
+            $user = auth()->user();
+            Log::info("User {name} has been Log in.", ['name' => $user->name]);
+            $auth = $user->user_level;
             if ($auth === 'user') {
                 return redirect()->intended('/')->with(
                     'login',
@@ -81,6 +84,7 @@ class AuthController extends Controller
     // memproses akses logout
     public function post_logout(Request $request)
     {
+        Log::info("User {name} has been Log out.", ['name' => auth()->user()->name]);
         Auth::logout();
 
         $request->session()->invalidate();

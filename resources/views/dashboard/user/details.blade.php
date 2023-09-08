@@ -4,6 +4,7 @@
     <!-- convert json ke string -->
     @php
         $json = json_decode($data->orderDetail->jsonstring);
+        // dd($json);
     @endphp
 
     <!-- Isi Page -->
@@ -30,12 +31,16 @@
                     </tr>
                     <tr>
                         <td>STATUS</td>
-                        @if ($data->payment_status == 'success')
-                            <td class="text-success">{{ $data->payment_status }}</td>
-                        @elseif ($data->payment_status == 'failed')
-                            <td class="text-danger">{{ $data->payment_status }}</td>
-                        @else
-                            <td class="text-secondary">{{ $data->payment_status }}</td>
+                        @if ($json->transaction_status == 'settlement' || $json->transaction_status == 'capture')
+                            <td class="text-success">Sukses</td>
+                        @elseif ($json->transaction_status == 'pending')
+                            <td class="text-secondary">Pending</td>
+                        @elseif (
+                            $json->transaction_status == 'deny' ||
+                                $json->transaction_status == 'cancel' ||
+                                $json->transaction_status == 'expire' ||
+                                $json->transaction_status == 'failure')
+                            <td class="text-danger">Gagal</td>
                         @endif
                     </tr>
                     <tr>

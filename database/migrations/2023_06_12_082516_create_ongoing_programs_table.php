@@ -17,15 +17,15 @@ return new class extends Migration
             $table->string('user_id');
             $table->string('program_services_id');
             $table->string('tutor_id')->nullable();
-            $table->enum('payment_status', ['success', 'failed', 'pending']);
+            // $table->enum('payment_status', ['success', 'failed', 'pending']);
             $table->string('program_session');
             $table->text('catatan');
             $table->string('alias')->nullable();
             $table->string('file')->nullable();
             $table->string('links')->nullable();
             $table->string('date');
-            $table->boolean('is_tutor');
-            $table->boolean('is_moderator');
+            $table->boolean('is_tutor')->default(0);
+            $table->boolean('is_moderator')->default(0);
             $table->timestamps();
         });
     }

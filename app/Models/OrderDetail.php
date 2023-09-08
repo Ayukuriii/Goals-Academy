@@ -9,7 +9,12 @@ class OrderDetail extends Model
 {
     use HasFactory;
 
-    protected $guarded = ['id'];
+    protected $fillable = [
+        'order_id',
+        'status',
+        'ongoing_program_id',
+        'jsonstring'
+    ];
 
     public function ongoing_program()
     {
