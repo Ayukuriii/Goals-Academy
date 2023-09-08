@@ -12,9 +12,13 @@
 
         {{-- <i class="fs-xl fa-regular fa-hourglass-half fa-spin text-purple my-4"></i> --}}
 
-        <p class="fs-5 mt-2">Lakukan Pembayaran dalam <span class="d-inline-block text-danger text-center" style="width: 80px" id="expiry-time"></span></p>
+        @if (isset($response->expiry_time))
+            <p class="fs-5 mt-2">Lakukan Pembayaran dalam <span class="d-inline-block text-danger text-center" style="width: 80px" id="expiry-time"></span></p>
+        @endif
 
-        <img title="Download QR Code" id="qr-code" class="my-3" style="cursor: pointer;" width="160px" src="{{ $response->actions[0]->url }}" alt="QR Code" onclick="saveFile(`{{ $response->actions[0]->url }}`)">
+        @if (isset($response->actions))
+            <img title="Download QR Code" id="qr-code" class="my-3" style="cursor: pointer;" width="160px" src="{{ $response->actions[0]->url }}" alt="QR Code" onclick="saveFile(`{{ $response->actions[0]->url }}`)">
+        @endif
 
         <p class="mt-2">Cara pembayaran menggunakan QRIS :</p>
 
@@ -43,23 +47,60 @@
 @endsection
 
 @section('script')
+    @if (isset($response->expiry_time))
+        <script>
+            const expiryTimeElement = document.querySelector("#expiry-time");
+            const expiryTime = moment("{{ $response->expiry_time }}")
+            countdown(expiryTimeElement, expiryTime);
+
+            // Function copy to clipboard
+            // const copyToClipboard = (value, callback = null) => {
+            //     // Copy the text inside the text field
+            //     navigator.clipboard.writeText(value);
+            // }
+
+            // const paymentCode = document.querySelector("#payment-code");
+
+            // paymentCode.addEventListener("click", e => {
+            //     copyToClipboard(e.target.innerText, alert("Payment code copied!\n"));
+            // })
+        </script>
+    @endif
     <script>
-        // Function copy to clipboard
-        // const copyToClipboard = (value, callback = null) => {
-        //     // Copy the text inside the text field
-        //     navigator.clipboard.writeText(value);
-        // }
+        // Cek status every second
+        const id = window.location.href.split('/')[window.location.href.split('/').length-1]
 
-        // Generate Expiry Time Countdown
-        const expiryTimeElement = document.querySelector("#expiry-time");
-        const expiryTime = moment("{{ $response->expiry_time }}")
+        const checkPaymentStatus = setInterval(() => {
+            $.ajax({
+                type: "get",
+                url: "/api/check_status",
+                success: function (response) {
+                    if (response['transaction_status'] == 'success') {
+                        clearInterval(checkPaymentStatus)
+                        $.ajax({
+                            type: "post",
+                            url: "/api/handle_payment",
+                            data: response,
+                            dataType: "json",
+                            success: function (response) {
+                                window.location.href = `/payment_success/${id}`
+                            }
+                        });
+                    } else {
+                        $.ajax({
+                            type: "post",
+                            url: "/api/handle_payment",
+                            data: response,
+                            dataType: "json",
+                            success: function (response) {
+                                console.log(response['message'])
+                            }
+                        });
+                    }
+                }
+            });
+        }, 2000);
 
-        countdown(expiryTimeElement, expiryTime);
-
-        // const paymentCode = document.querySelector("#payment-code");
-
-        // paymentCode.addEventListener("click", e => {
-        //     copyToClipboard(e.target.innerText, alert("Payment code copied!\n"));
-        // })
+        checkPaymentStatus()
     </script>
 @endsection
