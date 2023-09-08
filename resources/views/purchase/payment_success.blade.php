@@ -34,15 +34,23 @@
         <div class="card col-12 col-md-7 flex-column rounded-4 py-3 px-4 my-4">
             <div class="d-flex justify-content-between mb-3">
                 <div>
-                    <p class="fw-bold m-0 mb-2">Paket Dibimbing Sekali</p>
-                    <p class="small m-0">Selasa, 30 Februari 2023 |
-                        Pukul 14.00 WIB</p>
+                    <p class="fw-bold m-0 mb-2">
+                        {{
+                            $data->program_services_id == 1 ? 'Paket Dibimbing Online' : (
+                                $data->program_services_id == 2 ? 'Paket Dibimbing Online Premium' : (
+                                    $data->program_services_id == 3 ? 'Paket Dibimbing Sekali' : ''
+                                )
+                            )
+                        }}
+                    </p>
+                    <p class="small m-0">{{ \Carbon\Carbon::parse($data->date)->isoFormat('dddd, D MMMM Y') }} |
+                        Pukul {{ $data->program_session }} WIB</p>
                 </div>
-                <p class="m-0">Rp 43.000</p>
+                <p class="m-0">Rp {{ $response->gross_amount }}</p>
             </div>
             <div class="d-flex align-items-center justify-content-between mb-3">
                 <p class="fw-bold m-0">Voucher</p>
-                <p class="d-inline-block m-0">- Rp 10.000</p>
+                <p class="d-inline-block m-0">0.00</p>
             </div>
             <div class="d-flex align-items-center justify-content-between">
                 <p class="fw-bold m-0">Total</p>
