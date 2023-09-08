@@ -11,6 +11,8 @@ use App\Models\OngoingProgram;
 use App\Models\OrderDetail;
 use App\Notifications\NewOrderNotification;
 use GrahamCampbell\ResultType\Success;
+use Illuminate\Support\Facades\Date;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Notification;
 
 class Purchase extends Component
@@ -20,6 +22,7 @@ class Purchase extends Component
     public $currentStep = 1;
     public $agreement;
     public $program;
+    public $programName;
     public $price;
     public $dates;
     public $date;
@@ -123,10 +126,13 @@ class Purchase extends Component
 
         if ($this->program == 1) {
             $this->price = 11;
+            $this->programName = 'Dibimbing Online';
         } else if ($this->program == 2) {
             $this->price = 12;
+            $this->programName = 'Dibimbing Online Premium';
         } else if ($this->program == 3) {
             $this->price = 13;
+            $this->programName = 'Dibimbing Offline';
         }
 
         $this->currentStep = 4;
@@ -138,7 +144,7 @@ class Purchase extends Component
             'purchaseMethod' => 'required',
             'agreement' => 'accepted'
         ]);
-        
+
         // Set your Merchant Server Key
         Config::$serverKey = config('midtrans.server_key');
         // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
@@ -157,19 +163,19 @@ class Purchase extends Component
         }
 
         $user = auth()->user();
-
-        $randomNumber = rand(0, 9999);
-        $rand = str_pad($randomNumber, 4, '0', STR_PAD_LEFT);
-
+        $orderId = 'GA' . Date::now()->format('YmdHis');
         $params = array(
             'transaction_details' => array(
-                'order_id' => 'GA' . $rand,
+                'order_id' => $orderId,
                 'gross_amount' => $this->price,
-                // 'expiry' => array(
-                //     'start_time' => date('Y-m-d H:i:s'), // The start time of the expiry duration (usually the current time)
-                //     'unit' => 'minutes', // The unit of the expiry duration (can be 'minutes' or 'hours')
-                //     'duration' => 60
-                // )
+            ),
+            'item_details' => array(
+                array(
+                    'id' => $this->program,
+                    'price' => $this->price,
+                    'quantity' => 1,
+                    'name' => $this->programName,
+                )
             ),
             'customer_details' => array(
                 'first_name' => $user->name,
@@ -182,10 +188,13 @@ class Purchase extends Component
 
         $response = \Midtrans\CoreApi::charge($params);
         // dd($response);
+        Log::info('Create Purchase', ['payload' => $response]);
         $responseToJson = json_encode($response);
 
         $order = OrderDetail::create([
             'ongoing_program_id' => null, // temporary set to null
+            'order_id' => $orderId,
+            'status' => $response->transaction_status,
             'jsonstring' => $responseToJson,
         ]);
 
@@ -193,15 +202,12 @@ class Purchase extends Component
             'order_detail_id' => $order->id,
             'user_id' => $user->id,
             'program_services_id' => $this->program,
-            'payment_status' => $response->transaction_status,
             'program_session' => $this->time,
             'catatan' => $this->note,
             'alias' => $origin,
             'file' => $filepath,
             'links' => $this->location,
             'date' => Carbon::parse($this->date)->format('Y-m-d'),
-            'is_tutor' => 0,
-            'is_moderator' => 0,
         ]);
 
         $order->ongoing_program_id = $data->id;
