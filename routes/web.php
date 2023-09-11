@@ -217,12 +217,7 @@ Route::get('/purchase', function () {
 })->name('purchase.index')->middleware('auth', 'check.profile');
 
 Route::get('/payment_pending/{id}', [OrderDetailController::class, 'pending'])->name('payment.pending');
-
-Route::get('/payment_success', function () {
-    return view('purchase.payment_success', [
-        'title' => 'Purchase'
-    ]);
-})->name('payment.success');
+Route::get('/payment_success/{id}', [OrderDetailController::class, 'success'])->name('payment.success');
 
 Route::controller(FormValidationController::class)->group(function () {
     Route::post('/validate_register', 'validate_register');
