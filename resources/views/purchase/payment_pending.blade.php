@@ -1,3 +1,4 @@
+{{-- @dd(session('response')) --}}
 @extends('purchase.layouts.main')
 
 @section('main')
@@ -9,15 +10,18 @@
     @endif
     <div class="d-flex flex-column align-items-center justify-content-center h-100">
         <h1 class="text-purple fst-italic m-0 mt-5 mb-2">Menunggu Pembayaran</h1>
-
+        {{ $response->transaction_status }}
         {{-- <i class="fs-xl fa-regular fa-hourglass-half fa-spin text-purple my-4"></i> --}}
 
         @if (isset($response->expiry_time))
-            <p class="fs-5 mt-2">Lakukan Pembayaran dalam <span class="d-inline-block text-danger text-center" style="width: 80px" id="expiry-time"></span></p>
+            <p class="fs-5 mt-2">Lakukan Pembayaran dalam <span class="d-inline-block text-danger text-center"
+                    style="width: 80px" id="expiry-time"></span></p>
         @endif
 
         @if (isset($response->actions))
-            <img title="Download QR Code" id="qr-code" class="my-3" style="cursor: pointer;" width="160px" src="{{ $response->actions[0]->url }}" alt="QR Code" onclick="saveFile(`{{ $response->actions[0]->url }}`)">
+            <img title="Download QR Code" id="qr-code" class="my-3" style="cursor: pointer;" width="160px"
+                src="{{ $response->actions[0]->url }}" alt="QR Code"
+                onclick="saveFile(`{{ $response->actions[0]->url }}`)">
         @endif
 
         <p class="mt-2">Cara pembayaran menggunakan QRIS :</p>
@@ -68,39 +72,24 @@
     @endif
     <script>
         // Cek status every second
-        const id = window.location.href.split('/')[window.location.href.split('/').length-1]
-
+        const id = window.location.href.split('/')[window.location.href.split('/').length - 1]
+        const orderId = "{{ $response->order_id }}"
         const checkPaymentStatus = setInterval(() => {
-            $.ajax({
-                type: "get",
-                url: "/api/check_status",
-                success: function (response) {
-                    if (response['transaction_status'] == 'success') {
-                        clearInterval(checkPaymentStatus)
-                        $.ajax({
-                            type: "post",
-                            url: "/api/handle_payment",
-                            data: response,
-                            dataType: "json",
-                            success: function (response) {
-                                window.location.href = `/payment_success/${id}`
-                            }
-                        });
-                    } else {
-                        $.ajax({
-                            type: "post",
-                            url: "/api/handle_payment",
-                            data: response,
-                            dataType: "json",
-                            success: function (response) {
-                                console.log(response['message'])
-                            }
-                        });
+                $.ajax({
+                    type: "post",
+                    url: "/api/check_status",
+                    data: {
+                        "order_id": orderId
+                    },
+                    success: function(response) {
+                        if (response == 'settlement' || response == 'capture') {
+                            window.location.href = `/payment_success/${id}`
+                        }
                     }
-                }
-            });
-        }, 2000);
+                });
+            },
+            2000);
 
-        checkPaymentStatus()
+        // checkPaymentStatus()
     </script>
 @endsection
